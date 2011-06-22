@@ -1,0 +1,264 @@
+\chapter{Calculus of Variations}\label{cvar}
+\section{Euler-Lagrange Equation}\label{s11.2}
+It is a well-known fact, first enunciated by Archimedes, that the shortest
+distance between two points in a plane is a straight-line. However, suppose that
+we wish to demonstrate this result from first principles. Let us consider the
+length, $l$, of various curves, $y(x)$, which run between two fixed
+points, $A$ and $B$, in a plane, as illustrated in Figure~\ref{calv}. Now, $l$ takes the form
+\begin{equation}\label{e11.1}
+l = \int_A^B [dx^2 + dy^2]^{1/2} = \int_a^b [1 + y'^{\,2}(x)]^{1/2}\,dx,
+\end{equation}
+where $y'\equiv dy/dx$. Note that $l$ is a function of the function $y(x)$.
+In mathematics, a function of a function is  termed a {\em functional}. 
+
+\begin{figure}[h]
+\epsfysize=2.5in
+\centerline{\epsffile{AppendixD/figD.01.eps}}
+\caption{\em Different paths between points $A$ and $B$.}\label{calv}
+\end{figure}
+
+Now, in order to find the shortest path between points $A$ and $B$, we need to {\em minimize}\/ the functional $l$ with respect to small variations
+in the function $y(x)$, subject to the constraint that the end points, $A$
+and $B$, remain fixed. In other words, we need to solve
+\begin{equation}
+\delta l = 0.
+\end{equation}
+The meaning of the above equation is that if $y(x)\rightarrow y(x)+\delta y(x)$, where $\delta y(x)$ is small, then the {\em first-order variation} in $l$,
+denoted $\delta l$, 
+vanishes. In other words, $l\rightarrow l + {\cal O}(\delta y^{\,2})$. The particular function
+$y(x)$ for which $\delta l =0$ obviously yields an {\em extremum}\/ of $l$ ({\em i.e.}, either a maximum or a minimum). Hopefully,
+in the  case under consideration, 
+it yields a minimum of $l$.
+
+Consider a general functional of the form
+\begin{equation}\label{e11.3}
+I = \int_a^b F(y, y',x)\,dx,
+\end{equation}
+where the end points of the integration are fixed.
+   Suppose that $y(x)\rightarrow
+y(x)+\delta y(x)$. The first-order variation in $I$ is written
+\begin{equation}
+\delta I = \int_a^b\left(\frac{\partial F}{\partial y}\,\delta y+ \frac{\partial F}{\partial y'}\,\delta y'\right)dx,
+\end{equation}
+where $\delta y' = d(\delta y)/dx$.  Setting $\delta I$ to zero, we
+obtain
+\begin{equation}
+\int_a^b\left(\frac{\partial F}{\partial y}\,\delta y+ \frac{\partial F}{\partial y'}\,\delta y'\right)\,dx = 0.
+\end{equation}
+This equation must be satisfied for all possible small perturbations $\delta y(x)$. 
+
+Integrating the second term in the integrand of the above equation by
+parts, we get
+\begin{equation}
+\int_a^b\left[\frac{\partial F}{\partial y}- \frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)\right]\delta y\,dx +\left[\frac{\partial F}{\partial y'}\,\delta y\right]_a^b=0.
+\end{equation}
+Now, if the end points  are fixed then $\delta y=0$ at
+$x=a$ and $x=b$. Hence, the last term on the left-hand side of the
+above equation is zero. Thus, we obtain
+\begin{equation}
+\int_a^b\left[\frac{\partial F}{\partial y}- \frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)\right]\delta y\,dx =0.
+\end{equation}
+The above equation must be satisfied for {\em all}\/ small  perturbations
+$\delta y(x)$. The only way in which this is possible is for the
+expression enclosed in square brackets in the integral to be zero. Hence, the functional
+$I$ attains an extremum value whenever
+\begin{equation}\label{e11.8}
+\frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)-\frac{\partial F}{\partial y} = 0.
+\end{equation}
+This condition is known as the {\em Euler-Lagrange equation}.
+
+Let us consider some special cases. Suppose that $F$ does not explicitly
+depend on $y$. It follows that $\partial F/\partial y = 0$. Hence,
+the Euler-Lagrange equation (\ref{e11.8}) simplifies to
+\begin{equation}\label{e11.9}
+\frac{\partial F}{\partial y'} = {\rm const}.
+\end{equation}
+Next, suppose that $F$ does not depend explicitly on $x$. Multiplying
+Equation~(\ref{e11.8}) by $y'$, we obtain
+\begin{equation}
+y'\,\frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)-y'\,\frac{\partial F}{\partial y} = 0.
+\end{equation}
+However, 
+\begin{equation}
+\frac{d}{dx}\!\left(y'\,\frac{\partial F}{\partial y'}\right) = y'\,\frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)+ y''\,\frac{\partial F}{\partial y'}.
+\end{equation}
+Thus, we get
+\begin{equation}
+\frac{d}{dx}\!\left(y'\,\frac{\partial F}{\partial y'}\right) = y'\,\frac{\partial F}{\partial y} +  y''\,\frac{\partial F}{\partial y'}.
+\end{equation}
+Now, if $F$ is not an explicit function of $x$ then the right-hand side of
+the above equation is the total derivative of $F$, namely $dF/dx$. 
+Hence, we obtain
+\begin{equation}
+\frac{d}{dx}\!\left(y'\,\frac{\partial F}{\partial y'}\right) = \frac{dF}{dx},
+\end{equation}
+which yields
+\begin{equation}\label{e11.14}
+y'\,\frac{\partial F}{\partial y'} - F = {\rm const}.
+\end{equation}
+
+Returning to the  case under consideration, we have $F = \sqrt{1+y'^{\,2}}$, according to Equation~(\ref{e11.1}) and (\ref{e11.3}).  Hence, $F$ is not
+an explicit function of $y$, so Equation~(\ref{e11.9}) yields
+\begin{equation}
+\frac{\partial F}{\partial y'} = \frac{y'}{\sqrt{1+y'^{\,2}}} = c,
+\end{equation}
+where $c$ is a constant. So,
+\begin{equation}
+y' = \frac{c}{\sqrt{1-c^2}} = {\rm const}.
+\end{equation}
+Of course, $y' = {\rm constant}$ is the equation of a {\em straight-line}. Thus, the shortest distance between two fixed points in a plane is indeed a
+straight-line.
+
+\section{Conditional Variation}
+Suppose that we wish to find the function $y(x)$ which
+maximizes or minimizes the functional
+\begin{equation}
+I = \int_a^b F(y, y',x)\,dx,
+\end{equation}
+subject to the {\em  constraint}\/ that the value of
+\begin{equation}\label{e11.18}
+J = \int_a^b G(y,y',x)\,dx
+\end{equation}
+remains constant. We can achieve our goal by finding an  extremum of the new functional
+$K = I + \lambda\,J$, where $\lambda(x)$ is an undetermined function. We know
+that $\delta J = 0$, since the value of $J$ is fixed, so if $\delta K= 0$ then
+$\delta I = 0$ as well. In other words, finding an extremum of $K$ is equivalent
+to finding an extremum of $I$. Application of the Euler-Lagrange
+equation yields
+\begin{equation}
+\frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)-\frac{\partial F}{\partial y} +\left[\frac{d}{dx}\!\left(\frac{\partial [\lambda\,G]}{\partial y'}\right)-\frac{\partial [\lambda\,G]}{\partial y}\right]= 0.
+\end{equation}
+In principle, the above equation, together with the constraint (\ref{e11.18}),
+yields the  functions $\lambda(x)$ and  $y(x)$. Incidentally,  $\lambda$ is generally
+termed a {\em Lagrange multiplier}.  If $F$ and $G$ have no explicit $x$-dependence then $\lambda$ is usually a {\em constant}.
+
+As an example, consider the following famous problem. Suppose that a uniform
+chain of fixed length $l$ is suspended by its ends from
+two equal-height fixed points which are a distance $a$ apart, where $a < l$. 
+What is the equilibrium configuration of the chain?
+
+Suppose that the chain has the uniform density per unit length $\rho$. 
+Let the $x$- and $y$-axes be horizontal and vertical, respectively, and
+let the two ends of the chain lie at $(\pm a/2, 0)$. The equilibrium configuration of the chain is specified by the function $y(x)$, for $-a/2\leq x \leq +a/2$, where
+$y(x)$ is the vertical distance of the chain below its end points at horizontal
+position $x$. Of course, $y(-a/2) = y(+a/2) = 0$. 
+
+According to standard Newtonian dynamics, the stable equilibrium
+state of a conservative dynamical system is one which {\em minimizes}\/
+the system's potential energy. Now, the potential energy of the chain
+is written
+\begin{equation}
+U = - \rho\,g\,\int y\,ds = - \rho\,g\,\int_{-a/2}^{a/2} y\,[1+y'^{\,2}]^{1/2}\,dx,
+\end{equation}
+where $ds = \sqrt{dx^2+dy^2}$ is an element of length along the chain, and
+$g$ is the acceleration due to gravity.
+Hence, we need to minimize $U$ with respect to small variations in $y(x)$. 
+However, the variations in $y(x)$ must be such as to conserve the
+fixed length of the chain. Hence, our minimization procedure is subject to
+the constraint that
+\begin{equation}\label{e11.21}
+l = \int ds = \int_{-a/2}^{a/2}[1+y'^{\,2}]^{1/2}\,dx
+\end{equation} 
+remains constant.
+
+It follows, from the above discussion, that we need to minimize the
+functional
+\begin{equation}
+K = U + \lambda\,l = \int_{-a/2}^{a/2}(-\rho\,g\,y+\lambda)\,[1+y'^{\,2}]^{1/2}\,dx,
+\end{equation}
+where $\lambda$ is an, as yet, undetermined constant. Since the integrand
+in the functional does not depend explicitly on $x$, we have
+from Equation~(\ref{e11.14}) that
+\begin{equation}
+y'^{\,2}\,(-\rho\,g\,y+\lambda)\,[1+y'^{\,2}]^{-1/2} - (-\rho\,g\,y+\lambda)\,[1+y'^{\,2}]^{1/2} = k,
+\end{equation}
+where $k$ is a constant. This expression reduces to
+\begin{equation}\label{e11.24}
+y'^{\,2} = \left(\lambda' + \frac{y}{h}\right)^2 - 1,
+\end{equation}
+where $\lambda' = \lambda/k$, and $h=-k/\rho\,g$. 
+
+Let 
+\begin{equation}\label{e11.25}
+\lambda' + \frac{y}{h} = -\cosh z.
+\end{equation}
+Making this substitution, Equation~(\ref{e11.24}) yields
+\begin{equation}
+\frac{dz}{dx} = -h^{-1}.
+\end{equation}
+Hence, 
+\begin{equation}
+z =-\frac{x}{h} + c,
+\end{equation}
+where  $c$ is a constant. It follows from Equation~(\ref{e11.25}) that 
+\begin{equation}
+y(x) =-h\,[\lambda' + \cosh(-x/h + c)].
+\end{equation}
+The above solution contains three undetermined constants, $h$, $\lambda'$, and $c$. We can
+eliminate two of these constants by application of the boundary
+conditions $y(\pm a/2)= 0$. This yields
+\begin{equation}
+\lambda' + \cosh(\mp a/2\,h + c) = 0.
+\end{equation}
+Hence, $c=0$, and $\lambda' = - \cosh (a/2\,h)$. It follows that
+\begin{equation}\label{ecat}
+y(x) = h\,[\cosh(a/2\,h) - \cosh(x/h)].
+\end{equation}
+The final unknown constant, $h$, is determined via the application of
+the constraint (\ref{e11.21}). Thus,
+\begin{equation}
+l= \int_{-a/2}^{a/2}[1+y'^{\,2}]^{1/2}\,dx = \int_{-a/2}^{a/2} \cosh(x/h) \,dx = 2\,h\,\sinh(a/2\,h).
+\end{equation}
+Hence, the equilibrium configuration of the chain is given by the curve
+(\ref{ecat}), which is known as a {\em catenary}\/ (from the Latin for chain), where the parameter $h$ satisfies
+\begin{equation}
+\frac{l}{2\,h} = \sinh\left(\frac{a}{2\,h}\right).
+\end{equation}
+
+\section{Multi-Function Variation}\label{s11.4}
+Suppose that we wish to maximize or minimize the functional
+\begin{equation}
+I = \int_a^b F(y_1,y_2,\cdots,y_{\cal F},y_1',y_2',\cdots,y_{\cal F}',x)\,dx.
+\end{equation}
+Here, the integrand $F$ is now a functional of the ${\cal F}$ independent
+functions $y_i(x)$, for $i=1,{\cal F}$. A fairly straightforward extension of the
+analysis in Section~\ref{s11.2} yields ${\cal F}$ separate Euler-Lagrange equations,
+\begin{equation}\label{e11.34}
+\frac{d}{dx}\!\left(\frac{\partial F}{\partial y_i'}\right)-\frac{\partial F}{\partial y_i} = 0,
+\end{equation}
+for $i=1,{\cal F}$, which determine the ${\cal F}$ functions $y_i(x)$. If $F$ does not
+explicitly depend on the function $y_k$ then the $k$th Euler-Lagrange
+equation simplifies to
+\begin{equation}
+\frac{\partial F}{\partial y_k'} = {\rm const}.
+\end{equation}
+Likewise, if $F$ does not explicitly depend on $x$ then all ${\cal F}$ Euler-Lagrange equations simplify to
+\begin{equation}
+y_i'\,\frac{\partial F}{\partial y_i'} - F = {\rm const},
+\end{equation}
+for $i=1,{\cal F}$. 
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{D.\arabic{enumi}}
+\begin{enumerate}
+\item Find the extremal curves $y = y(x)$ of the following constrained optimization problems, using the method of Lagrange multipliers:
+\begin{enumerate}
+\item $\int_0^1\left[y'^{\,2}+x^2\right]\,dx$, such that $\int_0^1 y^2\,dx = 2$.
+\item $\int_0^\pi y'^{\,2}\,dx$, such that $y(0)=y(\pi)=0$, and
+$\int_0^\pi y^2 \,dx=2$. 
+\item $\int_0^1y\,dx$, such that $y(0)=y(1)=1$, and
+$\int\sqrt{1+y'^{\,2}}\,dx=2\pi/3$.
+\end{enumerate}
+\item Suppose $P$ and $Q$ are two points lying in the $x$-$y$ plane, which is orientated vertically such that $P$ is above $Q$. Imagine there is a thin, flexible wire connecting the two points and lying entirely in the $x$-$y$ plane. A frictionless bead travels down the wire, impelled by gravity alone. Show that the shape of the wire that results in the bead reaching the point $Q$ in the least amount of time is a {\em cycloid}, which takes the parametric form
+\begin{eqnarray}
+x(\theta)&=&k\left(\theta-\sin\theta\right),\nonumber\\[0.5ex]
+y(\theta)&=&k \left(1-\cos\theta\right),\nonumber
+\end{eqnarray}
+where $k$ is a constant. 
+\item Find the curve $y(x)$, in the interval $0\leq x\leq p$, which is of length $\pi$ and maximizes
+$$
+\int_0^p y\,dx.
+$$
+\end{enumerate}}
+

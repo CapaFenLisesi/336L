@@ -1,0 +1,808 @@
+\chapter{Hydrostatics}\label{c6}
+\section{Introduction}
+Part~II of this book is devoted to the study of {\em incompressible}\/ fluids---in practice, such fluids are  generally  either liquids, or gases whose
+motion is subsonic (see Section~\ref{scomp}). 
+This particular chapter discusses {\em hydrostatics}, which is the study of the {\em mechanical equilibrium}\/ of incompressible fluids. 
+
+\section{Hydrostatic Pressure}\label{s6.2}
+Consider a    body of water that is stationary   in a reference frame that is fixed with respect to the Earth's surface. In this chapter, such a  frame is
+treated as approximately inertial.  Let $z$ measure vertical height, and suppose that the region $z\leq 0$ is occupied
+by water, and the region $z>0$  by air. 
+According to Equation~(\ref{e5.78}), the air/water system remains in mechanical equilibrium  ({\em i.e.}, ${\bf v} = D{\bf v}/Dt= {\bf 0}$) provided
+\begin{equation}\label{e6.1}
+{\bf 0} = \nabla p + \rho\,\nabla\Psi,
+\end{equation}
+where $p$ is the static fluid pressure, $\rho$ the mass density,  $\Psi=g\,z$ the gravitational potential energy per unit mass,  and $g$
+the (approximately uniform) acceleration due to gravity.
+Now,
+\begin{equation}\label{e6.2}
+\rho(z) = \left\{ \begin{array}{ccc}
+0&\mbox{\hspace{1cm}}&z>0\\[0.5ex]
+\rho_0&&z\leq 0
+\end{array}\right.,
+\end{equation}
+where $\rho_0$ is the (approximately uniform) mass density of water. Here, the comparatively small mass density of air has been neglected. Since $\rho=\rho(z)$ and $\Psi=\Psi(z)$, it immediately follows, from (\ref{e6.1}), that $p=p(z)$,
+where
+\begin{equation}\label{e6.3}
+\frac{dp}{dz} = -\rho\,g.
+\end{equation}
+ We conclude that constant pressure
+surfaces in a stationary body of water take the form of {\em horizontal planes}. 
+Making use of (\ref{e6.2}), the above equation can be integrated to give
+\begin{equation}\label{e6.4}
+p(z)=\left\{\begin{array}{llc}
+p_0&\mbox{\hspace{1cm}}&z>0\\[0.5ex]
+p_0-\rho_0\,g\,z&&z\leq 0
+\end{array}\right.,
+\end{equation}
+where $p_0\simeq 10^5\,{\rm N\,m}^{-2}$ is  atmospheric pressure at ground level. According to this expression,  pressure in stationary water increases {\em linearly}\/ with increasing depth  ({\em i.e.}, with decreasing $z$, for $z<0$). 
+In fact, given that $g\simeq 9.8\,{\rm m\,s}^{-2}$ and $\rho_0\simeq 10^3\,{\rm kg\,m^{-3}}$, we deduce that
+hydrostatic  pressure rises
+at the rate of 1 atmosphere ({\em i.e.}, $10^5\,{\rm N\,m}^{-2}$) every $10.2\,{\rm m}$ increase in depth below the
+surface.
+
+\section{Buoyancy}\label{sbouy}
+Consider the air/water system described in the previous section.
+Let $V$ be some volume, bounded by a closed surface $S$, that straddles the plane $z=0$, and is thus partially occupied by water, and partially
+by air. The $i$-component of the net force acting on the fluid ({\em i.e.}, either water or air) contained within $V$ is written (see Section~\ref{s5.4})
+\begin{equation}\label{e6.5}
+f_i = \int_S \sigma_{ij}\,dS_j + \int_V F_i\,dV,
+\end{equation}
+where
+\begin{equation}
+\sigma_{ij} = - p\,\delta_{ij}
+\end{equation}
+is the stress tensor for a static fluid (see Section~\ref{s5.5}), and
+\begin{equation}\label{e6.7}
+{\bf F} =- \rho\,g\,{\bf e}_z
+\end{equation}
+the gravitational force density. (Recall that the indices $1$, $2$, and $3$ refer to the $x$-, $y$-, and $z$-axes, respectively. Thus,
+$f_3\equiv f_z$, {\em etc.})
+The first term on the right-hand side of (\ref{e6.5}) represents the net {\em surface force}\/ acting across
+ $S$, whereas the second term represents the net {\em volume force}\/ distributed throughout $V$. 
+ Making use of the tensor divergence theorem (see Section~\ref{stfield}), Equations~(\ref{e6.5})--(\ref{e6.7})
+yield the following expression for  the net force:
+\begin{equation}
+{\bf f}= {\bf B} + {\bf W},
+\end{equation}
+where 
+\begin{equation}\label{e6.9}
+B_i =- \int_V\frac{\partial p}{\partial x_i}\,dV,
+\end{equation}
+and
+\begin{eqnarray}\label{e6.10}
+W_x&=& W_y = 0,\\[0.5ex]
+W_z &=&-\int_V \rho\,g\,dV.\label{e6.10b}
+\end{eqnarray}
+Here, ${\bf B}$ is the  net surface force, and ${\bf W}$   the net volume force. 
+
+It follows from Equations~(\ref{e6.4}) and (\ref{e6.9}) that 
+\begin{equation}\label{e6.16}
+{\bf B}  = M_0\,g\,{\bf e}_z,
+\end{equation}
+where 
+$M_0 = \rho_0\,V_0$.
+Here, $V_0$ is volume of that part of $V$ which lies below the waterline, and $M_0$  the
+total mass of water contained within $V$. 
+ Moreover, from Equations~(\ref{e6.2}), (\ref{e6.10}), and (\ref{e6.10b}),
+\begin{equation}
+{\bf W} = -M_0\,g\,{\bf e}_z.
+\end{equation}
+It can be seen that the net surface force, ${\bf B}$, is directed vertically upward, and exactly balances the
+net volume force, ${\bf W}$, which is directed vertically downward. Of course, ${\bf W}$ is the {\em weight}\/ of the water contained
+within $V$. On the other hand,  ${\bf B}$,  which is generally known as the {\em buoyancy}\/ force,
+is the resultant pressure of the water immediately surrounding $V$.  We conclude that, in  equilibrium,   the net buoyancy force acting across $S$ exactly balances the weight of the water inside $V$, so that the total force acting on the contents of $V$ is zero, as
+must be the case for a system in mechanical equilibrium. We can  also deduce that 
+the line of action of ${\bf B}$ (which is vertical) passes through the  center of gravity of the water inside $V$.  Otherwise, a  net torque would act on the contents of $V$, which would contradict our  assumption that the system is in 
+mechanical equilibrium.
+
+\section{Equilibrium of Floating Bodies}\label{s6.4}
+Consider the situation described in the previous section.
+Suppose that the fluid contained within  $V$ is replaced by a partially submerged {\em solid body}\/ whose outer surface
+corresponds to $S$. Furthermore, suppose that this body is in mechanical equilibrium with the surrounding fluid ({\em i.e.}, it is stationary, and floating on the surface of the water). 
+It follows that the pressure distribution in the surrounding fluid is unchanged [since the force balance criterion (\ref{e6.3}) can be integrated to give the pressure distribution (\ref{e6.4}) at all contiguous points in the fluid, provided that the fluid remains 
+in mechanical equilibrium]. 
+We conclude that the net surface force acting across  $S$ is also unchanged (since this is directly related to the
+pressure distribution in the fluid immediately surrounding $V$), which implies that the 
+buoyancy force acting on the
+floating body is the {\em same}\/ as that acting on the displaced water: {\em i.e.}, the water that previously
+occupied $V$. 
+In other words, from (\ref{e6.16}), 
+\begin{equation}
+{\bf B} = W_0\,{\bf e}_z,
+\end{equation}
+where $W_0=M_0\,g$ and $M_0$ are the weight and mass of the displaced water, respectively.  The fact that the
+buoyancy force is unchanged also implies that the vertical line of action of ${\bf B}$ passes through the center of gravity, $H$ (say), of the displaced water. Incidentally, $H$ is generally
+known as the {\em center of buoyancy}. 
+
+A floating body of weight $W$ is acted upon by two forces: namely, its own weight, 
+\begin{equation}
+{\bf W} =- W\,{\bf e}_z,
+\end{equation}
+and the buoyancy force, ${\bf B}=W_0\,{\bf e}_z$,  due to the pressure of the surrounding water.
+Of course, the line of action of ${\bf W}$ passes through the body's center of gravity, $G$ (say).
+Now,   to remain in equilibrium, the body must be subject to zero net force and zero net torque. 
+The  requirement of zero net force yields  $W_0=W$. In other words, {\em in equilibrium,  the weight of the water displaced by a floating body 
+ is equal to the weight of the body}, or, alternatively, {\em in equilibrium, the magnitude of the buoyancy force acting on a floating body  is equal to the weight of the
+displaced water}. This famous result is known as {\em Archimedes' principle}. The requirement of
+zero net torque implies that, {\em in equilibrium, the center of gravity, $G$, and center of buoyancy, $H$, of
+a floating body lie on the same vertical straight-line}.
+
+Consider a floating body of mass $M$ and volume $V$. 
+ Let $\rho = M/V$ be the body's
+mean mass density. Archimedes' principle implies that, in equilibrium, 
+\begin{equation}\label{e6.20}
+\frac{V_0}{V} = s,
+\end{equation}
+where
+\begin{equation}
+s = \frac{\rho}{\rho_0}
+\end{equation}
+is termed the body's {\em specific gravity}. (Recall, that $V_0$ is the submerged volume, and $\rho_0$ the
+mass density of water.)
+We conclude, from (\ref{e6.20}), that the  volume fraction of a floating body  that is submerged  is equal to the body's 
+specific gravity. Obviously, the specific gravity must be {\em less}\/ than unity, since the
+submerged volume fraction cannot exceed unity.
+In fact, if the specific gravity exceeds unity then it is impossible for the buoyancy force to balance the body's weight, and the body
+consequently sinks. 
+
+Consider a body of volume $V$ and specific gravity $s$ that floats in equilibrium. It follows, from Equation~(\ref{e6.20}),
+that the submerged volume is $V_0=s\,V$. Hence, the volume above the waterline is $V_1= V-V_0 = (1-s)\,V$.
+Suppose that the body is inverted such that its previously submerged part is raised above the waterline, and {\em vice versa}: {\em i.e.},
+$V_0\leftrightarrow V_1$. According to (\ref{e6.20}),  the body can only remain in equilibrium in this configuration if its specific gravity changes to
+\begin{equation}
+s' = \frac{V_1}{V}=\frac{V-V_0}{V} =1-s.
+\end{equation}
+We conclude that for every equilibrium configuration of a floating body of specific gravity $s$ there exists
+an inverted equilibrium configuration for a body of the same shape having the complementary
+specific gravity $1-s$. 
+
+\section{Vertical Stability of  Floating Bodies}
+Consider a floating body of weight $W$ which, in equilibrium, has  a submerged volume $V_0$. Thus, the body's downward weight is balanced by the upward buoyancy force, $B = \rho_0\,V_0\,g$: {\em i.e.},  $\rho_0\, V_0\,g=W$. Let $A_0$ be the cross-sectional area of the body at the waterline ({\em i.e.}, in the
+plane $z=0$). It is convenient to define the body's {\em mean draft}\/ (or mean submerged depth) as $\delta_0= V_0/A_0$. Suppose that the
+body is displaced slightly downward, without rotation, such that its mean draft becomes $\delta_0+\delta_1$, where
+$|\delta_1|\ll \delta_0$. 
+Assuming that the
+cross-sectional area in the vicinity of the waterline  is constant, the new submerged volume is  $V_0'=A_0\,(\delta_0+\delta_1)= V_0 + A_0\,\delta_1$, and the
+new buoyancy force becomes $B'=\rho_0\,V_0'\,g=W+ \rho_0\,A_0\,g\,\delta_1=(1+\delta_1/\delta_0)\,W$. However, the weight of the body  is unchanged. Thus, 
+the body's perturbed vertical equation of motion  is written
+\begin{equation}
+\frac{W}{g}\,\frac{d^2 \delta_1}{dt^2} = W- B' = -\frac{W}{\delta_0}\,\delta_1,
+\end{equation}
+which reduces to the simple harmonic equation
+\begin{equation}
+\frac{d^2 \delta_1}{dt^2} = - \frac{g}{\delta_0}\,\delta_1.
+\end{equation}
+We conclude that when a floating body of mean draft $\delta_0$ is subject to a small vertical displacement it {\em oscillates}\/  about its equilibrium position at the
+characteristic frequency
+\begin{equation}
+\omega = \sqrt{\frac{g}{\delta_0}}.
+\end{equation}
+It follows that such a body is unconditionally {\em stable}\/ to small vertical displacements. Of course, the above analysis presupposes
+that the oscillations take place sufficiently slowly that the water immediately surrounding the  body always remains
+in approximate hydrostatic equilibrium. 
+
+\section{Angular Stability of Floating Bodies}\label{s3x6}
+Let us now investigate the  stability of  floating bodies to {\em angular}\/ displacements.  For the sake of simplicity, we shall
+only consider bodies that have two mutually perpendicular 
+planes of symmetry. Suppose that when such a  body is in an equilibrium state the 
+two symmetry planes are   {\em vertical},  and correspond to the $x=0$ and $y=0$ planes.
+As before, the $z=0$ plane coincides with the surface of the water. It follows, from symmetry,  that when the body is
+in an equilibrium
+state  its center of gravity, $G$, and center of buoyancy, $H$, both lie on the $z$-axis. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter03/fig3.01.eps}}
+\caption{\em Stable and unstable configurations for a floating body.}\label{f6.01}
+\end{figure}
+
+Suppose that the body turns through a small angle $\theta$ about some horizontal axis, lying in the plane $z=0$, that goes through the origin. 
+Let $GH$ be that, originally vertical, straight-line that passes through the body's center of gravity, $G$, and
+ original center of buoyancy, $H$. Owing to the altered shape of the volume of displaced water, the
+center of buoyancy is shifted to some new position $H'$. Let the vertical straight-line
+going through $H'$ meet $GH$ at $M$. See Figure~\ref{f6.01}. Point $M$ (in the limit $\theta\rightarrow 0$) is called the {\em metacenter}.
+In the disturbed state, the body's weight $W$ acts downward through $G$, and
+the buoyancy $\rho_0\,V_0\,g$ acts upward through $M$. Let us assume that the submerged volume, $V_0$,
+is {\em unchanged}\/ from the equilibrium state (which excludes vertical oscillations from consideration). It follows that the weight and
+the buoyancy force are equal and opposite, so
+that there is no net force on the body. However, as can be seen from Figure~\ref{f6.01}, the weight and the buoyancy force generate a net {\em torque}\/ of magnitude $\tau=W\,\lambda\,\sin\theta$. Here, $\lambda$ is the length $MG$: {\em i.e.}, the distance  between the metacenter and the
+center of gravity. This distance is generally known as the {\em metacentric height}, and is defined such that it is
+ positive when $M$ lies above $G$, and {\em vice versa}. 
+Moreover, as is also clear from Figure~\ref{f6.01}, when $M$ lies above $G$ the torque acts to reduce $\theta$, and {\em vice versa}.  In the former case, the torque is known as
+a {\em righting torque}. We conclude that a floating body is stable to small angular displacements about some horizontal axis lying
+in the plane $z=0$
+provided that its metacentric height is {\em positive}: {\em i.e.}, provided that the metacenter lies {\em above}\/ the
+center of gravity. Since we have already demonstrated that a floating body is unconditionally stable to
+small vertical displacements (and since it is also  fairly obvious that such a body is 
+neutrally stable to both  horizontal displacements and angular displacements about a vertical axis passing through its center of gravity), it follows that a necessary and sufficient condition for the stability
+of a floating body to a general small perturbation (made up of arbitrary linear and angular components)
+is that its metacentric height be positive for angular displacements about any horizontal axis. 
+
+\section{Determination of Metacentric Height}
+Suppose that the floating body considered in the previous section is in an equilibrium  state.
+Let $A_0$ be the  cross-sectional area  at the waterline: {\em i.e.}, in the plane $z=0$. Since  the
+body is assumed to be symmetric with respect to
+the $x=0$ and $y=0$ planes, we have
+\begin{equation}\label{e6.26}
+\int_{A_0}x\,dx\,dy = \int_{A_0}y\,dx\,dy=\int_{A_0}x\,y\,dx\,dy=0,
+\end{equation}
+where the integrals are taken over the whole cross-section at $z=0$. 
+Let $\delta(x,y)$ be the body's draft: {\em i.e.}, the vertical distance between the surface of the water and the body's lower boundary. It follows, from symmetry, that $\delta(-x,y)=\delta(x,y)$ and $\delta(x,-y)=\delta(x,y)$. Moreover, the submerged volume is
+\begin{equation}\label{e6.27}
+V_0 =\int_{A_0}\int_0^\delta dx\,dy\,dz= \int_{A_0}\,\delta (x,y)\,dx\,dy.
+\end{equation}
+It also follows from symmetry that
+\begin{equation}\label{e6.29}
+\int_{A_0} x\,
+\delta(x,y)\,dx\,dy= \int_{A_0}y\,\delta(x,y)\,dx\,dy = 0.
+\end{equation}
+Now, the depth of the unperturbed center of buoyancy below the surface of the water is
+\begin{equation}\label{e6.30}
+ h = \frac{\int_{A_0}\int_0^\delta z\,dx\,dy\,dz}{V_0}=\frac{1}{2V_0}\,\int_{A_0} \delta^2(x,y)\,dx\,dy=\frac{\delta_0^{\,2}\,A_0}{2V_0},
+\end{equation}
+where
+\begin{equation}
+\delta_0 = \left(\frac{\int_{A_0}\delta^2(x,y)\,dx\,dy}{A_0}\right)^{1/2}.
+\end{equation}
+Finally, from symmetry, the unperturbed center of buoyancy lies at $x=y=0$. 
+
+Suppose that the body now turns  through a {\em small}\/ angle $\theta$ about the $x$-axis. 
+As is easily demonstrated, the body's new draft becomes
+$\delta'(x,y)\simeq \delta(x,y) + \theta\,y$. Hence, the new submerged volume is
+\begin{equation}
+V_0'=\int_{A_0} [\delta(x,y) + \theta\,y]\,dx\,dy = V_0 + \theta\int_{A_0} y\,dx\,dy = V_0,
+\end{equation}
+where use has been made of Equations~(\ref{e6.26}) and (\ref{e6.27}). Thus, the submerged volume is
+unchanged, as should be the case for a purely angular displacement. The new depth of the center of buoyancy is
+\begin{equation}
+h' =  \frac{\int_{A_0}\int_0^{\delta'} z\,dx\,dy\,dz}{V_0}=\frac{1}{2V_0}\int_{A_0} [\delta^2(x,y) + 2\theta\,y\,\delta(x,y) + {\cal O}(\theta^2)]\,dx\,dy = h,
+\end{equation}
+where use has been made of (\ref{e6.29}) and (\ref{e6.30}). Thus, the depth of the center of buoyancy is also unchanged. Moreover, from symmetry, it
+is clear that  the center of buoyancy still lies at $x=0$. Finally, the new $y$-coordinate of
+the center of buoyancy is
+\begin{equation}
+ \frac{\int_{A_0}\int_0^{\delta'}y\,dx\,dy\,dz}{V_0}=\frac{\int_{A_0} y\,[\delta(x,y)+\theta\,y]\,dx\,dy}{V_0}=\theta\,\frac{\kappa_x^{\,2}\,A_0}{V_0},
+\end{equation}
+where use has been made of (\ref{e6.29}). Here,
+\begin{equation}
+\kappa_x = \left(\frac{\int_{A_0}y^2\,dx\,dy}{A_0}\right)^{1/2},
+\end{equation}
+is the {\em radius of gyration}\/ of area $A_0$ about the $x$-axis. 
+
+It follows, from the above analysis, that if the floating body under consideration turns  through a
+small angle $\theta$ about the $x$-axis then its center of buoyancy shifts {\em horizontally}\/  a distance $\theta\,\kappa_x^{\,2}\,A_0/V_0$ in the plane perpendicular to the axis of rotation.
+In other words, the distance $HH'$ in Figure~\ref{f6.01} is $\theta\,\kappa_x^{\,2}\,A_0/V_0$. Simple trigonometry
+reveals that $\theta \simeq HH'/MH'$ (assuming that $\theta$ is small). Hence, $MH' = HH'/\theta=\kappa_x^{\,2}\,A_0/V_0$. Now, $MH'$ is the height of the metacenter
+relative to the center of buoyancy. However, the center of buoyancy lies a depth $h$ below the surface of the water (which corresponds to the plane $z=0$).
+Hence, the $z$-coordinate of the metacenter  is $z_M=\kappa_x^{\,2}\,A_0/V_0- h$. Finally, if $z_G$ and $z_H=-h$ are the $z$-coordinates of the unperturbed
+centers of gravity and  buoyancy, respectively,  then 
+\begin{equation}
+z_M = \frac{\kappa_x^{\,2}\,A_0}{V_0}+ z_H, 
+\end{equation}
+and
+the metacentric height, $\lambda\equiv z_M-z_G$, becomes
+\begin{equation}\label{e6.33}
+\lambda = \frac{\kappa_x^{\,2}\,A_0}{V_0}-z_{GH},
+\end{equation}
+where $z_{GH} \equiv z_G-z_H$. Note that, since $\kappa_x^{\,2}\,A_0/V_0>0$, the metacenter always lies {\em above}\/
+the center of buoyancy.
+
+A simple extension of the above argument reveals that if  the body turns through
+a small angle $\theta$ about the $y$-axis then the metacentric height is
+\begin{equation}
+\lambda = \frac{\kappa_y^{\,2}\,A_0}{V_0}-z_{GH},
+\end{equation}
+where 
+\begin{equation}
+\kappa_y = \left(\frac{\int_{A_0}x^2\,dx\,dy}{A_0}\right)^{1/2},
+\end{equation}
+ is  radius of gyration of area $A_0$ about the $y$-axis. Finally, as is easily demonstrated, if the body rotates about a
+horizontal axis which subtends an angle $\alpha$ with the $x$-axis then
+\begin{equation}
+\lambda = \frac{\kappa^{\,2}\,A_0}{V_0} -z_{GH},
+\end{equation}
+where 
+\begin{equation}
+\kappa^{\,2} = \kappa_x^{\,2}\,\cos^2\alpha+ \kappa_y^{\,2}\,\sin^2\alpha.
+\end{equation}
+Thus, the minimum value of $\kappa^2$ is the lesser of $\kappa_x^{\,2}$ and $\kappa_y^{\,2}$. It follows that
+the equilibrium state in question is unconditionally stable provided it is stable to small
+amplitude angular displacements about horizontal axes normal to its two vertical symmetry planes ({\em i.e.}, the $x=0$ and
+$y=0$ planes). 
+
+As an example, consider a  uniform rectangular block of specific gravity $s$ floating such that its sides
+of length $a$, $b$, and $c$ are parallel to the $x$-, $y$-, and $z$-axes, respectively. Such a block can be
+thought of as a very crude model of a ship. 
+ The volume of the
+block is $V=a\,b\,c$. Hence, the submerged volume is $V_0=s\,V = s\,a\,b\,c$. The cross-sectional
+area of the block at the waterline ($z=0$) is $A_0=a\,b$. 
+It is easily demonstrated that $\delta(x,y)=\delta_0=V_0/A_0=s\,c$.  Thus, the center of buoyancy lies a depth $h=\delta_0^{\,2}\,A_0/2V_0=s\,c/2$ below
+the surface of the water [see Equation~(\ref{e6.30})]. Moreover, by symmetry, the center of gravity is a height $c/2$ above the bottom surface of the block, which is located 
+a depth $s\,c$ below the surface of the water. Hence, $z_H = -h=-s\,c/2$, $z_G= c/2-s\,c$, and $z_{GH} = c\,(1-s)/2$. Consider the
+stability of the block to small amplitude angular displacements about the $x$-axis. We have
+\begin{equation}
+\kappa_x^{\,2} = \frac{\int_{-a/2}^{a/2}\int_{-b/2}^{b/2} y^2\,dx\,dy}{a\,b} = \frac{b^2}{12}.
+\end{equation}
+Hence, from (\ref{e6.33}), the metacentric height is
+\begin{equation}
+\lambda = \frac{b^2}{12s\,c} - \frac{c}{2}\,(1-s).
+\end{equation}
+The stability criterion $\lambda>0$ yields
+\begin{equation}
+\frac{b^2}{6 c^2} - s\,(1-s)> 0.
+\end{equation}
+Since the maximum value that $s\,(1-s)$ can take is $1/4$, it follows that the block is stable for all
+specific gravities when
+\begin{equation}
+c < c_0 = \sqrt{\frac{2}{3}}\,b.
+\end{equation}
+On the other hand, if $c>c_0$ then the block is unstable for intermediate specific gravities such that $s_-< s< s_+$, where
+\begin{equation}
+s_\pm = \frac{1\pm \sqrt{1-c^2/c_0^{\,2}}}{2},
+\end{equation}
+ and is stable otherwise. 
+Assuming that the block is stable, its angular equation of motion is written
+\begin{equation}
+I\,\frac{d^2\theta}{dt^2} = - W\,\lambda\,\sin\theta\simeq - W\,\lambda\,\theta,
+\end{equation}
+where 
+\begin{equation}
+I = \frac{W}{g\,V}\int_{-a/2}^{a/2}\int_{-b/2}^{b/2}\int_{-s\,c}^{c-s\,c}\,(y^2+z^2)\,dx\,dy\,dz= \frac{W}{12g}\left(b^2+ 4\,[(1-s)^3+s^3]\,c^2\right)
+\end{equation}
+is the moment of inertia of the block about the $x$-axis. Thus, we obtain the the simple harmonic equation 
+\begin{equation}
+\frac{d^2\theta}{dt^2} = -\omega^2\,\theta,
+\end{equation}
+where
+\begin{equation}\label{e6.46}
+\omega^2 = \frac{W\,\lambda}{I}= \frac{g}{s\,c}\,\frac{c_0^{\,2}-4s\,(1-s)\,c^{2}}{c_0^{\,2}+(8/3)\,[(1-s)^3+s^3]\,c^{2}}.
+\end{equation} 
+We conclude that the block executes small amplitude angular oscillations about the $x$-axis at the angular frequency $\omega$. However, this result is only
+accurate in the limit in which the oscillations are sufficiently slow that the water surrounding the block always remains
+in approximate hydrostatic equilibrium. For the case of rotation about the $y$-axis, the above analysis
+is unchanged except that $a\leftrightarrow b$. 
+
+The metacentric height  of a conventional ship whose length  greatly exceeds its width is typically
+much less for rolling ({\em i.e.}, rotation about a horizontal axis
+running along the ship's length)  than  for pitching  ({\em i.e.}, rotation about a horizontal axis
+perpendicular to the ship's length), since the radius of gyration for pitching greatly exceeds that for rolling.
+As is clear
+from Equation~(\ref{e6.46}),  a ship with a relatively small  metacentric height (for rolling) has a relatively long roll period, and {\em vice versa}. Now,  an excessively low metacentric height increases the chances of a ship capsizing   if the weather is rough, or if its cargo/ballast shifts, or if it is
+damaged and partially flooded.  For this reason, maritime regulatory agencies, such as the International Maritime Organization, specify minimum metacentric heights for various different types of sea-going vessel. A relatively large metacentric height, on the other hand, 
+generally renders a ship uncomfortable for passengers and crew, because the ship executes short period rolls, resulting in large g-forces. Such forces also increase the risk that cargo may break loose or shift.  
+
+We saw earlier, in Section~\ref{s6.4}, that if a body of  specific gravity $s$ floats in vertical equilibrium in a certain position
+then a body of the same shape, but of specific gravity $1-s$, can float in vertical equilibrium in  the inverted position. We can now
+demonstrate that these positions are either both stable, or both unstable, provided the body is
+of uniform density. Let $V_1$ and $V_2$ be
+the volumes that are above and below the waterline, respectively, in the first position. Let $H_1$ and
+$H_2$ be the mean centers of these two volumes, and $H$ that of the whole volume. It follows that
+$H_2$ is the center of buoyancy in the first position, $H_1$ the center of buoyancy in the second (inverted) position, and
+$H$ the center of gravity in both positions. Moreover,
+\begin{equation}
+V_1\,\,H_1G = V_2\,\,H_2G = \left(\frac{V_1\,V_2}{V_1+V_2}\right)H_1H_2,
+\end{equation}
+where $H_1G$ is the distance between points $H_1$ and $G$, {\em etc.}
+The metacentric heights in the first and second positions are
+\begin{eqnarray}
+\lambda_1 &=& \frac{\kappa^{\,2}\,A}{V_1} - H_1G =\frac{1}{V_1}\left[A\,\kappa^{\,2}- \left(\frac{V_1\,V_2}{V_1+V_2}\right)  H_1H_2\right],\\[0.5ex]
+\lambda_2 &=& \frac{\kappa^{\,2}\,A}{V_2} - H_2G =\frac{1}{V_2}\left[A\,\kappa^{\,2}- \left(\frac{V_1\,V_2}{V_1+V_2}\right)H_1H_2\right],
+\end{eqnarray}
+respectively,
+where $A$ and $\kappa$ are the area and radius of gyration of the common waterline section, respectively. 
+Thus,
+\begin{equation}
+\lambda_1\,\lambda_2 = \frac{1}{V_1\,V_2}\left[A\,\kappa^{\,2}- \left(\frac{V_1\,V_2}{V_1+V_2}\right)  H_1H_2\right]^2\geq 0,
+\end{equation}
+which implies that  $\lambda_1\gtreqqless 0$ as $\lambda_2\gtreqqless 0$, and {\em vice versa}. It follows that the first
+and second positions are either both stable,  both marginally stable, or both unstable.
+
+\section{Energy of a Floating Body}
+The conditions governing the equilibrium and stability of a floating body can also be deduced from
+the principle of energy. 
+
+For the sake of simplicity, let us suppose that the water  surface area  is infinite, so that the immersion of the body does not
+generate any change in  the water level. The potential energy of the body itself is $W\,z_G$, where 
+$W$ is the body's weight, and $z_G$ the height of its center of gravity, $G$,  relative to the surface of the water. If the
+body displaces a volume $V_0$ of water then this  effectively means that a weight $\rho_0\,V_0$ of water, whose
+center of gravity is located at the center of buoyancy, $H$, is removed, and then spread as an infinitely thin film
+over the surface of the water. This involves a gain of potential energy of $-\rho_0\,V_0\,z_H$, where
+$z_H$ is the height of $H$ relative to the surface of the water. Now, vertical force balance requires that
+$W=\rho_0\,V_0$. Thus, the potential energy of the system is  $W\,z_{GH}$ (modulo an arbitrary additive constant), where 
+$z_{GH} \equiv z_G-z_H$ is the height of the center of gravity relative to the center of buoyancy. 
+
+According to the  principles of statics, an equilibrium state corresponds to either  a {\em minimum}\/
+or a {\em maximum}\/ 
+of the potential energy. However, such an equilibrium is only stable when the potential energy is  {\em minimized}. 
+Thus, it follows that a stable equilibrium configuration of a floating body is such as to minimize 
+the height of the body's center of gravity relative to its center of buoyancy.
+
+\section{Curve of Buoyancy}
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter03/fig3.02.eps}}
+\caption{\em Curve of buoyancy for a floating body.}\label{f6.02}
+\end{figure}
+
+Consider a floating body in vertical force balance that is slowly rotated about a horizontal axis normal to one of  its vertical symmetry planes.
+Let us take the center of gravity, $G$, which necessarily lies in this plane, as the origin of a coordinate system that is {\em fixed}\/ with respect to the body.  
+As illustrated in Figure~\ref{f6.02}, as the body rotates, the locus of its center of buoyancy, $H$, as seen in the fixed reference frame, appears to traces out a curve, $AB$,
+in the plane of symmetry.  
+This curve is known as the {\em curve of buoyancy}. Let $r$ represent the radial distance from the origin, $G$,
+to some point, $H$, on the curve of buoyancy. Note that the tangent to the curve of buoyancy is always orientated
+horizontally. This follows because, as was shown in the previous section, small rotations of a floating body in vertical force balance
+cause its center of buoyancy to shift horizontally, rather than vertically, in the plane perpendicular to the axis of rotation.
+Thus, the  difference in vertical height, $z_{GH}$, between the center of
+gravity and the center of buoyancy is equal to the perpendicular distance, $p$, between $G$ and the  tangent
+to the curve of buoyancy at $H$. An  equilibrium configuration therefore corresponds to a maximum or a minimum of $p$ as
+point $H$ moves along the curve of buoyancy. However, the equilibrium is only stable if $p$ is minimized.  Now, if $R$ is the radius of curvature of the
+curve of buoyancy then, according to a standard result in differential calculus, 
+\begin{equation}
+R = r\,\frac{dr}{dp}.
+\end{equation}
+Writing this result in the form
+\begin{equation}
+\delta r = \frac{R}{r}\,\delta p,
+\end{equation}
+it can be seen that maxima and minima of $\delta p$, which are the points on the
+curve of buoyancy where  $\delta p =0$, correspond to the points where  $\delta r= 0$, and are,
+thus,  coincident with maxima and minima of $r$. In other words, an equilibrium configuration corresponds to
+a point of maximum or minimum $r$ on the curve of buoyancy: {\em i.e.}, a point at which $GH$ meets the
+curve at right-angles. At such a point, $r=p$, and the potential energy consequently takes the value $W\,r$. 
+
+Let $H_0$ be a point on the curve of buoyancy, 
+and let $r_0$, $p_0$, and $R_0$ be the corresponding values of $r$, $p$, and $R$. For neighboring points on the curve, we can write
+\begin{equation}
+r-r_0=\left. \frac{dr}{dp}\right|_{H_0}\,(p-p_0),
+\end{equation}
+or
+\begin{equation}
+r -r_0 = \frac{R_0}{r_0}\,(p-p_0).
+\end{equation}
+It follows that $p-p_0$ has the same sign as $r-r_0$ (since $R_0$ and $r_0$ are both positive). [The fact that $R_0$ is positive
+({\em i.e.}, $dr/dp>0$)
+follows from the previously established result that the metacenter, which is the center of curvature of the curve of buoyancy,   always lies above the center of buoyancy,  implying 
+ that the curve of
+buoyancy is necessarily  concave upwards.]
+Hence,
+the minima and maxima of $r$ occur simultaneously with those of $p$. Consequently, a stable equilibrium
+configuration corresponds to a point of minimum  $r$ on the curve of buoyancy:
+{\em i.e.}, a {\em minimum}\/ in the distance $GH$ between the center of gravity and the center of buoyancy.
+
+We can use the above result to determine the stable equilibrium configurations for a beam of
+square cross-section, and uniform specific gravity $s$, that  floats with its length horizontal. 
+In order to achieve this goal, we must calculate the distance $GH$ for all possible configurations
+of the beam that are in vertical force balance. However, we need only consider cases where $s<1/2$, since, according to
+the analysis of Section~\ref{s3x6}, for every stable equilibrium configuration with  $s=s_0<1/2$
+there is a corresponding stable inverted configuration with $s = 1-s_0>1/2$, and {\em vice versa}. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter03/fig3.03.eps}}
+\caption{\em Beam of square cross-section floating with two corners immersed.}\label{f6.03}
+\end{figure}
+
+Let us define fixed rectangular axes, $x$ and $y$,  passing through the center of the middle section of the beam, and running parallel
+to its sides. Let us start with the case where the waterline $PQ$ is parallel to a side. See Figure~\ref{f6.03}.
+If the length of a side is $2a$ then (\ref{e6.20})
+yields
+\begin{equation}
+AP=BQ=2a\,s.
+\end{equation}
+
+Suppose that the beam is  turned through an angle $\theta>0$ such that the waterline assumes the position $P'Q'$, in Figure~\ref{f6.03},
+but still intersects two opposite sides. The lengths $AP'$ and $BQ'$ satisfy
+\begin{equation}
+BQ' - AP' = 2a\,\tan\theta.
+\end{equation}
+Moreover,  the area of the trapezium $P'ABQ'$ must match that of the  rectangle $PABQ$
+in order to ensure that the submerged volume remains invariant (otherwise, the beam would not remain in vertical force balance): {\em i.e.}, 
+\begin{equation}
+(AP' + BQ')\,a = 4a^2\,s.
+\end{equation}
+It follows that
+\begin{eqnarray}
+AP' &=& a\,(2s-\tan\theta),\\[0.5ex]
+BQ' &=& a\,(2s+\tan\theta).
+\end{eqnarray} 
+The constraint that the waterline intersect two opposite sides of the beam implies that $AP'>0$, and, hence, that
+\begin{equation}\label{e6.57}
+\tan\theta < 2s.
+\end{equation}
+The coordinates of the center of buoyancy, $H$, which is the mean center of the trapezium $P'ABQ'$, are
+\begin{eqnarray}
+\bar{x} &=& 
+\frac{\int_{-a}^a\int_{a-h(x)}^a x\,dx\,dy}{\int_{-a}^a\int_{a-h(x)}^a dx\,dy} = \frac{(2/3)\,a^3\,\tan\theta}{4a^2\,s}=\frac{a}{6s}\,\tan\theta,\\[0.5ex]
+\bar{y}&=&\frac{\int_{-a}^a\int_{a-h(x)}^a y\,dx\,dy}{\int_{-a}^a\int_{a-h(x)}^a dx\,dy} \nonumber\\[0.5ex]
+&=& \frac{4a^3\,s\,(1-s)-(1/3)\,a^3\,\tan^2\theta}{4a^2\,s}=(1-s)\,a - \frac{a}{12s}\,\tan^2\theta,
+\end{eqnarray} 
+where
+\begin{equation}
+h(x) = 2a\,s+x\,\tan\theta.
+\end{equation}
+Thus, if $u=r^2/a^2=(\bar{x}^2+ \bar{y}^2)/a^2$ then
+\begin{equation}
+u = \frac{t^2}{36s^2} + \left[(1-s)-\frac{t^2}{12s}\right]^2,
+\end{equation}
+where $t=\tan\theta$. Now, a stable equilibrium state corresponds to a minimum of $r$ with respect to $\theta$, and, hence, of $u$  with respect to $t$. 
+However,
+\begin{eqnarray}
+\frac{du}{dt} &=& \frac{t}{36s^2}\left[t^2-12s\,(1-s)+2\right],\\[0.5ex]
+\frac{d^2u}{dt^2} &=& \frac{1}{36s^2}\left[3t^2-12s\,(1-s)+2\right].
+\end{eqnarray}
+The minima and maxima of $u$ occur when $du/dt=0$, $d^2u/dt^2>0$ and $du/dt=0$, $d^2u/dt^2<0$, respectively.
+It follows that the symmetrical position, $t=0$, in which the sides of the beam are either parallel or perpendicular to the
+waterline, is always an equilibrium,  but is only stable when
+\begin{equation}
+s^2-s+\frac{1}{6}>0:
+\end{equation}
+{\em i.e.}, when $s<1/2-1/\sqrt{12}= 0.2113$. 
+It is also possible to obtain equilibria in asymmetric positions such that $t$ is the root of
+\begin{equation}
+t^2= 12s\,(1-s)-2.
+\end{equation}
+Such equilibria only exist for $s>0.2113$, and are stable. Finally, in order to satisfy the  constraint (\ref{e6.57}), we
+must have $t<2s$, which, in combination with the above equation, implies that
+\begin{equation}
+8s^2-6s +1>0,
+\end{equation}
+or $s<0.25$. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter03/fig3.04.eps}}
+\caption{\em Beam of square cross-section floating with one corner immersed.}\label{f6.04}
+\end{figure}
+
+Suppose that the constraint (\ref{e6.57}) is not satisfied, so that the immersed portion of the beam's cross-section
+is triangular. See Figure~\ref{f6.04}. It is clear that
+\begin{equation}
+\frac{BQ'}{BP'} = \tan\theta.
+\end{equation}
+Moreover, the area of the triangle $P'BQ'$, in Figure~\ref{f6.04}, must match that of the rectangle $PABQ$, in
+Figure~\ref{f6.03}, in order to ensure that the submerged volume remain invariant: {\em i.e.},
+\begin{equation}
+\frac{1}{2}\,BP'\,\,BQ'= 4a^2\,s.
+\end{equation}
+It follows that
+\begin{eqnarray}
+BP' &=& (8s/\tan\theta)^{1/2}\,a,\\[0.5ex]
+BQ' &=& (8s\,\tan\theta)^{1/2}\,a,
+\end{eqnarray}
+or, writing $z^2=\tan\theta$ and $\omega^2 = (8/9)\,s$, 
+\begin{eqnarray}
+BP' &=& 3\omega\,z^{-1}\,a,\\[0.5ex]
+BQ'&=& 3\omega\,z\,a.
+\end{eqnarray}
+The coordinates of the center of buoyancy, $H$, which is the mean center of triangle $P'BQ'$, are
+\begin{eqnarray}
+\bar{x} &=& a- BP'/3= a\,(1-\omega\,z^{-1}),\\[0.5ex]
+\bar{y} &=& a-BQ'/3=a\,(1-\omega\,z),
+\end{eqnarray}
+since the perpendicular distance of the mean center of a triangle from one of its sides is one third of the perpendicular distance
+from the side to the opposite vertex.
+Thus, if $u=r^2/a^2=(\bar{x}^2+ \bar{y}^2)/a^2$ then
+\begin{eqnarray}
+u &=&(1-\omega\,z^{-1})^2 + (1-\omega\,z)^2,\\[0.5ex]
+\frac{du}{dz} &=& \frac{2\omega^2\,(z^2-1)\,(z^2-\omega^{-1}\,z+1)}{z^3},\\[0.5ex]
+\frac{d^2u}{dz^2} &=& \frac{2\omega^2\,(z^4-2\omega^{-1}\,z+3)}{z^4}.
+\end{eqnarray}
+Moreover, the constraint (\ref{e6.57}) yields
+\begin{equation}
+z > \frac{3}{2}\,\omega.
+\end{equation}
+The stable and unstable equilibria correspond to $du/dz=0$, $d^2u/dz^2>0$ and $du/dz$, $d^2u/dz^2<0$, respectively. 
+It follows that the symmetrical position, $z=1$, in which the diagonals of the beam are either parallel or perpendicular to the
+waterline is an equilibrium provided $\omega<2/3$, or $s<1/2$,  but is only stable when
+$\omega>1/2$, or $s>9/32=0.28125$. 
+It is also possible to obtain equilibria in asymmetric positions such that $z$ is the root of
+\begin{equation}
+z^2-\omega^{-1}\,z+1=0.
+\end{equation}
+Such equilibria only exist for $\sqrt{2}/3<\omega<1/2$, or $1/4<s<9/32$, and are stable. 
+
+In summary, the stable equilibrium configurations of a beam of square cross-section, floating with its length horizontal, are such that
+the sides are either parallel or perpendicular to the waterline for $s<0.2113$, such
+that two corners are immersed but the  sides and diagonals are neither parallel nor perpendicular to the waterline for $0.2113<s<0.25$, such that only one corner is immersed but the
+sides and diagonals are neither parallel nor perpendicular to the waterline for $0.25<s<0.28125$, and such that the diagonals are either parallel or perpendicular to waterline for $0.28125<s<0.5$. For $s>0.5$, the stable configurations are the same as those for a
+beam with the complimentary specific gravity $1-s$. 
+
+\section{Rotational Hydrostatics}
+Consider, finally, the equilibrium of an  incompressible fluid that is {\em uniformly}\/ rotating at a
+{\em fixed}\/ angular velocity $\bomega$ in some inertial  frame of reference. Of course,  such a fluid appears {\em stationary}\/ in a non-inertial {\em co-rotating}\/ reference frame. Moreover, according to standard Newtonian dynamics, the force balance equation for the fluid in the
+co-rotating frame takes the form ({\em cf.}, Section~\ref{s6.2})
+\begin{equation}\label{e8.1}
+{\bf 0} = \nabla p + \rho\,\nabla\Psi + \rho\,\bomega\times (\bomega\times {\bf r}),
+\end{equation}
+where $p$ is the static fluid pressure, $\rho$ the mass density, $\Psi$ the gravitational potential energy
+per unit mass, and ${\bf r}$ a position vector (measured with respect to an origin that lies on the
+axis of rotation). The final term on the right-hand side of the above equation represents the fictitious {\em centrifugal force density}. 
+Without loss of generality, we can assume that $\bomega = \omega\,{\bf e}_z$. It follows
+that
+\begin{equation}\label{e8.2}
+{\bf 0} = \nabla p + \rho\,\nabla(\Psi+\Psi') ,
+\end{equation}
+where 
+\begin{equation}\label{e8.3}
+\Psi' = -\frac{1}{2}\,\omega^2\,(x^2+y^2)
+\end{equation}
+is the so-called {\em centrifugal potential}. 
+Recall, incidentally, that $\rho$ is a uniform constant in an incompressible fluid.
+
+As an example, consider the equilibrium of a body of water, located on the Earth's surface, that is uniformly rotating about a vertical
+axis at the fixed angular velocity $\omega$. It is convenient to adopt cylindrical
+coordinates (see Section~\ref{scyl}), $r$, $\theta$, $z$, whose symmetry axis coincides with the axis of rotation. Let $z$ increase upward.  It follows
+that $\Psi=-g\,z$ and $\Psi' =-(1/2)\,\omega^2\,r^2$. Assuming that the pressure distribution is {\em axisymmetric},
+so that $p=p(r,z)$, the force balance equation, (\ref{e8.2}), reduces to
+\begin{eqnarray}
+\frac{\partial p}{\partial r} + \rho\,\frac{\partial (\Psi+\Psi')}{\partial r} &=&0,\\[0.5ex]
+\frac{\partial p}{\partial z} + \rho\,\frac{\partial (\Psi+\Psi')}{\partial z} &=&0,
+\end{eqnarray}
+or
+\begin{eqnarray}
+\frac{\partial p}{\partial r} - \rho\,\omega^2\,r&=&0,\\[0.5ex]
+\frac{\partial p}{\partial z} +\rho\,g &=&0.
+\end{eqnarray}
+The previous two equations can be integrated to give
+\begin{equation}
+p(r,z) = p_0 + \rho\left(\frac{1}{2}\,\omega^2\,r^2- g\,z\right),
+\end{equation}
+where $p_0$ is a constant. Thus, constant pressure surfaces in a uniformly rotating
+body of water take the form of {\em paraboloids of revolution}\/ about the rotation axis. Suppose that $p_0$ represents
+atmospheric pressure. In this case, the surface of the water is the locus of $p(r,z)=p_0$: {\em i.e.},
+it is the constant pressure surface whose pressure matches that of the atmosphere. It follows that the
+surface of the water is the paraboloid of revolution 
+\begin{equation}
+z = \frac{\omega^{\,2}}{2g}\,r^2,
+\end{equation}
+where  $r$ is the perpendicular distance from the axis
+of rotation, and $z=0$  the on-axis height of the surface.
+
+Now, from Section~\ref{sbouy}, it is plain that the  buoyancy force acting on any co-rotating solid body which is wholly or
+partially immersed in the water is the same as that which would maintain the
+mass of water displaced by the body in relative equilibrium. In the case of a floating body, this mass is 
+limited by the continuation of the water's curved surface through the body. Let points $G$ and
+$H$ represent the centers of gravity and  buoyancy, respectively, of the body. Of course, the latter point is
+simply the center of gravity of the displaced water. Suppose that $G$ and $H$ are located perpendicular
+distances $r_G$ and $r_H$ from the axis of rotation, respectively. Finally, let $M$ be the mass of the body, and
+$M_0$ the mass of the displaced water. It follows that the buoyancy force has an upward vertical
+component $M_0\,g$, and an outward horizontal component $-M_0\,\omega^2\,r_H$. Thus, according to
+standard Newtonian dynamics, the
+equation of horizontal motion of a general co-rotating body is
+\begin{equation}
+M\,(\ddot{r} - \omega^2\,r_G) = -M_0\,\omega^2\,r_H,
+\end{equation}
+where $\dot{~}\equiv d/dt$. 
+Now,  from Archimedes' principle,  $M_0=M$ for the case of a floating body that is less dense than water. 
+However, if the body is of {\em uniform}\/ density then $r_H>r_G$, as a consequence of the curvature of the water's surface. Hence,
+we obtain
+\begin{equation}
+\ddot{r} = -\omega^2\,(r_H-r_G) <0.
+\end{equation}
+In other words,  a  floating body drifts radially {\em inward}\/ towards the rotation axis. On the other hand, $M_0<M$ for a fully submerged
+body that is more dense than water. However, if the body is of {\em uniform}\/ density then its centers of
+gravity and buoyancy coincide with one another, so that $r_H=r_G$. Hence, we obtain
+\begin{equation}
+\ddot{r} = (M-M_0)\,\omega^2\,r_G>0.
+\end{equation}
+In other words, a fully submerged body drifts radially {\em outward}\/ from the rotation axis. The above analysis accounts for the
+common observation that objects heavier than water, such as grains of sand, tend to
+collect on the outer side of a bend in a fast flowing river, whilst floating objects, such as sticks,
+tend to collect on the inner side. 
+
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{3.\arabic{enumi}}
+\begin{enumerate}
+\item A hollow vessel floats in a basin. If, as a consequence of a leak, water flows slowly into the vessel, how
+will the level of the water in the basin be affected?
+\item A hollow spherical shell made up of material of specific gravity $s>1$ has external and internal
+radii $a$ and $b$, respectively. Demonstrate that the sphere will only float in water if
+$$
+\frac{b}{a}> \left(1-\frac{1}{s}\right)^{1/3}.
+$$
+\item Show that the equilibrium of a solid of uniform density floating with an edge or corner just emerging
+from the water is unstable.
+\item Prove that if a solid of uniform density floats with a flat face just above the waterline then the
+equilibrium is stable.
+\item Demonstrate that a uniform solid cylinder floating with its axis horizontal is in a stable equilibrium
+provided that its length exceeds the breadth of the waterline section. [Hint: The cylinder is obviously neutrally
+stable to rotations about its axis, which means that the corresponding metacentric height is zero.]
+\item Show that a uniform solid cylinder of radius $a$ and height $h$ can float in stable equilibrium, with its
+axis vertical, if $h/a<\sqrt{2}$. If the ratio $h/a$ exceeds this value, prove that the equilibrium is
+ only stable when  the specific gravity of the cylinder  lies outside the range
+$$
+\frac{1}{2}\left(1\pm \sqrt{1-2\,\frac{a^2}{h^2}}\,\right).
+$$
+\item A uniform, thin, hollow cylinder of radius $a$ and height $h$ is open at both ends. Assuming that $h>2a$, prove that the
+cylinder  cannot
+float upright if its specific gravity lies in the range
+$$
+\frac{1}{2}\pm \sqrt{\frac{1}{4}-\frac{a^2}{h^2}}.
+$$
+\item Show that the cylinder of the preceding example can float with its axis horizontal provided
+$$
+\frac{h}{2a}> \sqrt{3}\,\sin(s\,\pi),
+$$
+where $s$ is the specific gravity of the cylinder.
+\item Prove that any segment of a uniform sphere, made up of a substance lighter than water, can float in
+stable equilibrium with its plane surface horizontal and immersed.
+\item A vessel carries a tank of oil, of specific gravity $s$, amidships. Show that the effect of the fluidity of the
+oil on the rolling of the vessel is equivalent to a reduction in the metacentric height by $A\,\kappa^2\,s/V$,
+where $V$ is the displacement of the ship, $A$ the surface-area of the tank, and $\kappa$ the radius
+of gyration of this area. In what ratio is the effect diminished when a longitudinal partition bisects the
+tank?
+\item Find the stable equilibrium configurations of a cylinder of elliptic cross-section, with major and minor radii $a$ and
+$b<a$, respectively, made up of material of specific gravity $s$, which floats with its axis horizontal.
+\item A cylindrical tank has a circular cross-section of radius $a$. 
+Let the center of gravity of the tank be located a
+distance $c$ above its base. Suppose that the tank is pivoted about a horizontal axis passing through its
+center of gravity, and is then filled with fluid up to a depth $h$ above its base. Demonstrate that the position in which the
+tank's axis is upright is unstable for all filling depths provided 
+$$
+c^2< \frac{1}{2}\,a^2.
+$$
+Show that if $c^2>(1/2)\,a^2$ then the upright position is stable when $h$ lies in the range
+$$
+ c\pm \sqrt{c^2-a^2/2}.
+$$
+\item A thin cylindrical vessel of cross-sectional area $A$ floats upright, being immersed to a depth $h$, and
+contains water to a depth $k$. Show that the work required to pump out the water is $\rho_0\,A\,k\,(h-k)$. 
+\item A sphere of radius $a$ is just immersed in water that is contained in a cylindrical vessel of radius $R$ whose
+axis is vertical. Prove that if the sphere is raised just clear of the water then the water's loss of potential energy is 
+$$
+W\,a\left(1-\frac{2}{3}\,\frac{a^2}{R^2}\right),
+$$
+where $W$ is the weight of the water originally displaced by the sphere.
+\item A sphere of radius $a$, weight $W$, and specific gravity $s>1$, rests on the bottom of
+a cylindrical vessel of radius $R$ whose axis is vertical, and which contains
+water to a depth $h>2a$. Show that the work required to lift the sphere out of the 
+vessel is less than if the water had been absent by an amount
+$$
+\left(h-a-\frac{2}{3}\,\frac{a^3}{R^2}\right)\frac{W}{s}.
+$$
+\item A lead weight is immersed in water that is steadily rotating at an angular velocity $\omega$ about a vertical axis, the
+weight being suspended from a fixed point on this axis by a string of length $l$. Prove that the
+position in which the weight hangs vertically downward is stable or unstable depending on whether $l< g/\omega^2$ or $l>g/\omega^2$,
+respectively. Also, show that if the vertical position is unstable then there exists a stable inclined position in which the
+string is normal to the surface of equal pressure passing though the weight.
+\item A thin cylindrical vessel of radius $a$ and height $H$ is orientated such that its axis is vertical. Suppose that the
+vessel is filled with liquid of density $\rho$ to 
+some height $h<H$ above the base, spun about its axis at a steady angular velocity $\omega$, and the liquid
+allowed to attain a steady state. Demonstrate that, provided $\omega^2\,a^2/g < 4\,h$ and $\omega^2\,a^2/g< 4\,(H-h)$,
+the net radial thrust on the vertical walls of the vessel is
+$$
+\pi\,a\,h^2\,\rho\,g\left(1+ \frac{\omega^2\,a^2}{4\,g\,h}\right)^2.
+$$
+\item A thin cylindrical vessel of radius $a$ with a plane horizontal lid is just filled with liquid of density $\rho$, and
+the whole rotated about a vertical axis at a fixed angular velocity $\omega$. Prove that the net upward thrust of the
+fluid on the lid is
+$$
+\frac{1}{4}\,\pi\,a^4\,\rho\,\omega^2.
+$$
+\item A liquid-filled thin spherical vessel of radius $a$ spins about a vertical diameter at the fixed angular velocity $\omega$.
+Assuming that the liquid co-rotates with the vessel, and that $\omega^2>g/a$, show that the pressure on the wall of the
+vessel is greatest  a depth $g/\omega^2$ below the center. Also prove that the net normal thrusts on the lower
+and upper hemispheres are
+$$
+\frac{5}{4}\,M\,g+ \frac{3}{16}\,M\,\omega^2\,a,
+$$
+and
+$$
+\frac{1}{4}\,M\,g - \frac{3}{16}\,M\,\omega^2\,a,
+$$
+respectively,
+where $M$ is the mass of the liquid.
+\item A closed cubic vessel filled with water is rotating about a vertical axis passing through the centers of two opposite sides.
+Demonstrate that, as a consequence of the rotation, the net thrust on a side is increased by
+$$
+\frac{1}{6}\,a^4\,\rho\,\omega^2,
+$$
+where $a$ is the length of an edge of the cube, and $\omega$  the angular velocity of rotation.
+\item A closed vessel filled with water is rotating at constant angular velocity $\omega$ about a horizontal axis. Show that,
+in the state of relative equilibrium, the constant pressure surfaces in the water are circular cylinders whose common axis
+is a height $g/\omega^2$ above the axis of rotation.
+
+\end{enumerate}}

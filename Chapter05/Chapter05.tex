@@ -1,0 +1,1024 @@
+\chapter{Inviscid Fluid Dynamics}
+\section{Introduction}
+This  chapter introduces some of the fundamental concepts that arise in the theory
+of incompressible, {\em inviscid}\/ (or, to be more exact, high Reynolds number) fluid motion.
+
+\section{Streamlines,   Stream Tubes, and Stream Filaments}
+A line drawn in a fluid such that its tangent at each point is parallel to the local fluid velocity is called
+a {\em streamline}. The aggregate of all the streamlines at a given instance in time constitutes
+the instantaneous {\em flow pattern}.
+The streamlines drawn through each point of a closed curve constitute  a {\em stream tube}. Finally, a
+{\em stream filament}\/ is defined as a stream tube whose cross-section is a curve of infinitesimal
+dimensions. 
+
+When the flow is unsteady then the configuration of the stream tubes and filaments changes from
+time to time. However, when the flow is {\em steady}\/ then the stream tubes and filaments are
+{\em stationary}. In the latter case, a stream tube acts like an actual tube through which the fluid
+is flowing. This follows because there can be no flow across the walls, and into the tube, since the
+flow is, by definition, always tangential to these walls. Moreover, the walls are fixed in space
+and time, since the motion is steady. Thus, the motion of the fluid within the
+tube would be unchanged were the walls replaced by a rigid  frictionless boundary. 
+
+Consider a stream filament of an incompressible fluid whose motion is steady. Suppose that the cross-sectional area of the
+filament is  sufficiently small that the fluid velocity is the same at  each point on the
+cross-section. Moreover, let the cross-section be  everywhere normal to the direction of this common velocity. 
+Suppose that $v_1$ and $v_2$ are the flow speeds at two points on the filament at which the cross-sectional
+areas are $S_1$ and $S_2$, respectively. Consider the section of the filament lying between these points.
+Since the fluid is {\em incompressible},  the same
+volume of fluid must flow into one end of the section, in a given time interval, as flows out of the other, which implies that
+\begin{equation}
+v_1\,S_1=v_2\,S_2.
+\end{equation}
+This is the simplest manifestation of the equation of fluid continuity discussed in Section~\ref{scont}. 
+The above result is equivalent to the statement  that the product of the
+speed and cross-sectional area is constant along any stream filament of an incompressible fluid in steady motion.
+Thus, a stream filament within such a fluid cannot terminate unless the velocity at that
+point becomes infinite. Leaving this case out of consideration, it follows that stream filaments
+in steadily flowing incompressible fluids are either closed loops, or terminate at the boundaries of the fluid. 
+The same is, of course, true of streamlines. 
+
+\section{Bernoulli's Theorem}\label{sqbern}
+In its most general form, {\em Bernoulli's theorem}---which was discovered by Daniel Bernoulli (1700--1783)---states that, in the {\em steady}\/ flow of an {\em inviscid}\/ fluid, the quantity
+\begin{equation}
+\frac{p}{\rho} + {\cal T}
+\end{equation}
+is constant along a streamline, where $p$ is the pressure, $\rho$ the density, and ${\cal T}$
+the total energy per unit mass.
+
+\begin{figure}
+\epsfysize=2.75in
+\centerline{\epsffile{Chapter05/bernoulli.eps}}
+\caption{\em Bernoulli's theorem.}\label{fbern}
+\end{figure}
+
+The proof is straightforward. Consider the body of fluid bounded by the cross-sectional areas $AB$ and $CD$ of the stream filament
+pictured in Figure~\ref{fbern}.  Let us denote the values of quantities at $AB$ and $CD$ by the suffixes $1$ and
+$2$, respectively. Thus, $p_1$, $v_1$, $\rho_1$, $S_1$, ${\cal T}_1$ are the pressure, fluid speed, density, cross-sectional
+area, and total energy per unit mass, respectively, at $AB$, {\em etc.} Suppose that, after a short time interval $\delta t$, the body of fluid has moved such
+that it occupies the section of the filament bounded by the cross-sections $A'B'$ and $C'D'$, where
+$AA'=v_1\,\delta t$ and $CC'=v_2\,\delta t$. Since the motion is {\em steady}, the mass $m$ of the fluid between $AB$
+and $A'B'$ is the same as that between $CD$ and $C'D'$, so that
+\begin{equation}
+m= S_1\,v_1\,\delta t\,\rho_1=S_2\,v_2\,\delta t\,\rho_2.
+\end{equation}
+Let $T$ denote the total energy of the section of the fluid lying between $A'B'$ and $CD$. Thus, the increase in energy 
+of the fluid body in the time interval $\delta t$ is
+\begin{equation}\label{q3.4}
+(m\,{\cal T}_2+T)-(m\,{\cal T}_1+T)=m\,({\cal T}_2-{\cal T}_1).
+\end{equation}
+In the absence of viscous energy dissipation, this energy increase must equal the net work done by the fluid pressures at
+$AB$ and $CD$, which is
+\begin{equation}\label{q3.5}
+p_1\,S_1\,v_1\,\delta t - p_2\,S_2\,v_2\,\delta t = m\left(\frac{p_1}{\rho_1}-\frac{p_2}{\rho_2}\right).
+\end{equation}
+Equating expressions (\ref{q3.4}) and (\ref{q3.5}), we find that
+\begin{equation}
+\frac{p_1}{\rho_1}+ {\cal T}_1= \frac{p_2}{\rho_2}+{\cal T}_2,
+\end{equation}
+which demonstrates that $p/\rho+{\cal T}$ has the same value at any two points on a given stream filament, and is therefore constant along the filament. Note that Bernoulli's theorem has only been proved for the case of the {\em steady}\/ motion of an {\em inviscid}\/ fluid. However,
+the fluid in question may either be compressible or incompressible.  
+
+For the particular case of an incompressible fluid, moving in a conservative force-field, the total energy per unit mass is the
+sum of the kinetic energy per unit mass, $(1/2)\,v^2$, and the potential energy per unit mass, $\Psi$, and
+Bernoulli's theorem thus becomes
+\begin{equation}
+\frac{p}{\rho} + \frac{1}{2}\,v^2 + \Psi = \mbox{constant along a streamline}.
+\end{equation}
+If we focus on a particular streamline, 1 (say), then Bernoulli's theorem states that
+\begin{equation}
+\frac{p}{\rho} + \frac{1}{2}\,v^2 + \Psi = C_1,
+\end{equation}
+where $C_1$ is a constant characterizing that streamline. If we consider a second streamline, 2 (say), then
+\begin{equation}
+\frac{p}{\rho} + \frac{1}{2}\,v^2 + \Psi = C_2,
+\end{equation}
+where $C_2$ is another constant. It is not generally the case that $C_1=C_2$. If, however, the fluid motion is
+{\em irrotational}\/  then the constant in Bernoulli's theorem is the same for all streamlines (see Section~\ref{qirr}), so
+that
+\begin{equation}
+\frac{p}{\rho} + \frac{1}{2}\,v^2 + \Psi = C
+\end{equation}
+throughout the fluid.
+
+\section{Vortex Lines,   Vortex Tubes, and Vortex Filaments}
+The curl of the velocity field of a fluid, which is generally termed  {\em vorticity},  is usually
+represented by the symbol $\bomega$: {\em i.e.},
+\begin{equation}
+\bomega \equiv \nabla\times {\bf v}.
+\end{equation}
+
+A {\em vortex line}\/ is a line whose tangent is everywhere parallel to the local vorticity vector.
+The vortex lines drawn through each point of a closed curve 
+constitute the surface of a {\em vortex tube}. Finally, a
+{\em vortex filament}\/ is a vortex tube whose cross-section is of infinitesimal dimensions. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/vortex.eps}}
+\caption{\em A vortex filament.}\label{fvortex}
+\end{figure}
+
+Consider a section $AB$ of a vortex filament. The filament is bounded by the curved surface that forms the filament
+wall, as well as two plane surfaces, whose vector areas are ${\bf S}_1$ and ${\bf S}_2$ (say), which form the ends of the section at
+points $A$ and $B$, respectively. See Figure~\ref{fvortex}. Let the plane surfaces have outward pointing normals
+that are parallel (or anti-parallel) to the vorticity vectors, $\bomega_1$ and $\bomega_2$, at points $A$ and $B$,
+respectively.
+Gauss's theorem (see Section~\ref{sdiv}), applied to the section, yields
+\begin{equation}
+\oint \bomega \cdot d{\bf S} = \int \nabla\cdot\bomega\,dV,
+\end{equation}
+where $d{\bf S}$ is an outward directed surface element, and $dV$ a volume element. However, 
+\begin{equation}
+\nabla\cdot\bomega=\nabla\cdot\nabla\times {\bf v} \equiv 0
+\end{equation}
+[see Equation~(\ref{divcurl})],
+implying that
+\begin{equation}
+\oint \bomega \cdot d{\bf S} =0.
+\end{equation}
+Now, $\bomega\cdot d{\bf S}=0$ on the curved surface of the filament,
+since $\bomega$ is, by definition, tangential to this surface. Thus, the only contributions to the surface integral
+come from the plane areas ${\bf S}_1$ and ${\bf S}_2$. It follows that
+\begin{equation}
+\oint \bomega \cdot d{\bf S} = S_2\,\omega_2-S_1\,\omega_1 = 0.
+\end{equation}
+This result is essentially an equation of continuity for vortex filaments. It implies that the product of the
+magnitude of the vorticity and the cross-sectional area, which is termed the vortex  {\em intensity}, is constant
+along the filament. It follows that a vortex filament cannot terminate in the interior of the fluid. For, if
+it did,  the cross-sectional area, $S$, would have to vanish, and, therefore, the vorticity, $\omega$, would have to become infinite. Thus,
+a vortex filament must either form  a closed vortex ring, or must terminate at the fluid boundary. 
+
+Since a vortex tube can be regarded as a bundle of vortex filaments whose net intensity is the sum of the
+intensities of the constituent  filaments, we conclude that the intensity of a vortex tube
+remains constant along the tube. 
+
+\section{Circulation and Vorticity}\label{scirc}
+Consider a closed curve $C$ situated entirely within a moving fluid.  The
+vector line integral (see Section~\ref{sveclinei})
+\begin{equation}
+\Gamma_C = \oint_C {\bf v}\cdot d{\bf r},
+\end{equation}
+where $d{\bf r}$ is an element of $C$, and the integral is taken around the whole curve, is termed the {\em circulation}\/ of the flow around the curve. 
+The sense of circulation ({\em e.g.}, either clockwise or counter-clockwise) is arbitrary. 
+
+Let $S$ be a surface having the closed curve $C$ for a boundary, and let $d{\bf S}$ be an element of this surface (see Section~\ref{sect22})  with that direction of the normal which is related to the chosen sense of circulation around $C$ by the right-hand
+circulation rule (see Section~\ref{svecp}).  According to Stokes' theorem (see Section~\ref{scurl}),
+\begin{equation}\label{q3.12}
+\Gamma_C= \oint_C {\bf v}\cdot d{\bf r} = \int_S \bomega\cdot d{\bf S}.
+\end{equation}
+Thus, we conclude that circulation and vorticity are intimately related to one another. In fact, according to the
+ above expression, the circulation of the fluid around loop $C$ is equal to the net sum of the  intensities of the
+ vortex filaments passing through the loop and piercing the surface $S$ (with a filament making a
+ positive, or negative, contribution to the sum depending on whether it pierces the surface
+ in the direction determined by the chosen sense of circulation around $C$ and the right-hand circulation rule, or in the opposite direction). 
+ One important proviso to (\ref{q3.12}) is that the surface $S$ must lie entirely within the fluid. 
+
+\section{Kelvin Circulation Theorem}\label{skelvin}
+According to the {\em Kelvin circulation theorem}, which is named after Lord Kelvin  (1824--1907),  the
+circulation around any {\em co-moving}\/ loop in an
+{\em inviscid}\/ fluid  is {\em independent}\/ of time. The
+proof is as follows. The circulation around a given loop $C$ is defined
+\begin{equation}
+\Gamma_C = \oint_C {\bf v}\cdot d{\bf r}.
+\end{equation}
+However, for a loop that is co-moving with the fluid, we have $d{\bf v} = d(d{\bf r}/dt)= d(d{\bf r})/dt$. Thus,
+\begin{equation}
+\frac{d\Gamma_C}{dt} = \oint_C \frac{d{\bf v}}{dt}\cdot d{\bf r} + \oint_C {\bf v}\cdot d{\bf v}.
+\end{equation}
+However, by definition, $d{\bf v}/dt\equiv D{\bf v}/Dt$ for a co-moving loop (see Section~\ref{sconv}). Moreover, the equation of motion of
+an incompressible inviscid fluid can be written [see Equation~(\ref{e5.78})]
+\begin{equation}
+\frac{D{\bf v}}{Dt}=   - \nabla\left(\frac{p}{\rho}+\Psi\right),
+\end{equation}
+since $\rho$ is a constant. Hence, 
+\begin{equation}
+\frac{d\Gamma_C}{dt} =- \oint_C\nabla\!\left(\frac{p}{\rho}- \frac{1}{2}\,v^2+\Psi\right)\cdot d{\bf r}= 0,
+\end{equation}
+since ${\bf v}\cdot d{\bf v} = d(v^2/2)=\nabla(v^2/2)\cdot d{\bf r}$ (see Section~\ref{sgrad}), and $p/\rho -\frac{1}{2}\,v^2+\Psi$ is obviously a single-valued function. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/kelvin.eps}}
+\caption{\em A vortex tube.}\label{fkelvin}
+\end{figure}
+
+One corollary of the Kelvin circulation theorem is that the fluid particles that form the walls of a vortex tube at a given instance in time continue to
+form the walls of a vortex tube at all subsequent times. To prove this, imagine a closed loop $C$ that is embedded in the wall of a vortex tube but does
+not circulate around the interior of the tube. See Figure~\ref{fkelvin}. The normal component of the
+vorticity over the surface enclosed by $C$ is zero, since all vorticity vectors are tangential to this surface.
+Thus, from (\ref{q3.12}), the circulation around the loop is zero. By Kelvin's circulation theorem, the circulation around the loop remains zero as the
+tube is convected by the fluid. In other words, although the
+surface enclosed by $C$  deforms, as it is convected by the fluid, it always remains on the  tube wall, since
+no vortex filaments can pass through it. 
+
+Another corollary of the circulation theorem is that the intensity of a vortex tube remains constant as it
+is convected by the fluid. This can be proved by considering the circulation around the loop $C'$ pictured
+in Figure~\ref{fkelvin}. 
+
+\section{Irrotational Flow}\label{qirr}
+Flow is said to be {\em irrotational}\/ when the vorticity $\bomega$ has the magnitude zero everywhere. 
+It immediately follows, from Equation~(\ref{q3.12}), that the circulation around any arbitrary loop in an irrotational
+flow pattern is zero (provided that the loop can be spanned by a surface that lies entirely within the fluid). Hence, from Kelvin's circulation theorem, if an inviscid fluid is initially irrotational
+then it remains irrotational at all subsequent times. This can be seen more directly from the
+equation of motion of an inviscid incompressible fluid which, according to  Equations~(\ref{e4.35}) and (\ref{e5.78}),  takes the
+form
+\begin{equation}
+\frac{\partial{\bf v}}{\partial t} + ({\bf v}\cdot \nabla)\,{\bf v} = - \nabla\left(\frac{p}{\rho}+\Psi\right),
+\end{equation}
+since $\rho$ is a constant. However, from Equation~(\ref{divsp}), 
+\begin{equation}
+({\bf v}\cdot\nabla)\,{\bf v} \equiv \nabla(v^2/2) -{\bf v}\times \bomega.
+\end{equation}
+Thus, we obtain
+\begin{equation}\label{eq3.24}
+\frac{\partial {\bf v}}{\partial t} = -\nabla\left(\frac{p}{\rho}+\frac{1}{2}\,v^2+\Psi\right)+ {\bf v}\times \bomega.
+\end{equation}
+Taking the curl of this equation, and making use of the vector identities $\nabla\times \nabla\phi\equiv 0$ [see Equation~(\ref{curlgrad})], 
+$\nabla\cdot\nabla\times {\bf A}\equiv {\bf 0}$ [see Equation~(\ref{divcurl})], as well as the identity (\ref{curlvp}), and the fact that $\nabla\cdot{\bf v}=0$
+in an incompressible fluid, we obtain the vorticity evolution equation
+\begin{equation}\label{eq3.25}
+\frac{D{\bomega}}{Dt} = (\bomega\cdot\nabla)\,{\bf v}.
+\end{equation}
+Thus, if $\bomega={\bf 0}$, initially, then $D\bomega/Dt={\bf 0}$, and, consequently, $\bomega={\bf 0}$  at all subsequent times. 
+
+Suppose that $O$ is a fixed point, and $P$ an arbitrary movable point, in an irrotational fluid. Let $O$ and $P$ be joined
+by two different paths, $OAP$ and $OBP$ (say). It follows that $OAPBO$ is a closed curve. Now, since the circulation
+around such a curve in an irrotational fluid is zero, we can write
+\begin{equation}
+\int_{OAP} {\bf v}\cdot d{\bf r} + \int_{PBO} {\bf v}\cdot d{\bf r} = 0,
+\end{equation}
+which implies that
+\begin{equation}
+\int_{OAP} {\bf v}\cdot d{\bf r} =\int_{OBP} {\bf v}\cdot d{\bf r} = -\phi_P
+\end{equation}
+(say). It is clear that $\phi_P$ is a scalar function whose value depends  on the
+position of $P$ (and the fixed point $O$), but not on the path taken between $O$ and $P$.
+Thus, if $O$ is the origin of our coordinate system, and $P$ an arbitrary point whose position
+vector is ${\bf r}$, then we have effectively defined a scalar field $\phi({\bf r})\equiv-\int_O^P {\bf v}\cdot d{\bf r}$.
+
+Consider a point $Q$ that is sufficiently close to $P$ that the velocity ${\bf v}$ is constant along $PQ$. 
+Let $\bdeta$ be the position vector of $Q$ relative to $P$. It  then follows that (see Section~\ref{sgrad})
+\begin{equation}
+-\bdeta\cdot\nabla\phi = -\phi_Q+\phi_P = \int_{P}^Q {\bf v}\cdot d{\bf r} \simeq {\bf v}\cdot \bdeta.
+\end{equation}
+The above equation becomes exact in the limit that $|\bdeta|\rightarrow 0$. Since $Q$ is arbitrary (provided that it is
+sufficiently close to $P$), the
+direction of the vector $\bdeta$ is also arbitrary, which implies that
+\begin{equation}\label{e3.51t}
+{\bf v} = -\nabla\phi.
+\end{equation}
+We, thus, conclude that if the motion of a fluid is irrotational then the associated velocity field can always be expressed as minus the
+gradient of a scalar function of position, $\phi({\bf r})$. This scalar function is called the {\em velocity potential}, and
+flow which is derived from such a potential is known as {\em potential flow}. Note that the velocity potential
+is undefined to an arbitrary additive constant.
+
+We have demonstrated that a velocity potential necessarily exists in a fluid whose velocity field is irrotational. 
+Conversely, when a velocity potential exists the flow is necessarily irrotational. This follows because [see Equation~(\ref{curlgrad})]
+\begin{equation}
+\bomega=\nabla\times {\bf v} = -\nabla\times\nabla\phi\equiv {\bf 0}.
+\end{equation}
+Incidentally, the fluid velocity at any given point in an irrotational fluid is normal to the constant-$\phi$ surface that
+passes through that point. 
+
+If a flow pattern is both irrotational and incompressible then we have 
+\begin{equation}
+{\bf v} = -\nabla\phi
+\end{equation}
+and
+\begin{equation}
+\nabla\cdot{\bf v} = 0.
+\end{equation}
+These two expressions can be combined to give (see Section~\ref{qlap})
+\begin{equation}
+\nabla^2\phi = 0.
+\end{equation}
+In other words, the velocity potential in an incompressible irrotational fluid satisfies Laplace's equation. 
+
+According to Equation~(\ref{eq3.24}),  if the flow pattern in an incompressible inviscid fluid is also irrotational, so that $\bomega={\bf 0}$ and ${\bf v}=-\nabla\phi$, then we can write
+\begin{equation}
+\nabla\left(\frac{p}{\rho} + \frac{1}{2}\,v^2 + \Psi - \frac{\partial\phi}{\partial t}\right)=0,
+\end{equation}
+which implies that
+\begin{equation}
+\frac{p}{\rho} + \frac{1}{2}\,v^2 + \Psi - \frac{\partial\phi}{\partial t} = C(t),
+\end{equation}
+where $C(t)$ is uniform in space, but can vary in time. In fact, the time variation of $C(t)$ can be eliminated
+by adding the appropriate function of time (but not of space) to the velocity potential, $\phi$. Note that such
+a procedure does not modify the instantaneous velocity field ${\bf v}$ derived from $\phi$. Thus, the above equation can
+be rewritten
+\begin{equation}
+\frac{p}{\rho} + \frac{1}{2}\,v^2 + \Psi - \frac{\partial\phi}{\partial t} = C,\label{e3.36}
+\end{equation}
+where $C$ is constant in both space and time. Expression~(\ref{e3.36}) is a generalization of Bernoulli's theorem (see Section~\ref{sqbern})
+that takes non-steady flow into account. However, this generalization is only valid for irrotational flow. For the special
+case of steady flow, we get
+\begin{equation}\label{e3.37}
+\frac{p}{\rho} + \frac{1}{2}\,v^2 + \Psi = C,
+\end{equation}
+which demonstrates that for steady irrotational flow the constant in Bernoulli's theorem is the same on all streamlines (see Section~\ref{sqbern}). 
+
+\section{Two-Dimensional Flow}\label{s2d}
+Fluid motion is said to be {\em two-dimensional}\/ when the velocity at every point is parallel to
+a fixed plane, and is the same everywhere on a given normal to that plane. Thus, in Cartesian coordinates, if the fixed plane is the
+$x$-$y$ plane then we can express a general two-dimensional flow patten in the form
+\begin{equation}
+{\bf v} = v_x(x,y,t)\,{\bf e}_x + v_y(x,y,t)\,{\bf e}_y.
+\end{equation}
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/stream.eps}}
+\caption{\em Two-dimensional flow.}\label{fstream}
+\end{figure}
+
+Let $A$ be a fixed point in the $x$-$y$ plane, and let $ABP$ and $ACP$ be two curves, also in the $x$-$y$  plane, 
+that join $A$ to an arbitrary point $P$. See Figure~\ref{fstream}. Suppose that fluid is neither created nor destroyed in the region, $R$ (say),  bounded by
+these curves. Since the fluid is incompressible, which essentially means that its density is uniform and constant, 
+fluid continuity requires that the rate at which the fluid flows into the region $R$, from right to left across the
+curve $ABP$, is equal to the rate at which it flows out the of the region, from right to left across the
+curve $ACP$. Now, the rate of fluid flow across a surface is generally termed the {\em flux}. Thus, the flux (per unit length parallel to the $z$-axis) from right to left across $ABP$
+is equal to the flux from right to left across $ACP$. Since $ACP$ is arbitrary, it follows that the flux from right to left across any curve
+joining points $A$ and $P$ is equal to the flux from right to left across $ABP$. In fact, once the base point $A$
+has been chosen, this flux only depends on the position of point $P$, and the time $t$. In other words, if we denote the flux by $\psi$ then
+it is solely a function of the location of $P$ and the time. Thus, if point $A$ lies at the origin, and point $P$ has Cartesian
+coordinates $x$, $y$, then we can write
+\begin{equation}
+\psi= \psi(x,y,t).
+\end{equation}
+The function $\psi$ is known as the {\em stream function}. Moreover, the existence of a stream function is a direct consequence of the assumed incompressible nature of the flow. 
+
+Consider two points, $P_1$ and $P_2$, in addition to the fixed point $A$.  See Figure~\ref{fstream1}. Let $\psi_1$ and $\psi_2$ be the fluxes
+from right to left across curves $AP_1$ and $AP_2$. Now, using similar arguments to those employed above, the
+flux across $AP_2$ is equal to the flux across $AP_1$ plus the flux across $P_1 P_2$. Thus, the
+flux across $P_1 P_2$, from right to left, is $\psi_2-\psi_1$. Now, if $P_1$ and $P_2$ both lie on the same streamline
+then the flux across $P_1 P_2$ is zero, since the local fluid velocity is directed everywhere parallel to $P_1P_2$. It follows that $\psi_1=\psi_2$. Hence, we conclude that the
+stream function is {\em constant}\/ along a streamline. The equation of a streamline is thus $\psi=c$, where $c$
+is an arbitrary constant. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/stream1.eps}}
+\caption{\em Two-dimensional flow.}\label{fstream1}
+\end{figure}
+
+Let $P_1 P_2=\delta s$ be an infinitesimal arc of a curve that is sufficiently short that it can be regarded as a straight-line.
+The fluid velocity in the vicinity of this arc can be resolved into components parallel and perpendicular to the arc. 
+The component parallel to $\delta s$ contributes nothing to the flux across the arc from right to left. The component perpendicular to
+$\delta s$ contributes $v_\perp\,\delta s$ to the flux. However, the flux is equal to $\psi_2-\psi_1$. Hence,
+\begin{equation}
+v_\perp = \frac{\psi_2-\psi_1}{\delta s}.
+\end{equation}
+In the limit $\delta s\rightarrow 0$, the perpendicular velocity from right to left across $ds$ becomes
+\begin{equation}
+v_\perp = \frac{d\psi}{ds}.
+\end{equation}
+Thus, in Cartesian coordinates, by considering infinitesimal arcs parallel to the $x$- and $y$-axes, we deduce that
+\begin{eqnarray}\label{e3.42}
+v_x &=& -\frac{\partial\psi}{\partial y},\\[0.5ex]
+v_y&=&\frac{\partial\psi}{\partial x}.\label{e3.43}
+\end{eqnarray}
+These expressions can be combined to give
+\begin{equation}\label{e3.44}
+{\bf v} = {\bf e}_z\times \nabla\psi\equiv \nabla z\times \nabla \psi.
+\end{equation}
+Note that when the fluid velocity is written in this form then it immediately becomes clear
+that the incompressibility constraint $\nabla\cdot{\bf v}=0$ is automatically
+ satisfied [since $\nabla\cdot(\nabla A\times \nabla B)\equiv 0$---see Equations~(\ref{divvp}) and (\ref{curlgrad})]. 
+It is also clear that the stream function is undefined to an arbitrary additive constant. 
+
+The vorticity in two-dimensional flow takes the form
+\begin{equation}
+\bomega = \omega_z\,{\bf e}_z,
+\end{equation}
+where
+\begin{equation}
+\omega_z =  \frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}.
+\end{equation}
+Thus, it follows from Equations~(\ref{e3.42}) and (\ref{e3.43}) that
+\begin{equation}
+\omega_z=\frac{\partial^2\psi}{\partial x^2}+\frac{\partial^2\psi}{\partial y^2}=\nabla^2\psi.  \label{e3.46}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+\end{equation}
+Moreover, {\em irrotational}\/ two-dimensional  flow is characterized by
+\begin{equation}\label{e3.47}
+\nabla^2\psi = 0.
+\end{equation}
+
+Now, when expressed in terms of cylindrical  coordinates (see Section~\ref{scyl}), Equation~(\ref{e3.44}) yields
+\begin{equation}
+{\bf v} = v_r(r,\theta,t)\,{\bf e}_r + v_\theta(r,\theta,t)\,{\bf e}_\theta,
+\end{equation}
+where
+\begin{eqnarray}\label{e3.50}
+v_r &=& - \frac{1}{r}\,\frac{\partial \psi}{\partial\theta},\\[0.5ex]
+v_\theta &=& \frac{\partial\psi}{\partial r}.\label{e3.51}
+\end{eqnarray}
+Moreover, the vorticity is $\bomega= \omega_z\,{\bf e}_z$, where
+\begin{equation}\label{e3.51x}
+\omega_z =\frac{1}{r}\,\frac{\partial}{\partial r}\!\left(r\,\frac{\partial\psi}{\partial r}\right) + \frac{1}{r^{\,2}}\,\frac{\partial^2\psi}{\partial \theta^2}.
+\end{equation}
+
+\section{Two-Dimensional Uniform Flow}\label{suniform}
+Consider a steady two-dimensional flow pattern that is {\em uniform}: {\em i.e.}, such that the fluid velocity
+is the same everywhere in the $x$-$y$ plane. For instance, suppose that the common fluid velocity is
+\begin{equation}
+{\bf v} = V_0\,\cos\theta_0\,{\bf e}_x + V_0\,\sin\theta_0\,{\bf e}_y,
+\end{equation}
+which corresponds to flow at the uniform speed $V_0$ in a fixed direction that subtends a (counter-clockwise) angle
+$\theta_0$ with the $x$-axis.  It follows, from Equations~(\ref{e3.42}) and (\ref{e3.43}), that the
+stream function for steady uniform flow takes the form
+\begin{equation}\label{e3.53x}
+\psi(x,y) = V_0\left(\sin\theta_0\,x-\cos\theta_0\,y\right).
+\end{equation}
+When written in terms of cylindrical coordinates, this becomes
+\begin{equation}
+\psi(r,\theta)=-V_0\,r\,\sin(\theta-\theta_0).
+\end{equation}
+
+Note, from (\ref{e3.53x}), that $\partial^2\psi/\partial x^2=\partial^2\psi/\partial y^2=0$. Thus, it
+follows from Equation~(\ref{e3.46}) that uniform flow is {\em irrotational}. Hence, according to
+Section~\ref{qirr}, such flow can also be derived from a velocity potential. In fact, it is easily
+demonstrated that
+\begin{equation}
+\phi(r,\theta)  = -V_0\,r\,\cos(\theta-\theta_0).
+\end{equation}
+
+\section{Two-Dimensional Sources and Sinks}\label{ssource}
+Consider a uniform {\em line source}, coincident with the $z$-axis,
+that emits fluid isotropically at the steady rate of $Q$ unit volumes per unit length per unit time. 
+By symmetry, we expect the associated steady flow pattern to be isotropic, and everywhere directed radially away from the source.
+See Figure~\ref{fsource}. In other words, we expect
+\begin{equation}
+{\bf v} = v_r(r)\,{\bf e}_r.
+\end{equation}
+Consider a cylindrical surface $S$ of unit height and radius $r$ that is co-axial with the source. In a steady state,
+the rate at which fluid crosses this surface must be equal to the rate at which the
+section of the source enclosed by the surface emits fluid. Hence,
+\begin{equation}
+\int_S {\bf v}\cdot d{\bf S} = 2\pi\,r\,v_r(r)= Q,
+\end{equation}
+which implies that
+\begin{equation}
+v_r(r) = \frac{Q}{2\pi\,r}.
+\end{equation}
+
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter05/source.eps}}
+\caption{\em Streamlines of the flow generated by a line source coincident with the $z$-axis.}\label{fsource}
+\end{figure}
+
+According to Equations~(\ref{e3.50}) and (\ref{e3.51}), the stream function associated with a line source
+of strength $Q$ that is coincident with the $z$-axis is
+\begin{equation}\label{e3.58x}
+\psi(r,\theta) = -\frac{Q}{2\pi}\,\theta.
+\end{equation}
+Note that the streamlines, $\psi=c$, are directed radially away from the $z$-axis, as illustrated in Figure~\ref{fsource}. 
+Note, also, that the stream function associated with a line source is multivalued. However, this does not cause any
+particular difficulty,
+since the stream function is continuous, and its gradient single-valued. 
+
+Note, from Equation~(\ref{e3.58x}), that $\partial\psi/\partial r=\partial^2\psi/\partial\theta^2=0$. Hence,
+according to (\ref{e3.51x}), $\omega_z=-\nabla^2\psi=0$. In other words, the steady flow pattern
+associated with a uniform line source is {\em irrotational}, and can, thus, be derived from a velocity
+potential. In fact, it is easily demonstrated that this potential takes the form
+\begin{equation}
+\phi(r,\theta) = -\frac{Q}{2\pi}\,\ln r.
+\end{equation}
+
+A uniform {\em line sink}, coincident with the $z$-axis,
+which absorbs  fluid isotropically at the steady rate of $Q$ unit volumes per unit length per unit time
+has an associated steady flow pattern
+\begin{equation}
+{\bf v} = - \frac{Q}{2\pi\,r}\,{\bf e}_r,
+\end{equation}
+whose stream function is
+\begin{equation}\label{e3.58}
+\psi(r,\theta) = \frac{Q}{2\pi}\,\theta.
+\end{equation}
+This flow pattern is also irrotational, and can be derived from the velocity potential
+\begin{equation}
+\phi(r,\theta) = \frac{Q}{2\pi}\,\ln r.
+\end{equation}
+
+Consider a line source and a line sink of equal strength, which  both run parallel to the
+$z$-axis, and are located a small distance apart in the $x$-$y$ plane. Such an arrangement
+is known as a  {\em dipole}\/ or  {\em doublet}\/ line source. Suppose that the  line source, which is of strength $Q$, is located
+at ${\bf r}={\bf d}/2$ (where ${\bf r}$ is a position vector in the $x$-$y$ plane), and that the  line sink, which is also of strength $Q$, is located at ${\bf r}=-{\bf d}/2$. 
+Let the function 
+\begin{equation}
+\psi_Q({\bf r})= -\frac{Q}{2\pi}\,\theta =- \frac{Q}{2\pi}\,\tan^{-1}(y/x)
+\end{equation}
+ be the stream function associated with a  line source of strength $Q$ located at ${\bf r}={\bf 0}$. 
+ Thus, $\psi_Q({\bf r}-{\bf r}_0)$ is the  stream function associated with a  line source of strength $Q$ located at ${\bf r}={\bf r}_0$. 
+Furthermore, the stream function associated with a  line sink of strength $Q$ located at ${\bf r}={\bf r}_0$
+is $-\psi_Q({\bf r}-{\bf r}_0)$. Now, we expect the flow pattern associated with the combination of a source and a sink to be the vector
+sum of the flow patterns generated by the source and sink taken in isolation. It follows that the overall stream function
+is the sum of the stream functions generated by the source and the sink taken in isolation. In other words,
+\begin{equation}
+\psi({\bf r}) = \psi_Q({\bf r}-{\bf d}/2)-\psi_Q({\bf r}+{\bf d}/2)\simeq - {\bf d}\cdot\nabla\psi_Q({\bf r}),
+\end{equation}
+to first-order in $d/r$. Hence, if ${\bf d} = d\,(\cos\theta_0\,{\bf e}_x+ \sin\theta_0\,{\bf e}_y)=d\,[\cos(\theta-\theta_0)\,{\bf e}_r
+-\sin(\theta-\theta_0)\,{\bf e}_\theta]$,
+so that the line joining the sink to the source subtends an angle $\theta_0$ with the $x$-axis, 
+ then
+\begin{equation}
+\psi(r,\theta) = -\frac{D}{2\pi}\,\frac{\sin(\theta-\theta_0)}{r},
+\end{equation}
+where $D=Q\,d$ is termed the strength of the dipole source. Note that the above stream function is antisymmetric
+across the line $\theta=\theta_0$ joining the source to the sink. It follows that the
+associated dipole flow pattern,
+\begin{eqnarray}
+v_r(r,\theta)&=& \frac{D}{2\pi}\,\frac{\cos(\theta-\theta_0)}{r^{\,2}},\\[0.5ex]
+v_\theta(r,\theta)&=&\frac{D}{2\pi}\,\frac{\sin(\theta-\theta_0)}{r^{\,2}},
+\end{eqnarray}
+ is symmetric across this line. Figure~\ref{fdipole} shows the streamlines associated with a dipole flow
+ pattern characterized by $D>0$ and $\theta_0=0$. Note that the flow speed in a dipole
+ pattern falls off like $1/r^{\,2}$. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/dipole.eps}}
+\caption{\em Streamlines of the flow generated by a dipole line source coincident with the $z$-axis and
+aligned along the $x$-axis. The flow is outward along the positive $x$-axis and inward
+along the negative $x$-axis.}\label{fdipole}
+\end{figure}
+
+ A dipole flow pattern is necessarily irrotational since it is a linear superposition of two irrotational flow patterns.
+ The associated velocity potential is
+ \begin{equation}
+ \phi(r,\theta) = \frac{D}{2\pi}\,\frac{\cos(\theta-\theta_0)}{r}.
+ \end{equation}
+
+\section{Two-Dimensional Vortex Filaments}\label{svortex}
+Consider a vortex filament of intensity $\Gamma$ that is coincident with the $z$-axis. By symmetry, we expect the associated flow pattern  to circulate isotropically around the filament.
+See Figure~\ref{fvortex1}. In other words, we expect
+\begin{equation}
+{\bf v} = v_\theta(r)\,{\bf e}_\theta.
+\end{equation}
+Now, according to Section~\ref{scirc}, 
+the circulation, $\oint {\bf v}\cdot d{\bf r}$, around any closed curve in the $x$-$y$ plane  is equal to the net intensity of the vortex filaments that pass through the curve. Consider a circular curve of radius $r$ that is concentric with the origin. It follows that
+\begin{equation}
+\Gamma_r = \oint {\bf v}\cdot d{\bf r}= 2\pi\,r\,v_\theta(r) = \Gamma,
+\end{equation}
+or
+\begin{equation}\label{e3.69}
+v_\theta(r) = \frac{\Gamma}{2\pi\,r}.
+\end{equation}
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/vortex1.eps}}
+\caption{\em Streamlines of the flow generated by a line vortex coincident with the $z$-axis.}\label{fvortex1}
+\end{figure}
+
+According to Equations~(\ref{e3.50}) and (\ref{e3.51}), the stream function associated with a vortex filament
+of intensity $\Gamma$ that is coincident with the $z$-axis is
+\begin{equation}\label{e3.74}
+\psi(r,\theta) = \frac{\Gamma}{2\pi}\,\ln r.
+\end{equation}
+Note that the streamlines, $\psi=c$, circulate around the $z$-axis, as illustrated in Figure~\ref{fvortex1}. 
+
+It can be seen, from Equation~(\ref{e3.74}), that $(\partial/\partial r)(r\,\partial\psi/\partial r)= \partial\psi/\partial\theta=0$. 
+Hence,
+it follows from  (\ref{e3.51x}) that $\omega_z=-\nabla^2\psi=0$. In other words, the  flow pattern
+associated with a straight vortex filament is {\em irrotational}. This is a somewhat surprising result, since there
+is a net circulation of the flow around the filament, and, according to Section~\ref{scirc}, non-zero circulation implies
+non-zero vorticity. The paradox can be resolved by supposing that the filament has a small,
+but finite, radius. In fact, let the filament have the finite radius $a$, and be such that the vorticity is
+uniform inside this radius, and zero outside: {\em i.e.}, 
+\begin{eqnarray}
+\omega_z = \left\{\begin{array}{ccc}
+\Gamma/\pi\,a^2&\mbox{\hspace{1cm}}&r\leq a\\[0.5ex]
+0&&r>a
+\end{array}\right..
+\end{eqnarray}
+Note that the intensity of the filament ({\em i.e.}, the product of its vorticity and cross-sectional
+area) is still $\Gamma$. According to Equation~(\ref{e3.51x}), and assuming that $\psi=\psi(r)$, 
+\begin{eqnarray}
+\frac{1}{r}\,\frac{d}{\partial r}\!\left(r\,\frac{d\psi}{d r}\right)= \left\{\begin{array}{ccc}
+\Gamma/\pi\,a^2&\mbox{\hspace{1cm}}&r\leq a\\[0.5ex]
+0&&r>a
+\end{array}\right..
+\end{eqnarray}
+The solution that is well-behaved at $r=0$, and continuous (up to its first derivative) at $r=a$,  is
+\begin{eqnarray}
+\psi(r,\theta)= \left\{\begin{array}{ccc}
+(\Gamma/4\pi)\,(r^2/a^2-1)&\mbox{\hspace{1cm}}&r\leq a\\[0.5ex]
+(\Gamma/2\pi)\,\ln(r/a)&&r>a
+\end{array}\right..
+\end{eqnarray}
+Note that this expression is equivalent to (\ref{e3.74}) (apart from an unimportant additive constant) outside the filament, but
+ differs inside. The associated circulation velocity, $v_\theta(r)=\partial\psi/\partial r$, is
+\begin{eqnarray}
+v_\theta(r)= \left\{\begin{array}{ccc}
+(\Gamma/2\pi)\,(r/a^2)&\mbox{\hspace{1cm}}&r\leq a\\[0.5ex]
+(\Gamma/2\pi)\,(1/r)&&r>a
+\end{array}\right.,
+\end{eqnarray}
+whereas the circulation, $\Gamma_r(r) = 2\pi\,r\,v_\theta(r)$, is written
+\begin{eqnarray}
+\Gamma_r(r)= \left\{\begin{array}{ccc}
+\Gamma\,(r/a)^2&\mbox{\hspace{1cm}}&r\leq a\\[0.5ex]
+\Gamma&&r>a
+\end{array}\right..
+\end{eqnarray}
+Thus, we conclude that the flow pattern associated with a straight vortex filament is irrotational
+outside the filament, but has finite vorticity inside the filament. Moreover, the  non-zero internal
+vorticity generates a constant net circulation of the flow outside the filament. In the limit in which the
+radius of the filament tends to zero, the strength of the vorticity within the filament tends to infinity
+(in such a way that the product of the vorticity and the cross-sectional area of the filament remains
+constant), and the region of the fluid in which the vorticity is non-zero becomes infinitesimal in extent. 
+
+Now, since the flow pattern outside a straight vortex filament is irrotational, it can be derived from a velocity potential. 
+In fact, it is easily demonstrated that the appropriate potential takes the form 
+\begin{equation}
+\phi(r,\theta)= - \frac{\Gamma}{2\pi}\,\theta.
+\end{equation}
+Note that the above potential is multivalued. However, this does not cause any
+particular difficulty,
+since the potential is continuous, and its gradient single-valued. 
+
+\section{Two-Dimensional Irrotational Flow}
+As we have seen,  in a two-dimensional flow pattern, we can automatically satisfy the
+incompressibility constraint, $\nabla\cdot{\bf v}=0$,  by expressing the pattern in terms of a stream function. Suppose, however, that, in addition
+to being incompressible, the flow pattern is also {\em irrotational}. In this case,
+Equation~(\ref{e3.46}) yields
+\begin{equation}
+\nabla^2\psi=0.
+\end{equation}
+In cylindrical coordinates, since $\psi=\psi(r,\theta,t)$, this expression implies that (see Section~\ref{scyl})
+\begin{equation}
+\frac{1}{r}\,\frac{\partial}{\partial r}\!\left(r\,\frac{\partial\psi}{\partial r}\right) + \frac{1}{r^{\,2}}\,\frac{\partial^2\psi}{\partial\theta^2}
+=0.\label{e3.53}
+\end{equation}
+
+Let us search for a separable steady-state solution of Equation~(\ref{e3.53}) of the form
+\begin{equation}
+\psi(r,\theta) = R(r)\,\Theta(\theta).
+\end{equation}
+It is easily seen that
+\begin{equation}
+\frac{r}{R}\,\frac{d}{dr}\!\left(r\,\frac{dR}{dr}\right)= - \frac{1}{\Theta}\,\frac{d^2\Theta}{d\theta^2},
+\end{equation}
+which can only be satisfied if
+\begin{eqnarray}
+r\,\frac{d}{dr}\!\left(r\,\frac{dR}{dr}\right)&=&m^2\,R,\label{e3.56}\\[0.5ex]
+\frac{d^2\Theta}{d\theta^2} &=& -m^2\,\Theta,\label{e3.57}
+\end{eqnarray}
+where $m^2$ is an arbitrary (positive) constant. The general solution of Equation~(\ref{e3.57})
+is a linear combination of $\exp(\,{\rm i}\,m\,\theta)$ and $\exp(-{\rm i}\,m\,\theta)$ factors.
+However, assuming that the flow extends over all $\theta$ values, the function $\Theta(\theta)$ must be  {\em single-valued}\/ in $\theta$, otherwise $\nabla\psi$---and,
+hence, ${\bf v}$---would not be be single-valued (which is unphysical).  It follows that $m$ can only take {\em integer}\/ values (and that $m^2$
+must be a positive, rather than a negative, constant). 
+Now, the general solution of Equation~(\ref{e3.56}) is a linear combination of $r^m$ and
+$r^{-m}$ factors, except for the special case $m=0$, when it is a linear combination
+of $r^0$ and $\ln r$ factors. Thus, the general stream function for steady two-dimensional
+irrotational flow (that extends over all values of $\theta$) takes the form
+\begin{equation}\label{e3.58y}
+\psi(r,\theta) = \alpha_0+ \beta_0\,\ln r + \sum_{m>0} (\alpha_m\,r^m+\beta_m\,r^{-m})\,
+\sin[m\,(\theta-\theta_m)],
+\end{equation}
+where $\alpha_m$, $\beta_m$, and $\theta_m$ are arbitrary constants. 
+We can recognize the first few terms on the right-hand side of the above expression. The constant term $\alpha_0$
+has zero gradient, and, therefore, does not give rise to any flow. The term $\beta_0\,\ln r$ is the flow pattern generated by 
+a vortex filament of intensity $2\pi\,\beta_0$, coincident with the $z$-axis (see Section~\ref{svortex}). The
+term $\alpha_1\,r\,\sin(\theta-\theta_1)$  corresponds to uniform flow of speed $\alpha_1$ whose
+direction subtends an angle $\theta_1$ with the minus $x$-axis (see Section~\ref{suniform}).
+Finally, the term $\beta_1\,\sin(\theta-\theta_1)/r$ corresponds to a dipole flow pattern (see Section~\ref{ssource}).
+
+The velocity potential associated with the irrotational stream function (\ref{e3.58y}) satisfies [see Equations~(\ref{e3.51t}) and
+(\ref{e3.44})]
+\begin{eqnarray}
+\frac{\partial\phi}{\partial r} &=& \frac{1}{r}\,\frac{\partial\psi}{\partial\theta},\\[0.5ex]
+\frac{1}{r}\,\frac{\partial\phi}{\partial\theta} &=&-\frac{\partial\psi}{\partial r}.
+\end{eqnarray}
+It follows that
+\begin{equation}
+\phi(r,\theta) = \alpha_0-\beta_0\,\theta+\sum_{m>0}(\alpha_m\,r^m-\beta_m\,r^{-m})\,\cos[m\,(\theta-\theta_0)].
+\end{equation}
+
+\section{Inviscid Flow Past a Cylindrical Obstacle}\label{scylo}
+Consider the steady flow pattern produced when an impenetrable  rigid cylindrical obstacle is placed in a uniformly flowing
+incompressible inviscid fluid,  with the cylinder orientated such that its axis is normal to the flow. For instance, suppose that the radius of the cylinder is 
+ $a$, and that its axis  corresponds to the line  $x=y=0$. Furthermore, let the unperturbed fluid velocity be of magnitude $V_0$, and 
+be directed parallel to the $x$-axis.  Now, we expect the
+flow pattern to remain unperturbed very far away from the cylinder. In other words,
+we expect  ${\bf v}(r,\theta)\rightarrow V_0\,{\bf e}_x$ as $r/a\rightarrow\infty$, 
+which corresponds to a boundary condition on the stream function of the form (see Section~\ref{suniform})
+\begin{equation}\label{e3.88}
+\psi(r,\theta)\rightarrow -V_0\,r\,\sin\theta\mbox{\hspace{1cm}as $r/a\rightarrow\infty$}.
+\end{equation}
+Given that the fluid velocity field a large distance downstream of the cylinder is irrotational (since we
+have already seen that the flow pattern associated with uniform
+flow is irrotational---see Section~\ref{suniform}), it follows from the Kelvin circulation theorem (see Section~\ref{skelvin})
+that the velocity field remains irrotational as it is convected past the cylinder. Hence, according to Section~\ref{s2d}, the stream function of the
+flow satisfies Laplace's equation:
+\begin{equation}\label{e3.89}
+\nabla^2\psi = 0.
+\end{equation}
+The appropriate boundary condition at the surface of the cylinder is simply that the normal fluid
+velocity there be zero, since the fluid must stay in contact with the cylinder, but cannot penetrate its
+surface. Hence, $v_r(a,\theta) \equiv -(1/a)\,\partial\psi/\partial \theta|_{r=a} = 0$, which implies that
+\begin{equation}\label{e3.90}
+\psi(a,\theta)= 0,
+\end{equation}
+since $\psi$ is undetermined to an arbitrary additive constant.  It follows that we are searching for the most
+general solution of (\ref{e3.89}) that satisfies the boundary conditions (\ref{e3.88}) and (\ref{e3.90}). 
+Comparison with Equation~(\ref{e3.58y}) reveals that this solution takes the form
+\begin{equation}
+\psi(r,\theta) = V_0\,a\left[-\gamma\,\ln\left(\frac{r}{a}\right)-\left(\frac{r}{a}-\frac{a}{r}\right)\sin\theta\right],
+\end{equation}
+where
+\begin{equation}
+\gamma = -\frac{\Gamma}{2\pi\,a\,V_0},
+\end{equation}
+and $\Gamma$ is the circulation of the flow around the cylinder. 
+(Note that the velocity field can be irrotational, but still possess nonzero circulation
+around the cylinder, because a loop that encloses the cylinder cannot be spanned
+by a surface lying entirely within the fluid. Thus, zero fluid vorticity does not
+necessarily imply zero circulation around such a loop from Stokes' theorem.) Let us assume that $\gamma\geq 0$, for the
+sake of definiteness. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/cylinder.eps}}
+\caption{\em Streamlines of the flow generated by a cylindrical obstacle of radius $a$, whose axis runs  along the $z$-axis,
+placed in the uniform flow field ${\bf v}= V_0\,{\rm e}_x$. The normalized circulation is $\gamma=0$. }\label{fxcyl}
+\end{figure}
+
+Figure~\ref{fxcyl}--\ref{fxcyl2} show streamlines of the flow calculated for various different values of the normalized circulation,
+$\gamma$. For $\gamma<2$ there exist  a pair of  points on the surface of the
+cylinder at which the flow speed is zero. These are known as {\em stagnation points}, and can be located in Figures~\ref{fxcyl}
+and \ref{fxcyl1} as the points at which streamlines intersect the surface of the cylinder at right-angles. Now, the
+tangential fluid velocity at the surface of the cylinder is
+\begin{equation}
+v_t(\theta) \equiv v_\theta(a,\theta) = \left.\frac{\partial\psi}{\partial r}\right|_{r=a} = -V_0\,(\gamma+2\,\sin\theta).
+\end{equation}
+The stagnation points correspond to the points at which $v_t=0$ (since the normal velocity is automatically 
+zero at the surface of the cylinder). Thus, the stagnation points lie at $\theta = \sin^{-1}(-\gamma/2)$. When $\gamma>2$
+the stagnation points coalesce and move off the surface of the cylinder, as illustrated in Figure~\ref{fxcyl2} (the stagnation point
+corresponds to the point at which two streamlines cross at right-angles). 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/cylinder1.eps}}
+\caption{\em Streamlines of the flow generated by a cylindrical obstacle of radius $a$, whose axis runs  along the $z$-axis,
+placed in the uniform flow field ${\bf v}= V_0\,{\rm e}_x$. The normalized circulation is $\gamma=1$. }\label{fxcyl1}
+\end{figure}
+
+The irrotational form of Bernoulli's theorem, (\ref{e3.37}), can be combined with the boundary condition $v\rightarrow V_0$
+as $r/a\rightarrow \infty$, as well as the fact that $\Psi$ is constant in the present case,  to give
+\begin{equation}
+p = p_0 + \frac{1}{2}\,\rho\left(V_0^{\,2}-v^2\right),
+\end{equation}
+where $p_0$ is the constant static fluid pressure a large distance from the cylinder. In particular, the fluid
+pressure on the surface of the cylinder is
+\begin{equation}\label{e3.95}
+P(\theta)\equiv p(a,\theta) = p_0 + \frac{1}{2}\,\rho\left(V_0^{\,2}-v_t^{\,2}\right)= p_1 + \rho\,V_0^{\,2}\left(\cos 2\theta-2\,\gamma\,\sin\theta\right),
+\end{equation}
+where $p_1=p_0-(1/2)\,\rho\,V_0^{\,2}\,(1+\gamma^2)$. 
+The net force per unit length exerted on the cylinder by the fluid has the Cartesian components
+\begin{eqnarray}
+F_x &=& -\oint P\,\cos\theta\,a\,d\theta,\\[0.5ex]
+F_y&=& -\oint P\,\sin\theta\,a\,d\theta.
+\end{eqnarray}
+Thus, it follows from (\ref{e3.95}) that
+\begin{eqnarray}
+F_x &=& 0,\\[0.5ex]
+F_y&=&  2\pi\,\gamma\,\rho\,V_0^{\,2}\,a= \rho\,V_0\,(-\Gamma).
+\end{eqnarray}
+Now, the component of the force which a moving fluid exerts on an obstacle, placed in its path, in a direction parallel to that of  the unperturbed  flow is usually called {\em drag}. On the other hand,  the component of the force which
+the fluid exerts in a direction perpendicular to that of  the unperturbed flow is usually called {\em lift}. Hence, the above equations imply
+that if a cylindrical obstacle is placed in a uniformly flowing inviscid fluid then there is {\em zero drag}. On the other
+hand, as long as there is net circulation of the flow around the cylinder, the lift is non-zero. Now, lift is generated because (negative) 
+circulation tends to increase the fluid speed directly above, and to decrease it directly below, the cylinder. 
+Thus, from Bernoulli's theorem, the fluid pressure is decreased above, and increased below,
+the cylinder, giving rise to a net upward force ({\em i.e.}, a force in the $+y$ direction). 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/cylinder2.eps}}
+\caption{\em Streamlines of the flow generated by a cylindrical obstacle of radius $a$, whose axis runs  along the $z$-axis,
+placed in the uniform flow field ${\bf v}= V_0\,{\rm e}_x$. The normalized circulation is $\gamma=2.5$. }\label{fxcyl2}
+\end{figure}
+
+Suppose that the cylinder  is placed in a fluid which is initially at rest, and that the fluid's uniform flow velocity, $V_0$,
+is then very slowly ramped up (in such a manner that no vorticity is induced in the flow at infinity). Since the flow pattern is initially irrotational, and since the
+flow pattern well upstream of the cylinder is assumed to remain irrotational, the Kelvin circulation theorem indicates
+that the flow pattern around the cylinder also remains irrotational. Consider the time evolution of the circulation, $\Gamma=\oint_C{\bf v}\cdot d{\bf r}$,  around
+some {\em fixed}\/  curve $C$ that lies entirely within the fluid, and encloses the cylinder. We have
+\begin{equation}
+\frac{d\Gamma_C}{dt} = \oint_C\frac{\partial {\bf v}}{\partial t}\cdot d{\bf r} =
+\oint_C\left[-\nabla\left(\frac{p}{\rho}+\frac{1}{2}\,v^2\right) + {\bf v}\times \bomega\right]\cdot d{\bf r}= \oint_C {\bf v}\times \bomega\cdot d{\bf r},
+\end{equation}
+where use has been made of (\ref{eq3.24}) (with $\Psi$ assumed constant). However, $\bomega=\omega_z\,{\bf e}_z$ in two-dimensional flow, and
+$d{\bf r}\times {\bf e}_z  =d{\bf S}$, where $d{\bf S}$ is an outward surface element of a unit depth (in the $z$-direction)
+surface whose normal lies in the $x$-$y$ plane, and that cuts the $x$-$y$ plane at $C$. In other words,
+\begin{equation}
+\frac{d\Gamma_C}{dt} = -\oint_S \omega_z\,{\bf v}\cdot d{\bf S}.
+\end{equation}
+We, thus, conclude that the rate of change of the circulation around $C$ is equal to minus the flux of the vorticity across $S$
+[assuming that vorticity is convected by the flow, which follows from (\ref{eq3.25}), the fact that $\bomega=\omega_z\,{\bf e}_z$, and the fact that $\partial/\partial z\equiv 0$ in two-dimensional flow]. 
+However, we have already seen that the flow field surrounding the cylinder is {\em irrotational}\/ ({\em i.e.}, such that $\omega_z=0$). It follows that $\Gamma_C$
+is  {\em constant}\/ in time. Moreover, since $\Gamma_C=0$ originally, because the fluid surrounding the cylinder was initially
+at rest,  we deduce that $\Gamma_C=0$ at all subsequent times. Hence, we conclude that, in an inviscid fluid, 
+if the circulation of the flow around the cylinder is initially zero then it remains zero. It follows, from the above
+analysis, that, in such a fluid, zero drag force and zero lift force are exerted on the cylinder as a consequence of the
+fluid flow.  This result is known as {\em d'Alembert's paradox}, after the French scientist Jean-Baptiste le Rond d'Alembert (1717--1783). D'Alembert's result is  paradoxical because it would seem, at
+first sight, to be a reasonable approximation to neglect viscosity alltogether in high Reynolds number flow. However, if
+we do this then we end up with the nonsensical  prediction that a high Reynolds number fluid is incapable of
+exerting any force on an obstacle placed in its path.
+
+\section{Inviscid Flow Past a Semi-Infinite Wedge}\label{swedge}
+Consider the situation, illustrated in Figure~\ref{fwedge}, in which incompressible irrotational flow is incident on a
+impenetrable rigid wedge whose apex subtends an angle $\alpha\,\pi$. Let the cross-section of the wedge in the $x$-$y$ plane
+be both $z$-independent and symmetric about the $x$-axis. Furthermore, let the apex of
+the wedge lie at $x=y=0$. Finally, let the upstream flow a large distance from the
+wedge be parallel to the $x$-axis.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/wedge.eps}}
+\caption{\em Inviscid flow past a wedge.}\label{fwedge}
+\end{figure}
+
+Since the flow is two-dimensional, incompressible, and irrotational, it can be represented in terms of a stream function that
+satisfies Laplace's equation. Moreover, in cylindrical coordinates, this equation takes the form (\ref{e3.53}). The
+boundary conditions on the stream function are
+\begin{equation}
+\psi(r,\alpha\,\pi/2) =\psi(r,-\alpha\,\pi/2)=\psi(r,\pi)=0.
+\end{equation}
+The first two boundary conditions ensure that the normal velocity at the surface of the wedge is zero. The third boundary condition
+follows from the observation that, by symmetry, the streamline that meets the apex of the wedge splits in two, and then flows along its 
+top and bottom boundaries, combined with well-known  result that $\psi$ is constant on a streamline.
+It is easily demonstrated that
+\begin{equation}\label{e3.106}
+\psi(r,\theta) = \frac{A}{1+m}\,r^{1+m}\,\sin\left[(1+m)\,(\pi-\theta)\right]
+\end{equation}
+is a solution of (\ref{e3.53}). Moreover, this solution satisfies the boundary conditions provided  
+$(1+m)\,(1-\alpha/2) = 1$, or
+\begin{equation}
+m=\frac{\alpha}{2-\alpha}.
+\end{equation}
+Since, as is well-known, the solutions to Laplace's equation (for problems with well-posed boundary conditions) are
+{\em unique}, we can be sure that (\ref{e3.106}) is the correct 
+solution to the problem under investigation. According to this solution, the tangential velocity on the surface of the
+wedge is given by
+\begin{equation}
+v_t(r) = A\,r^m,
+\end{equation}
+where $m\geq 0$. 
+Note that the tangential velocity is zero at the apex of the wedge. Since the normal velocity is also zero at this point, we
+conclude that the apex is a stagnation point of the flow. Figure~\ref{fwedge1} shows the streamlines of the
+flow for the case $\alpha=1/2$. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/wedge1.eps}}
+\caption{\em Streamlines of inviscid incompressible irrotational flow past a $90^\circ$ wedge.}\label{fwedge1}
+\end{figure}
+
+\section{Inviscid Flow Over a Semi-Infinite Wedge}\label{swedge1}
+Consider the situation illustrated in Figure~\ref{fwedge2} in which an incompressible irrotational fluid flows over an
+impenetrable rigid wedge whose apex subtends an angle $\alpha\,\pi$. Let the cross-section of the wedge in the $x$-$y$ plane
+be both $z$-independent and symmetric about the $y$-axis. Furthermore, let the apex of
+the wedge lie at $x=y=0$. Finally, let the upstream flow a large distance from the
+wedge be parallel to the $x$-axis.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/wedge2.eps}}
+\caption{\em Inviscid flow over a wedge.}\label{fwedge2}
+\end{figure}
+
+Since the flow is two-dimensional, incompressible, and irrotational, it can be represented in terms of a stream function that
+satisfies Laplace's equation. The
+boundary conditions on the stream function are
+\begin{equation}
+\psi\left(r,[3-\alpha]\,\pi/2\right) =\psi\left(r,-[1-\alpha]\,\pi/2\right)=0.
+\end{equation}
+These boundary conditions ensure that the normal velocity at the surface of the wedge is zero. 
+It is easily demonstrated that
+\begin{equation}\label{e3.106x}
+\psi(r,\theta) = -\frac{A}{1-m}\,r^{1-m}\,\cos\left[(1-m)\,(\theta-\pi/2)\right]
+\end{equation}
+is a solution of Laplace's equation, (\ref{e3.53}). Moreover, this solution satisfies the boundary conditions provided that 
+$(1-m)\,(1-\alpha/2) = 1/2$, or
+\begin{equation}
+m=\frac{\alpha'}{1+\alpha'},
+\end{equation}
+where $\alpha'=1-\alpha$. 
+Since the solutions to Laplace's equation are
+unique, we can again  be sure that (\ref{e3.106x}) is the correct 
+solution to the problem under investigation. According to this solution, the tangential velocity on the surface of the
+wedge is given by
+\begin{equation}
+v_t(r) = A\,r^{-m},
+\end{equation}
+where $m\geq 0$. 
+Note that the tangential velocity, and hence the flow speed, is infinite at the apex of the wedge.  However, this
+singularity in the flow can be eliminated by slightly rounding the apex.
+Figure~\ref{fwedge3} shows the streamlines of the
+flow for the case $\alpha=1/2$. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/wedge3.eps}}
+\caption{\em Streamlines of inviscid incompressible irrotational flow over a $90^\circ$ wedge.}\label{fwedge3}
+\end{figure}
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\begin{enumerate}
+\item Liquid is led steadily through a pipeline that passes over a hill of height $h$ into the valley below, the
+speed at the crest being $v$. Show that, by properly adjusting the ratio of the cross-sectional areas of the pipe
+at the crest and in the valley, the pressure may be equalized at these two places. 
+
+\item For the case of the two-dimensional motion of an incompressible fluid, determine the condition that the velocity components
+\begin{eqnarray}
+v_x &=& a\,x+b\,y,\nonumber\\[0.5ex]
+v_y&=&c\,x+d\,y\nonumber
+\end{eqnarray}
+satisfy the equation of continuity. Show that the magnitude of the vorticity is $c-b$. 
+
+\item For the case of the two-dimensional motion of an incompressible fluid, show that
+\begin{eqnarray}
+v_x &=& 2\,c\,x\,y,\nonumber\\[0.5ex]
+v_y&=& c\,(a^2+x^2-y^2)\nonumber
+\end{eqnarray}
+are the velocity components of a possible flow pattern. Determine the stream function and sketch the streamlines. 
+Prove that the motion is irrotational, and find the velocity potential. 
+
+\item A cylindrical vortex in an incompressible fluid is co-axial with the $z$-axis, and such that $\omega_z$ takes the constant value
+$\omega$ for $r\leq a$, and is zero for $r>a$, where $r$ is a cylindrical coordinate.  Show that
+$$
+\frac{1}{\rho}\,\frac{dp}{dr} = \frac{\omega^2\,r}{4} = \frac{\kappa^2\,r}{a^4},
+$$
+where $p(r)$ is the pressure at radius $r$ inside the vortex, and the circulation of the fluid outside the vortex is $2\pi\,\kappa$. 
+Deduce that
+$$
+p(r) = \frac{\kappa^2\,r^2\,\rho}{2\,a^4}+ p_0,
+$$
+where $p_0$ is the pressure at the center of the vortex. 
+
+\item Consider the cylindrical vortex discussed in Exercise 5.4. If $p(r)$ is the pressure at radius $r$ external to the
+vortex, demonstrate that
+$$
+p(r) = -\frac{\kappa^2\,\rho}{2\,r^2}+ p_\infty,
+$$
+where $p_\infty$ is the pressure at infinity. 
+
+\item Show that the stream function for the cylindrical vortex discussed in Exercises 5.4 and 5.5 is
+$\psi(r)=(1/2)\,\omega\,a^2\,\ln(r/a)$ for $r>a$, and $\psi(r)=(1/4)\,\omega\,(r^2-a^2)$ for $r\leq a$. 
+
+\item Consider a volume $V$ whose boundary is the  surface $S$. Suppose that $V$ contains an
+incompressible fluid whose motion is irrotational. Let the velocity potential $\phi$ be constant over
+$S$. Prove that $\phi$ has the same constant value throughout $V$. [Hint: Consider the identity
+$\nabla\cdot(A\,\nabla A)\equiv \nabla A\cdot \nabla A +A\,\nabla^2 A$.]
+
+\item In Exercise~5.7, suppose that, instead of $\phi$ taking a constant value on the boundary, the
+normal velocity is everywhere zero on the boundary. Show that $\phi$ is constant throughout $V$. 
+
+\item Prove that in the two-dimensional motion of a liquid the mean tangential
+fluid velocity around any {\em small}\/ circle of radius $r$ is $\omega\,r$, where $2\,\omega$
+is the value of
+$$
+\frac{\partial v_y}{\partial x}- \frac{\partial v_x}{\partial y}
+$$
+at the center of the circle. Neglect terms of order $r^3$. 
+
+\item Show that the equation of continuity for the two-dimensional motion of an
+incompressible fluid can be written
+$$
+\frac{\partial (r\,v_r)}{\partial r} + \frac{\partial v_\theta}{\partial\theta}=0,
+$$
+where $r$, $\theta$ are cylindrical coordinates. Demonstrate that this
+equation is satisfied when $v_r=a\,k\,r^n\,\exp[-k\,(n+1)\,\theta]$ and
+$v_\theta=a\,r^n\,\exp[-k\,(n+1)\,\theta]$. Determine the stream function, and
+show that the fluid speed at any point is
+$$
+(n+1)\,\psi\,\sqrt{1+k^2}/r,
+$$
+where $\psi$ is the stream function at that point (defined such that $\psi=0$ at $r=0$). 
+
+\item Demonstrate that streamlines cross at right-angles at a stagnation point in two-dimensional incompressible
+irrotational flow.
+
+\item Consider two-dimensional incompressible inviscid flow. Demonstrate that the fluid  motion
+is governed by the following equations:
+\begin{eqnarray}
+\frac{\partial\omega}{\partial t} +[\psi,\omega] &=& 0,\nonumber\\[0.5ex]
+\nabla^2\psi &=&\omega,\nonumber\\[0.5ex]
+\nabla^2\chi &=&\nabla\omega\cdot\nabla\psi + \omega^2,\nonumber
+\end{eqnarray}
+where ${\bf v} = {\bf e}_z\times \nabla\psi$,  $[A,B] \equiv {\bf e}_z\cdot\nabla A \times\nabla B$, and
+$\chi = p/\rho+(1/2)\,v^2+\Psi$. 
+
+\item For irrotational incompressible inviscid motion in two-dimensions show that
+$$
+\nabla q\cdot\nabla q = q\,\nabla^2 q,
+$$
+where $q=|{\bf v}|$. 
+
+\end{enumerate}}

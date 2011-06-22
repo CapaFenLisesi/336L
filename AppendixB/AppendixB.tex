@@ -1,0 +1,675 @@
+\chapter{Cartesian Tensors}\label{appb}
+\section{Introduction}
+As we saw in Appendix~\ref{vector},  many physical entities can be represented mathematically as 
+either {\em scalars}\/ or
+{\em vectors}, depending on their transformation properties under rotation of the coordinate axes. 
+However, it turns out that scalars and vectors are particular types of a more general class of 
+mathematical constructs called {\em tensors}. In fact, a scalar is a tensor of order zero, and a vector is a tensor of
+order one. In fluid mechanics, certain important physical entities ({\em i.e.}, stress and rate of strain) are represented mathematically
+by  tensors of order greater than one. It is therefore necessary to supplement our investigation of fluid mechanics with a brief discussion of the mathematics
+of tensors. For the sake of simplicity, we shall limit this discussion to Cartesian coordinate systems. Tensors expressed
+in such  coordinate systems are known as {\em Cartesian tensors}. 
+
+\section{Tensors and Tensor Notation}
+Let the Cartesian coordinates $x$, $y$, $z$ be written as the $x_i$, where $i$ runs from 1 to 3. In other words,
+$x\equiv x_1$, $y\equiv x_2$, and $z\equiv x_3$. Incidentally, in the following, any lowercase roman subscript ({\em e.g.}, $i$, $j$, $k$) is
+assumed to run from 1 to 3. We can also write the Cartesian components of a general {\em vector}\/ ${\bf v}$
+as the $v_i$. In other words, $v_x\equiv v_1$, $v_y\equiv v_2$, and $v_z\equiv v_3$. By contrast, a {\em scalar}\/ is represented as
+a variable without a subscript: {\em e.g.}, $a$, $\phi$. Thus, a scalar---which is a tensor of order zero---is
+represented as a variable with zero subscripts, and a vector---which is a tensor of order one---is
+represented as a variable with one subscript. It stands to reason, therefore, that a tensor of order two is
+represented as a variable with two subscripts: {\em e.g.}, $a_{ij}$, $\sigma_{ij}$. Moreover, an $n$th-order tensor is represented as a variable with $n$ subscripts: {\em e.g.}, $a_{ijk}$ is a third-order tensor, and $b_{ijkl}$  a fourth-order tensor. 
+Note that a general $n$th-order tensor has $3^n$ independent components. 
+
+Now, the
+components of a second-order tensor are conveniently visualized as a two-dimensional matrix, just as
+the components of a vector are sometimes visualized as a one-dimensional matrix. However, it
+is important to recognize that an $n$th-order  tensor is not simply another name for an $n$-dimensional matrix. A matrix is
+just an ordered set of numbers. A tensor, on the other hand, is an ordered set of components
+that have specific transformation properties under rotation of the coordinate axes. See Section~\ref{strans}.
+
+Consider two vectors ${\bf a}$ and ${\bf b}$ that are represented as $a_i$ and $b_i$, respectively, in
+tensor notation. According to Section~\ref{sscalar}, the {\em scalar product}\/ of these two vectors
+takes the form
+\begin{equation}
+{\bf a}\cdot{\bf b} = a_1\,b_1+a_2\,b_2+a_3\,b_3.
+\end{equation}
+The above expression can be written more compactly as
+\begin{equation}\label{e3.2}
+{\bf a}\cdot{\bf b} = a_i\,b_i.
+\end{equation}
+Here, we have made use of the {\em Einstein summation convention}, according to which, in an expression
+containing lower case roman subscripts, any subscript that appears twice (and only twice) in any
+term of the expression is assumed to be {\em summed}\/ from 1 to 3 (unless stated otherwise).
+Thus, $a_i\,b_i\equiv a_1\,b_1+a_2\,b_2+a_3\,b_3$, and $a_{ij}\,b_j\equiv a_{i1}\,b_1+a_{i2}\,b_2+a_{i3}\,b_3$. 
+Note that when an index is summed it becomes a dummy index, and can be written as any
+(unique) symbol: {\em i.e.}, $a_{ij}\,b_j$ and $a_{ip}\,b_p$ are equivalent. 
+Moreover, only non-summed, or {\em free},  indices  count toward the order of a tensor expression. Thus,
+$a_{ii}$ is a zeroth-order tensor (because there are no free indices), and $a_{ij}\,b_j$ is a first-order tensor (because there
+is only one free index). The process of reducing the order of a tensor expression by summing indices is known
+as {\em contraction}. For example, $a_{ii}$ is a zeroth-order contraction of the second-order tensor $a_{ij}$. 
+ Incidentally, when two tensors are multiplied together without contraction the
+resulting tensor is called an {\em outer product}: {\em e.g.}, the second-order tensor $a_i\,b_j$ is the
+outer product of the two first-order tensors $a_i$ and $b_i$. Likewise, when two tensors are multiplied
+together in a manner that  involves contraction then the resulting tensor is called an {\em inner product}:
+{\em e.g.}, the first-order tensor $a_{ij}\,b_j$ is an inner product of the second-order tensor $a_{ij}$ and
+the first-order tensor $b_i$. Note, from Equation~(\ref{e3.2}), that the scalar product of two
+vectors is equivalent to the inner product of the corresponding first-order tensors. 
+
+According to Section~\ref{svecp}, the {\em vector product}\/ of two vectors ${\bf a}$ and ${\bf b}$
+takes the form
+\begin{eqnarray}
+({\bf a}\times {\bf b})_1 &=& a_2\,b_3-a_3\,b_2,\\[0.5ex]
+({\bf a}\times {\bf b})_2 &=& a_3\,b_1-a_1\,b_3,\\[0.5ex]
+({\bf a}\times {\bf b})_3 &=&a_1\,b_2-a_2\,b_1
+\end{eqnarray}
+in tensor notation. 
+The above expression can be written more compactly as
+\begin{equation}\label{e3.6}
+({\bf a}\times {\bf b})_i = \epsilon_{ijk}\,a_j\,b_k.
+\end{equation}
+Here,
+\begin{equation}
+\epsilon_{ijk} = \left\{
+\begin{array}{lll}
++1&\mbox{\hspace{1cm}}& \mbox{if $i, j, k$ is an even permutation of $1, 2, 3$}\\[0.5ex]
+-1&&\mbox{if $i, j, k$ is an odd permutation of $1, 2, 3$}\\[0.5ex]
+0&&\mbox{otherwise}
+\end{array}\right.\label{e3.7}
+\end{equation}
+is known as the third-order {\em permutation tensor}\/ (or, sometimes, the third-order Levi-Civita tensor). Note, in particular, that $\epsilon_{ijk}$ is zero if one of its indices is
+repeated: {\em e.g.}, $\epsilon_{113}=\epsilon_{212}=0$. 
+Furthermore, it follows from (\ref{e3.7}) that
+\begin{equation}\label{e3.8}
+\epsilon_{ijk}=\epsilon_{jki}=\epsilon_{kij}=-\epsilon_{kji}=-\epsilon_{jik}=-\epsilon_{ikj}.
+\end{equation}
+
+It is helpful to define the second-order {\em identity tensor}\/ (also known as the Kroenecker delta tensor):
+ \begin{equation}
+\delta_{ij} = \left\{
+\begin{array}{lll}
+1&\mbox{\hspace{1cm}}& \mbox{if $i=j$}\\[0.5ex]
+0&&\mbox{otherwise}
+\end{array}\right. .
+\end{equation}
+It is easily seen that
+\begin{eqnarray}
+\delta_{ij} &=& \delta_{ji},\label{e3.10}\\[0.5ex]
+\delta_{ii} &=&3,\\[0.5ex]
+\delta_{ik}\,\delta_{kj} &=& \delta_{ij},\label{e3.11}\\[0.5ex]
+\delta_{ij}\,a_j &=& a_i,\label{e3.11a}\\[0.5ex]
+\delta_{ij}\,a_i\,b_j &=& a_i\,b_i,\label{e3.11b}\\[0.5ex]
+\delta_{ij}\,a_{ki}\,b_j &=& a_{ki}\,b_i,
+\end{eqnarray}
+{\em etc.} 
+
+The following is a particularly important tensor identity:
+\begin{equation}\label{e3.12}
+\epsilon_{ijk}\,\epsilon_{ilm} = \delta_{jl}\,\delta_{km}-\delta_{jm}\,\delta_{kl}.
+\end{equation}
+In order to establish the validity of the above expression, let us consider the various cases that arise. 
+As is easily seen, the right-hand side of (\ref{e3.12}) takes the values
+\begin{eqnarray}
++1&\mbox{\hspace{1cm}}&\mbox{if $j=l$ and $k=m\neq j$},\label{e3.13}\\[0.5ex]
+-1&&\mbox{if $j=m$ and $k=l\neq j$},\label{e3.14}\\[0.5ex]
+0&&\mbox{otherwise}.\label{e3.15}
+\end{eqnarray}
+Moreover, in each product on the left-hand side, $i$ has the same value in both $\epsilon$  factors. Thus,
+for a non-zero contribution,
+none of $j$, $k$, $l$, and $m$ can have the same value as $i$ (because each $\epsilon$ factor is zero if any of its
+indices are repeated). Since a given subscript
+can only take one of three values ($1$, $2$, or $3$), the only possibilities that
+generate non-zero contributions are $j=l$ and $k=m$, or $j=m$ and $k=l$, excluding $j=k=l=m$ (since 
+each $\epsilon$ factor would then have repeated indices, and so be zero). Thus, the left-hand side reproduces (\ref{e3.15}), as well as the conditions on the indices  in
+(\ref{e3.13}) and (\ref{e3.14}). The left-hand side also reproduces the values in (\ref{e3.13}) and (\ref{e3.14}) since if $j=l$ and $k=m$ then $\epsilon_{ijk}=\epsilon_{ilm}$
+and the product $\epsilon_{ijk}\,\epsilon_{ilm}$ (no summation) is equal to $+1$, whereas
+if $j=m$ and $k=l$ then $\epsilon_{ijk}=\epsilon_{iml}=-\epsilon_{ilm}$ and the
+ product $\epsilon_{ijk}\,\epsilon_{ilm}$ (no summation) is equal to $-1$. Here, use has been made of Equation~(\ref{e3.8}).
+Hence, the validity of the identity (\ref{e3.12}) has been established. 
+
+In order to illustrate the use of (\ref{e3.12}), consider the vector triple product
+identity (see Section~\ref{svtp})
+\begin{equation}\label{e3.17}
+{\bf a}\times ({\bf b}\times {\bf c}) \equiv ({\bf a}\cdot{\bf c})\,{\bf b} - ({\bf a}\cdot{\bf b})\,{\bf c}.
+\end{equation}
+In tensor notation, the left-hand side of this identity is written
+\begin{equation}
+[{\bf a}\times ({\bf b}\times {\bf c})]_i = \epsilon_{ijk}\,a_j\,(\epsilon_{klm}\,b_l\,c_m),
+\end{equation}
+where use has been made of Equation~(\ref{e3.6}).  Employing Equations~(\ref{e3.8}) and (\ref{e3.12}), this
+becomes
+\begin{equation}
+[{\bf a}\times ({\bf b}\times {\bf c})]_i = \epsilon_{kij}\,\epsilon_{klm}\,a_j\,b_l\,c_m = 
+\left(\delta_{il}\,\delta_{jm}-\delta_{im}\,\delta_{jl}\right)a_j\,b_l\,c_m,
+\end{equation}
+which, with the aid of Equations~(\ref{e3.2}) and (\ref{e3.11a}),  reduces to
+\begin{equation}
+[{\bf a}\times ({\bf b}\times {\bf c})]_i = a_j\,c_j\,b_i - a_j\,b_j\,c_i = \left[({\bf a}\cdot{\bf c})\,{\bf b} - ({\bf a}\cdot{\bf b})\,{\bf c}\right]_i.
+\end{equation}
+ Thus, we have established the validity of the vector identity (\ref{e3.17}). 
+Moreover, our proof is much more rigorous than that given earlier (in Section~\ref{svtp}). 
+
+\section{Tensor Transformation}\label{strans}
+As we saw in Appendix~\ref{vector}, scalars and vectors are defined according to their
+transformation properties under rotation of the coordinate axes. In fact, a scalar is
+{\em invarient}\/ under rotation of the coordinate axes. On the other
+hand, according to Equations~(\ref{e2.41z}) and (\ref{e3.6}), the components of a general vector ${\bf a}$ transform under an {\em infinitesimal}\/ 
+rotation of the coordinate axes according to
+\begin{equation}\label{e3.21}
+a_i' = a_i + \epsilon_{ijk} \,\delta\theta_j\,a_k.
+\end{equation}
+Here, the $a_i$ are the components of the vector in the original coordinate system, the $a_i'$ are the
+components in the rotated coordinate system, and the latter system is obtained from the former via
+a combination of an infinitesimal rotation through an angle $\delta\theta_1$ about coordinate axis 1, an infinitesimal rotation through an angle $\delta\theta_2$ about axis 2, and an infinitesimal rotation through an angle $\delta\theta_3$ about axis 3. These three  rotations can take place in
+{\em any}\/ order. Incidentally, a finite rotation can be built up out of a great many infinitesimal rotations, so if a vector
+transforms properly under an infinitesimal rotation of the coordinate axes then it will also transform properly under a finite rotation. 
+
+Equation~(\ref{e3.21}) can also be written
+\begin{equation}\label{e3.22}
+a_i' = {\cal R}_{ij}\,a_j,
+\end{equation}
+where
+\begin{equation}\label{e3.21x}
+{\cal R}_{ij}  = \delta_{ij} - \delta{\theta}_k\,\epsilon_{kij}
+\end{equation}
+is a {\em rotation matrix}\/ (which is not a tensor, since it is specific to the two coordinate systems it transforms
+between).
+To first-order in the $\delta\theta_i$,  Equation~(\ref{e3.22}) can be inverted to give
+\begin{equation}\label{e3.24}
+a_i = {\cal R}_{ji}\,a_j'.
+\end{equation}
+This follows because, to first-order in the $\delta\theta_i$,
+\begin{eqnarray}
+{\cal R}_{ik}\,{\cal R}_{jk}&=& (\delta_{ik}-\delta{\theta}_l\,\epsilon_{lik})\,(\delta_{jk}-\delta\theta_m\,\epsilon_{mjk})
+= \delta_{ik}\,\delta_{jk}-\delta\theta_l\,\delta_{jk}\,\epsilon_{lik} -\delta\theta_m\,\delta_{ik}\,\epsilon_{mjk}\nonumber\\[0.5ex]
+&=& \delta_{ij} -\delta\theta_l\,\epsilon_{lij}-\delta\theta_l\,\epsilon_{lji}=\delta_{ij},\label{e3.25}
+\end{eqnarray} 
+where the dummy index $m$ has been relabeled $l$, and use has been made of Equations~(\ref{e3.8}), (\ref{e3.10}), and (\ref{e3.11}). Likewise, it is easily demonstrated that
+\begin{equation}
+{\cal R}_{ki}\,{\cal R}_{kj } = \delta_{ij}.\label{e3.27}
+\end{equation}
+It can also be shown that, to first-order in the $\delta\theta_i$, 
+\begin{equation}
+\epsilon_{ijk}\,{\cal R}_{li}\,{\cal R}_{mj}\,{\cal R}_{nk} = \epsilon_{lmn}.
+\end{equation}
+This follows because
+\begin{eqnarray}
+\epsilon_{ijk}\,{\cal R}_{li}\,{\cal R}_{mj}\,{\cal R}_{nk} &=& \epsilon_{ijk}\,(\delta_{li}-\delta\theta_a\,\epsilon_{ali})\,(\delta_{mj}-\delta\theta_b\,\epsilon_{bmj})\,(\delta_{nk}-\delta\theta_c\,\epsilon_{cnk})\nonumber\\[0.5ex]
+&=&\epsilon_{ijk}\left[\delta_{li}\,\delta_{mj}\,\delta_{nk}-\delta\theta_a\left(\epsilon_{ali}\,\delta_{mj}\,\delta_{nk}
++\epsilon_{amj}\,\delta_{li}\,\delta_{nk} +\epsilon_{ank}\,\delta_{li}\,\delta_{mj}\right)\right]\nonumber\\[0.5ex]
+&=& \epsilon_{lmn} -\delta\theta_a\left(\epsilon_{imn}\,\epsilon_{ial}+\epsilon_{inl}\,\epsilon_{iam}
++\epsilon_{ilm}\,\epsilon_{ian}\right)\nonumber\\[0.5ex]
+&=& \epsilon_{lmn}-\delta\theta_a\left(\delta_{ma}\,\delta_{nl}-\delta_{ml}\,\delta_{na}+\delta_{na}\,\delta_{lm}-\delta_{nm}\,\delta_{la}+\delta_{la}\,\delta_{mn}-\delta_{ln}\,\delta_{ma}\right)\nonumber\\[0.5ex]
+&=&\epsilon_{lmn}.\label{e3.30}
+\end{eqnarray}
+Here, there has been much relabeling of dummy indices, and use has been made of Equations~(\ref{e3.10}) and (\ref{e3.12}). It can similarly be shown that
+\begin{equation}
+\epsilon_{ijk}\,{\cal R}_{il}\,{\cal R}_{jm}\,{\cal R}_{kn} = \epsilon_{lmn}.
+\end{equation}
+
+As a direct generalization of Equation~(\ref{e3.22}), a second-order tensor transforms under
+rotation as
+\begin{equation}
+a_{ij}' = {\cal R}_{ik}\,{\cal R}_{jl}\,a_{kl},
+\end{equation}
+whereas a third-order tensor transforms as
+\begin{equation}
+a_{ijk}' = {\cal R}_{il}\,{\cal R}_{jm}\,{\cal R}_{kn}\,a_{lmn}.
+\end{equation}
+The generalization to higher-order tensors is straight-forward. For the  case of a scalar, which is a zeroth-order
+tensor, the transformation rule is particularly simple: {\em i.e.}, 
+\begin{equation}
+a' = a.
+\end{equation}
+By analogy with Equation~(\ref{e3.24}), the inverse transform is
+exemplified by 
+\begin{equation}
+a_{ijk} = {\cal R}_{li}\,{\cal R}_{mj}\,{\cal R}_{nk}\,a_{lmn}'.
+\end{equation}
+Incidentally, since all tensors of the same order transform in the same manner, it immediately
+follows that two tensors of the same order whose components are equal in one particular Cartesian coordinate system
+will have their components equal in {\em all}\/ coordinate systems that can be obtained from the original
+system via rotation of the coordinate axes. In other words,
+if
+\begin{equation}
+a_{ij} = b_{ij}
+\end{equation}
+in one particular Cartesian coordinate system then
+\begin{equation}
+a_{ij}'=b_{ij}'
+\end{equation}
+in all Cartesian coordinate systems (with the same origin and system of units as the original system).
+Conversely, it does not make sense to equate tensors of different order, since such an equation would
+only be valid in one particular coordinate system, and so could not have any physical significance (since the
+laws of physics are coordinate independent). 
+
+It can easily be shown that the outer product of two tensors transforms as a tensor of the appropriate order.
+Thus, if
+\begin{equation}
+c_{ijk} = a_i\,b_{jk},
+\end{equation}
+and
+\begin{eqnarray}
+a_i' &=& {\cal R}_{ij}\,a_j,\\[0.5ex]
+b_{ij}'&=&{\cal R}_{ik}\,{\cal R}_{jl}\,b_{kl},
+\end{eqnarray}
+then
+\begin{eqnarray}
+c_{ijk}' &=& a_i'\,b_{jk}' = {\cal R}_{il}\,a_l\,{\cal R}_{jm}\,{\cal R}_{kn}\,b_{mn} = {\cal R}_{il}\,{\cal R}_{jm}\,{\cal R}_{kn}\,a_l\,b_{mn}\nonumber\\[0.5ex]
+&=&{\cal R}_{il}\,{\cal R}_{jm}\,{\cal R}_{kn}\,c_{lmn},
+\end{eqnarray}
+which is the correct transformation rule for a third-order tensor.
+
+The tensor transformation rule  can be combined with the identity (\ref{e3.27}) to show that the
+scalar product of two vectors transforms as a scalar. Thus,
+\begin{equation}
+a_i'\,b_i' = {\cal R}_{ij}\,a_j\,{\cal R}_{ik}\,b_k ={\cal R}_{ij}\,{\cal R}_{ik}\,a_j\,b_k = \delta_{jk}\,a_j\,b_k = a_j\,b_j=a_i\,b_i,
+\end{equation}
+where use has been made of Equation~(\ref{e3.11b}). Again, the above proof is more rigorous than that given
+previously (in Section~\ref{sscalar}). The proof also indicates that the inner product of
+two tensors transforms as a tensor of the appropriate order. 
+
+The result that both the inner and outer products of two tensors transform as  tensors
+of the appropriate order is known as the {\em product rule}.
+Closely related to this rule is the so-called {\em quotient rule}, according to which 
+if (say)
+\begin{equation}
+c_{ij} = a_{ik}\,b_{jk},
+\end{equation}
+where $b_{jk}$ is an {\em arbitrary}\/ tensor, 
+and $c_{ij}$  transforms as a tensor under {\em all}\/ rotations
+of the coordinate axes, then $a_{ik}$---which can be thought of as the quotient of $c_{ij}$ and $b_{jk}$---also transforms as a tensor.
+The proof is as follows:
+\begin{eqnarray}
+a_{ik}'\,b_{jk}'&=&c_{ij}' = {\cal R}_{il}\,{\cal R}_{jm}\,c_{lm}= {\cal R}_{il}\,{\cal R}_{jm}\,a_{lk}\,b_{mk}={\cal R}_{il}\,{\cal R}_{jm}\,a_{lk}\,{\cal R}_{pm}\,{\cal R}_{qk}\,b_{pq}'
+\nonumber\\[0.5ex]
+&=& {\cal R}_{il}\,{\cal R}_{qk}\,a_{lk}\,b_{jq} = {\cal R}_{il}\,{\cal R}_{km}\,a_{lm}\,b_{jk}',
+\end{eqnarray}
+where use has been made of the fact that $c_{ij}$ and  $b_{ij}$ transform as tensors, as well as Equation~(\ref{e3.25}).
+Rearranging, we obtain
+\begin{equation}
+(a_{ik}'- {\cal R}_{il}\,{\cal R}_{km}\,a_{lm})\,b_{jk}' = 0.
+\end{equation}
+However, the $b_{ij}'$ are arbitrary, so the above equation can only be satisfied, in general, if
+\begin{equation}
+a_{ik}' = {\cal R}_{il}\,{\cal R}_{km}\,a_{lm},
+\end{equation}
+which is the correct transformation rule for a tensor.
+Incidentally, the quotient rule applies to any type of valid tensor product.
+
+The components of the second-order identity tensor, $\delta_{ij}$, have the special property that they
+are invariant under rotation of the coordinate axes. This follows because
+\begin{equation}
+\delta_{ij}' = {\cal R}_{ik}\,{\cal R}_{jl}\,\delta_{kl}= {\cal R}_{ik}\,{\cal R}_{jk} = \delta_{ij},
+\end{equation}
+where use has been made of Equation~(\ref{e3.25}). The components of the third-order permutation
+tensor, $\epsilon_{ijk}$, also have this special property. This follows because
+\begin{equation}
+\epsilon_{ijk}' = {\cal R}_{il}\,{\cal R}_{jm}\,{\cal R}_{ln}\,\epsilon_{lmn} = \epsilon_{ijk},
+\end{equation}
+where use has been made of Equation~(\ref{e3.30}). The fact that $\epsilon_{ijk}$ transforms as a proper
+third-order tensor immediately implies, from the product rule,
+that the vector product of two vectors transforms as a proper vector: {\em i.e.},
+$\epsilon_{ijk}\,a_j\,b_k$ is a first-order tensor provided that $a_i$ and $b_i$ are both first-order tensors.
+This proof is much more rigorous that that given earlier (in Section~\ref{svecp}).
+
+\section{Tensor Fields}\label{stfield}
+We saw in Appendix~\ref{vector} that  a {\em scalar field}\/ is a set of scalars  associated with every point in space: {\em e.g.},
+$\phi({\bf x})$, where ${\bf x}= (x_1,\,x_2,\,x_3)$ is a position vector. We also saw that   a {\em vector field}\/
+ is a set of vectors  associated with every point in space: {\em e.g.}, $a_i({\bf x})$. It stands to reason, then, that
+a {\em tensor field}\/  is a set of tensors  associated with every point in space: {\em e.g.}, $a_{ij}({\bf x})$. 
+It immediately follows that a scalar field is a zeroth-order tensor field, and a vector field is a first-order
+tensor field.
+
+Most tensor field encountered in physics are smoothly varying and {\em differentiable}. Consider the first-order tensor field $a_i({\bf x})$. 
+The various partial derivatives of the components of this field with respect to the Cartesian coordinates $x_i$ are written
+\begin{equation}
+\frac{\partial a_i}{\partial x_j}.
+\end{equation}
+Moreover, this set of derivatives transform as the components of a  second-order tensor. In order to demonstrate this, we need the transformation
+rule for the $x_i$, which is the same as that for a first-order tensor: {\em i.e.},
+\begin{equation}
+x_i' = {\cal R}_{ij}\,x_j.
+\end{equation}
+Thus,
+\begin{equation}
+\frac{\partial x_i'}{\partial x_j} = {\cal R}_{ij}.
+\end{equation}
+It is also easily shown that
+\begin{equation}\label{e3.52}
+\frac{\partial x_i}{\partial x_j'} = {\cal R}_{ji}.
+\end{equation}
+Now,
+\begin{equation}
+\frac{\partial a_i'}{\partial x_j'} = \frac{\partial a_i'}{\partial x_k}\,\frac{\partial x_k}{\partial x_j'}
+= \frac{\partial ({\cal R}_{il}\,a_l)}{\partial x_k}\,{\cal R}_{jk}= {\cal R}_{il}\,{\cal R}_{jk}\,\frac{\partial a_l}{\partial x_k},
+\end{equation}
+which is the correct transformation rule for a second-order tensor. Here, use has been made of the chain rule, as
+well as Equation~(\ref{e3.52}). [Note, from Equation~(\ref{e3.21x}), that the ${\cal R}_{ij}$ are not
+functions of position.]
+It follows, from the above argument, that differentiating a
+tensor field increases its order by one: {\em e.g.}, $\partial a_{ij}/\partial x_k$ is a third-order tensor. The only
+exception to this rule occurs when  differentiation and contraction are combined. Thus, $\partial a_{ij}/\partial x_j$
+is a first-order tensor, since it only contains a single free index.  
+
+The {\em gradient}\/ (see Section~\ref{sgrad}) of a scalar field is an example of a first-order tensor field ({\em i.e.}, a vector field): 
+\begin{equation}
+(\nabla \phi)_i = \frac{\partial \phi}{\partial x_i}.
+\end{equation}
+The {\em divergence}\/ (see Section~\ref{sdiv}) of a vector field is a contracted second-order tensor field that transforms as a scalar:
+\begin{equation}
+\nabla\cdot {\bf a} = \frac{\partial a_i}{\partial x_i}.
+\end{equation}
+Finally, the {\em curl}\/ (see Section~\ref{scurl}) of a vector field is a contracted fifth-order tensor that transforms as a vector
+\begin{equation}
+(\nabla\times {\bf a})_i = \epsilon_{ijk}\,\frac{\partial a_k}{\partial x_j}.
+\end{equation}
+
+
+The above definitions can be used to prove a number of useful results. 
+For instance,
+\begin{equation}
+(\nabla\times \nabla\phi)_i=\epsilon_{ijk}\,\frac{\partial }{\partial x_j}\!\left(\frac{\partial \phi}{\partial x_k}\right)= \epsilon_{ijk}\,\frac{\partial^2\phi}{\partial x_j\,\partial x_k}=0,
+\end{equation}
+which follows from symmetry because $\epsilon_{ikj}=-\epsilon_{ijk}$ whereas $\partial^2\phi/\partial x_k\,\partial x_j
+= \partial^2\phi/\partial x_j\,\partial x_k$. Likewise,
+\begin{equation}
+\nabla\cdot( \nabla\times {\bf a}) = \frac{\partial}{\partial x_i}\!\left(\epsilon_{ijk}\,\frac{\partial a_k}{\partial x_j}\right)= \epsilon_{ijk}\,\frac{\partial a_k}{\partial x_i\,\partial x_j} = 0,
+\end{equation}
+which again follows from symmetry. As a final example,
+\begin{eqnarray}
+\nabla\cdot ({\bf a}\times {\bf b}) &=& \frac{\partial}{\partial x_i}\!\left(\epsilon_{ijk}\,a_j\,b_k\right)
+= \epsilon_{ijk}\,\frac{\partial a_j}{\partial x_i}\,b_k + \epsilon_{ijk}\,a_j\,\frac{\partial b_k}{\partial x_i}\nonumber\\[0.5ex]
+&=&b_i\, \epsilon_{ijk}\,\frac{\partial a_k}{\partial x_j}-a_i\,\epsilon_{ijk} \,\frac{\partial b_k}{\partial x_j}
+={\bf b}\cdot(\nabla \times {\bf a}) - {\bf a}\cdot(\nabla\times {\bf b}).
+\end{eqnarray}
+
+According to the {\em divergence theorem}\/ (see Section~\ref{sdiv}),
+\begin{equation}
+\oint_S a_i\,dS_i = \int_V \frac{\partial a_i}{\partial x_i}\,dV,
+\end{equation}
+where $S$ is a closed surface surrounding the volume $V$. The above theorem is
+easily generalized to give, for example, 
+\begin{equation}
+\oint_S a_{ij}\,dS_i = \int_V \frac{\partial a_{ij}}{\partial x_i}\,dV,
+\end{equation}
+or
+\begin{equation}
+\oint_S a_{ij}\,dS_j = \int_V \frac{\partial a_{ij}}{\partial x_j}\,dV,
+\end{equation}
+or even
+\begin{equation}
+\oint_S a\,dS_i = \int_V \frac{\partial a}{\partial x_i}\,dV.
+\end{equation}
+
+\section{Isotropic Tensors}\label{siso}
+A tensor which has the special property that its components take the {\em same}\/ value in all
+Cartesian coordinate systems is called an {\em isotropic tensor}. We have already encountered two
+such tensors: namely, the second-order identity tensor, $\delta_{ij}$, and the third-order
+permutation tensor, $\epsilon_{ijk}$. Of course, all scalars are isotropic. Moreover, as is easily
+demonstrated, there are
+no isotropic vectors (other than the null vector). 
+It turns out that the
+most general isotropic Cartesian tensors of second-, third-, and fourth-order are $\lambda\,\delta_{ij}$, $\mu\,\epsilon_{ijk}$,
+and $\alpha\,\delta_{ij}\,\delta_{kl} + \beta\,\delta_{ik}\,\delta_{jl} + \gamma\,\delta_{il}\,\delta_{jk}$, respectively,
+where $\lambda$, $\mu$, $\alpha$, $\beta$, and $\gamma$ are scalars. Let us prove these important results.\footnote{This proof
+is adapted from P.G.~Hodge, Jr., American Mathematical Monthly {\bf 68}, 793 (1961).} 
+
+The most general second-order isotropic tensor, $a_{ij}$,  is such that
+\begin{equation}\label{e3.60}
+a_{ij}' = {\cal R}_{ip}\,{\cal R}_{jq}\,a_{pq} = a_{ij}
+\end{equation}
+for arbitrary rotations of the coordinate axes. 
+It follows from Equation~(\ref{e3.21}) that, to first-order in the $\delta\theta_i$, 
+\begin{equation}
+\delta \theta_m \left(\epsilon_{mis}\,a_{sj} + \epsilon_{mjs}\,a_{is}\right) = 0.
+\end{equation}
+However, the $\delta\theta_i$ are arbitrary, so we can write
+\begin{equation}\label{e3.62}
+\epsilon_{mis}\,a_{sj} + \epsilon_{mjs}\,a_{is}=0.
+\end{equation}
+Let us multiply by $\epsilon_{mik}$. With the aid of Equation~(\ref{e3.12}), we obtain
+\begin{equation}
+(\delta_{ii}\,\delta_{ks}-\delta_{is}\,\delta_{ki})\,a_{sj} + (\delta_{ij}\,\delta_{ks} -\delta_{is}\,\delta_{kj})\,a_{is} = 0,
+\end{equation}
+which reduces to 
+\begin{equation}
+2\,a_{ij} + a_{ji} = a_{ss}\,\delta_{ij}.
+\end{equation}
+Interchanging the labels $i$ and $j$, and then taking the difference between the two equations thus obtained, we deduce that
+\begin{equation}
+a_{ij} = a_{ji}.
+\end{equation}
+Hence,
+\begin{equation}
+a_{ij} = \frac{a_{ss}}{3}\,\delta_{ij},
+\end{equation}
+which implies that
+\begin{equation}
+a_{ij } =\lambda\,\delta_{ij}.
+\end{equation}
+
+For the case of an isotropic third-order tensor, Equation~(\ref{e3.62}) generalizes to
+\begin{equation}\label{e3.68}
+\epsilon_{mis}\,a_{sjk} + \epsilon_{mjs}\,a_{isk}+\epsilon_{mks}\,a_{ijs}=0.
+\end{equation}
+Multiplying by $\epsilon_{mit}$,  $\epsilon_{mjt}$, and $\epsilon_{mkt}$, and then
+setting $t=i$, $t=j$, and $t=k$, respectively, we obtain
+\begin{eqnarray}
+2\,a_{ijk} + a_{jik} + a_{kji} &=&a_{ssk}\,\delta_{ij} + a_{sjs}\,\delta_{ik},\\[0.5ex]
+2\,a_{ijk} + a_{jik} + a_{ikj} &=& a_{ssk}\,\delta_{ij} + a_{iss}\,\delta_{jk},\\[0.5ex]
+2\,a_{ijk} +a_{kji} +a_{ikj} &=&a_{sjs}\,\delta_{ik} + a_{iss}\,\delta_{jk},
+\end{eqnarray}
+respectively. However, multiplying the above equations by $\delta_{jk}$, $\delta_{ik}$, and $\delta_{ij}$, and
+then setting $i=i$, $j=i$, and $k=i$, respectively, we
+obtain
+\begin{eqnarray}
+2\,a_{iss} + a_{sis} + a_{ssi} &=&a_{ssi}+a_{sis},\\[0.5ex]
+2\,a_{sis} + a_{iss} + a_{ssi} &=& a_{ssi}+a_{iss},\\[0.5ex]
+2\,a_{ssi} +a_{iss} +a_{sis} &=&a_{sis} + a_{iss},
+\end{eqnarray}
+respectively,
+which implies that
+\begin{equation}
+a_{iss}=a_{sis}= a_{ssi} = 0.
+\end{equation}
+Hence, we deduce that
+\begin{eqnarray}
+2\,a_{ijk} + a_{jik} + a_{kji} &=&0,\\[0.5ex]
+2\,a_{ijk} + a_{jik} + a_{ikj} &=& 0,\\[0.5ex]
+2\,a_{ijk} +a_{kji} +a_{ikj} &=&0.
+\end{eqnarray}
+The solution to the above equation must satisfy
+\begin{equation}
+a_{ikj} = a_{jik}=a_{kji} = -a_{ijk}.
+\end{equation}
+This implies, from Equation~(\ref{e3.8}), that
+\begin{equation}
+a_{ijk} = \mu\,\epsilon_{ijk}.
+\end{equation}
+
+For the case of an isotropic fourth-order tensor, Equation~(\ref{e3.68}) generalizes to
+\begin{equation}
+\epsilon_{mis}\,a_{sjkl} + \epsilon_{mjs}\,a_{iskl}+\epsilon_{mks}\,a_{ijsl} +\epsilon_{mls}\,a_{ijks}=0.
+\end{equation}
+Multiplying the above by $\epsilon_{mit}$,  $\epsilon_{mjt}$, $\epsilon_{mkt}$, $\epsilon_{mlt}$, and then
+setting $t=i$, $t=j$, $t=k$, and $t=l$, respectively, we obtain
+\begin{eqnarray}
+2\,a_{ijkl} + a_{jikl} + a_{kjil}+a_{ljki} &=&a_{sskl}\,\delta_{ij} + a_{sjsl}\,\delta_{ik}+ a_{sjks}\,\delta_{il},\\[0.5ex]
+2\,a_{ijkl} + a_{jikl} + a_{ikjl} +a_{iljk}&=& a_{sskl}\,\delta_{ij} +a_{isks}\,\delta_{jl}+ a_{issl}\,\delta_{jk},\\[0.5ex]
+2\,a_{ijkl} +a_{kjil} +a_{ikjl}+a_{ijlk} &=&a_{ijss}\,\delta_{kl}+a_{sjsl}\,\delta_{ik} + a_{issl}\,\delta_{jk},\\[0.5ex]
+2\,a_{ijkl}+a_{ljki} +a_{ilkj}+a_{ijlk} &=&a_{ijss}\,\delta_{kl}+a_{isks}\,\delta_{jl}+a_{sjks}\,\delta_{il},
+\end{eqnarray}
+respectively.
+Now, if $a_{ijkl}$ is an isotropic fourth-order tensor then $a_{sskl}$ is clearly an isotropic second-order tensor, which means that is a multiple of $\delta_{kl}$. This, and similar arguments, allows us to deduce that
+\begin{eqnarray}
+a_{sskl} &=&\lambda\,\delta_{kl},\\[0.5ex]
+a_{sjsl} &=&\mu\,\delta_{jl},\\[0.5ex]
+a_{sjks} &=& \nu\,\delta_{jk}.
+\end{eqnarray}
+Let us assume, for the moment, that
+\begin{eqnarray}
+a_{ijss} &=&a_{ssij},\label{e3.91}\\[0.5ex]
+a_{isks} &=&a_{sisk},\\[0.5ex]
+a_{issl} &=& a_{sils}.\label{e3.91x}
+\end{eqnarray}
+Thus, we get 
+\begin{eqnarray}\label{e3.92a}
+2\,a_{ijkl} + a_{jikl} +a_{kjil} +a_{ljki} &=&\lambda\,\delta_{ij}\,\delta_{kl} + \mu\,\delta_{ik}\,\delta_{jl} 
++\nu\,\delta_{il}\,\delta_{jk},\\[0.5ex]
+2\,a_{ijkl} + a_{jikl} +a_{ikjl} +a_{ilkj}&=&\lambda\,\delta_{ij}\,\delta_{kl} + \mu\,\delta_{ik}\,\delta_{jl} 
++\nu\,\delta_{il}\,\delta_{jk},\\[0.5ex]
+2\,a_{ijkl} +a_{kjil} +a_{ikjl} +a_{ijlk} &=&\lambda\,\delta_{ij}\,\delta_{kl} + \mu\,\delta_{ik}\,\delta_{jl} 
++\nu\,\delta_{il}\,\delta_{jk},\\[0.5ex]
+2\,a_{ijkl} +a_{ljki} +a_{ilkj} +a_{ijlk} &=&\lambda\,\delta_{ij}\,\delta_{kl} + \mu\,\delta_{ik}\,\delta_{jl} 
++\nu\,\delta_{il}\,\delta_{jk}.\label{e3.92}
+\end{eqnarray}
+Relations of the form
+\begin{equation}\label{e3.93}
+a_{ijkl} = a_{jilk} = a_{klij}=a_{lkji}
+\end{equation}
+can be obtained by subtracting the sum of one pair of Equations~(\ref{e3.92a})--(\ref{e3.92}) from the sum of the other pair.
+These relations justify Equations~(\ref{e3.91})--(\ref{e3.91x}). 
+Equations~(\ref{e3.92a}) and (\ref{e3.93}) can be combined to give
+\begin{eqnarray}\label{e3.97}
+2\,a_{ijkl}+(a_{ijlk}+a_{ikjl}+a_{ilkj})&=&\lambda\,\delta_{ij}\,\delta_{kl} + \mu\,\delta_{ik}\,\delta_{jl}
++\nu\,\delta_{il}\,\delta_{jk},\\[0.5ex]
+2\,a_{iklj}+(a_{ikjl}+a_{ilkj}+a_{ijlk})&=&\lambda\,\delta_{ik}\,\delta_{jl} + \mu\,\delta_{il}\,\delta_{jk}
++\nu\,\delta_{ij}\,\delta_{kl},\\[0.5ex]
+2\,a_{iljk}+(a_{ilkj}+a_{ijlk}+a_{ikjl})&=&\lambda\,\delta_{il}\,\delta_{jk} + \mu\,\delta_{ij}\,\delta_{kl}
++\nu\,\delta_{ik}\,\delta_{jl}.\label{e3.99}
+\end{eqnarray}
+The latter two equations are obtained from the first via cyclic permutation of $j$, $k$, and $l$, with $i$ remaining unchanged.
+Summing Equations (\ref{e3.97})--(\ref{e3.99}), we get
+\begin{equation}
+2\,(a_{ijkl}+a_{iklj}+a_{iljk}) + 3\,(a_{ijlk}+a_{ikjl} +a_{ilkj}) =(\lambda+\mu+\nu)\,(\delta_{ij}\,\delta_{kl}
++\delta_{ik}\,\delta_{jl}+\delta_{il}\,\delta_{jk}).
+\end{equation}
+It follows from symmetry that
+\begin{equation}
+a_{ijkl}+a_{iklj}+a_{iljk}= a_{ijlk}+a_{ikjl}+a_{ilkj} = \frac{1}{5}\,(\lambda+\mu+\nu)\,(\delta_{ij}\,\delta_{kl}
++\delta_{ik}\,\delta_{jl}+\delta_{il}\,\delta_{jk}).
+\end{equation}
+This  can be seen by swapping the indices $k$ and $l$ in the above expression.
+Finally, substitution into Equation~(\ref{e3.97}) yields
+\begin{equation}
+a_{ijkl} = \alpha\,\delta_{ij}\,\delta_{kl} + \beta\,\delta_{ik}\,\delta_{jl}
++\gamma\,\delta_{il}\,\delta_{jk},
+\end{equation}
+where
+\begin{eqnarray}
+\alpha &=& (4\,\lambda-\mu-\nu)/10,\\[0.5ex]
+\beta &=& (4\,\mu-\nu-\lambda)/10,\\[0.5ex]
+\gamma &=& (4\,\nu-\lambda-\mu)/10.
+\end{eqnarray}
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{B.\arabic{enumi}}
+\begin{enumerate}
+\item Show that a general second-order tensor $a_{ij}$ can be decomposed into three tensors
+$$
+a_{ij} = u_{ij} + v_{ij} + s_{ij},
+$$
+where $u_{ij}$ is symmetric ({\em i.e.}, $u_{ji}=u_{ij}$) and traceless ({\em i.e.}, $u_{ii}=0$), $v_{ij}$ is isotropic,
+and $s_{ij}$ only has three independent components.
+
+\item Use tensor methods to establish the following vector identities:
+\begin{enumerate}
+\item ${\bf a}\cdot{\bf b}\times {\bf c}={\bf a}\times {\bf b}\cdot{\bf c}=-{\bf b}\cdot{\bf a}\times{\bf c}$. 
+\item $({\bf a}\times {\bf b})\times {\bf c} = ({\bf a}\cdot{\bf c})\,{\bf b} - ({\bf c}\cdot{\bf b})\,{\bf a}$.
+\item $({\bf a}\times {\bf b})\cdot({\bf c}\times {\bf d})=
+({\bf a}\cdot{\bf c})\,({\bf b}\cdot{\bf d}) - ({\bf a}\cdot{\bf d})\,({\bf b}\cdot{\bf c})$.
+\item $({\bf a}\times {\bf b})\times ({\bf c}\times {\bf d})= ({\bf a}\times
+{\bf b}\cdot{\bf d})\,{\bf c} - ({\bf a}\times {\bf b}\cdot{\bf c})\,{\bf d}$.
+\item $\nabla\cdot(\phi\,{\bf a}) = \phi\,\nabla\cdot {\bf a} + {\bf a}\cdot\nabla \phi$. 
+\item $\nabla\times (\phi\,{\bf a})= \phi\,\nabla\times {\bf a} + \nabla\phi\times {\bf a}$.
+\item $\nabla\times({\bf a}\times {\bf b}) = ({\bf b}\cdot\nabla)\,{\bf a} - ({\bf a}\cdot\nabla)\,{\bf b} + (\nabla\cdot {\bf b})\,{\bf a}
+-(\nabla\cdot{\bf a})\,{\bf b}$. 
+\item $\nabla ({\bf a}\cdot{\bf a}) = 2\,{\bf a}\times (\nabla\times{\bf a}) + 2\,({\bf a}\cdot\nabla)\,{\bf a}$.
+\item $\nabla\times(\nabla\times {\bf a}) = \nabla(\nabla\cdot{\bf a}) - \nabla^2 {\bf a}$.
+\end{enumerate}
+Here, $[({\bf b}\cdot{\nabla}){\bf a}]_i\equiv b_j\,\partial a_i/\partial x_j$, and $(\nabla^2 {\bf a})_i \equiv \nabla^2 a_i$. 
+
+\item A {\em quadric}\/ surface has an equation of the form
+$$
+a\,x_1^{\,2} + b\,x_2^{\,2}+c\,x_3^{\,2} + 2\,f\,x_1\,x_2+2\,g\,x_1\,x_3+2\,h\,x_2\,x_3=1.
+$$
+Show that the coefficients in the above expression transform under rotation of
+the coordinate axes like the components of a symmetric second-order tensor. Hence, demonstrate that the equation for the surface can be written in the form
+$$
+x_i\,T_{ij}\,x_j = 1,
+$$
+where the $T_{ij}$ are the components of the aforementioned tensor.
+
+\item The {\em determinant}\/ of a second-order tensor $A_{ij}$ is defined 
+$$
+{\rm det}(A) = \epsilon_{ijk}\,A_{i1}\,A_{j2}\,A_{k3}.
+$$
+\begin{enumerate}
+\item Show that 
+$$
+{\rm det}(A) = \epsilon_{ijk}\,A_{1i}\,A_{2j}\,A_{3k}
+$$
+is an alternative, and entirely equivalent, definition.
+\item Demonstrate that ${\rm det}(A)$ is invariant under rotation of the coordinate axes.
+\item Suppose that $C_{ij} = A_{ik}\,B_{kj}$. Show that
+$$
+{\rm det}(C) = {\rm det}(A)\,{\rm det}(B).
+$$
+\end{enumerate}
+
+\item If
+$$
+A_{ij}\,x_j = \lambda\,x_i
+$$
+then $\lambda$ and $x_j$ are said to be  {\em eigenvalues}\/ and {\em eigenvectors}\/ of the second-order  tensor $A_{ij}$, respectively.
+The eigenvalues of $A_{ij}$ are calculated by solving the related homogeneous matrix equation
+$$
+(A_{ij}-\lambda\,\delta_{ij})\,x_j = 0.
+$$
+Now, it is a standard result in linear algebra that an equation of the  above form  only has a non-trivial
+solution when 
+$$
+{\rm det}(A_{ij}-\lambda\,\delta_{ij}) = 0.
+$$
+Demonstrate that the eigenvalues of $A_{ij}$ satisfy the cubic polynomial
+$$
+\lambda^3 - {\rm tr}(A) \,\lambda^2 + \Pi(A)\,\lambda - {\rm det}(A) = 0,
+$$
+where
+${\rm tr}(A) = A_{ii}$ and $\Pi(A)= (A_{ii}\,A_{jj}-A_{ij}\,A_{ji})/2$. 
+Hence, deduce that $A_{ij}$ possesses {\em three}\/ eigenvalues---$\lambda_1$, $\lambda_2$, and $\lambda_3$ (say).
+Moreover, show that
+\begin{eqnarray}
+{\rm tr}(A) &=&\lambda_1+\lambda_2+\lambda_3,\nonumber\\[0.5ex]
+{\rm det}(A)&=&\lambda_1\,\lambda_2\,\lambda_3.\nonumber
+\end{eqnarray}
+
+\item Suppose that $A_{ij}$ is a {\em symmetric}\/ second-order tensor: {\em i.e.}, $A_{ji}=A_{ij}$. 
+\begin{enumerate}
+\item Demonstrate that the eigenvalues of $A_{ij}$ are all {\em real}, and that the eigenvectors
+can be chosen to be real. 
+\item Show that eigenvectors of $A_{ij}$ corresponding to different eigenvalues
+are {\em orthogonal}\/ to one another. Hence, deduce that the three eigenvectors of $A_{ij}$ are, or can be chosen to be, mutually orthogonal. 
+\item Demonstrate that $A_{ij}$ takes the {\em diagonal}\/ form $A_{ij}=\lambda_i\,\delta_{ij}$ (no sum) in a
+Cartesian coordinate system in which the coordinate axes are each parallel to one of the eigenvectors. 
+\end{enumerate}
+
+\item In an isotropic elastic medium under stress the displacement $u_i$ satisfies
+\begin{eqnarray}
+\frac{\partial\sigma_{ij}}{\partial x_j} &=&\rho\,\frac{\partial^2 u_i}{\partial t^2},\nonumber\\[0.5ex]
+\sigma_{ij} &=&c_{ijkl}\,\frac{1}{2}\!\left(\frac{\partial u_k}{\partial x_l}+ \frac{\partial u_l}{\partial x_k}\right),\nonumber
+\end{eqnarray}
+where $\sigma_{ij}$ is the {\em stress tensor}\/ (note that $\sigma_{ji}=\sigma_{ij}$), $\rho$  the mass density
+(which is a uniform constant), and 
+$$
+c_{ijkl} =  K\,\delta_{ij}\,\delta_{kl} + \mu\,[\delta_{ik}\,\delta_{jl}+\delta_{il}\,\delta_{jk} - (2/3)\,\delta_{ij}\,\delta_{kl}].
+$$
+the isotropic {\em stiffness tensor}.
+Here, $K$ and $\mu$ are the {\em bulk modulus}\/ and {\em shear modulus}\/ of the medium, respectively.
+Show that the divergence and the curl of ${\bf u}$ both satisfy wave equations. Furthermore, demonstrate that
+the characteristic wave velocities of the divergence and curl waves are $[(K+4\mu/3)/\rho]^{1/2}$ and
+$(\mu/\rho)^{1/2}$, respectively.
+
+\end{enumerate}}

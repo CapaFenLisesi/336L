@@ -1,0 +1,1276 @@
+\chapter{Boundary Layers}
+\section{Introduction}
+In the previous chapter, we saw that  an idealized moving fluid that is modeled as  completely inviscid    is incapable of exerting a drag force on a rigid  
+stationary obstacle placed in its path. This result is surprising  since, in practice,  a stationary obstacle    experiences a significant drag when  situated in
+a moving fluid, even in the limit that the
+Reynolds number tends to infinity (which corresponds to the inviscid limit).  
+In this chapter, we shall attempt to reconcile these two results by introducing the concept of a {\em boundary layer}.
+This is a comparatively thin layer that   covers the surface of an obstacle  placed in a high Reynolds number 
+fluid---viscosity is assumed to have a significant effect on the flow inside the  layer, but  a negligible 
+effect on the flow outside. For the sake of simplicity, we shall restrict our discussion to the {\em two-dimensional}\/
+boundary layers that form when a high Reynolds number fluid  flows transversely around a stationary obstacle of infinite length and uniform cross-section. 
+
+\section{No Slip Condition}\label{snoslip}
+We saw, in Section~\ref{scylo}, that when an {\em inviscid}\/ fluid flows around a rigid stationary obstacle then the  {\em normal}\/
+fluid velocity at the surface of the obstacle is required to be {\em zero}. However, in general, the {\em tangential}\/
+velocity is {\em non-zero}. In fact, if the fluid velocity field is both incompressible and  irrotational then it is derivable from a stream function 
+that satisfies Laplace's equation (see Section~\ref{s2d}). It is a well-known property of Laplace's equation that we can either specify
+the solution itself, or its normal derivative, on  a bounding surface, but we cannot  specify both these
+quantities simultaneously. Now, the constraint of zero normal velocity 
+ is equivalent to the requirement that the  stream
+function take the constant value zero (say) on the surface of the obstacle. Hence, the normal derivative of the stream function, which determines the tangential velocity, cannot also  be specified at this surface, and
+is, in general, non-zero. 
+ 
+In reality, all physical fluids possess {\em finite}\/ viscosity. Moreover, when a viscous fluid flows around a rigid   
+stationary obstacle 
+both the  normal {\em and}\/ the  tangential  components of the fluid velocity are found to be  {\em zero}\/ at the obstacle's surface. 
+The additional constraint that the {\em tangential}\/ fluid velocity be zero at a rigid stationary boundary is known as the 
+ {\em no slip condition}, and 
+is  ultimately justified via experimental observations. 
+
+The concept of a {\em boundary layer}\/ was first introduced into fluid mechanics by Ludwig Prandtl (1875--1953) in order to
+account for the modification to the flow pattern of a high Reynolds number irrotational fluid necessitated  by the 
+ imposition of the no slip condition on the  surface of an impenetrable stationary obstacle. According to Prandtl, the boundary layer covers the surface of the obstacle, but  is relatively thin in the direction normal to this 
+ surface. Outside the layer, the  flow pattern is the same as  that of an idealized  inviscid fluid, and is thus
+irrotational. This
+implies that the normal fluid velocity is zero on the outer edge of the layer, where it interfaces with the irrotational
+flow, but, in general, the
+tangential velocity is non-zero. However, the no slip condition requires the tangential velocity to be zero on the inner edge 
+of the layer, where it interfaces with the rigid surface. It follows that there is a very large normal gradient of the tangential
+velocity across the layer, which implies the presence of intense internal vortex filaments. Consequently, the
+flow within the layer is {\em not}\/ irrotational. In the following,
+we shall attempt to make the concept of a boundary layer more precise. 
+
+\section{Boundary Layer Equations}\label{sj6.3}
+Consider a rigid stationary  obstacle whose surface is (locally) flat, and corresponds to the $y$-$z$ plane. Let this
+surface be in contact with a  high Reynolds
+number fluid that  occupies the region $y>0$. See Figure~\ref{fbl}. Let $\delta$ be the typical normal thickness of the boundary layer. 
+The layer thus  extends over the region $0< y\ltapp \delta$. Now, the fluid that occupies the region $\delta\ltapp y<\infty$, 
+and thus lies outside
+the layer, is assumed to be both irrotational and (effectively) inviscid. On the other hand, viscosity must be included in the
+equation of motion of the fluid  within the layer. The fluid both inside and outside the layer is assumed to
+be incompressible. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/bl.eps}}
+\caption{\em A boundary layer.}\label{fbl}
+\end{figure}
+
+Suppose that the equations of irrotational flow have already been solved to determine the fluid velocity outside the boundary 
+layer. This velocity must be such that its normal component is zero at the outer edge of the layer ({\em i.e.}, $y\simeq \delta$). On the other hand, the tangential component of the fluid velocity at the outer edge of the layer, $U(x)$ (say), is generally non-zero. 
+Here, we are assuming, for the sake of simplicity, that there is no spatial variation in the $z$-direction, so
+that both the irrotational flow and the boundary layer are effectively {\em two-dimensional}. 
+Likewise, we are also assuming that all flows are {\em steady}, so that any time variation can be neglected. 
+Now, the motion of the fluid within the boundary layer is governed by the equations of steady-state, incompressible,
+two-dimensional, viscous flow, which take the form (see Section~\ref{siff})
+\begin{eqnarray}
+\frac{\partial v_x}{\partial x} +\frac{\partial v_y}{\partial y} &=& 0,\label{ej6.1}\\[0.5ex]
+v_x\,\frac{\partial v_x}{\partial x} + v_y\,\frac{\partial v_x}{\partial y} &=&-\frac{1}{\rho}\,\frac{\partial p}{\partial x}
++ \nu\left(\frac{\partial^2 v_x}{\partial x^2}+\frac{\partial^2 v_x}{\partial y^2}\right),\label{ej6.2}\\[0.5ex]
+v_x\,\frac{\partial v_y}{\partial x} + v_y\,\frac{\partial v_y}{\partial y} &=&-\frac{1}{\rho}\,\frac{\partial p}{\partial y}
++ \nu\left(\frac{\partial^2 v_y}{\partial x^2}+\frac{\partial^2 v_y}{\partial y^2}\right),\label{ej6.3}
+\end{eqnarray}
+where $\rho$ is the (constant) density, and $\nu$ the kinematic viscosity. Here, Equation~(\ref{ej6.1}) is the
+equation of continuity, whereas Equations~(\ref{ej6.2}) and (\ref{ej6.3}) are the $x$- and $y$- components of the fluid equation of motion,
+respectively. The boundary conditions at the outer edge of the layer, where it interfaces with the irrotational
+fluid, are
+\begin{eqnarray}
+v_x(x,y)&\rightarrow & U(x),\\[0.5ex]
+p(x,y)&\rightarrow & P(x)
+\end{eqnarray}
+as $y/\delta\rightarrow \infty$. Here, $P(x)$ is the fluid pressure at the outer edge of the layer, and 
+\begin{equation}\label{ej6.7}
+U\,\frac{dU}{dx} = - \frac{1}{\rho}\,\frac{dP}{dx}
+\end{equation}
+(since $v_y=0$, and viscosity is negligible, just outside the layer).
+The boundary conditions at the inner edge of the layer, where it interfaces with the impenetrable surface, are
+\begin{eqnarray}
+v_x(x,0) &=&0,\\[0.5ex]
+v_y(x,0)&=&0.
+\end{eqnarray}
+Of course, the first of these constraints corresponds to the no slip condition. 
+
+Let $U_0$ be a typical value of the external tangential velocity, $U(x)$, and let $L$ be the typical variation length-scale
+of this quantity.  It is reasonable to suppose  that $U_0$ and $L$ are also the characteristic tangential flow velocity and variation length-scale in the $x$-direction, respectively,  of the boundary layer.
+Of course, $\delta$ is the typical variation length-scale of the  layer in the $y$-direction. Moreover, $\delta/L\ll 1$,
+since the layer is assumed to be thin. 
+It is helpful to define the normalized variables
+\begin{eqnarray}
+X &=& \frac{x}{L},\\[0.5ex]
+Y&=& \frac{y}{\delta},\\[0.5ex]
+V_x(X,Y) &=& \frac{v_x}{U_0},\\[0.5ex]
+V_y(X,Y) &=& \frac{v_y}{U_1},\\[0.5ex]
+\widehat{P}(X,Y)&=& \frac{p}{p_0},
+\end{eqnarray}
+where $U_1$ and $p_0$ are constants. 
+All of these variables are designed to be ${\cal O}(1)$ inside the layer. Equation~(\ref{ej6.1}) yields
+\begin{equation}
+\frac{U_0}{L}\,\frac{\partial V_x}{\partial X} + \frac{U_1}{\delta}\,\frac{\partial V_y}{\partial Y} = 0.
+\end{equation}
+In order for the terms in this equation to balance one another, we need
+\begin{equation}
+U _1= \frac{\delta}{L}\,U_0.
+\end{equation}
+In other words, within  the layer, continuity requires the typical flow velocity in the $y$-direction, $U_1$, to be much smaller than
+that in the $x$-direction, $U_0$. 
+
+Equation~(\ref{ej6.2}) gives
+\begin{equation}
+\frac{U_0^{\,2}}{L}\left(V_x\,\frac{\partial V_x}{\partial X} + V_y\,\frac{\partial V_x}{\partial Y}\right)
+= - \frac{p_0}{\rho\,L}\,\frac{\partial \widehat{P}}{\partial X} + \left(\frac{\nu\,U_0}{\delta^{\,2}}\right)\left[\left(\frac{\delta}{L}\right)^2\,\frac{\partial^2 V_x}{\partial X^2}+\frac{\partial^2 V_x}{\partial Y^2}\right].
+\end{equation}
+In order for the pressure term on the right-hand side of the above equation to be of similar magnitude to the advective terms on the
+left-hand side, we require that
+\begin{equation}
+p_0 = \rho\,U_0^{\,2}.
+\end{equation}
+Furthermore, in order for the viscous term on the right-hand side to balance  the other terms, we
+need 
+\begin{equation}\label{ej6.18}
+\frac{\delta}{L} =\frac{U_1}{U_0}= \frac{1}{{\rm Re}^{1/2}},
+\end{equation}
+where
+\begin{equation}
+{\rm Re} = \frac{U_0\,L}{\nu}
+\end{equation}
+is the Reynolds number of the flow external to the layer.  The
+assumption that $\delta/L\ll 1$ can be seen to imply that ${\rm Re}\gg 1$.  In other words, the normal thickness of the boundary layer separating an irrotational flow pattern 
+from a rigid surface is only much less than the typical variation length-scale of the pattern when the Reynolds
+number of the flow is much greater than unity.
+
+Equation~(\ref{ej6.3}) yields
+\begin{equation}
+\frac{1}{{\rm Re}}\left(V_x\,\frac{\partial V_y}{\partial X} + V_y\,\frac{\partial V_y}{\partial Y}\right)
+= - \frac{\partial \widehat{P}}{\partial Y} + \frac{1}{\rm Re}\left[\frac{1}{{\rm Re}}\,\frac{\partial^2 V_y}{\partial X^2}+\frac{\partial^2 V_y}{\partial Y^2}\right].
+\end{equation}
+In the limit ${\rm Re}\gg 1$, this reduces to
+\begin{equation}
+\frac{\partial \widehat{P}}{\partial Y} = 0.
+\end{equation}
+Hence, $\widehat{P}=\widehat{P}(X)$, where
+\begin{equation}\label{ej6.23}
+\frac{d\widehat{P}}{d X} = - \widehat{U}\,\frac{d\widehat{U}}{dX},
+\end{equation}
+ $\widehat{U}(X)=U/U_0$, and use has been made of (\ref{ej6.7}). In other words, the pressure
+  is {\em uniform}\/ across the layer, in the direction normal to the surface of the obstacle, and is thus the same as that on the
+ outer edge of the layer. 
+ 
+Retaining only ${\cal O}(1)$ terms, our final set of normalized layer equations becomes
+\begin{eqnarray}
+\frac{\partial V_x}{\partial X} + \frac{\partial V_y}{\partial Y} &=& 0,\label{ej6.24}\\[0.5ex]
+V_x\,\frac{\partial V_x}{\partial X} + V_y\,\frac{\partial V_y}{\partial Y} &=& \widehat{U}\,\frac{d\widehat{U}}{\partial X}
++ \frac{\partial^2 V_y}{\partial Y^2},\label{ej6.25}
+\end{eqnarray}
+subject to the boundary conditions
+\begin{equation}
+V_x(X,\infty)= \widehat{U}(X),
+\end{equation}
+and
+\begin{eqnarray}
+V_x(X,0) &=& 0,\\[0.5ex]
+V_y(X,0) &=&0.\label{ej6.27}
+\end{eqnarray}
+
+In unnormalized form, the above set of layer equations are written
+\begin{eqnarray}
+\frac{\partial v_x}{\partial x} + \frac{\partial v_y}{\partial y} &=& 0,\label{ej6.30}\\[0.5ex]
+v_x\,\frac{\partial v_x}{\partial x} + v_y\,\frac{\partial v_x}{\partial y} &=& U\,\frac{dU}{dx}
++ \nu\,\frac{\partial^2 v_x}{\partial y^2},\label{ej6.31}
+\end{eqnarray}
+subject to the boundary conditions
+\begin{equation}
+v_x(x,\infty)= U(x)
+\end{equation}
+(note that $y=\infty$ really means $y/\delta\rightarrow\infty$), and
+\begin{eqnarray}
+v_x(x,0) &=& 0,\\[0.5ex]
+v_y(x,0) &=&0.
+\end{eqnarray}
+Now, Equation~(\ref{ej6.30}) can be automatically satisfied by expressing the flow velocity in terms of a
+stream function: {\em i.e.}, 
+\begin{eqnarray}
+v_x &=&-\frac{\partial\psi}{\partial y},\\[0.5ex]
+v_y &=&\frac{\partial\psi}{\partial x}.
+\end{eqnarray}
+In this case, Equation~(\ref{ej6.31}) reduces to
+\begin{equation}\label{ej6.38}
+\nu\,\frac{\partial^3\psi}{\partial y^3}-\frac{\partial\psi}{\partial x}\,\frac{\partial^2\psi}{\partial y^2} + \frac{\partial \psi}{\partial y}\,\frac{\partial^2\psi}{\partial
+x \,\partial y}= U\,\frac{dU}{dx},
+\end{equation}
+subject to the boundary conditions
+\begin{equation}\label{ej6.32}
+\frac{\partial\psi(x,\infty)}{\partial y}=-U(x),
+\end{equation}
+ and
+\begin{eqnarray}
+\psi(x,0) &=&0,\\[0.5ex]
+\frac{\partial\psi(x,0)}{\partial y}&=&0.\label{ej6.35}
+\end{eqnarray}
+ To lowest order, the vorticity internal to the layer, $\bomega=\omega\,{\bf e}_z$, is given by
+\begin{equation}\label{ej6.43}
+\omega = \frac{\partial^2\psi}{\partial y^2},
+\end{equation}
+whereas the $x$-component of the  viscous force per unit area acting on the surface of the obstacle is written (see Section~\ref{sx2.18})
+\begin{equation}\label{ej6.44}
+\left.\sigma_{xy}\right|_{y=0} = \rho\,\nu\left.\frac{\partial v_x}{\partial y}\right|_{y=0} = -\rho\,\nu\left.\frac{\partial^2\psi}{\partial y^2}\right|_{y=0}.
+\end{equation}
+
+\section{Self-Similar  Boundary Layers}\label{sssim}
+The boundary layer equation, (\ref{ej6.38}),  takes the form of  a nonlinear partial
+differential equation that is extremely difficult to solve exactly. However, considerable progress can be made if 
+this equation is converted into an ordinary differential equation by demanding that its solutions be
+{\em self-similar}.  Self-similar solutions are such that, at a given distance, $x$, along the layer, the tangential flow profile, $v_x(x,y)$,  is
+ a scaled version of some common profile: {\em i.e.}, $v_x(x,y)= U(x)\,F(y/\delta(x))$, where $\delta(x)$ is a scale-factor, and $F(z)$
+ a dimensionless function. It follows that $\psi(x,y)=-U(x)\,\delta(x)\,f(y/\delta(x))$, where $f'(z)=F(z)$. 
+
+Let us search for a self-similar solution to Equation~(\ref{ej6.38}) of the general form
+\begin{equation}\label{ej6.45}
+\psi(x,y) = -\left[\frac{2\nu\,U_0\,x^{m+1}}{m+1}\right]^{1/2}f(\eta),
+\end{equation}
+where
+\begin{equation}\label{ej6.46}
+\eta =\left[\frac{(m+1)\,U_0\,x^{m-1}}{2\nu}\right]^{1/2}y.
+\end{equation}
+This implies that $\delta(x)=[2\,\nu/(m+1)\,U_0\,x^{m-1}]^{1/2}$, and $U(x)=U_0\,x^m$. 
+Here, $U_0$ and $m$ are constants. Moreover, $U_0\,x^m$ has dimensions of velocity, whereas $m$, $\eta$, and $f$, are dimensionless.
+Transforming variables from $x$, $y$ to $x$, $\eta$, we find that
+\begin{eqnarray}
+\left.\frac{\partial}{\partial x}\right|_y &=& \left.\frac{\partial}{\partial x}\right|_\eta +\frac{m-1}{2}\,\frac{\eta}{x}\left.\frac{\partial}{\partial\eta}\right|_x,\\[0.5ex]
+\left.\frac{\partial}{\partial y}\right|_x &=& \left[\frac{(m+1)\,U_0\,x^{m-1}}{2\nu}\right]^{1/2}\left.\frac{\partial}{\partial\eta}\right|_x.
+\end{eqnarray}
+Hence,
+\begin{eqnarray}
+\frac{\partial\psi}{\partial x} &=& -\left[\frac{\nu\,U_0\,x^{m-1}}{2\,(m+1)}\right]^{1/2}[(m+1)\,f+(m-1)\,\eta\,f'],\\[0.5ex]
+\frac{\partial\psi}{\partial y} &=& - U_0\,x^m\,f',\\[0.5ex]
+\frac{\partial^2\psi}{\partial y^2}&=&-\left[\frac{(m+1)\,U_0^{\,3}\,x^{3m-1}}{2\nu}\right]^{1/2}f'',\label{ej6.51}\\[0.5ex]
+\frac{\partial^2\psi}{\partial x\,\partial y}&=& -\frac{U_0\,x^{m-1}}{2}\,[2m\,f'+(m-1)\,\eta\,f''],\\[0.5ex]
+\frac{\partial^3\psi}{\partial y^3}&=& -\frac{(m+1)\,U_0^{\,2}\,x^{2m-1}}{2\nu}\,f''',
+\end{eqnarray}
+where $'\equiv d/d\eta$. Thus, Equation~(\ref{ej6.38}) 
+becomes
+\begin{equation}
+(m+1)\,f'''+ (m+1)\,f\,f'' -2m\,f'^{\,2} = -\frac{1}{U_0^{\,2}\,x^{2m-1}}\,\frac{dU^{\,2}}{dx}.
+\end{equation}
+Since the left-hand side of the above equation is a (non-constant) function of $\eta$, whilst the right-hand side
+is a function of $x$ (and since $\eta$ and $x$ are independent variables), the equation can only be satisfied if its right-hand
+side takes a {\em constant}\/ value. In fact, if
+\begin{equation}
+\frac{1}{U_0^{\,2}\,x^{2m-1}}\,\frac{dU^{\,2}}{dx}=2m
+\end{equation}
+then
+\begin{equation}\label{ej6.56x}
+U(x) = U_0\,x^m
+\end{equation}
+(which is consistent with our initial guess), 
+and
+\begin{equation}\label{ej6.56}
+f'''+f\,f'' + \beta\,(1-f'^{\,2}) = 0,
+\end{equation}
+where 
+\begin{equation}
+\beta = \frac{2m}{m+1}.
+\end{equation}
+Expression~(\ref{ej6.56}) is known as the {\em Falkner-Skan equation}.
+The solutions to this equation that satisfy the physical boundary conditions (\ref{ej6.32})--(\ref{ej6.35}) are such that
+\begin{equation}
+f(0) = f'(0) = 0,\label{ej6.59}
+\end{equation}
+and
+\begin{eqnarray}
+f'(\infty)&=&1,\label{ej6.60}\\[0.5ex]
+f''(\infty) &=& 0.\label{ej6.61}
+\end{eqnarray}
+(The final condition corresponds to the requirement that the vorticity tend to zero at the edge of the layer.)
+Note, from (\ref{ej6.43}), (\ref{ej6.46}), (\ref{ej6.51}), (\ref{ej6.56x}), (\ref{ej6.59}), and (\ref{ej6.60}),  that the normally  integrated
+vorticity within the boundary layer is
+\begin{equation}
+\int_0^\infty \omega\,dy = -U(x).
+\end{equation}
+Furthermore, from (\ref{ej6.44}), (\ref{ej6.51}), and (\ref{ej6.56x}), the $x$-component of the viscous force per unit area acting on the surface of
+the obstacle is
+\begin{equation}\label{ej6.63}
+\left.\sigma_{xy}\right|_{y=0} =\frac{1}{2}\,\rho\,U^{\,2}\left(\frac{\nu}{U\,x}\right)^{1/2}(m+1)^{1/2}\,\sqrt{2}\,f''(0).
+\end{equation}
+It is convenient to parameterize this quantity in terms of a {\em skin friction coefficient},
+\begin{equation}
+c_f = \frac{\left.\sigma_{xy}\right|_{y=0}}{(1/2)\,\rho\,U^{\,2}}.
+\end{equation}
+It follows that
+\begin{equation}
+c_f(x) = \frac{(m+1)^{1/2}\,\sqrt{2}\,f''(0)}{[{\rm Re}(x)]^{1/2}},
+\end{equation}
+where
+\begin{equation}
+{\rm Re}(x) = \frac{U(x)\,x}{\nu}
+\end{equation}
+is the effective Reynolds number  of the flow on the outer edge of the layer at position $x$. Hence,  $c_f(x)\propto x^{-(m+1)/2}$. 
+Finally, according to Equation~(\ref{ej6.45}), the width of the boundary layer is approximately
+\begin{equation}
+\frac{\delta(x)}{x} \simeq \frac{1}{[{\rm Re}(x)]^{\,1/2}},
+\end{equation}
+which implies that $\delta(x)\propto x^{-(m-1)/2}$. 
+
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter06/bs.eps}}
+\caption{\em $f''(0)$ calculated as a function of $\beta$ for solutions of the Falkner-Skan equation.}\label{fbs}
+\end{figure}
+
+Note that if $m>0$  then the external tangential velocity profile, $U(x) = U_0\,x^m$,  corresponds to that of irrotational inviscid
+flow  incident, in a symmetric fashion, on a semi-infinite wedge whose apex subtends an angle $\alpha\,\pi$, where $\alpha=2m/(m+1)$ (see Section~\ref{swedge}, and Figure~\ref{fwedge}). In this case, $U(x)$ can be interpreted as the tangential velocity a distance $x$
+along the surface of the wedge from its apex (in the direction of the flow). 
+By analogy, if $m=0$ then the external velocity profile corresponds to  that of irrotational inviscid flow parallel to a semi-infinite flat
+plate (which can be thought of as a wedge whose apex subtends  zero angle).  In this case, $U(x)$ can be interpreted as the tangential velocity
+ a distance $x$ along the surface of the plate from its leading edge (in the direction of the flow)---see Section~\ref{splate}.
+Finally, if $m<0$ then the
+external velocity profile is that of symmetric irrotational inviscid flow over the back surface of a semi-infinite wedge whose apex
+subtends an angle $(1-\alpha')\,\pi$, where $\alpha'=-m/(1+m)$ (see Section~\ref{swedge1}, and Figure~\ref{fwedge1}). 
+In this case, $U(x)$ can be  interpreted as the tangential velocity  a distance $x$ along the surface of the wedge from its apex  (in the
+direction of the flow).
+
+Unfortunately, the Falkner-Skan equation, (\ref{ej6.56}),  possesses no general analytic solutions. However, this equation is relatively straightforward to solve via numerical methods. 
+Figure~\ref{fbs} shows $f''(0)$, calculated numerically as a function of $\beta=2m/(m+1)$, for  the solutions of (\ref{ej6.56}) that
+satisfy the boundary conditions (\ref{ej6.59})--(\ref{ej6.61}). In addition, Figure~\ref{ffs} shows $f'(\eta)$ versus $\eta$, calculated numerically
+for various different  values of $m$.
+Note that, since $\beta\rightarrow 2$ as $m\rightarrow \infty$, solutions of the Falkner-Skan equation with
+$\beta>2$ have no physical significance. For $0<\beta<2$ it can be seen, from Figures~\ref{fbs} and \ref{ffs}, that there is a single
+solution branch characterized by $f'(\eta)>0$ and $f''(0)>0$. This branch is termed the {\em forward flow}\/  branch, since it
+is such that the tangential velocity, $v_x(\eta)\propto f'(\eta)$,  is in the {\em same}\/ direction as the
+external tangential velocity [{\em i.e.}, $v_x(\infty)$] across the whole layer ({\em i.e.}, $0<\eta<\infty$). 
+The forward flow branch is  characterized by a {\em positive}\/ skin friction coefficient, $c_f\propto f''(0)$. 
+It can also be seen that for $\beta<0$ there exists a second solution branch, which is termed the {\em reversed flow}\/
+branch, since it is such that the tangential velocity is in the {\em opposite}\/ direction to the
+external tangential velocity in the  region of the layer immediately adjacent to the  surface of the obstacle (which corresponds to $\eta=0$).
+The reversed flow branch is characterized by a {\em negative}\/  skin friction coefficient. Note that the reversed flow
+solutions are probably unphysical, since reversed flow close to the wall is generally associated
+with a phenomenon known as {\em boundary layer
+separation}\/ (see Section~\ref{sblapp}) which invalidates the boundary layer orderings.
+It can be seen that the two
+solution branches merge together at $\beta=\beta_\ast=-0.1989$,
+which corresponds to $m=m_\ast = -0.0905$. Moreover,  there are no solutions to the Falkner-Skan equation with $\beta<\beta_\ast$ or $m<m_\ast$. 
+ The disappearance  of solutions when $m$ becomes too negative ({\em i.e.}, when the deceleration of the
+ external flow becomes too large) is also related to boundary layer separation. 
+ 
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter06/fs.eps}}
+\caption{\em Solutions of the Falkner-Skan equation. In order from the left to the right, the various solid curves correspond to forward flow solutions calculated with $m=4$, $1$, $1/3$, $1/9$, $0$,
+$-0.05$, and $-0.0904$, respectively. The dashed curve shows a reversed flow solution calculated with $m=-0.05$. }\label{ffs}
+\end{figure}
+
+\section{Boundary Layer on a Flat Plate}\label{splate}
+Consider a  flat plate of length $L$, infinite width, and  negligible thickness, which lies in the $x$-$z$ plane, and whose
+two  edges correspond to $x=0$ and $x=L$. Suppose that  the plate is immersed in a low viscosity fluid whose unperturbed velocity field is ${\bf v}= U_0\,{\bf e}_x$. See Figure~\ref{fplate}. In the inviscid limit, the appropriate boundary condition at the
+surface of the plate, $v_y=0$---corresponding to the requirement of zero normal velocity---is already satisfied by the unperturbed flow. Hence, the original flow is not modified
+by the presence of the plate. However, when we take the finite viscosity of the fluid into account, an additional boundary
+condition, $v_x=0$---corresponding to the no slip condition----must be satisfied at the plate. The
+imposition of this additional constraint causes thin boundary layers, of thickness $\delta(x)\ll L$, to form above and below the
+plate. The fluid flow outside the boundary layers remains effectively inviscid, whereas that inside the
+layers is modified by viscosity. It follows that the flow external to the layers is unaffected by the presence of the
+plate. Hence, the tangential velocity at the outer edge of the boundary layers is $U(x) = U_0$. This corresponds
+to the case $m=0$ discussed in the previous section---see Equation~(\ref{ej6.56x}). (Here, we are assuming that the flow upstream of the
+trailing edge of the plate, $x=L$, is unaffected by the edge's presence, and, is, therefore, the same as if the plate were 
+of infinite length. Of course, the flow downstream of the edge is modified as a consequence of the finite length of the plate.)
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/plate.eps}}
+\caption{\em Flow over a flat plate. }\label{fplate}
+\end{figure}
+
+Making use of the analysis contained in the previous section (with $m=0$), as well as the
+fact that, by symmetry, the lower boundary layer is the mirror image of the upper one, the tangential velocity
+profile across the both layers is written
+\begin{equation}
+v_x(x,y) = U_0\,f'(\eta),
+\end{equation}
+where
+\begin{equation}
+\eta = \left(\frac{U_0}{2\nu\,x}\right)^{1/2} |y|.
+\end{equation}
+Here, $f(\eta)$ is the solution of 
+\begin{equation}\label{ej6.70}
+f''' + f\,f'' = 0
+\end{equation}
+that satisfies the boundary conditions
+\begin{equation}
+f(0)=f'(0)= 0,\label{ej6.71}
+\end{equation}
+and
+\begin{eqnarray}
+f'(\infty)&=&1,\\[0.5ex]
+f''(\infty) &=&0.\label{ej6.73}
+\end{eqnarray}
+Solution (\ref{ej6.70}) is known as the {\em Blasius equation}. 
+
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter06/vx.eps}}
+\caption{\em Tangential velocity profile across the boundary layers located above and below a flat plate of negligible
+thickness located at $y=0$. }\label{fvx}
+\end{figure}
+
+It is convenient to define the so-called {\em displacement thickness}\/ of the upper boundary layer, 
+\begin{equation}\label{ej6.75}
+\delta(x) = \int_0^\infty \left[1-\frac{v_x(x,y)}{U_0}\right]dy,
+\end{equation}
+which can be interpreted as the distance through which streamlines just outside the  layer
+are displaced laterally due to the retardation of the flow within the layer. (Of course, the thickness of the
+lower boundary layer is the same as that of the upper layer.)
+It follows that
+\begin{equation}
+\delta(x) = \left(\frac{\nu\,x}{U_0}\right)^{1/2}\sqrt{2}\int_0^\infty [1-f'(\eta)]\,d\eta.
+\end{equation}
+In fact, the numerical solution of (\ref{ej6.70}), subject to the boundary conditions~(\ref{ej6.71})--(\ref{ej6.73}),  yields
+\begin{equation}\label{ej6.76}
+\delta(x) = 1.72\left(\frac{\nu\,x}{U_0}\right)^{1/2}.
+\end{equation}
+Hence, the thickness of the boundary layer increases as the square root of the distance from the leading edge of the plate. 
+In particular, the thickness at the trailing edge of the plate is
+\begin{equation}\label{ej6.77}
+\frac{\delta(L)}{L} = \frac{1.72}{{\rm Re}^{1/2}},
+\end{equation}
+where
+\begin{equation}
+{\rm Re} = \frac{U_0\,L}{\nu}
+\end{equation}
+is the appropriate Reynolds number for the interaction of the flow with the plate. Note that if ${\rm Re}\gg 1$ then the
+thickness of the boundary layer is much less than its length, as was previously assumed. 
+
+The tangential velocity profile across the both boundary layers, which takes the form
+\begin{equation}
+v_x(x,y) = U_0\,f'\!\left[1.22\,\frac{|y|}{\delta(x)}\right],
+\end{equation}
+is plotted in Figure~\ref{fvx}. In addition, the vorticity profile across  the layers, which is
+written
+\begin{equation}
+\omega(x,y) = - {\rm sgn}(y)\,1.22\,\frac{U_0}{\delta(x)}\,f''\!\left[1.22\,\frac{|y|}{\delta(x)}\right],
+\end{equation}
+is shown in Figure~\ref{fw}. Note that the vorticity is negative in the upper boundary layer ({\em i.e.}, $y>0$), positive
+in the lower boundary layer ({\em i.e.}, $y<0$), and discontinuous across the plate (which is located at $y=0$). 
+Finally, the net viscous drag force per unit width (along the $z$-axis) acting on the plate in the $x$-direction is
+\begin{equation}
+D = 2\int_0^L\left.\sigma_{xy}\right|_{y=0}\,dx,
+\end{equation}
+where the factor of $2$ is needed to take into account the presence of boundary layers both above and below the plate. 
+It follows from Equation~(\ref{ej6.63}) (with $m=0$) that
+\begin{equation}
+D = \rho\,U_0^{\,2}\left(\frac{\nu}{U_0}\right)^{1/2}\sqrt{2}\,f''(0)\int_0^L x^{-1/2}\,dx=
+\rho\,U_0^{\,2}\left(\frac{\nu\,L}{U_0}\right)^{1/2}2\sqrt{2}\,f''(0).
+\end{equation}
+In fact, the numerical solution of (\ref{ej6.70}) yields
+\begin{equation}\label{ej6.83}
+D = 1.33\,\frac{\rho\,U_0^{\,2}\,L}{{\rm Re}^{1/2}}=1.33\,\rho\,U_0\,(\nu\,U_0\,L)^{1/2}.
+\end{equation}
+
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter06/w.eps}}
+\caption{\em Vorticity profile across the boundary layers located above and below a flat plate of negligible
+thickness located at $y=0$. }\label{fw}
+\end{figure}
+
+The above discussion is premised on the assumption that the flow in the upper (or lower) boundary layer is both steady and
+$z$-independent. It turns out that this assumption becomes invalid when the Reynolds number of the
+layer, $U_0\,\delta/\nu$, exceeds a critical value which is about $600$. In this case, small-scale $z$-dependent disturbances spontaneously grow to large amplitude, and the
+layer becomes {\em turbulent}. Since $\delta\propto x^{1/2}$, if the criterion for boundary layer turbulence is not
+satisfied at the trailing edge of the plate, $x=L$,  then it is not satisfied anywhere  else in the layer. Thus, the
+ previous analysis, which neglects turbulence, remains valid provided  $U_0\,\delta(L)/\nu<600$.
+According to (\ref{ej6.77}),  this implies that the  analysis is valid when $1\ll {\rm Re}<1.2\times 10^5$, where ${\rm Re} = U_0\,L/\nu$
+is the Reynolds number of the external flow. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/plate1.eps}}
+\caption{\em Flow between two flat parallel plates. }\label{fplate1}
+\end{figure}
+
+Consider, finally, the situation illustrated in Figure~\ref{fplate1} in which an initially irrotational fluid
+passes between two flat parallel plates. Let $d$ be the perpendicular distance between the plates. 
+As we have seen,  the finite viscosity of the fluid causes boundary layers to form on the inner surfaces of the upper and lower
+plates. The flow within these layers possesses non-zero vorticity, and is significantly affected by viscosity. On the
+other hand, the flow outside the layers is irrotational and essentially inviscid---this type of flow is usually
+termed {\em potential flow}\/ (since it can be derived from a velocity potential satisfying Poisson's equation). 
+Now, the thickness of the two boundary layers increases like $x^{1/2}$, where $x$ represents distance, parallel to the
+flow,  measured from the
+leading edges of the  plates. It follows that, as $x$ increases, the region of potential flow shrinks in size, and
+eventually disappears. See Figure~\ref{fplate1}. Assuming that, prior to merging, the two boundary layers do not significantly affect one another, 
+their thickness, $\delta(x)$,  is given by formula (\ref{ej6.76}), where $U_0$ is the speed of the incident fluid. 
+The region of potential flow thus extends from $x=0$ (which corresponds to the leading edge of the plates) to $x=l$, where
+\begin{equation}
+\delta(l) = \frac{d}{2}.
+\end{equation}
+It follows that
+\begin{equation}
+\frac{l}{d} = 11.8\,{\rm Re},
+\end{equation}
+where
+\begin{equation}
+{\rm Re} = \frac{U_0\,d}{\nu}.
+\end{equation}
+Thus, when an irrotational high Reynolds number fluid passes between two parallel plates then the region of potential flow extends a comparatively long distance between the plates, relative to their spacing ({\em i.e.}, $l/d\gg 1$). By analogy, if an irrotational high Reynolds number fluid
+passes into a pipe then the fluid remains essentially irrotational until it has travelled  a considerable distance along the
+pipe, compared to its diameter. Obviously, these conclusions are modified if the flow becomes turbulent.
+
+\section{Wake Downstream of a Flat Plate}\label{swake}
+As we saw in the previous section, if a flat plate of negligible thickness, and finite length, is placed in the path of a uniform high Reynolds number
+flow, directed parallel to the plate, then  thin boundary layers form above and below the plate. Outside the
+layers, the flow is irrotational, and essentially inviscid. Inside the layers, the flow is modified by viscosity,
+and has non-zero vorticity. Downstream of the plate, the boundary layers are convected by the flow, and merge to form a thin {\em wake}. See
+Figure~\ref{fplate}. 
+Within the wake, the flow is modified by viscosity, and possesses finite vorticity. Outside the wake, the downstream flow 
+remains irrotational, and effectively inviscid. 
+
+Since there is no solid surface embedded in the wake, acting to retard the flow, we would
+expect the action of viscosity to cause the velocity within the wake, a long distance downstream of the plate, to closely match that of
+the unperturbed flow. In other words, we expect the fluid velocity within the wake to take the form 
+\begin{eqnarray}
+v_x(x,y) &=& U_0 - u(x,y),\label{ej6.84}\\[0.5ex]
+v_y(x,y) &=& v(x,y),
+\end{eqnarray}
+where 
+\begin{equation}
+|u|\ll U_0.
+\end{equation} 
+Assuming that, within the wake, 
+\begin{eqnarray}
+\frac{\partial}{\partial x}&\sim &\frac{1}{x},\\[0.5ex]
+\frac{\partial}{\partial y}&\sim &\frac{1}{\delta},
+\end{eqnarray}
+where $\delta\ll x$ is the wake thickness, fluid continuity requires that
+\begin{equation}
+v\sim \frac{\delta}{x}\,u.\label{ej6.85}
+\end{equation}
+Now, the flow external to  the boundary layers, and the wake, is  both uniform and essentially inviscid. Hence, according to Bernoulli's theorem, the pressure in this region is also uniform---see Equation~(\ref{ej6.23}). However, as we saw in Section~\ref{sj6.3},  there is no $y$-variation of the pressure  across the boundary layers.
+It follows that the pressure is  uniform within the layers.
+Thus, it is reasonable to assume that the pressure is also uniform within the wake, since the wake is formed via 
+the   convection of the boundary layers downstream of the plate. We conclude 
+that
+\begin{equation}
+p(x,y)\simeq p_0\label{ej6.86}
+\end{equation}
+{\em everywhere}\/ in the fluid, where $p_0$ is a constant. 
+
+The $x$-component of the fluid equation of motion  is written
+\begin{equation}
+v_x\,\frac{\partial v_x}{\partial x} + v_y\,\frac{\partial v_x}{\partial y} = -\frac{1}{\rho}\,\frac{\partial p}{\partial x} + 
+\nu\left(\frac{\partial^2 v_x}{\partial x^2} + \frac{\partial^2 v_x}{\partial y^2}\right).
+\end{equation}
+Making use of (\ref{ej6.84})--(\ref{ej6.86}), the above expression reduces to 
+\begin{equation}\label{ej6.92}
+U_0\,\frac{\partial u}{\partial x} \simeq \nu\,\frac{\partial^2 u}{\partial y^2}.
+\end{equation}
+The boundary condition 
+\begin{equation}\label{ej6.93}
+u(x,\pm\infty) = 0
+\end{equation}
+ensures that the flow outside the wake remains unperturbed. 
+Note that Equation~(\ref{ej6.92}) has the same mathematical form as a conventional diffusion equation, with $x$ playing the role of time, and 
+$\nu/U_0$ playing the role of the diffusion coefficient. Hence, by analogy with the standard solution
+of the diffusion equation, we would expect $\delta\sim (\nu\,x/U_0)^{1/2}$. 
+
+As can easily be demonstrated, the self-similar solution to (\ref{ej6.92}), subject to the boundary condition (\ref{ej6.93}),
+is
+\begin{equation}
+u(x,y) = \frac{Q}{\sqrt{\pi}\,\delta}\,\exp\left(-\frac{y^{\,2}}{\delta^{\,2}}\right),
+\end{equation}
+where
+\begin{equation}
+\delta(x)  =2\left(\frac{\nu\,x}{U_0}\right)^{1/2},
+\end{equation}
+and $Q$ is a constant. 
+It follows that
+\begin{equation}\label{ej6.99}
+\int_{-\infty}^\infty u\,dy = Q,
+\end{equation}
+since, as is well-known, $\int_{-\infty}^\infty \exp(-t^2)\,dt = \sqrt{\pi}$. As expected, the width of the wake scales as $x^{1/2}$. 
+
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter06/vx1.eps}}
+\caption{\em Tangential velocity profile across the wake of a flat plate of negligible
+thickness located at $y=0$. The profile is calculated for $Q/(U_0\,\delta)=0.5$.}\label{fvx1}
+\end{figure}
+
+The tangential velocity profile across the wake, which takes the form
+\begin{equation}\label{ej6.100}
+\frac{v_x(x,y)}{U_0} = 1 - \frac{Q}{U_0\,\delta}\,\frac{1}{\sqrt{\pi}}\,\exp(-y^2/\delta^{\,2}),
+\end{equation}
+is plotted in Figure~\ref{fvx1}. In addition, the vorticity profile across the wake, which is
+written
+\begin{equation}\label{ej6.101}
+\frac{\omega(x,y)}{U_0/\delta}= -\frac{Q}{U_0\,\delta}\,\frac{2}{\sqrt{\pi}}\,\frac{y}{\delta}\,\exp(-y^2/\delta^{\,2})
+\end{equation}
+is shown in Figure~\ref{fw1}. It can be seen that the profiles pictured in Figures~\ref{fvx1} and \ref{fw1} are essentially smoothed out versions of the boundary
+layer profiles shown in Figures~\ref{fvx} and \ref{fw}, respectively. 
+
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter06/w1.eps}}
+\caption{\em Vorticity profile across the boundary layers above and below a flat plate of negligible
+thickness located at $y=0$. The profile is calculated for $Q/(U_0\,\delta)=0.5$. }\label{fw1}
+\end{figure}
+
+Suppose that the plate and a portion of its trailing wake are enclosed by a cuboid control volume of unit depth (in the $z$-direction)
+that extends from $x=-l$ to $x=+l$ and from $y=-h$ to $y=h$. See Figure~\ref{frect}. Here, $l\gg L$ and $h\gg \delta(l)$, where $L$ is the
+length of the plate, and $\delta(x)$ the width of the wake. Hence, the control volume extends well upstream and
+ downstream of the plate. Moreover, the volume is much wider than the wake. 
+ 
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter06/rect.eps}}
+\caption{\em Control volume surrounding a flat plate and its trailing wake.}\label{frect}
+\end{figure}
+
+Let us apply the integral form of the fluid equation of continuity to the control volume. For a
+ steady-state, this reduces to (see Section~\ref{scont})
+ \begin{equation}\label{ej6.102}
+ \oint_S \rho\,{\bf v}\cdot d{\bf S}=0,
+ \end{equation}
+ where $S$ is the bounding surface of the control volume.
+ The normal fluid velocity is $-U_0$ at $x=-l$,
+$U_0-u(y)$ at $x=l$, and $v(x)$ at $y=\pm h$, as indicated in the figure. 
+Hence, (\ref{ej6.102}) yields
+\begin{equation}
+-\int_{-h}^h\rho\,U_0\,dy + \int_{-h}^{h}\rho\,[U_0-u(y)]\,dy+2\int_{-l}^{l}\rho\,v(x)\,dx = 0,
+\end{equation}
+or 
+\begin{equation}\label{ej6.104}
+\int_{-h}^h u(y)\,dy = 2\,\int_{-l}^l v(x)\,dx.
+\end{equation}
+However, given that $u\rightarrow 0$ for $|y|\gg\delta$, and since $h\gg \delta$, it is a good approximation to replace the limits of integration on the left-hand side of the
+above expression  by $\pm \infty$. Thus, from  Equation~(\ref{ej6.99}), 
+\begin{equation}\label{ej6.104a}
+\int_{-h}^h\,u(y)\,dy=2\,\int_{-l}^lv(x)\,dx \simeq Q,
+\end{equation}
+where $Q$ is independent of $x$.
+Note that the slight retardation of the flow inside the wake, due  to the presence of the plate, which is parameterized by $Q$,
+necessitates a small lateral outflow, $v(x)$,   in the region of the fluid external to the wake. 
+
+Let us now apply the integral form of the $x$-component of the fluid equation of motion to the control volume. For a steady-state, 
+this reduces to (see Section~\ref{smom})
+\begin{equation}
+\int_S \rho\,v_x\,{\bf v}\cdot d{\bf S} = F_x + \int_S \sigma_{xj}\,dS_j,
+\end{equation}
+where $F_x$ is the net $x$-directed force exerted on the fluid within the control volume by the plate. It follows,
+from Newton's third law of motion, that
+$F_x=-D$, where $D$ is the viscous drag force per unit width (in the $z$-direction) acting on the plate in the $x$-direction. 
+Now, in an incompressible fluid (see Section~\ref{sstress}), 
+\begin{equation}
+\sigma_{ij} = -p\,\delta_{ij} + \rho\,\nu\left(\frac{\partial v_i}{\partial x_j} + \frac{\partial v_j}{\partial x_i}\right).
+\end{equation}
+Hence, we obtain
+\begin{eqnarray}
+-\int_{-h}^h\rho\,U_0^{\,2}\,dy+\int_{-h}^h\rho\left[U_0-u(y)\right]^{\,2}\,dy&&\nonumber\\[0.5ex]
++ 2\int_{-l}^l \rho\,U_0\,v(x)\,dx &=& -D -2\rho\,\nu\,\frac{d}{dx}\!\int_{-h}^h u(y)\, dy,
+\end{eqnarray}
+since the pressure within the fluid is essentially uniform, and the tangential fluid velocity at $y=\pm h$ is $U_0$. Making use of Equation~(\ref{ej6.104a}), as
+well as the fact that $Q$ is independent of $x$, we get
+\begin{equation}
+D = \rho\,U_0\,Q.
+\end{equation}
+Here, we have neglected any terms that are second-order in the small quantity $u$. 
+A comparison with Equation~(\ref{ej6.83}) reveals that
+\begin{equation}
+Q = 1.33\,(\nu\,U_0\,L)^{1/2},
+\end{equation}
+or
+\begin{equation}
+\frac{Q}{U_0\,\delta} = 0.664\left(\frac{L}{x}\right)^{1/2}.
+\end{equation}
+Hence, from (\ref{ej6.100}) and (\ref{ej6.101}), the velocity and vorticity profiles across the layer are
+\begin{equation}
+\frac{v_x(x,y)}{U_0} = 1 -0.375\left(\frac{L}{x}\right)^{1/2}\exp(-y^2/\delta^{\,2}),
+\end{equation}
+and
+\begin{equation}
+\frac{\omega(x,y)}{U_0/\delta} = -0.749 \left(\frac{L}{x}\right)^{1/2}\frac{y}{\delta}\,\exp(-y^2/\delta^{\,2}),
+\end{equation}
+where $\delta(x)= 2\,(\nu\,x/U_0)^{1/2}$. Finally, since the above analysis is premised on the assumption that $|1-v_x/U_0|=|u|/U_0\ll 1$,
+it is clear that the previous three expressions are only valid when $x\gg L$ ({\em i.e.}, well downstream of the plate).
+
+The above analysis only holds when the flow within the wake is non-turbulent. Let us assume, by analogy with the
+discussion in the previous section, that
+this is the case as long as the Reynolds number of the wake, $U_0\,\delta(x)/\nu$,  remains less than some
+critical value that is approximately $600$.
+Since the Reynolds number of the wake can be written $2\,{\rm Re}^{1/2}\,(x/L)^{1/2}$,
+where ${\rm Re}=U_0\,L/\nu$ is the Reynolds number of the external flow, we deduce that the wake becomes turbulent
+when $x/L \gtapp 9\times 10^4/{\rm Re}$. Hence, the wake is always turbulent sufficiently far downstream of the plate.
+Our analysis, which effectively assumes that the wake is  non-turbulent in some region, immediately downstream of the plate, whose extent (in $x$) is large compared
+with $L$, is thus only valid when $1\ll {\rm Re}\ll 9\times 10^4$. 
+
+\section{Von K\'{a}rm\'{a}n Momentum Integral}
+Consider a  boundary layer that forms on the surface of a rigid stationary obstacle of arbitrary shape (but infinite length and
+uniform cross-section) placed in a steady, uniform, transverse, high Reynolds
+number flow. Let $x$ represent arc length along the surface, measured, in the direction of the external flow,  from the stagnation point that forms at the front of the obstacle (see Figure~\ref{fsep}). Moreover, let $y$ represent distance across the boundary layer, measured normal to the surface. Suppose that the boundary layer is
+sufficiently thin that it is well approximated as a plane slab in the immediate vicinity of a general point on the
+surface. In this case, writing the velocity field within the layer in the form ${\bf v} = u(x,y)\,{\bf e}_x+v(x,y)\,{\bf e}_y$, 
+it is reasonable to model  this flow using the  slab boundary layer equations [see Equations~(\ref{ej6.30}) and (\ref{ej6.31})] 
+\begin{eqnarray}
+\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} &=&0,\label{ej6.110}\\[0.5ex]
+u\,\frac{\partial u}{\partial x} + v\,\frac{\partial u}{\partial y} - U\,\frac{dU}{dx}& =& \nu\,\frac{\partial^2 u}{\partial y^2},\label{ej6.111}
+\end{eqnarray}
+subject to the standard boundary conditions
+\begin{eqnarray}
+u(x,\infty) &=& U(x),\label{ej6.112}\\[0.5ex]
+u(x,0)=v(x,0) &=& 0.\label{ej6.113}
+\end{eqnarray}
+Here, $U(x)$ is the external tangential fluid velocity at the edge of the layer.  Integrating (\ref{ej6.111}) across the layer,
+making use of the boundary conditions (\ref{ej6.113}), leads to
+\begin{eqnarray}
+\nu\left.\frac{\partial u}{\partial y}\right|_{y=0} &=&\int_0^\infty\left(U\,\frac{dU}{dx} - u\,\frac{\partial u}{\partial x}-v\,\frac{\partial u}{\partial y}\right)dy\nonumber\\[0.5ex]
+&=&\int_0^\infty\left[(U-u)\,\frac{dU}{dx} + u\,\frac{\partial(U-u)}{\partial x} + v\,\frac{\partial(U-u)}{\partial y}\right]dy\nonumber\\[0.5ex]
+&=&\int_0^\infty\left[(U-u)\,\frac{dU}{dx} + u\,\frac{\partial(U-u)}{\partial x} -(U-u)\,\frac{\partial v}{\partial y}\right]dy\nonumber\\[0.5ex]
+&=&\int_0^\infty\left[(U-u)\,\frac{dU}{dx} + u\,\frac{\partial(U-u)}{\partial x} +(U-u)\,\frac{\partial u}{\partial x}\right]dy\nonumber\\[0.5ex]
+&=& \frac{dU}{dx}\int_0^\infty (U-u)\,dy + \frac{d}{dx}\int_0^\infty u\,(U-u)\,dy.\label{ej6.114}
+\end{eqnarray}
+Here, we have integrated the final term on the right-hand side by parts, making use of Equations~(\ref{ej6.110}), (\ref{ej6.112}), and (\ref{ej6.113}). 
+Let us define the {\em displacement thickness}\/ of the layer [see Equation~(\ref{ej6.75})]
+\begin{equation}\label{ej6.115}
+\delta_1(x) = \int_0^\infty \left(1-\frac{u}{U}\right)dy,
+\end{equation}
+as well as the so-called {\em momentum thickness}
+\begin{equation}\label{ej6.116}
+\delta_2(x) = \int_0^\infty \frac{u}{U}\left(1-\frac{u}{U}\right)dy.
+\end{equation}
+It follows from (\ref{ej6.114}) that
+\begin{equation}\label{ej6.117}
+\nu\left.\frac{\partial u}{\partial y}\right|_{y=0} = U^2\,\frac{d\delta_2}{dx} + U\,\frac{dU}{dx}\,(\delta_1+2\,\delta_2).
+\end{equation}
+This important result is known as the {\em von K\'{a}rm\'{a}n momentum integral}, and is fundamental to 
+many of the approximation methods commonly employed to calculate boundary layer thicknesses on the surfaces of general obstacles
+placed in high Reynolds number flows (see Section~\ref{sblapp}).
+
+\section{Boundary Layer Separation}\label{sblsep}
+As we saw in Section~\ref{splate}, when a high Reynolds number fluid
+passes around a {\em streamlined}\/ obstacle, such as a slender plate that is aligned with the flow, a relatively thin boundary layer
+form on the obstacle's surface. Here, by relatively thin, we
+mean that the typical transverse (to the flow) thickness of the layer  is $\delta\sim L/{\rm Re}^{1/2}$, 
+where $L$ is the length of the obstacle (in the direction of the flow), and ${\rm Re}$  the Reynolds number of
+the external flow. Suppose, however, that the obstacle is not streamlined: {\em i.e.},  the surface of the
+obstacle is not closely aligned with the streamlines of the unperturbed flow pattern. 
+In this case, the typically observed behavior  is illustrated in Figure~\ref{fsep}, which
+shows the flow pattern of a high Reynolds number irrotational fluid around a cylindrical obstacle (whose axis is normal
+to the direction of the unperturbed flow). It can be seen that a {\em stagnation point}, at which the flow velocity is locally
+zero, forms in front of the obstacle.  Moreover, a thin boundary layer covers the front side of the obstacle. The thickness of this
+layer is smallest at the stagnation point, and increases towards the back side of the obstacle. However, at some point on
+the back side, the boundary layer separates from the obstacle's surface to form a vortex-filled wake whose transverse dimensions
+are similar to those of the obstacle itself. This phenomenon is known as {\em boundary layer separation}. 
+
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter06/separation.eps}}
+\caption{\em Boundary layer separation.}\label{fsep}
+\end{figure}
+
+Outside the boundary layer, and the wake, the flow pattern is irrotational and essentially inviscid. So, from Section~\ref{scylo}, the
+tangential flow speed just outside the boundary layer (neglecting any circulation of the external  flow around the cylinder) is
+\begin{equation}
+U(\theta) = 2\,U_0\,\sin\theta,
+\end{equation}
+where $U_0$ is the unperturbed flow speed, and $\theta$ is a cylindrical coordinate defined such that the stagnation point
+corresponds to $\theta=0$. Note that the tangential flow  accelerates ({\em i.e.}, increases with increasing arc-length, along the
+surface of the obstacle, in the direction of the flow) on the front side of the obstacle ({\em i.e.}, $0\leq\theta\leq \pi/2$),
+and decelerates on the back side.  Boundary layer separation is always observed to
+take place at a point on the surface of an obstacle where there is {\em deceleration}\/ of the  external tangential flow. 
+In addition, from Section~\ref{scylo}, the pressure just outside the boundary layer (and, hence, on the surface of
+the obstacle, since the pressure is uniform across the layer) is
+\begin{equation}\label{ej6.119}
+P(\theta) = p_1 +\rho\,U_0^{\,2}\,\cos 2\theta,
+\end{equation}
+where $p_1$ is a constant. Note that the tangential pressure gradient is such as to accelerate the tangential
+flow on the front side of the obstacle---this is known as a favorable pressure gradient. On the other hand,
+the  pressure gradient is such as to decelerate the flow on the back side---this is known as an adverse pressure gradient. Boundary layer separation is always observed to
+take place at a point on the surface of an obstacle where the pressure gradient is {\em adverse}.
+
+Boundary layer separation is an important physical phenomenon because it gives rise to a greatly
+enhanced drag force acting on a non-streamlined obstacle placed in a high Reynolds number flow. This is the case because the pressure in the comparatively wide
+wake that forms behind a non-streamlined obstacle, as a consequence of separation, is relatively low. To be more exact, in the
+case of a cylindrical obstacle, Equation~(\ref{ej6.119}) specifies the expected pressure variation over the obstacle's surface in the
+absence of separation. It can be seen that the variation on the front side of the obstacle mirrors
+that on the back side: {\em i.e.}, $P(\pi-\theta)=P(\theta)$---see Figure~\ref{fpres}. In other words, the resultant pressure force 
+on the front side of the obstacle is equal and opposite to that  on the back side, so that the pressure distribution
+gives rise to zero net drag acting on the obstacle. Figure~\ref{fpres} illustrates how the pressure distribution is modified
+as a consequence of boundary layer separation. In this case, the pressure between the separation points is significantly less than that on the
+front side of the obstacle. Consequently, the resultant pressure force on the front side  is
+greater in magnitude than the oppositely directed force on the back side, giving rise to a significant drag
+ acting on the obstacle. Let $D$ be the drag force per unit width (parallel to the axis
+of the cylinder) exerted on the obstacle. It is convenient to parameterize this force in terms of a
+dimensionless {\em drag coefficient},
+\begin{equation}\label{ej6.120}
+C_D = \frac{D}{\rho\,U_0^{\,2}\,a},
+\end{equation}
+where $\rho$ is the fluid density, and $a$ the typical transverse size of the obstacle (in the present example, the radius
+of the cylinder). The drag force that acts on a non-streamlined obstacle  placed in a high Reynolds
+number flow, as a consequence of boundary layer separation, is generally characterized by a drag coefficient of 
+order unity.
+The exact value of the coefficient depends strongly on the shape of the obstacle, but
+only relatively weakly on the Reynolds number of the flow. Consequently, this type of drag is termed {\em form drag}, since it
+depends primarily on the external shape, or form, of the obstacle. Form drag  scales roughly as the cross-sectional area (per unit width) of the vortex-filled wake that forms behind the obstacle.
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter06/pres.eps}}
+\caption{\em Pressure variation over surface of a cylindrical obstacle in a high Reynolds
+number flow both with (dashed curve) and without (solid curve) boundary layer separation.}\label{fpres}
+\end{figure}
+
+Boundary layer separation is associated with strong adverse pressure gradients, or, equivalently,  strong flow deceleration, on the
+back side of an obstacle placed in a high Reynolds number flow. Such gradients can be significantly reduced by streamlining the obstacle: {\em i.e.}, 
+by closely aligning its back surface with the unperturbed streamlines of the external flow. Indeed, boundary
+layer separation can be delayed, or even completely prevented, on the surface of a sufficiently streamlined
+obstacle, thereby significantly decreasing, or even eliminating, the associated form drag (essentially, by reducing the cross-sectional area of the wake). However, even in the limit that the form drag 
+is reduced to a negligible level, there is still a residual drag acting on the obstacle due to boundary layer viscosity. 
+This type of drag is called {\em friction drag}. As is clear from a comparison of Equations~(\ref{ej6.83}) and
+(\ref{ej6.120}), the drag coefficient associated with friction drag is ${\cal O}({\rm Re}^{-1/2})$, where ${\rm Re}$ is the
+Reynolds number of the flow.  Friction drag thus tends
+to zero as the Reynolds number tends to infinity. 
+
+The phenomenon of boundary layer separation  allows us to resolve d'Alembert's paradox. Recall, from
+Section~\ref{scylo}, that an idealized fluid that is modeled as  inviscid and irrotational  is incapable of exerting a drag force on a stationary
+obstacle, despite the fact that very high Reynolds number, ostensibly irrotational, fluids are observed to exert significant drag forces
+on stationary obstacles. The resolution of the paradox lies in the realization that, in such fluids, viscosity can only be neglected (and the
+flow is consequently only irrotational) 
+ in the absence of boundary layer separation. In this case, the region of the fluid in which viscosity
+plays a significant role is localized to a thin boundary layer on the surface of the obstacle, and the resultant
+friction drag scales as ${\rm Re}^{-1/2}$, and, therefore, disappears in the inviscid limit (essentially,
+because the boundary layer shrinks to zero thickness in this limit). On the other hand, 
+if the boundary layer separates then viscosity is important both in a thin boundary layer on the front
+of the obstacle, and in a wide,  low-pressure, vortex-filled, wake that forms behind the obstacle. Moreover, the
+wake does not disappear in the inviscid limit.
+The presence of significant fluid vorticity within the wake invalidates  irrotational fluid dynamics.
+Consequently, the  pressure on the back side of the obstacle is significantly smaller than that
+predicted by irrotational fluid dynamics. Hence, the resultant pressure force
+on the front side is larger than that on the back side, and a significant drag is exerted on the obstacle.
+The drag coefficient associated with this type of drag is generally of order unity, and does not tend to zero
+as the Reynolds number tends to infinity. 
+
+\section{Criterion for Boundary Layer Separation}\label{sblsep1}
+As we have seen, the boundary layer equations (\ref{ej6.110})--(\ref{ej6.113}) generally lead to the conclusion that the tangential velocity in a thin boundary layer, $u$,
+is large compared with the normal velocity, $v$. Mathematically speaking, this result holds everywhere except  in the
+immediate vicinity of singular points. But, if $v\ll u$ then it follows that the fluid moves predominately parallel to the surface
+of the obstacle, and can only move  away from this surface to a very limited extent. This restriction effectively precludes separation of the flow from the surface. Hence, we conclude
+that separation can only occur at a point at which the solution of the boundary layer
+equations is singular. 
+
+As we approach a separation point, we expect the flow to deviate from the boundary layer
+towards the interior of the fluid. In other words, we expect the  normal velocity to become comparable with the
+tangential velocity. However, we have seen that the ratio $v/u$ is of order ${\rm Re}^{-1/2}$ [see Equation~(\ref{ej6.18})]. Hence, an increase of $v$ to
+such a degree that $v\sim u$ implies  an increase by a factor ${\rm Re}^{1/2}$. For sufficiently large Reynolds
+numbers, we may suppose that $v$ effectively increases by an infinite factor. Indeed, if we employ the dimensionless form of the
+boundary layer equations, (\ref{ej6.24})--(\ref{ej6.27}), the situation just described is formally
+equivalent to an infinite value of the dimensionless normal velocity, $V_y$, at the separation point. 
+
+Let the separation point lie at $x=x_0$, and let $x<x_0$ correspond to the region of the boundary layer upstream
+of this point. According to the above discussion,
+\begin{equation}
+v(x_0,y) = \infty
+\end{equation}
+at all $y$ (except, of course,  $y=0$, where the boundary conditions at the surface of the obstacle require that $v=0$).
+It follows that  the deriviative $\partial v/\partial y$ is also infinite at $x=x_0$.  Hence, the
+equation of continuity, $\partial u/\partial x+\partial v/\partial y=0$, implies that $(\partial u/\partial x)_{x=x_0}=\infty$,
+or $\partial x/\partial u=0$, if $x$ is regarded as a function of $u$ and $y$. Let $u(x_0,y)=u_0(y)$. 
+Close to the point of separation, $x_0-x$ and $u-u_0$ are small. Thus, we can expand $x_0-x$ in powers
+of $u-u_0$ (at fixed $y$). Since $(\partial x/\partial u)_{u=u_0}=0$, the first term in this expansion
+vanishes identically, and we are left with
+\begin{equation}
+x_0-x = f(y)\,(u-u_0)^2 + {\cal O}\left[(u-u_0)^3\right],
+\end{equation}
+or
+\begin{equation}\label{ej6.123}
+u(x,y)\simeq u_0(y) +\alpha(y)\,\sqrt{x_0-x},
+\end{equation}
+where $\alpha=1/\sqrt{f}$ is some function of $y$. From the equation of continuity,
+\begin{equation}
+\frac{\partial v}{\partial y} = -\frac{\partial u}{\partial x} \simeq \frac{\alpha(y)}{2\,\sqrt{x_0-x}}.
+\end{equation}
+Upon integration, the above expression yields
+\begin{equation}\label{ej6.125}
+v(x,y) \simeq \frac{\beta(y)}{\sqrt{x_0-x}},
+\end{equation}
+where 
+\begin{equation}\label{ej6.126}
+\beta(y) = \frac{1}{2}\int^y \alpha(y')\,dy'.
+\end{equation}
+
+The equation of tangential motion in the boundary layer, (\ref{ej6.111}), is written
+\begin{equation}
+u\,\frac{\partial u}{\partial x} + v\,\frac{\partial u}{\partial y} = U\,\frac{dU}{dx} +\nu\,\frac{\partial^2 u}{\partial y^2}.
+\end{equation}
+As is clear from Equation~(\ref{ej6.123}), the derivative $\partial^2 u/\partial y^2$ does not become
+infinite as $x\rightarrow x_0$. The same is true of the function $U\,dU/dx$, which is determined from  the
+flow outside the boundary layer. However, both terms on the left-hand side of the above expression become
+infinite as $x\rightarrow x_0$. Hence, in the immediate vicinity of the separation point,
+\begin{equation}
+u\,\frac{\partial u}{\partial x} + v\,\frac{\partial u}{\partial y} \simeq 0.
+\end{equation}
+Since $\partial u/\partial x = -\partial v/\partial y$, we can rewrite this equation in the form
+\begin{equation}
+-u\,\frac{\partial v}{\partial y} +v\,\frac{\partial u}{\partial y} =- u^2\frac{\partial}{\partial y}\!\left(\frac{v}{u}\right)\simeq 0.
+\end{equation}
+Since $u$ does not, in general, vanish at $x=x_0$, we conclude that
+\begin{equation}
+\frac{\partial}{\partial y}\!\left(\frac{v}{u}\right)\simeq 0.
+\end{equation}
+In other words, $v/u$ is a function of $x$ only. Now, from (\ref{ej6.123}) and (\ref{ej6.125}), 
+\begin{equation}
+\frac{v}{u} = \frac{\beta(y)}{u_0(y)\,\sqrt{x_0-x}}+ {\cal O}(1).
+\end{equation}
+Hence, if this ratio is a function of $x$ alone then $\beta(y) = (1/2)\,A\,u_0(y)$, where $A$ is a constant: {\em i.e.},
+\begin{equation}\label{ej6.132}
+v(x,y)\simeq \frac{A\,u_0(y)}{2\,\sqrt{x_0-x}}.
+\end{equation}
+Finally, since (\ref{ej6.126}) yields $\alpha=2\,d\beta/dy=A\,du_0/dy$,  we obtain
+\begin{equation}\label{ej6.133}
+u(x,y) \simeq u_0(y) + A\,\frac{du_0}{dy}\,\sqrt{x_0-x}.
+\end{equation}
+The previous two expressions specify $u$ and $v$ as functions of $x$ and $y$ 
+near the point of separation. Beyond the point of separation, that is
+for $x>x_0$, the expressions are physically meaningless, since the
+square roots become imaginary. This implies that the solutions of the
+boundary layer equations cannot sensibly be  continued beyond the separation
+point. 
+
+Now, the standard boundary conditions at the surface of the obstacle require
+that $u=v=0$ at $y=0$. It, therefore, follows from Equations~(\ref{ej6.132}) and (\ref{ej6.133}) that
+\begin{eqnarray}
+u_0(0) &=& 0,\\[0.5ex]
+\left.\frac{du_0}{dy}\right|_{y=0}& =& 0.
+\end{eqnarray}
+Thus, we obtain the important prediction that  both the
+tangential velocity, $u$, and its first derivative, $\partial u/\partial y$,  are zero at the separation point ({\em i.e.}, $x=x_0$ and $y=0$). This result was originally
+obtained by Prandtl, although the argument we have used to derive it is due to L.D.~Landau. 
+
+Note that if the constant $A$ in expressions (\ref{ej6.132}) and (\ref{ej6.133}) happens to be
+zero then the point $x=x_0$ and $y=0$, at which the derivative $\partial u/\partial y$ vanishes, 
+has no particular properties, and is not a point of separation. However,  there is no reasons, in
+general, why $A$ should take the special value zero. Thus, in practice, a point on  the surface
+of an obstacle at which $\partial u/\partial y=0$ is always a point of separation. 
+
+Incidentally, if there were no separation at the point $x=x_0$ ({\em i.e.}, if $A=0$) then  we
+would have $\partial u/\partial y<0$ for $x>x_0$. In other words, $u$ would become negative as we move
+away from the surface, $y$ being still small. That is, the fluid beyond the point $x=x_0$
+would move tangentially, in the region of the boundary layer immediately adjacent to the surface, in the
+direction {\em opposite}\/ to that of the external flow: {\em i.e.}, there would be  ``back-flow'' in this region. 
+In practice, the flow separates from the surface at $x=x_0$, and the back-flow migrates into the wake. 
+
+Note that the dimensionless boundary layer equations,  (\ref{ej6.24})--(\ref{ej6.27}),  are independent of the Reynolds
+number of the external flow (assuming that this number is much greater than unity). Thus, it follows
+that the point on the surface of the obstacle at which $\partial u/\partial y=0$ is also independent of the
+Reynolds number. In other words, the location of the separation point is independent of the Reynolds
+number (as long as this number is large, and the flow in the boundary layer is non-turbulent). 
+
+At $y=0$, the equation of tangential motion in the boundary layer, (\ref{ej6.111}),
+is written
+\begin{equation}
+\nu\left.\frac{\partial^2 u}{\partial y^2}\right|_{y=0} = -\frac{1}{U}\,\frac{dU}{dx} = \frac{1}{\rho}\,\frac{dP}{dx},
+\end{equation}
+where $P(x)$ is the pressure just outside the  layer, and use has been made of (\ref{ej6.7}). Now, since $u$
+is positive, and increases away from the surface (upstream of the separation point), it follows that $(\partial^2 u/\partial y^2)_{y=0}>0$ at the separation point itself, where $(\partial u/\partial y)_{y=0}=0$. Hence, according to the above equation,
+\begin{eqnarray}
+\left(\frac{dU}{dx}\right)_{x=x_0} &<&0,\\[0.5ex]
+\left(\frac{dP}{dx}\right)_{x=x_0}& >& 0.
+\end{eqnarray}
+In other words, we predict that the external tangential flow is always decelerating at the separation point, whereas the pressure gradient is always 
+adverse ({\em i.e.}, such as to decelerate the tangential flow), in agreement with experimental observations. 
+
+\section{Approximate Solutions of  Boundary Layer Equations}\label{sblapp}
+The boundary layer equations, (\ref{ej6.110})--(\ref{ej6.113}), take the form
+\begin{eqnarray}
+\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} &=&0,\\[0.5ex]
+u\,\frac{\partial u}{\partial x} + v\,\frac{\partial u}{\partial y} - U\,\frac{dU}{dx}& =& \nu\,\frac{\partial^2 u}{\partial y^2},\label{ej6.140}
+\end{eqnarray}
+subject to the boundary conditions
+\begin{eqnarray}
+u(x,\infty) &=& U(x),\label{ej6.141}\\[0.5ex]
+u(x,0)&=&0,\label{ej6.142}\\[0.5ex]
+v(x,0)&=&0.\label{ej6.143}
+\end{eqnarray}
+Furthermore, it follows from (\ref{ej6.140}), (\ref{ej6.142}), and (\ref{ej6.143}) that
+\begin{equation}\label{ej6.144}
+\nu\left.\frac{\partial^2 u}{\partial y^2}\right|_{y=0} =  -U\,\frac{dU}{dx}.
+\end{equation}
+The above expression can be thought of as an alternative form of (\ref{ej6.143}).
+As we saw in Section~\ref{sssim}, the boundary layer equations can be solved exactly when $U(x)$ takes the special form $U_0\,x^m$. 
+However, in the general case, we must resort to approximation methods. 
+
+Following Pohlhausen, let us assume that
+\begin{equation}
+\frac{u(x,y)}{U(x)} = f(\eta),
+\end{equation}
+where $\eta = y/\delta(x)$, and $\partial/\partial x\ll 1/\delta$. 
+In particular, suppose that
+\begin{equation}\label{ej6.146}
+f(\eta)=\left\{\begin{array}{ccl}
+a+b\,\eta+c\,\eta^2+d\,\eta^3+e\,\eta^4&\mbox{\hspace{1cm}}&0\leq\eta\leq 1\\[0.5ex]
+1&&\eta>1\end{array}\right.,
+\end{equation}
+where $a$, $b$, $c$, $d$, and $e$ are constants. This expression automatically satisfies the boundary condition (\ref{ej6.141}).
+Moreover, the boundary conditions (\ref{ej6.142}) and (\ref{ej6.144}) imply that $a=0$, and
+\begin{equation}\label{ej6.147}
+f''(0) = -\Lambda(x),
+\end{equation}
+where $'\equiv d/d\eta$, and 
+\begin{equation}
+\Lambda = \frac{\delta^2}{\nu}\,\frac{dU}{dx}.
+\end{equation}
+Finally, let us assume that $f$, $f'$, and $f''$ are continuous at $\eta=1$: {\em i.e.},
+\begin{eqnarray}
+f(1)&=&1,\label{ej6.149}\\[0.5ex]
+f'(1)&=&0,\\[0.5ex]
+f''(1)&=&0.\label{ej6.151}
+\end{eqnarray}
+These constraints corresponds to the reasonable requirements that the
+velocity, vorticity, and viscous stress tensor, respectively,  be continuous across the layer. 
+Given that $a=0$, Equations (\ref{ej6.146}), (\ref{ej6.147}), and (\ref{ej6.149})--(\ref{ej6.151}) yield
+\begin{equation}\label{ej6.152}
+f(\eta) = F(\eta)+\Lambda\,G(\eta)
+\end{equation}
+for $0\leq \eta\leq 1$, 
+where
+\begin{eqnarray}
+F(\eta)&=& 1 - (1-\eta)^{\,3}\,(1+\eta),\\[0.5ex]
+G(\eta) &=& \frac{1}{6}\,\eta\,(1-\eta)^{\,3}.\label{ej6.154}
+\end{eqnarray}
+Thus, the tangential velocity profile across the layer is a function of a single parameter, $\Lambda$, which is
+termed the {\em Pohlhausen}\/ parameter. The behavior of this profile is illustrated in Figure~\ref{fpohl}. Note that, under normal
+circumstances, 
+the Pohlhausen parameter must lie in the range $-12\leq \Lambda\leq 12$. For $\Lambda> 12$, the
+profile is such that $f(\eta)>1$ for some $\eta<1$, which is not possible in a steady-state solution. On the
+other hand, for $\Lambda<-12$, the profile is such that $f'(0)<0$, which implies flow reversal close to the wall.
+As we have seen,   flow reversal is indicative of separation. Indeed, the separation
+point, $f'(0)=0$, corresponds to $\Lambda=-12$. Note that expression (\ref{ej6.152}) is only an approximation, since
+it satisfies some, but not all, of the boundary conditions satisfied by the true velocity profile. For instance, differentiation
+of (\ref{ej6.140}) with respect to $y$ reveals that $(\partial^3 u/\partial y^3)_{y=0}\propto f'''(0)=0$, which is not the case for expression (\ref{ej6.152}).
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter06/pohl.eps}}
+\caption{\em Pohlhausen velocity profiles for $\Lambda=12$ (solid curve) and $\Lambda=-12$ (dashed curve).}\label{fpohl}
+\end{figure}
+
+It follows from Equations~(\ref{ej6.115}), (\ref{ej6.116}), and (\ref{ej6.152})--(\ref{ej6.154}) that
+\begin{eqnarray}
+\delta_1(x)&=&\delta\int_0^1(1-f)\,d\eta = \delta\left(\frac{3}{10}-\frac{\Lambda}{120}\right),\\[0.5ex]
+\delta_2(x)&=&\delta\int_0^1 f\,(1-f)\,d\eta=\delta\left(\frac{37}{315}-\frac{\Lambda}{945}-\frac{\Lambda^{\,2}}{9072}\right).
+\end{eqnarray}
+Furthermore,
+\begin{equation}
+\left.\frac{\partial u}{\partial y}\right|_{y=0} = \frac{U}{\delta}\,f'(0) = \frac{U}{\delta}\left(2 + \frac{\Lambda}{6}\right).
+\end{equation}
+Now, the von K\'{a}rm\'{a}n momentum integral, (\ref{ej6.117}), can be rearranged to give
+\begin{equation}\label{ej6.160}
+\frac{U}{\nu}\,\delta_2\,\frac{d\delta_2}{dx} +\frac{\delta_2^{\,2}}{\nu}\,\frac{dU}{dx} \left(2+\frac{\delta_1}{\delta_2}\right)
+=\frac{\delta_2}{U}\left.\frac{\partial u}{\partial y}\right|_{y=0}.
+\end{equation}
+Defining
+\begin{equation}\label{ej6.159}
+\lambda(x) = \frac{\delta_2^{\,2}}{\nu}\,\frac{dU}{dx},
+\end{equation}
+we obtain
+\begin{equation}\label{ej6.160a}
+U\,\frac{d}{dx}\!\left(\frac{\lambda}{dU/dx}\right) = 2\left[F_2(\lambda)-\lambda\left\{2+F_1(\lambda)\right\}\right] = F(\lambda),
+\end{equation}
+where
+\begin{eqnarray}\label{ej6.161a}
+\lambda &=& \left(\frac{37}{315}-\frac{\Lambda}{945}-\frac{\Lambda^{\,2}}{9072}\right)^2\Lambda,\\[0.5ex]
+F_1(\lambda)&=& \frac{\delta_1}{\delta_2} = \left(\frac{3}{10}-\frac{\Lambda}{120}\right)\left/\left(\frac{37}{315}-\frac{\Lambda}{945}-\frac{\Lambda^{\,2}}{9072}\right)\right.,\label{ej6.161}\\[0.5ex]
+F_2(\lambda) &=&\frac{\delta_2}{U}\left.\frac{\partial u}{\partial y}\right|_{y=0}=
+\left(2+\frac{\Lambda}{6}\right)\left(\frac{37}{315}-\frac{\Lambda}{945}-\frac{\Lambda^{\,2}}{9072}\right),\label{ej6.162}\\[0.5ex]
+F(\lambda)&=& 2\left(\frac{37}{315}-\frac{\Lambda}{945}-\frac{\Lambda^{\,2}}{9072}\right)\left[2-
+\frac{116}{315}\,\Lambda+\left(\frac{2}{945}+\frac{1}{120}\right)\Lambda^{\,2}+ \frac{2}{9072}\,\Lambda^{\,3}\right].\nonumber\\[0.5ex]&&
+\end{eqnarray}
+It is generally necessary to integrate Equation~(\ref{ej6.160})  from the stagnation point at the front of the obstacle, through the
+point of maximum tangential velocity, to the separation point on the back side of the obstacle. Now, at the
+stagnation point we have  $U=0$ and $dU/dx\neq 0$, which implies that $F(\lambda)=0$.  Furthermore, at the point of maximum tangential velocity we have 
+$dU/dx=0$ and $U\neq 0$, which implies that $\Lambda=\lambda=0$. Finally, as we have already seen,
+$\Lambda=-12$ at the separation point, which implies, from (\ref{ej6.161a}),  that $\lambda=-0.1567$. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter06/walz.eps}}
+\caption{\em The function $F(\lambda)$ (solid curve)  and the linear function $0.46-6\,\lambda$ (dashed line).}\label{fwalz}
+\end{figure}
+
+As was first pointed out by Walz, and is illustrated in Figure~\ref{fwalz}, it is a fairly good approximation to
+replace $F(\lambda)$ by the linear function
+$0.47-6\,\lambda$
+for $\lambda$ in the physically relevant range.  The approximation is
+particularly accurate on the front side of the obstacle (where $\lambda>0$). Making use of this
+approximation, Equations~(\ref{ej6.159}) and (\ref{ej6.160a}) reduce to 
+the linear differential equation 
+\begin{equation}
+\frac{d}{dx}\!\left(\frac{U\,\delta_2^{\,2}}{\nu}\right) = 0.47 - 5\,\frac{dU}{dx}\,\frac{\delta_2^{\,2}}{\nu},
+\end{equation}
+which can be integrated to give
+\begin{equation}\label{ej6.166}
+\frac{\delta_2^{\,2}}{\nu} = \frac{0.47}{U^{\,6}}\int_0^x U^{\,5}(x')\,dx',
+\end{equation}
+assuming that the stagnation point corresponds to $x=0$. It follows that
+\begin{equation}\label{ej6.167}
+\lambda= \frac{0.47}{U^{\,6}}\,\frac{dU}{dx}\int_0^x U^{\,5}(x')\,dx'.
+\end{equation}
+Recall that the separation point corresponds to $x=x_s$, where $\lambda(x_s)\equiv\lambda_s= -0.1567$. 
+
+Suppose that $U(x)=U_0$, which corresponds to uniform flow over a flat plate (see Section~\ref{splate}). 
+It follows from Equations~(\ref{ej6.166}) and (\ref{ej6.167}) that 
+\begin{equation}
+\frac{\delta_2}{x} = \frac{0.69}{{\rm Re}^{1/2}},
+\end{equation}
+where ${\rm Re}=U_0\,x/\nu$, and $\lambda=0$. Moreover, according to Equations~(\ref{ej6.161a}) and (\ref{ej6.161}),
+$\Lambda=0$ and $\delta_1/\delta_2=2.55$. Hence, the displacement width of the boundary layer becomes
+\begin{equation}
+\frac{\delta_1(x)}{x} = \frac{1.75}{{\rm Re}^{1/2}}.
+\end{equation}
+This approximate result compares very favorably with the exact result, (\ref{ej6.77}).
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter06/cyl.eps}}
+\caption{\em The function $\lambda(\theta)$ for flow around a circular cylinder.}\label{fccyl}
+\end{figure}
+
+Suppose that $x=a\,\theta$ and $U(\theta)=2\,U_0\,\sin\theta$, which corresponds to uniform transverse flow around a circular cylinder of radius $a$ (see Section~\ref{sblsep}). Equation~(\ref{ej6.167}) yields
+\begin{equation}
+\lambda(\theta) = 0.47\,\frac{\cos\theta}{\sin^6\theta}\int_0^\theta \sin^5\,\theta.
+\end{equation}
+Figure~\ref{fccyl} shows $\lambda(\theta)$ determined from the above formula. It can be seen that $\lambda=\lambda_s=-0.1567$
+when $\theta=\theta_s\simeq 108^\circ$. In other words, the separation point is located $108^\circ$ from the stagnation point at
+the front of the cylinder. This suggests that the low pressure wake behind the cylinder is almost as wide as the
+cylinder itself, and that the associated form drag is comparatively large.
+
+\begin{figure}
+\epsfysize=1.5in
+\centerline{\epsffile{Chapter06/wedge.eps}}
+\caption{\em Flow over the back surface of a semi-infinite wedge.}\label{fwedgex}
+\end{figure}
+
+Suppose, finally, that $U=U_0\,x^m$. If $m$ is negative then, as illustrated in Figure~\ref{fwedgex},  this corresponds to uniform flow over the back surface of a semi-infinite
+wedge whose angle of dip is 
+\begin{equation}
+\theta = - \frac{m}{1+m}\,\frac{\pi}{2}
+\end{equation}
+(see Section~\ref{sssim}).
+It follows from (\ref{ej6.167}) that
+\begin{equation}
+\lambda = \frac{0.47\,m}{1+5\,m} = -\frac{0.47\,\theta}{\pi/2-4\,\theta}.
+\end{equation}
+Now, we expect boundary layer separation on the back surface of the wedge  when $\lambda<\lambda_s=-0.1567$. This corresponds to $\theta>\theta_s$, where
+\begin{equation}
+\theta_s = \frac{\pi}{2}\,\frac{(-\lambda_s)}{0.47+4\,(-\lambda_s)} \simeq 13^\circ.
+\end{equation}
+Hence, boundary layer separation can be prevented by making the wedge's angle of
+dip sufficiently shallow: {\em i.e.}, by streamlining the wedge, which has the effect of reducing the deceleration of the
+flow on the wedge's back surface. 
+Note that the critical value of $m$  ({\em i.e.}, $m_s=-0.0125$) at which separation occurs in our approximate solution is
+very similar to the critical value of $m$ ({\em i.e.}, $m_\ast=-0.0905$) at which the exact self-similar solutions described in Section~\ref{sssim}
+can no longer be found. This suggests that the absence of self-similar solutions for $m<m_\ast$ is related to
+boundary layer separation. 
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{6.\arabic{enumi}}
+\begin{enumerate}
+\item Fluid flows between two non-parallel plane walls, towards the intersection of the planes, in such a  manner that 
+if $x$ is measured along a wall from the intersection of the planes then $U(x)=-U_0/x$, where $U_0$ is
+a positive constant. Verify that a solution of the boundary layer equation (6.35) can be found
+such that $\psi$ is a function of $y/x$ only. Demonstrate that this solution yields
+$$
+\frac{u(x,y)}{U(x)} = F\left[\left(\frac{U_0}{\nu}\right)^{1/2}\,\frac{y}{x}\right],
+$$
+where
+$$
+F'' - F^{\,2} = -1,
+$$
+subject to the boundary conditions $F(0)=0$ and $F(\infty)=1$. Verify  that
+$$
+F(z) = 3\,\tanh^2\left(\alpha+\frac{z}{\sqrt{2}}\right)-2
+$$
+is a suitable solution of the above differential equation, where $\tanh^2\alpha =2/3$. 
+
+\item A jet of water issues from a straight narrow slit in a wall, and mixes with the surrounding water, which is at rest.
+On the assumption that the motion is non-turbulent and two-dimensional, and that the approximations of boundary
+layer theory apply, the stream function satisfies the boundary layer equation
+$$
+\nu\,\frac{\partial^3\psi}{\partial y^3}-\frac{\partial\psi}{\partial x}\,\frac{\partial^2\psi}{\partial y^2}
++\frac{\partial\psi}{\partial y}\,\frac{\partial^2\psi}{\partial x\,\partial y} = 0.
+$$
+Here, the symmetry axis of the jet is assumed to run along the $x$-direction, whereas the $y$-direction is perpendicular to this axis.
+The velocity of the jet parallel to the symmetry axis is
+$$
+u(x,y)= -\frac{\partial\psi}{\partial y},
+$$
+where $u(x,-y)=u(x,y)$, and $u(x,y)\rightarrow 0$ as $y\rightarrow\infty$. We expect the momentum flux of the
+jet parallel to its symmetry axis,
+$$
+M = \rho\int_{-\infty}^{\infty}u^2\,dy,
+$$
+to be independent of $x$. 
+
+Consider a self-similar  stream function of the form
+$$
+\psi(x,y)=\psi_0\,x^p\,F(y/x^q).
+$$
+Demonstrate that the boundary layer equation requires that $p+q=1$, and that $M$ is only independent of $x$ when
+$2\,p-q=0$. Hence, deduce that $p=1/3$ and $q=2/3$. 
+
+Suppose that
+$$
+\psi(x,y)=-\frac{6\,\nu}{x^{1/3}}\,F(y/x^{2/3}).
+$$
+Demonstrate that $F(z)$ satisfies
+$$
+F''' +2\,F\,F'' + 2\,F'^{\,2} = 0,
+$$
+subject to the constraints that $F(-z)=F(z)$, and $F(z)\rightarrow 0$ as $z\rightarrow\infty$. 
+Show that
+$$
+F(z)=\alpha\,\tanh(\alpha\,z)
+$$
+is a suitable solution, and that
+$$
+M= 48\,\rho\,\nu^2\,\alpha^3.
+$$
+
+\item The growth of a boundary layer can be inhibited by sucking some of the fluid through a porous wall. 
+Consider conventional boundary layer theory. As a consequence
+of suction, the boundary condition on the normal velocity at the wall is modified to $v(x,0)=-v_s$, where
+$v_s$ is the (constant) suction velocity. Demonstrate that, in the presence of suction, the von K\'{a}rm\'{a}n velocity
+integral becomes
+$$
+\nu\left.\frac{\partial u}{\partial y}\right|_{y=0} = U^{\,2}\,\frac{d\delta_2}{dx} + U\,\frac{dU}{dx}\,(\delta_1+2\,\delta_2) + U\,v_s.
+$$
+Suppose that
+$$
+u(x,y) = U(x)\left\{\begin{array}{ccl}
+\sin(\alpha\,y)&\mbox{\hspace{1cm}}&0\leq y\leq \pi/(2\,\alpha)\\[0.5ex]
+1&&y>\pi/(2\,\alpha)
+\end{array}\right.,
+$$
+where $\alpha=\alpha(x)$. Demonstrate that the displacement and momentum widths of the boundary layer are
+\begin{eqnarray}
+\delta_1&=&(\pi/2-1)\,\alpha^{-1},\nonumber\\[0.5ex]
+\delta_2&=&(1-\pi/4)\,\alpha^{-1},\nonumber
+\end{eqnarray}
+respectively. 
+Hence, deduce that
+$$
+\frac{\nu\,(\pi/2-1)^2}{\delta_1} = U\,(1-\pi/4)\,\frac{d\delta_1}{dx} + \frac{dU}{dx}\,\delta_1+(\pi/2-1)\,v_s.
+$$
+
+Consider a boundary layer on a flat plate, for which $U(x)=U_0$. Show that, in the absence of suction,
+$$
+\delta_1 = (\pi/2-1)\left(\frac{8}{4-\pi}\right)^{1/2}\left(\frac{\nu\,x}{U_0}\right)^{1/2},
+$$
+but that in the presence of suction
+$$
+\delta_1 = \frac{(\pi/2-1)\,\nu}{v_s}.
+$$
+Hence, deduce that, for a plate of length $L$, suction is capable of significantly reducing the thickness of the
+boundary layer when
+$$
+\frac{v_s}{U_0}\gg \frac{1}{{\rm Re}^{1/2}},
+$$
+where ${\rm Re} = U_0\,L/\nu$. 
+\end{enumerate}}

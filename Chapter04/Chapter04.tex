@@ -1,0 +1,754 @@
+\chapter{Surface Tension}\label{c6x}
+\section{Introduction}\label{s6x1}
+As is well-known, small drops of water in air, and small bubbles of gas in water, tend to adopt  spherical shapes.
+This phenomenon, and a host of other natural phenomena, can  only be accounted for on the hypothesis that an interface between two different media is associated with a
+particular form of energy whose magnitude is directly proportional to the interface area.
+To be more exact, if $S$ is the  area then the contribution of the interface to the Helmholtz free energy
+of the system takes the form $\gamma\,S$, where  $\gamma$ only depends  on the temperature and  
+chemical composition
+of the two media on either side of the interface. It follows, from standard thermodynamics, that $\gamma\,S$ is the work that
+must be performed on the system in order to create the
+interface via an isothermal and reversible process. However, this work is exactly the same as that which we would calculate
+on the assumption that the interface is in a state of uniform constant tension per unit length $\gamma$. Thus, $\gamma$
+can be interpreted as both a free energy per unit area of the interface, and a {\em surface tension}. This
+ tension is such that a force of magnitude
+$\gamma$ per unit length is exerted across any line drawn on the interface,  in a direction normal to the line, and tangential to 
+the interface. 
+
+Surface tension originates from intermolecular cohesive forces. The average free energy of a molecule
+in a given isotropic medium possessing an interface with a second medium is independent of its position, provided that the molecule does not lie too close to the interface. However, the free energy is modified when the molecule's distance from
+the interface becomes less than the range of the cohesive forces (which is typically $10^{-9}\,{\rm m}$). Since this
+range is so small, the number of molecules in a macroscopic system whose free energies are affected by the presence of an interface is directly
+proportional to the interface area. Hence, the contribution of the interface to the total free energy
+of the system is also proportional to the  area. If only one of the two media
+in question is a condensed phase then the parameter $\gamma$ is invariably {\em positive}\/ ({\em i.e.}, such that a
+reduction in the surface area is energetically favorable). This follows because
+the molecules of a liquid or a solid are subject to an {\em attractive}\/ force from neighboring molecules.
+However, molecules that are near to an interface with a gas lack neighbors on one side, and
+so experience an unbalanced cohesive force directed toward the interior of the liquid/solid. The
+existence of this force makes it energetically favorable for  the interface to contract ({\em i.e.}, $\gamma>0$). 
+On the other hand, if the interface
+separates a liquid and a solid, or a liquid and another liquid, then the sign of $\gamma$ cannot be predicted
+by this argument. In fact, it is possible for both signs of $\gamma$ to occur at liquid/solid and liquid/liquid interfaces. 
+
+The surface tension of a water/air interface at $20^\circ\,{\rm C}$ is $\gamma=7.28\times 10^{-2}\,{\rm N\,m^{-1}}$. The
+surface tension at  most
+oil/air interfaces is much lower---typically, $\gamma\simeq 2\times 10^{-2}\,{\rm N\,m^{-1}}$. On the other hand, 
+interfaces between  liquid metals and air generally have  very large surface tensions. For instance, the surface 
+tension of a mercury/air interface at $20^\circ\,{\rm C}$
+is $4.87\times 10^{-1}\,{\rm N\,m^{-1}}$. 
+
+For some pairs of liquids, such as water and alcohol, an
+interface cannot generally be observed because it is in compression ({\em i.e.}, $\gamma<0$). Such an interface tends
+to become as large as possible, leading to complete mixing of the two liquids. In other words, liquids for
+which $\gamma>0$ are immiscible, whereas those for which $\gamma<0$ are miscible.  
+
+Finally, the 
+surface tension at a liquid/gas or a liquid/liquid interface can be 
+affected by the presence of  adsorbed impurities at the interface. For instance, the surface tension at a water/air interface
+is significantly deceased in the presence of adsorbed soap molecules. Impurities
+that tend to reduce surface tension at interfaces are termed {\em surfactants}. 
+
+\section{Young-Laplace Equation}
+Consider an interface separating two immiscible fluids that are in equilibrium with one another. Let these two
+fluids be denoted 1 and 2. Consider an arbitrary segment $S$ of this interface that is enclosed by some closed curve $C$. 
+Let ${\bf t}$ denote a unit tangent to the curve, and let ${\bf n}$ denote a unit normal to the
+interface directed from fluid 1 to fluid 2. (Note that $C$ circulates around ${\bf n}$ in a
+right-handed manner.) See Figure~\ref{f6x.01}. Suppose that $p_1$ and $p_2$ are the 
+pressures of fluids 1 and 2, respectively, on either side of $S$. Finally, let $\gamma$ be the (uniform) 
+surface tension at the interface. 
+ 
+\begin{figure}
+\epsfysize=1.5in
+\centerline{\epsffile{Chapter04/fig6.01.eps}}
+\caption{\em Interface between two immiscible fluids.}\label{f6x.01}
+\end{figure}
+
+The net force acting on $S$ is
+\begin{equation}\label{e6x.1}
+{\bf f} =\int_S  (p_1-p_2)\,{\bf n}\,dS + \gamma \oint_C {\bf t}\times {\bf n}\,dr,
+\end{equation}
+where $d{\bf S} = {\bf n}\,dS$ is an element of $S$, and $d{\bf r}= {\bf t}\,dr$ an element of $C$. Here, the first term on the
+right-hand side is the net normal force due to the pressure difference across the interface, whereas the
+second term is the net surface tension force. 
+Note that body forces play no role in (\ref{e6x.1}), because the interface has zero volume. Furthermore, 
+viscous forces can be neglected, since both fluids are static.
+Now, in equilibrium,
+the net  force acting on $S$ must be zero: {\em i.e.}, 
+\begin{equation}\label{e6x.2}
+\int_S (p_1-p_2)\,{\bf n}\,dS =- \gamma \oint_C {\bf t}\times {\bf n}\,dr.
+\end{equation}
+(In fact, the net force would be zero even in the absence of equilibrium, because the interface has zero mass.)
+
+Applying Stokes' theorem (see Section~\ref{scurl}) to the curve $C$, we find that
+\begin{equation}
+\oint_C {\bf F}\cdot d{\bf r} = \int_S \nabla\times {\bf F}\cdot d{\bf S},
+\end{equation}
+where ${\bf F}$ is a general vector field. This theorem can also be written
+\begin{equation}
+\oint_C {\bf F}\cdot {\bf t}\,dr= \int_S \nabla\times {\bf F}\cdot {\bf n}\,dS.
+\end{equation}
+Suppose that ${\bf F} = {\bf g}\times {\bf b}$, where ${\bf b}$ is an arbitrary constant vector. We obtain
+\begin{equation}
+\oint_C ({\bf g}\times {\bf b})\cdot {\bf t}\,dr= \int_S \nabla\times({\bf g}\times{\bf b})\cdot {\bf n}\,dS.
+\end{equation}
+However, the vector identity (\ref{curlvp}) yields
+\begin{equation}
+\nabla\times ({\bf g}\times {\bf b}) = - (\nabla\cdot{\bf g})\,{\bf b} + ({\bf b}\cdot\nabla)\,{\bf g},
+\end{equation}
+since ${\bf b}$ is a {\em constant}\/ vector.
+Hence, we get
+\begin{equation}
+{\bf b}\cdot\oint_C {\bf t}\times {\bf g}\,dr = {\bf b}\cdot\!\int_S[(\nabla {\bf g})\cdot{\bf n} - (\nabla\cdot{\bf g})\,{\bf n}]\,dS,
+\end{equation}
+where ${\bf b} \cdot(\nabla {\bf g})\cdot{\bf n} \equiv b_i\,(\partial g_j/\partial x_i)\,n_j$. 
+Now, since ${\bf b}$ is also an {\em arbitrary}\/ vector, the above equation gives
+\begin{equation}
+\oint_C {\bf t}\times {\bf g}\,dr = \int_S\left[(\nabla {\bf g})\cdot{\bf n} - (\nabla\cdot{\bf g})\,{\bf n}\right]dS.
+\end{equation}
+Taking  ${\bf g} = \gamma\,{\bf n}$, we find that
+\begin{equation}
+\gamma\oint_C {\bf t}\times {\bf n}\,dr= \gamma\int_S \left[(\nabla {\bf n})\cdot {\bf n} - (\nabla\cdot {\bf n})\,{\bf n}\right]dS.
+\end{equation}
+But, $(\nabla{\bf n})\cdot {\bf n}\equiv (1/2)\,\nabla(n^2)=0$, because ${\bf n}$ is a {\em unit}\/ vector. Thus, we obtain
+\begin{equation}\label{e6x.10}
+\gamma\,\oint_C {\bf t}\times{\bf n}\,dr = - \gamma\int_S (\nabla \cdot{\bf n})\,{\bf n}\,dS,
+\end{equation}
+which can be combined with (\ref{e6x.2}) to give
+\begin{equation}
+\int_S\left[(p_1-p_2)-\gamma\,(\nabla\cdot{\bf n})\right]{\bf n}\,dS = 0.
+\end{equation}
+Finally, given that $S$ is {\em arbitrary}, the above expression reduces to the pressure balance constraint
+\begin{equation}\label{e6x.11}
+\Delta p = \gamma\,\nabla\cdot{\bf n},
+\end{equation}
+where $\Delta p = p_1-p_2$.
+The above relation is generally known as the {\em Young-Laplace equation}, and
+can also be derived by minimizing the free energy of the interface (see Section~\ref{sbubble}). Note that $\Delta p$ is
+the jump in pressure seen when crossing the interface in the {\em opposite}\/ direction to ${\bf n}$.
+Of course, a plane interface is characterized by $\nabla\cdot{\bf n}=0$. On the other hand, a curved
+interface generally has $\nabla\cdot{\bf n}\neq 0$. In fact, $\nabla\cdot{\bf n}$ measures the {\em local
+ mean curvature}\/ of the interface. Thus, according to the Young-Laplace equation, there is a pressure jump across  
+a curved interface between two immiscible fluids, the
+magnitude of the jump being proportional to the surface tension. 
+
+\section{Spherical Interfaces}\label{s6x3}
+Generally speaking, the equilibrium shape of an interface between two immiscible fluids is determined by solving
+the force balance equation (\ref{e6.1}) in each fluid, and then applying the Young-Laplace equation to the
+interface. However, in situations in which a mass of one fluid is completely
+immersed in a second fluid---{\em e.g.}, a mist droplet in air, or a gas bubble in water---the shape of the interface is fairly obvious.  Provided that either the
+size of the droplet or bubble, or the difference in densities on the two sides of the interface, is sufficiently small,
+we can safely ignore the effect of gravity. This implies that the pressure is {\em uniform}\/ in each fluid, and consequently that the pressure jump
+$\Delta p$ is {\em constant}\/ over the interface. Hence, from (\ref{e6x.11}), the mean curvature $\nabla\cdot{\bf n}$
+of the interface is also {\em constant}.  Since a sphere is the only closed surface which possesses  a constant mean curvature, we conclude that
+ the interface is {\em spherical}. This result also follows from the argument that a stable equilibrium state
+is one which {\em minimizes}\/ the free energy of the interface, subject to the constraint that the enclosed volume be 
+{\em constant}. In other words, the equilibrium shape of the interface is that which
+has the least surface area for a given volume: {\em i.e.}, a sphere.
+
+Suppose that the interface corresponds to the spherical surface $r=R$, where $r$ is a spherical coordinate (see Section~\ref{ssph}).
+It follows that ${\bf n}= \left.{\bf e}_r\right|_{r=R}$. (Note, for future reference, that ${\bf n}$ points away from the center of
+curvature of the interface.)
+ Hence, from (\ref{ec65}), 
+\begin{equation}\label{e6x12}
+\nabla\cdot{\bf n} = \left.\frac{1}{r^2}\,\frac{\partial r^2}{\partial r}\right|_{r=R} = \frac{2}{R}.
+\end{equation}
+The Young-Laplace equation, (\ref{e6x.11}), then gives
+\begin{equation}
+\Delta p = \frac{2\,\gamma}{R}.
+\end{equation}
+Thus, given that $\Delta p$ is the pressure jump seen crossing the interface in the opposite direction to ${\bf n}$, 
+we conclude that the
+pressure {\em inside}\/ a droplet or bubble {\em exceeds}\/ that outside by an amount proportional to the surface tension, and
+inversely proportional to the droplet or bubble radius. This explains why small bubbles are louder that large
+ones when they burst at a free surface: {\em e.g.}, champagne fizzes louder than beer. Note that soap bubbles in air
+have {\em two}\/ interfaces  defining  the inner and outer extents of the soap film. Consequently, the net pressure difference is
+{\em twice}\/ that across a single interface.  
+
+\section{Capillary Length}\label{sclen}
+Consider an interface separating the atmosphere from a liquid of uniform density $\rho$ that is at rest on the surface of the
+Earth. Neglecting the density of air compared to that of the liquid, the pressure in the atmosphere can
+be regarded as constant. On the other hand, the pressure in the liquid varies as $p=p_0-\rho\,g\,z$ (see Chapter~\ref{c6}), where
+$p_0$ is the pressure of the atmosphere, $g$  the acceleration due to gravity, and $z$ measures vertical height (relative
+to the equilibrium height of the interface in the absence of surface tension). Note that $z$
+increases upward. In this situation, the Young-Laplace equation (\ref{e6x.11})
+yields
+\begin{equation}\label{e6x.14}
+\rho\,g\,z = -\gamma\,\nabla\cdot{\bf n},
+\end{equation}
+where ${\bf n}$ is the normal to the interface directed from liquid to air.  Now, if $l$ represents the typical radius of curvature of the
+interface then the left-hand side of the above equation dominates the right-hand side whenever $l\gg \lambda$,
+and {\em vice versa}. Here, 
+\begin{equation}\label{e6x16}
+\lambda = \left(\frac{\gamma}{\rho\,g}\right)^{1/2}
+\end{equation}
+is known as the {\em capillary length}, and takes the value $2.7\times 10^{-3}\,{\rm m}$
+for pure water at $20^\circ\,{\rm C}$. We conclude that the effect of surface tension on the shape of an liquid/air interface
+is likely to dominate the effect of gravity when the  interface's radius of curvature is much less than the capillary length, and {\em vice versa}. 
+
+\begin{figure}
+\epsfysize=2in
+\centerline{\epsffile{Chapter04/fig6.02.eps}}
+\caption{\em Interface between two fluids and a solid.}\label{f6x.02}
+\end{figure}
+
+\section{Angle of Contact}
+Suppose that a liquid/air interface is in contact with a solid, as would be  the case for water in a glass tube, or a drop
+of mercury resting on a table. Figure~\ref{f6x.02} shows a section perpendicular to the edge at which the
+liquid, $1$, the air, $2$, and the solid, $3$, meet. Suppose that the free energies per unit
+area at the liquid/air, liquid/solid, and air/solid interfaces are $\gamma_{12}$, $\gamma_{13}$, and $\gamma_{23}$,
+respectively. If the boundary between the three media is slightly modified in the neighborhood of the edge, as indicated
+by the dotted line in the figure, then the area of contact of the air with the solid is increased by a small amount $\delta r$ per unit
+breadth (perpendicular to the figure), whereas that of the liquid with the solid is decreased by
+$\delta r$ per unit breadth, and that of the liquid with the air is decreased by $\delta r\,\cos\theta$ per unit
+breadth. Thus, the net change in free energy per unit breadth is
+\begin{equation}
+\gamma_{23}\,\delta r - \gamma_{13}\,\delta r - \gamma_{12}\,\delta r\,\cos\theta.
+\end{equation}
+However, an equilibrium state is one which {\em minimizes}\/ the free energy, implying that the above expression is {\em zero}\/ for arbitrary
+(small) $\delta r$: {\em i.e.}, 
+\begin{equation}\label{e6x.16}
+\cos\theta = \frac{\gamma_{23}-\gamma_{13}}{\gamma_{12}}.
+\end{equation}
+We conclude that, in equilibrium, the {\em angle of contact}, $\theta$, between the liquid and the solid takes a {\em fixed}\/ value that depends on the
+free energies per unit area at the liquid/air, liquid/solid, and  air/solid interfaces. Note that the above formula
+could also be obtained from the requirement that the various surface tension forces acting at the edge  balance one another, assuming that
+it is really appropriate to interpret $\gamma_{13}$ and $\gamma_{23}$ as surface tensions when one of
+the media making up the interface is a solid. 
+
+As explained in Section~\ref{s6x1}, we would generally expect $\gamma_{12}$ and $\gamma_{23}$ to be positive. 
+On the other hand, $\gamma_{13}$ could be either positive or negative. Now, since $|\cos\theta|\leq 1$, Equation~(\ref{e6x.16})
+can only be solved when $\gamma_{13}$ lies in the range
+\begin{equation}
+\gamma_{23}+\gamma_{12}> \gamma_{13} > \gamma_{23}-\gamma_{12}.
+\end{equation}
+If $\gamma_{13}> \gamma_{23}+\gamma_{12}$ then the angle of contact is $180^\circ$, which corresponds to the case
+ where the
+free energy at the liquid/solid interface is so large that the liquid does not wet the solid at all, but instead breaks up into beads
+ on its surface. On the other hand, if $\gamma_{13}< \gamma_{23}-\gamma_{12}$ then the
+angle of contact is $0^\circ$, which corresponds to the case where the free energy at the liquid/solid
+interface is so small that the liquid completely wets the solid, spreading out indefinitely until it either covers the
+whole surface, or its thickness reaches molecular dimensions. 
+
+The angle of contact between water and glass typically lies in the range $25^\circ$ to $29^\circ$, whereas
+that between mercury and glass is about $127^\circ$. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter04/fig6.03.eps}}
+\caption{\em Elevation of liquid level in a capillary tube.}\label{f6x.03}
+\end{figure}
+
+\section{Jurin's Law}
+Consider a situation in which a narrow, cylindrical,  glass tube of radius $a$ is
+dipped vertically  into a liquid of density $\rho$, and the liquid level within the tube rises a height $h$ above the free surface
+ as a consequence of surface tension. See Figure~\ref{f6x.03}. Suppose that the radius of the
+ tube  is much less than the capillary length. A tube for which this is the case is generally
+known as a {\em capillary tube}. 
+ According to the discussion in  Section~\ref{sclen}, the shape of the internal liquid/air interface within a capillary tube
+  is not significantly affected by gravity.  Thus,  from Section~\ref{s6x3}, the interface is
+ a segment of a sphere of radius $R$ (say). If $\theta$ is the angle of contact of interface with the glass then  simple geometry (see Figure~\ref{f6x.03}) reveals that 
+ \begin{equation}
+ R = \frac{a}{\cos\theta}.
+ \end{equation}
+ Hence, from Equation~(\ref{e6x12}), the mean curvature of the interface is given by
+ \begin{equation}
+ \nabla\cdot{\bf n} = -\frac{2}{R} =- \frac{2\,\cos\theta}{a},
+ \end{equation}
+ where $\gamma$ is the associated surface tension. [The minus sign in the above expression arises from the
+ fact that ${\bf n}$ points towards the center of curvature of the interface, whereas the opposite is true for Equation~(\ref{e6x12}).] Finally, from
+ (\ref{e6x.14}), application of the Young-Laplace equation to the interface yields
+ \begin{equation}
+ \rho\,g\,h = \frac{2\,\gamma\,\cos\theta}{a},
+ \end{equation}
+ which  can be rearranged to give
+ \begin{equation}\label{e6x.22}
+ h \simeq  \frac{2\,\gamma\,\cos\theta}{\rho\,g\,a}.
+ \end{equation}
+ This result, which relates the height, $h$, to which a liquid rises in a capillary tube of radius $a$ to the
+liquid's  surface tension, $\gamma$, is known as {\em Jurin's law}. 
+Note that the assumption that the radius of the tube is much less than the capillary length
+is equivalent to the assumption that the height  of the interface above the free surface of the
+liquid is much greater than the radius of the tube.
+This follows, from (\ref{e6x16}) and (\ref{e6x.22}), because
+\begin{equation}
+\frac{h}{a} = 2\,\cos\theta\,\frac{\lambda^2}{a^2}.
+\end{equation}
+Thus, the ordering $a\ll \lambda$  implies that $h\gg a$. 
+
+For the case of water at $20^\circ$, assuming a contact angle of $25^\circ$, Jurin's law yields
+$h({\rm mm}) = 13.5/a({\rm mm})$. Thus, water rises a height $13.5\,{\rm mm}$ in a capillary tube of
+radius $1\,{\rm mm}$, but rises $13.5\,{\rm cm}$ in a capillary tube of radius $0.1\,{\rm mm}$. 
+Note that in the case of a liquid, such a mercury, that has an {\em oblique}\/
+angle of contact with glass, so that $\cos\theta<0$, the  liquid level in a capillary tube is {\em depressed}\/
+below that of the free surface ({\em i.e.}, $h<0$). 
+ 
+\section{Capillary Curves}
+Let adopt Cartesian coordinates on the Earth's surface such that $z$ increases vertically upward. Suppose
+that the interface of a liquid of density $\rho$ and surface tension $\gamma$ with the atmosphere corresponds to the
+surface $z=f(x)$, where the liquid occupies the region $z<f(z)$. Note that the shape of the interface is $y$-independent. The unit normal to the interface (directed from liquid
+to air) is thus 
+\begin{equation}
+{\bf n} = \frac{\nabla(z-f)}{|\nabla(z-f)|}=\frac{{\bf e}_z - f_x\,{\bf e}_x}{(1+f_x^{\,2})^{1/2}},
+\end{equation}
+where $f_x\equiv df/dx$. Hence, the mean curvature of the interface is
+\begin{equation}
+\nabla\cdot {\bf n} = - \frac{f_{xx}}{(1+f_x^{\,2})^{3/2}},
+\end{equation}
+where $f_{xx}\equiv d^2f/dx^2$. 
+According to  (\ref{e6x.14}), the shape of the interface is governed by the nonlinear differential
+equation
+\begin{equation}
+f = \frac{\lambda^2\,f_{xx}}{(1+f_x^{\,2})^{3/2}}.
+\end{equation}
+where  the vertical height, $f$, of the interface
+is measured relative to its equilibrium height in the absence of surface tension. 
+Multiplying the above equation by $f_x/\lambda^2$, and integrating with respect to $x$, we obtain
+\begin{equation}\label{e6x.27}
+ \frac{1}{(1+f_x^{\,2})^{1/2}} = C-\frac{f^{\,2}}{2\,\lambda^{\,2}},
+\end{equation}
+where $C$ is a constant. It follows that
+\begin{equation}\label{e6x.28}
+C - \frac{f^{\,2}}{2\,\lambda^{\,2}}\geq 1,
+\end{equation}
+and
+\begin{equation}\label{e6x.29}
+\frac{1}{f_x} = \mp \frac{C-f^{\,2}/2\,\lambda^{\,2}}{[1-(C-f^{\,2}/2\,\lambda^{\,2})^2]^{1/2}}.
+\end{equation}
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter04/fig6.04.eps}}
+\caption{\em Capillary curves for $\pi/4\leq \phi\leq 3\pi/4$ and  (in order from the top to the bottom) $k=0.6$, $0.7$, $0.8$, $0.9$, and $0.99$.}\label{f6x.04}
+\end{figure}
+
+ Let
+\begin{equation}\label{e6x.30}
+C = \frac{2}{k^2}-1,
+\end{equation}
+where $0< k< 1$, and
+\begin{equation}\label{e6x.31}
+f = \pm\frac{2\,\lambda}{k}\,(1-k^2\,\sin^2\phi)^{1/2}.
+\end{equation}
+Thus, from (\ref{e6x.30}) and (\ref{e6x.31}), 
+\begin{equation}\label{e6x.32}
+C - \frac{f^{\,2}}{2\,\lambda^{\,2}} =-\cos(2\,\phi),
+\end{equation}
+and so the constraint (\ref{e6x.28}) implies that $\pi/4\leq \phi\leq 3\pi/4$. Moreover, Equations~(\ref{e6x.29})
+and (\ref{e6x.32})
+reduce to
+\begin{equation}\label{e6x.33}
+\frac{1}{f_x}\equiv \frac{dx}{df} = \pm \frac{1}{\tan(2\,\phi)}.
+\end{equation}
+It follows from (\ref{e6x.31}) and (\ref{e6x.33}) that
+\begin{equation}
+\frac{dx}{d\phi} = \frac{dx}{df}\,\frac{df}{d\phi} = -\frac{\lambda\,k\,\cos(2\,\phi)}{(1-k^2\,\sin^2\phi)^{1/2}},
+\end{equation}
+which can be integrated to give
+\begin{equation}
+\frac{x}{\lambda} = \int_\phi^{\pi/2} \frac{k\,\cos(2\,\phi)}{(1-k^2\,\sin^2\phi)^{1/2}}\,d\phi,
+\end{equation}
+assuming that $x=0$ when $\phi=\pi/2$. 
+Thus, we get
+\begin{equation}
+\frac{x}{\lambda} = \left(k-\frac{2}{k}\right)\tilde{F}(\phi,k) + \frac{2}{k}\,\tilde{E}(\phi,k),
+\end{equation}
+where
+\begin{eqnarray}
+\tilde{E}(\phi,k) &=& E(\pi/2,k)- E(\phi,k),\\[0.5ex]
+\tilde{F}(\phi,k) &=&  F(\pi/2,k)- F(\phi,k),
+\end{eqnarray}
+and
+\begin{eqnarray}
+E(\phi,k) &=& \int_0^\phi (1-k^2\,\sin^2\phi)^{1/2},\label{e8x56}\\[0.5ex]
+F(\phi,k) &=& \int_0^\phi (1-k^2\,\sin^2\phi)^{-1/2},\label{e8x57}
+\end{eqnarray}
+are types of {\em incomplete elliptic integral}.\footnote{See {\em Handbook of Mathematical Functions}, M.~Abramowitz, and
+I.A.~Stegun (Dover, New York NY, 1965).}  In conclusion, the  interface shape is  determined parametrically by 
+\begin{eqnarray}\label{e6x.38}
+\frac{x}{\lambda}& =& \left(k-\frac{2}{k}\right)\tilde{F}(\phi,k) + \frac{2}{k}\,\tilde{E}(\phi,k),\\[0.5ex]
+\frac{z}{\lambda} &=& \pm\frac{2}{k}\,(1-k^2\,\sin^2\phi)^{1/2},\label{e6x.39}
+\end{eqnarray}
+where  $\pi/4\leq \phi\leq 3\pi/4$. Here, the parameter $k$ is restricted to lie in the range $0< k< 1$. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter04/fig6.05.eps}}
+\caption{\em Liquid/air interface for a liquid trapped between two vertical parallel plates located at $x=\pm\lambda$.
+The contact angle of the interface with the plates is $\theta=30^\circ$. }\label{f6x.05}
+\end{figure}
+
+Figure~\ref{f6x.04} shows the capillary curves predicted by (\ref{e6x.38}) and (\ref{e6x.39}) for various different values of $k$. Here, we have chosen the plus sign in (\ref{e6x.39}). 
+However, if the minus sign is chosen then
+the curves  are simply inverted: {\em i.e.}, $x\rightarrow x$ and $z\rightarrow -z$. In can be seen that
+all of the  curves shown in the figure are {\em symmetric}\/ about $x=0$: {\em i.e.}, $z\rightarrow z$ as $x\rightarrow -x$. 
+Consequently, we can use these curves to determine the shape of the liquid/air interface which arises when a liquid is trapped between
+two  flat vertical  plates (made of the same material) that are parallel to one another. Suppose that the plates in question lie at $x=\pm d$. Furthermore, let the angle of contact of the interface 
+with the plates be $\theta$, where $\theta <\pi/2$.  Since the angle of contact is {\em acute}, we expect the liquid to
+be drawn {\em upward}\/  between the plates, and the interface to be {\em concave}\/ (from above). This corresponds to the
+positive sign in (\ref{e6x.39}). In order for the interface to meet the plates at the correct angle, we require
+$f_x=-1/\tan\theta$ at $x=-d$ and $f_x=1/\tan\theta$ at $x=+d$. However, if one of these boundary conditions is
+satisfied then, by symmetry, the other is automatically satisfied.
+From Equation~(\ref{e6x.33}) (choosing the positive sign), the latter boundary condition yields $\tan(2\,\phi)=1/\tan\theta$ at $x=+d$,
+which is equivalent to $x=+d$ when $\phi=3\pi/4-\theta/2$. Substituting this value of $\phi$ into Equation~(\ref{e6x.38}), we can numerically determine the
+value of $k$ for which $x=d$. The interface shape is then given by Equations~(\ref{e6x.38}) and (\ref{e6x.39}), using
+the aforementioned value of $k$, and $\phi$ in the range $\pi/4+\theta/2$ to $3\pi/4-\theta/2$. 
+For instance, if $d=\lambda$ and $\theta=30^\circ$ then $k=0.9406$, and the associated interface  is shown
+in Figure~\ref{f6x.05}. Furthermore, if we invert this interface ({\em i.e.}, $x\rightarrow x$ and $z\rightarrow -z$) then
+we obtain the interface which corresponds to the same plate spacing, but an obtuse contact angle of $\theta=180^\circ-30^\circ=150^\circ$. 
+
+Consider the limit $k\ll 1$, which is such that the distance between the two plates is much less than the capillary
+length. It is easily demonstrated that, at small $k$,\,\footnote{See {\em Handbook of Mathematical Functions}, M.~Abramowitz, and
+I.A.~Stegun (Dover, New York NY, 1965).} 
+\begin{eqnarray}
+\tilde{E}(\phi,k)&\simeq & \tilde{\phi} - \frac{k^2}{4}\,(\tilde{\phi}+\sin\tilde{\phi}\,\cos\tilde{\phi}),\\[0.5ex]
+\tilde{F}(\phi,k) &\simeq & \tilde{\phi} + \frac{k^2}{4}\,(\tilde{\phi}+\sin\tilde{\phi}\,\cos\tilde{\phi}),
+\end{eqnarray}
+where $\tilde{\phi}=\pi/2-\phi$. Thus, Equations~(\ref{e6x.38}) and (\ref{e6x.39}) reduce to
+\begin{eqnarray}\label{e6x.42}
+\frac{x}{\lambda}&\simeq & -\frac{k}{2}\,\sin(2\,\tilde{\phi}),\\[0.5ex]
+\frac{z}{\lambda}&\simeq &\frac{2}{k}-\frac{k}{2}\,[1-\cos(2\,\tilde{\phi})].
+\end{eqnarray}
+It follows that the interface is a segment of the curved surface of a {\em cylinder}\/ whose axis runs parallel to the
+$y$-axis. If the distance between the
+plates is $2\,d$, and the contact angle is $\theta$, then we require $x=d$ when $\phi=3\pi/4-\theta/2$ (which
+corresponds to $\tilde{\phi}=-\pi/4+\theta/2$). 
+From Equation~(\ref{e6x.42}), this constraint yields
+\begin{equation}
+\frac{d}{\lambda}\simeq \frac{k}{2}\,\cos\theta.
+\end{equation}
+Thus, the height that the liquid rises between the two plates---{\em i.e.}, $h\equiv z(x=0)\equiv z(\tilde{\phi}=\pi/2)\simeq 2\,\lambda/k$---is given by
+\begin{equation}
+h \simeq \frac{\gamma\,\cos\theta}{\rho\,g\,d}.
+\end{equation}
+This result is the form taken by Jurin's law, (\ref{e6x.22}), for a liquid drawn up between two parallel plates
+of spacing $2\,d$. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter04/fig6.06.eps}}
+\caption{\em Liquid/air interface for a liquid in contact with a vertical plate located at $x=0$.
+The contact angle of the interface with the plate is $\theta=25^\circ$. }\label{f6x.06}
+\end{figure}
+
+Consider the case $k=C =1$, which is such that the distance between the two plates is infinite. Let the leftmost plate
+lie at $x=0$, and let us completely neglect the rightmost plate, since it lies at infinity. Suppose that $h\equiv z(x=0)$ is the
+height of the interface  above the free surface  of the liquid at the point where the interface meets the leftmost plate. 
+If $\theta$ is the angle of contact of the interface with the plate then we require $f_x=-1/\tan\theta$ at $x=0$. 
+Since $C=1$, it follows from (\ref{e6x.27}) that
+\begin{equation}
+\frac{h^2}{2\,\lambda^2} = 1-\sin\theta,
+\end{equation}
+or
+\begin{equation}\label{e6x.47}
+h=2\,\lambda\,\sin(\pi/4-\theta/2).
+\end{equation}
+Furthermore, again recalling that $C=1$, Equation~(\ref{e6x.29}) can be integrated to
+give
+\begin{equation}
+x = \int_z^h \frac{df}{f_x}= \lambda \int_{z/2\lambda}^{h/2\lambda}\frac{1-2\,y^2}{y\,(1-y^2)^{1/2}}\,dy,
+\end{equation}
+where we have chosen the minus sign, and $y=f/2\lambda$. Making the substitution $y=\sin u$, this becomes
+\begin{equation}
+\frac{x}{\lambda} = \int_{\sin^{-1}(z/2\lambda)}^{\sin^{-1}(h/2\lambda)}\left(\frac{1}{\sin u}- 2\,\sin u\right)du=
+\left[-\ln\left(\frac{1+\cos u}{\sin u}\right)+2\,\cos u\right]_{\sin^{-1}(z/2\lambda)}^{\sin^{-1}(h/2\lambda)},
+\end{equation}
+which reduces to
+\begin{equation}\label{e6x.50}
+\frac{x}{\lambda} = \cosh^{-1}\left(\frac{2\,\lambda}{z}\right)-\cosh^{-1}\left(\frac{2\,\lambda}{h}\right)
++ \left(4-\frac{h^{\,2}}{\lambda^{\,2}}\right)^{1/2}- \left(4-\frac{z^{\,2}}{\lambda^{\,2}}\right)^{1/2},
+\end{equation}
+since $\cosh^{-1}(z)\equiv \ln[z+(z^2-1)^{1/2}]$. Thus, Equations~(\ref{e6x.47}) and (\ref{e6x.50})
+specify the shape of a liquid/air interface that meets an isolated vertical plate at $x=0$. In particular,
+(\ref{e6x.47}) gives the height that the interface climbs up the plate (relative to the free surface) due to the action of
+surface tension. Note that this height is restricted to lie in the range $-2\,\lambda\leq h\leq 2\,\lambda$, irrespective
+of the angle of contact.
+Figure~\ref{f6x.06} shows an example interface calculated for $\theta=25^\circ$. 
+
+\section{Axisymmetric Soap-Bubbles}\label{sbubble}
+Consider an axisymmetric soap-bubble whose surface takes the form $r=f(z)$ in cylindrical coordinates. See Section~\ref{scyl}. The
+unit normal to the surface is
+\begin{equation}
+{\bf n} \equiv \frac{\nabla(r-f)}{|\nabla(r-f)|} = \frac{{\bf e}_r- f_z\,{\bf e}_z}{(1+f_z^{\,2})^{1/2}},
+\end{equation}
+where $f_z\equiv df/dz$. Hence, from (\ref{ec39}), the mean curvature of the surface is given by
+\begin{equation}
+\nabla\cdot {\bf n} = \frac{1}{f\,f_z}\,\frac{d}{dz}\!\left[\frac{f}{(1+f_z^{\,2})^{1/2}}\right].
+\end{equation}
+The Young-Laplace equation, (\ref{e6x.11}), then yields
+\begin{equation}\label{e6x.54}
+\frac{f\,f_z}{a} = \frac{d}{dz}\!\left[\frac{f}{(1+f_z^{\,2})^{1/2}}\right],
+\end{equation}
+where
+\begin{equation}
+a = \frac{\gamma}{p_0}.
+\end{equation}
+Here, $\gamma$ is the net surface tension, including the contributions from the internal and external soap/air interfaces. Moreover,
+$p_0=\Delta p$ is the pressure difference between the interior and the exterior of the bubble. Equation~(\ref{e6x.54})
+can be integrated to give
+\begin{equation}\label{e6x.59}
+\frac{f}{(1+f_z^{\,2})^{1/2}}  = \frac{f^{\,2}}{2\,a} + C,
+\end{equation}
+where $C$ is a constant. 
+
+Suppose that the bubble occupies the region $z_1\leq z\leq z_2$, where $z_1<z_2$, and has a fixed
+radius at its two end-points, $z=z_1$ and $z=z_2$. 
+This could most easily be achieved by supporting the
+bubble on two rigid parallel co-axial rings located at $z=z_1$ and $z=z_2$. 
+The net free energy required to create the bubble  can be written
+\begin{equation}
+{\cal E} = \gamma\,S - p_0\,V,
+\end{equation}
+where $S$ is area of the bubble surface, and $V$ the enclosed volume. The first term on the right-hand side of
+the above expression represents the work needed to overcome surface tension, whilst the second term
+represents the work required to overcome the  pressure difference, $-p_0$, between the exterior and
+the interior of the bubble. Now, from the general principles of statics, we  expect a stable equilibrium state
+of a mechanical system to be such as to {\em minimize}\/ the net free energy, subject to any dynamical
+constraints.  It follows that the equilibrium shape of the bubble 
+is such as to minimize
+\begin{equation}
+{\cal E} = \gamma\int_{z_1}^{z_2} 2\pi\,f\,(1+f_z^{\,2})^{1/2}\,dz-p_0\int_{z_1}^{z_2}\pi\,f^{\,2}\,dz,
+\end{equation}
+subject to the constraint that the bubble radius, $f$, be fixed at $z=z_1, z_2$.
+Hence, we need to find the function $f(z)$ that minimizes the integral
+\begin{equation}
+\int_{z_1}^{z_2} {\cal L}(f,f_z)\,dz,
+\end{equation}
+where
+\begin{equation}
+{\cal L}(f,f_z) = 2\pi\,\gamma\,f\,(1+f_z^{\,2})^{1/2} - \pi\,p_0\,f^{\,2},
+\end{equation}
+subject to the constraint that $f$ is fixed at the limits. This is a standard problem in the {\em calculus of
+variations}. See Appendix~\ref{cvar}. In fact, since the functional ${\cal L}(f,f_z)$ does not depend explicitly
+on $z$, the minimizing function is the solution of [see Equation~(\ref{e11.14})]
+\begin{equation}
+{\cal L}-f_z\,\frac{\partial {\cal L}}{\partial f_z}  = C',
+\end{equation}
+where $C'$ is an arbitrary constant. 
+Thus, we obtain 
+\begin{equation}
+2\pi\,\gamma\left[\frac{f}{(1+f_z^{\,2})^{1/2}}-\frac{f^{\,2}}{2\,a}\right] = C',
+\end{equation}
+which can be rearranged to give Equation~(\ref{e6x.59}). Hence, we conclude that application of the Young-Laplace
+equation does indeed lead to a bubble shape that minimizes the net free energy of the soap/air interfaces.
+
+Consider the case $p_0=0$, in which there is no pressure difference across the surface of the bubble. 
+In this situation, writing
+$C=b>0$, Equation~(\ref{e6x.59}) reduces to
+\begin{equation}\label{e6x.57}
+f = b\,(1+f_z^{\,2})^{1/2}.
+\end{equation}
+Moreover,  according to the previous discussion, the bubble shape specified by (\ref{e6x.57}) is such as to  minimize  the {\em surface area}\/ of the bubble (since the only contribution to the free energy of the soap/air interfaces is directly proportional
+to the bubble area). 
+The above equation can be rearranged to give
+\begin{equation}
+f_z=\pm \left(\frac{f^{\,2}}{b^{\,2}}-1\right)^{1/2},
+\end{equation}
+which leads to
+\begin{equation}
+z-z_0 = \int_b^r\,\frac{df}{f_z} = \pm\int_b^r\frac{df}{(f^{\,2}/b^{\,2}-1)^{1/2}}=\pm b\,\cosh^{-1}(r/b),
+\end{equation}
+or
+\begin{equation}\label{e6x.67}
+r = b\,\cosh(|z-z_0|/b),
+\end{equation}
+where $z_0$ is a constant. 
+This expression describes an axisymmetric surface known as a {\em catenoid}. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter04/fig6.07.eps}}
+\caption{\em Radius  versus axial distance for a catenoid soap bubble supported by two parallel co-axial rings
+of radius $c$ located at $z=\pm 0.65\,c$.}\label{f6x.07}
+\end{figure}
+
+Suppose, for instance, that the soap bubble is
+supported by identical rings of radius $c$ that are located a perpendicular
+distance $2\,d$ apart. Without loss of generality, we can specify that the rings lie at $z=\pm d$. It thus follows,
+from (\ref{e6x.67}), that $z_0=0$, and
+\begin{equation}\label{e6x.61}
+r = b\,\cosh(z/b).
+\end{equation}
+Here, the parameter $b$ must be chosen so as to satisfy
+\begin{equation}
+c = b\,\cosh(d/b).
+\end{equation}
+For example, if $d=0.65\,c$ then $b=0.6416\,c$, and the resulting  bubble shape is illustrated in Figure~\ref{f6x.07}. 
+
+Let $d/c=\zeta$ and $d/b=u$, in which case the above equation becomes
+\begin{equation}\label{e6x.70}
+G(u) \equiv u - \zeta\,\cosh u = 0.
+\end{equation}
+Now, the function $G(u)$ attains a maximum value
+\begin{equation}
+G(u_0) = u_0-\frac{1}{\tanh u_0},
+\end{equation}
+when $ u_0= \sinh^{-1}(1/\zeta)$. Moreover, if $G(u_0)>0$ then Equation~(\ref{e6x.70}) possesses {\em two}\/ roots. It turns
+out that the root associated with the smaller value of $u$ {\em minimizes}\/ the interface system energy, whereas
+the other root {\em maximizes}\/ the free energy. Hence, the former root corresponds to a {\em stable}\/
+equilibrium state, whereas the latter  corresponds to an {\em unstable}\/
+equilibrium state. On the other hand, if $G(u_0)<0$ then Equation~(\ref{e6x.70}) 
+possesses {\em no}\/ roots, implying the absence of any equilibrium state. The critical case $G(u_0)=0$ 
+corresponds to $u=u_c$ and $\zeta=\zeta_c$, where $u_c\,\tanh u_c=1$ and $\zeta_c=1/\sinh u_c$. 
+It is easily demonstrated that $u_c=1.1997$ and $\zeta_c=0.6627$. 
+We conclude that  a stable equilibrium state of a catenoid bubble only exists when $\zeta\leq \zeta_c$, which corresponds to
+$d\leq 0.6627\,c$. If the relative ring spacing $d$ exceeds the critical value $0.6627\,c$ then the bubble presumably bursts. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter04/fig6.08.eps}}
+\caption{\em Radius  versus axial distance for an unduloid soap bubble  calculated with $k=0.95$.}\label{f6x.08}
+\end{figure}
+
+Consider the case $p_0\neq 0$, in which there is a pressure difference across the surface of the bubble. 
+In this situation, writing
+\begin{eqnarray}
+2\,a &=&\alpha+\beta,\\[0.5ex]
+2a\,C &=&\alpha\,\beta,
+\end{eqnarray}
+Equation~(\ref{e6x.59}) becomes
+\begin{equation}\label{e6x.74}
+\frac{(\alpha+\beta)\,f}{(1+f_z^{\,2})^{1/2}}= f^{\,2} + \alpha\,\beta,
+\end{equation}
+which can be rearranged to give
+\begin{equation}
+f_z = \mp \frac{(\alpha^2-f^{\,2})^{1/2}\,(f^{\,2}-\beta^2)^{1/2}}{f^{\,2}+\alpha\,\beta}.
+\end{equation}
+We can assume, without loss of generality, that $|\alpha|>|\beta|$. 
+It follows, from the above expression,
+that $|\alpha|\leq f\leq |\beta|$. Hence, we can write
+\begin{eqnarray}
+f^{\,2} &=& \alpha^2\,\cos^2\phi + \beta^{\,2}\,\sin^2\phi,\\[0.5ex]
+k^2 &=& \frac{\alpha^2-\beta^2}{\alpha^2},
+\end{eqnarray}
+where $0\leq\phi\leq \pi/2$ and $0< k\leq 1$. 
+It follows that
+\begin{eqnarray}
+f&=& |\alpha|\,(1-k^2\,\sin^2\phi)^{1/2},\\[0.5ex]
+\beta &=&{\rm sgn}(\beta)\,|\alpha|\,(1-k^2)^{1/2},
+\end{eqnarray}
+and
+\begin{equation}
+\frac{dz}{d\phi} = \frac{1}{f_z}\,\frac{df}{d\phi} = \pm \left(f + \frac{\alpha\,\beta}{f}\right),
+\end{equation}
+which can be integrated to give
+\begin{equation}
+|z|= |\alpha|\left[E(\phi,k) + {\rm sgn}(\alpha\,\beta)\,(1-k^2)^{1/2}\,F(\phi,k)\right],
+\end{equation}
+where $E(\phi,k)$ and $F(\phi,k)$ are {\em incomplete elliptic integrals}\/ [see Equations~(\ref{e8x56})
+and (\ref{e8x57})]. Here, we have assumed that $\phi=0$ when $z=0$. 
+There are three cases of interest. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter04/fig6.09.eps}}
+\caption{\em Radius  versus axial distance for a positive  pressure nodoid soap bubble calculated with $k=0.95$.}\label{f6x.09}
+\end{figure}
+
+In the first case, $\alpha>0$ and $\beta>0$. It follows that $(1-k^2)^{1/2}\leq r/\alpha\leq 1$ for
+$\pi/2\geq\phi\geq 0$, and $0.5\leq \gamma/(p_0\,\alpha) < 1$ for $1\geq k> 0$, where
+\begin{eqnarray}
+r &=&\alpha\,(1-k^2\,\sin^2\phi),\\[0.5ex]
+|z|&=& \alpha\left[E(\phi,k) +(1-k^2)^{1/2}\,F(\phi,k)\right].
+\end{eqnarray}
+The axisymmetric curve parameterized by the above pair of equations is known as an {\em unduloid}. Note that an
+unduloid bubble always has {\em positive}\/ internal pressure (relative to the external pressure): {\em i.e.}, $p_0>0$. 
+An example unduloid soap bubble is illustrated in Figure~\ref{f6x.08}
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter04/fig6.10.eps}}
+\caption{\em Radius  versus axial distance for a negative  pressure nodoid soap bubble calculated with $k=0.95$.}\label{f6x.10}
+\end{figure}
+
+In the second case, $\alpha>0$ and $\beta<0$. It follows that $(1-k^2)^{1/4}\leq r/\alpha \leq 1$
+for $\phi_0\geq \phi\geq 0$, and $0<\gamma/(p_0\,\alpha)\leq 0.5$ for $0< k \leq 1$, where
+$\phi_0= \sin^{-1}([1-(1-k^2)^{1/2}]^{1/2}/k)$, and 
+\begin{eqnarray}
+r &=&\alpha\,(1-k^2\,\sin^2\phi),\\[0.5ex]
+|z|&=& \alpha\left[E(\phi,k) -(1-k^2)^{1/2}\,F(\phi,k)\right].
+\end{eqnarray}
+The axisymmetric curve parameterized by the above pair of equations is known as an {\em nodoid}. This
+particular type of nodoid bubble has  {\em positive}\/ internal  pressure: {\em i.e.}, $p_0>0$. 
+An example positive pressure nodoid soap bubble is illustrated in Figure~\ref{f6x.09}.
+
+In the third case, $\alpha<0$ and $\beta>0$. It follows that $(1-k^2)^{1/2}|\leq r/|\alpha|\leq \alpha|\,(1-k^2)^{1/4}$
+for $\pi/2\geq \phi\geq \phi_0$ (or $\pi/2\leq \phi\leq \pi-\phi_0$), and $0>\gamma/(p_0\,|\alpha|)\geq -0.5$ for $0< k \leq1$, where
+\begin{eqnarray}
+r &=&|\alpha|\,(1-k^2\,\sin^2\phi),\\[0.5ex]
+|z|&=& |\alpha|\left[E(\phi,k) -(1-k^2)^{1/2}\,F(\phi,k)\right].
+\end{eqnarray}
+The axisymmetric curve parameterized by the above pair of equations is again a nodoid. However, this
+particular type of nodoid bubble has  {\em negative}\/ internal pressure: {\em i.e.}, $p_0<0$.
+An example negative pressure nodoid soap bubble is illustrated in Figure~\ref{f6x.10}. 
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{4.\arabic{enumi}}
+\begin{enumerate}
+\item Show that if $N$ equal spheres of water coalesce so as to form a single spherical drop then the
+surface energy is decreased by a factor $1/N^{2/3}$. 
+\item A circular cylinder of radius $a$, height $h$, and specific gravity $s$ floats upright in water. Show
+that the depth of the base below the general level of the water surface is
+$$
+s\,h + \frac{2\,\gamma}{a}\,\cos\theta,
+$$
+where $\gamma$ is the surface tension at the air/water interface, and $\theta$ the contact angle of the
+interface with the cylinder. 
+
+\item A film of water is held between two parallel plates of glass a small distance $d$ apart. Prove
+that the apparent attraction between the plates is
+$$
+\frac{2\,A\,\gamma\,\cos\theta}{d} + L\,\gamma\,\sin\theta,
+$$
+where $\gamma$ is the surface tension at the air/water interface, and $\theta$ the angle of contact of the
+interface with glass.
+
+\item Show that if the surface of a sheet of water is slightly corrugated then the surface energy is
+increased by
+$$
+\frac{\gamma}{2}\int \left(\frac{\partial \zeta}{\partial x}\right)^2\,dx
+$$
+per unit breadth of the corrugations. Here, $x$ is measured horizontally, perpendicular to the corrugations. 
+Moreover, $\zeta$ denotes the elevation of the surface above the mean level. Finally, $\gamma$ is the
+surface tension at an air/water interface.  If the corrugations are sinusoidal, such that
+$$
+\zeta = c\,\sin(k\,x),
+$$
+show that the average increment of the surface energy per unit area is $(1/4)\,\gamma\,k^2\,c^2$.
+
+\item A mass of liquid, which is held together by surface tension alone, revolves about a
+fixed axis at a small angular velocity $\omega$, so as to assume a slightly spheroidal shape of
+mean radius $a$. Prove that the ellipticity of the spheroid is 
+$$
+\frac{\rho\,\omega^2\,a^3}{8\,\gamma},
+$$
+where $\rho$ is the uniform mass density, and $\gamma$ the surface tension.
+
+\item A liquid mass rotates, in the form of a circular ring of radius $a$ and small cross-section, with a constant angular
+velocity $\omega$, about an axis normal to the plane of the ring, and passing through its center. The mass is
+held together by surface tension alone. Show that the section of the ring must be approximately circular. 
+Demonstrate that
+$$
+\omega = \left(\frac{2\,\gamma}{\rho\,a\,c^2}\right)^{1/2},
+$$
+where $\rho$ is the density, $\gamma$ the surface tension, and $c$ the radius of the cross-section.
+
+\item Two spherical soap bubbles of radii $a_1$ and $a_2$ are made to coalesce. Show that when the
+temperature of the gas in the resulting bubble has returned to its initial value the radius $a$ of
+the bubble satisfies
+$$
+p_0\,a^3+ 4\,\gamma\,a^2= p_0\,(a_1^{\,3}+a_2^{\,3})+4\,\gamma\,(a_1^{\,2}+a_2^{\,2}),
+$$
+where $p_0$ is the ambient pressure, and $\gamma$ the surface tension of the soap/air interfaces. 
+
+\item A rigid sphere of radius $a$ rests on a flat rigid surface, and a small amount of liquid surrounds
+the contact point, making a concave-planar lens whose diameter is small compared to $a$. The
+angle of contact of the liquid/air interface with each of the solid surfaces is zero, and the surface tension of the interface is $\gamma$. Show that there is an adhesive force of magnitude $4\pi\,a\,\gamma$ acting
+on the sphere. (It is interesting to note that the force is independent of the volume of  liquid.)
+
+\item Two small solid bodies are floating on the surface of a liquid. Show that the effect of
+surface tension is to make the objects approach one another if the liquid/air interface has either an acute or an obtuse angle
+of contact with both bodies, and to make them move away from one another if the interface has an acute
+angle of contact with one body, and an obtuse angle of contact with the other.
+\end{enumerate}}

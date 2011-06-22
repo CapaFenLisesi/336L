@@ -1,0 +1,440 @@
+\chapter{Potential Flow}
+\section{Introduction}
+This chapter investigates uniform, high Reynolds number,  flow around  a stationary obstacle which is sufficiently streamlined that there
+is no appreciable separation of the flow from its back surface. In this case, the flow is essentially irrotational and inviscid
+everywhere apart from a thin boundary layer covering the obstacle's surface. It follows that, in the region outside the
+boundary layer, we can write
+\begin{equation}
+{\bf v} = -\nabla\phi,
+\end{equation}
+which automatically ensures that the flow is irrotational. If the flow is also incompressible, so that $\nabla\cdot{\bf v}=0$,
+then the velocity potential, $\phi$, satisfies Laplace's equation: {\em i.e.},
+\begin{equation}
+\nabla^2\phi = 0.
+\end{equation}
+This type of flow is known as {\em potential flow}, since it can be derived from a velocity potential. 
+The appropriate boundary condition at the surface of the obstacle is that the normal flow velocity be zero. In other
+words, ${\bf n}\cdot\nabla\phi=0$, where ${\bf n}$ is a unit  vector normal to the surface. In general, the
+tangential velocity at the surface of the obstacle is non-zero. Of course, this is inconsistent with the {\em no slip condition}, which
+demands that the tangential velocity be zero at the surface (see Section~\ref{snoslip}). 
+However, as described in the previous chapter,  this inconsistency is resolved by the {\em boundary layer}, across which the tangential velocity is
+effectively discontinuous, being non-zero on the outer edge of the layer (where it interfaces with the irrotational
+flow), and zero on the inner edge (where it interfaces with the obstacle). The discontinuity in the tangential
+velocity across the layer gives rise to a {\em friction drag}\/ acting on the obstacle in the direction of the
+  external flow. However, the magnitude of this drag scales as ${\rm Re}^{-1/2}$,  where ${\rm Re}$
+is the Reynolds number of the  flow. Hence, such drag becomes negligibly small in the high Reynolds number limit.
+In the following, we shall assume that any {\em form drag}\/ due to residual separation of the flow at the back of
+the obstacle is also negligibly small. Moreover, for the sake of simplicity, we shall mostly  restrict our
+discussion to essentially {\em two-dimensional}\/ situations in which a high Reynolds number fluid moves 
+transversely around a stationary obstacle of infinite length and uniform cross-section. 
+
+\section{Velocity Potentials and Stream Functions}
+Consider a {\em two-dimensional}\/ velocity field in which the flow is everywhere parallel to the $x$-$y$ plane, and there is
+no variation along the $z$-direction. It follows that
+\begin{equation}
+{\bf v} = v_x(x,y,t)\,{\bf e}_x + v_y(x,y,t)\,{\bf e}_y.
+\end{equation}
+If the flow is {\em irrotational}\/ then $\nabla\times {\bf v}={\bf 0}$ is automatically satisfied by writing ${\bf v}=-\nabla\phi$, where
+$\phi(x,y,t)$ is termed the {\em velocity potential} (see Section~\ref{qirr}). Hence, 
+\begin{eqnarray}\label{ep7.4}
+v_x &=& - \frac{\partial\phi}{\partial x},\\[0.5ex]
+v_y&=&-\frac{\partial\phi}{\partial y}.\label{ep7.5}
+\end{eqnarray}
+On the other hand, if the flow is {\em incompressible}\/ then $\nabla\cdot{\bf v}=0$ is automatically
+satisfied by writing ${\bf v} = \nabla z\times \nabla\psi$, where $\psi(x,y,t)$ is termed the
+{\em stream function} (see Section~\ref{s2d}). Hence,
+\begin{eqnarray}
+v_x &=& - \frac{\partial\psi}{\partial y},\label{ep7.6}\\[0.5ex]
+v_y&=&\frac{\partial\psi}{\partial x}.\label{ep7.7}
+\end{eqnarray}
+Finally, if the flow is both irrotational and incompressible then Equations~(\ref{ep7.4})--(\ref{ep7.5}) and
+(\ref{ep7.6})--(\ref{ep7.7}) hold simultaneously, and  so
+\begin{eqnarray}\label{ep7.8}
+\frac{\partial\phi}{\partial x} &=&\frac{\partial\psi}{\partial y},\\[0.5ex]
+\frac{\partial\psi}{\partial x}&=&-\frac{\partial\phi}{\partial y}.\label{ep7.9}
+\end{eqnarray}
+It immediately follows, from the previous two expressions, that
+\begin{equation}
+\frac{\partial^2\phi}{\partial x^2} = \frac{\partial^2\psi}{\partial x\,\partial y} = \frac{\partial^2\psi}{\partial y\,\partial x} = 
+-\frac{\partial^2\phi}{\partial y^2},
+\end{equation}
+or
+\begin{equation}
+\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2} = 0.
+\end{equation}
+Likewise, it can also be shown that
+\begin{equation}
+\frac{\partial^2\psi}{\partial x^2}+\frac{\partial^2\psi}{\partial y^2} = 0.
+\end{equation}
+We conclude that, for two-dimensional flow,  both the velocity potential and the stream function
+satisfy Laplace's equation when the fluid is irrotational and incompressible. 
+Equations~(\ref{ep7.8}) and (\ref{ep7.9}) also imply that
+\begin{equation}
+\nabla\phi\cdot\nabla\psi = 0:
+\end{equation}
+{\em i.e.},  the contours of the velocity potential and the stream function cross at right-angles.
+
+\section{Complex Velocity Potential}
+The complex variable is conventionally written
+\begin{equation}
+z = x + {\rm i}\,y,
+\end{equation}
+where ${\rm i}$ represents the square root of minus one. Here, $x$ and $y$ are both real, and are identified with the corresponding
+Cartesian coordinates.
+(Incidentally, $z$ should not be confused with a $z$-coordinate: this is a strictly two-dimensional discussion.) 
+We can also write
+\begin{equation}
+z = r\,{\rm e}^{\,{\rm i}\,\theta}
+\end{equation}
+where $r=\sqrt{x^2+y^2}$ and $\theta=\tan^{-1}(y/x)$ are termed the modulus and
+argument of $z$, respectively, but can also be identified with the corresponding cylindrical polar coordinates. 
+Finally, De\,Moivre's theorem,
+\begin{equation}
+{\rm e}^{\,{\rm i}\,\theta}\equiv \cos\theta+{\rm i}\,\sin\theta,
+\end{equation}
+implies that
+\begin{eqnarray}
+x &=&r\,\cos\theta,\\[0.5ex]
+y&=&r\,\sin\theta.
+\end{eqnarray}
+
+We can write functions  of the complex variable, $F(z)$, just like
+we would write functions of a real variable. For instance,
+\begin{eqnarray}
+F(z) &=& z^2,\\[0.5ex]
+F(z)&=& \frac{1}{z}.
+\end{eqnarray}
+For a given function, $F(z)$, we can substitute  $z=x +{\rm i}\,y$ and write
+\begin{equation}\label{ek5.137}
+F(z) = \phi(x, y) + {\rm i}\,\psi(x, y),
+\end{equation}
+where $\phi$ and $\psi$ are {\em real}\/ two-dimensional functions. Thus, if
+\begin{equation}
+F(z) = z^2,
+\end{equation}
+then
+\begin{equation}
+F(x + {\rm i}\,y) = (x+{\rm i}\,y)^2 = (x^2-y^2) + 2\,{\rm i}\, x\,y,
+\end{equation}
+giving
+\begin{eqnarray}
+\phi(x, y) &=& x^2 - y^2,\\[0.5ex]
+\psi(x, y) &=& 2\, x\,y.
+\end{eqnarray}
+
+We can define the derivative of a complex function in just the same manner as
+we would  define the derivative of a real function: {\em i.e.}, 
+\begin{equation}\label{ek5.141}
+\frac{dF}{dz} = ~_{\lim |\delta z|\rightarrow\infty}
+\frac{F(z+\delta z) - F(z) }{\delta z}.
+\end{equation}
+However, we now have a slight problem. If $F(z)$ is a ``well-defined''
+function ({\em i.e.}, finite, single-valued, and differentiable) then it should not matter from which direction in the complex
+plane we approach $z$ when taking the limit in Equation~(\ref{ek5.141}).
+ There are, of course, many
+different directions we could approach $z$ from, but if we look at a regular complex
+function, $F(z) = z^2$  (say), then
+\begin{equation}
+\frac{dF}{dz} = 2 \,z
+\end{equation}
+is perfectly well-defined, and is, therefore,  completely independent of the details of
+how the limit is taken in Equation~(\ref{ek5.141}).
+
+The fact that Equation~(\ref{ek5.141})
+ has to give the same result, no matter from which direction we approach
+$z$, means that there are some restrictions on the forms of the functions $\phi$ and $\psi$ in
+ Equation~(\ref{ek5.137}).
+Suppose that we approach $z$ along the real axis, so that $\delta z = \delta x$.
+We obtain
+\begin{eqnarray}\label{ep7.28x}
+\frac{dF}{dz}& =& ~_{\lim |\delta x|\rightarrow 0}
+\frac{\phi(x+\delta x, y) + {\rm i}\, \psi(x+\delta x, y) - \phi(x, y) - {\rm i}\,
+\psi(x,y)}{\delta x} 
+\nonumber\\[0.5ex]
+&=& \frac{\partial \phi}{\partial x} + {\rm i}\, \frac{\partial \psi}
+{\partial x}.
+\end{eqnarray}
+Suppose that we now approach $z$ along the imaginary axis, so that $\delta z
+= {\rm i}\,\delta y$. We get
+\begin{eqnarray}
+\frac{dF}{dz} &=& ~_{\lim |\delta y|\rightarrow 0}
+\frac{\phi(x, y+\delta y) + {\rm i}\, \psi(x, y+\delta y) - \phi(x, y) - {\rm i}\,
+\psi(x,y)}{{\rm i}\,\delta y}  \nonumber\\[0.5ex]
+&=&
+-{\rm i}\,\frac{\partial \phi}{\partial y} + \frac{\partial \psi}
+{\partial y}.
+\end{eqnarray}
+But, if $F(z)$ is a well-defined function then its derivative must also be 
+well-defined,
+which implies that the above two expressions are equivalent. This 
+requires that
+\begin{eqnarray}\label{ep7.27}
+\frac{\partial \phi}{\partial x} &=& \frac{\partial \psi}{\partial y},\\[0.5ex]
+\frac{\partial \psi}{\partial x} &=& -\frac{\partial \phi}{\partial y}.\label{ep7.28}
+\end{eqnarray}
+These expressions are called the {\em Cauchy-Riemann relations}, and are, in fact, sufficient to ensure 
+that  all possible ways of taking the limit (\ref{ek5.141})  give the same answer.
+
+Note that Equations~(\ref{ep7.27})--(\ref{ep7.28}) are identical to Equations~(\ref{ep7.8})--(\ref{ep7.9}).
+This suggests that the real and imaginary parts of a well-behaved function of the complex variable
+can be interpreted as the velocity potential and stream function, respectively, of some two-dimensional,
+irrotational, incompressible, flow pattern. For instance,
+suppose that
+\begin{equation}\label{ep7.32}
+F(z)=U\,z,
+\end{equation}
+where $U$ is real.  It
+follows that
+\begin{eqnarray}
+\phi (r,\theta)&=&U\,\cos\theta,\\[0.5ex]
+\psi(r,\theta)&=&U\,\sin\theta.
+\end{eqnarray}
+It can be seen, by comparison with the analysis in Section~\ref{suniform}, that the complex potential (\ref{ep7.32}) corresponds to {\em uniform flow}\/ of speed $U$ directed along the negative $x$-axis. 
+As a simple generalization of this result, the complex potential
+\begin{equation}
+F(z) = U\,z\,{\rm e}^{\,{\rm i}\,\alpha}
+\end{equation}
+corresponds to uniform flow of speed $U$ which subtends a (clockwise) angle $\alpha$ with the negative $x$-axis (see Figure~\ref{funi}).
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter07/uniform.eps}}
+\caption{\em Uniform flow.}\label{funi}
+\end{figure}
+
+Suppose that
+\begin{equation}\label{ep7.37}
+F(z)= \frac{Q}{2\pi}\,\ln z,
+\end{equation}
+where $Q$ is real.
+Since $\ln z \equiv \ln r + {\rm i}\,\theta$, it follows that
+\begin{eqnarray}
+\phi(r,\theta)&=&\frac{Q}{2\pi}\,\ln r,\\[0.5ex]
+\psi(r,\theta)&=&\frac{Q}{2\pi}\,\theta.
+\end{eqnarray}
+Thus, according to the analysis in Section~\ref{ssource}, the complex potential (\ref{ep7.37}) corresponds
+to the flow pattern of a {\em line source}\/ of strength $Q$ running along the $z$-axis (see Figure~\ref{fsource}). 
+
+Suppose that 
+\begin{equation}\label{ep7.40}
+F(z) = {\rm i}\,\frac{\Gamma}{2\pi}\,\ln z,
+\end{equation}
+where $\Gamma$ is real. It follows that
+\begin{eqnarray}
+\phi(r,\theta)&=&-\frac{\Gamma}{2\pi}\,\theta,\\[0.5ex]
+\psi(r,\theta)&=&\frac{\Gamma}{2\pi}\,\ln r.
+\end{eqnarray}
+Thus, according to the analysis in Section~\ref{svortex}, the complex potential (\ref{ep7.40}) corresponds
+to the flow pattern of a {\em vortex filament}\/ of intensity  $\Gamma$ running along the $z$-axis (see Figure~\ref{fvortex1}). 
+
+Suppose, finally, that
+\begin{equation}\label{ep7.43}
+F(z)= U\left(z+\frac{a^2}{z}\right) + {\rm i}\,\frac{\Gamma}{2\pi}\,\ln\left(\frac{z}{a}\right),
+\end{equation}
+where $U$, $a$, and $\Gamma$, are real. It follows that
+\begin{eqnarray}
+\phi(r,\theta)&=&U\left(r+\frac{a^2}{r}\right)\cos\theta-\frac{\Gamma}{2\pi}\,\theta,\\[0.5ex]
+\psi(r,\theta)&=&U\left(r-\frac{a^2}{r}\right)\sin\theta + {\rm i}\,\frac{\Gamma}{2\pi}\,\ln\left(\frac{r}{a}\right).
+\end{eqnarray}
+Thus, according to the analysis in Section~\ref{scylo}, the complex potential (\ref{ep7.43}) corresponds to uniform
+flow of unperturbed speed $U$, running parallel to the minus $x$-axis, around a cylindrical obstacle of radius $a$ whose
+axis coincides with the $z$-axis (see Figures~\ref{fxcyl}, \ref{fxcyl1}, and \ref{fxcyl2}). Here, $\Gamma$ is the circulation of the flow about the cylinder. Note that $\psi=0$
+on the  surface of the cylinder ($r=a$), which implies that the normal velocity is zero there, as must be the case.
+
+\section{Complex Velocity}
+It follows from Equations~(\ref{ep7.4}), (\ref{ep7.7}), and (\ref{ep7.28x}) that
+\begin{equation}
+\frac{dF}{dz} = \frac{\partial\phi}{\partial x} + {\rm i}\,\frac{\partial\psi}{\partial x} = -v_x+{\rm i}\,v_y.
+\end{equation}
+Consequently, $dF/dz$ is termed the {\em complex velocity}. Note that
+\begin{equation}
+\left|\frac{dF}{dz}\right|^2 = v_x^{\,2} + v_y^{\,2} =v^2,
+\end{equation}
+where $v$ is the flow speed. 
+
+A {\em stagnation point}\/  is defined as a point in a flow pattern where the flow speed, $v$, falls to zero. 
+It follows, from the previous equation, that
+\begin{equation}
+\frac{dF}{dz} = 0
+\end{equation}
+at a stagnation point. For instance, the stagnation points of uniform flow, with circulation, around a
+cylindrical obstacle---whose complex potential is given
+by Equation~(\ref{ep7.43})---satisfy the quadratic equation
+\begin{equation}
+\frac{dF}{dz}= U\left(1-\frac{a^2}{z^2}\right) + {\rm i}\,\frac{\Gamma}{2\pi\,z} = 0.
+\end{equation}
+The roots of this equation are
+\begin{equation}
+\frac{z}{a} = -{\rm i}\,\zeta \pm \sqrt{1-\zeta^2},
+\end{equation}
+where $\zeta=\Gamma/(4\pi\,U\,a)$, 
+with the proviso that $|z|/a>1$, since the region $|z|/a<1$ is occupied by the cylinder. Thus, if
+$\zeta \leq 1$ then there are two stagnation points on the surface of the cylinder at $x/a=\pm\sqrt{1-\zeta^2}$ and $y/a=-\zeta$. 
+On the other hand, if $\zeta>1$ then there is a single stagnation point below the cylinder at $x/a=0$ and $y=-\zeta-\sqrt{\zeta^2-1}$.
+
+Now, according to Section~\ref{qirr}, Bernoulli's theorem in an steady, irrotational, incompressible, fluid takes the form
+\begin{equation}
+p +\frac{1}{2}\,\rho\,v^2 = p_0,
+\end{equation}
+where $p_0$ is a uniform constant, and where gravity (or any other body force) has been neglected. Thus, the
+pressure distribution in such a fluid can be written
+\begin{equation}\label{ep7.51}
+p = p_0 -\frac{1}{2}\,\rho\left|\frac{dF}{dz}\right|^{\,2}.
+\end{equation}
+
+\section{Theorem of Blasius}\label{sblasius}
+Consider a stationary aerofoil of infinite length and uniform cross-section whose axis runs parallel to the $z$-axis. See Figure~\ref{faero} Let the
+curve $C$ represent the intersection of the surface of the aerofoil with the $x$-$y$ plane. Suppose that the aerofoil
+is placed in a uniformly flowing incompressible fluid, moving perpendicular to the $z$-axis, and that the two-dimensional steady flow pattern set up around the aerofoil in the $x$-$y$ plane is specified by the
+complex potential $F(z)$.  Assuming that the aerofoil is sufficiently streamlined that there is no separation of the flow
+from its surface, the  pressure distribution over this surface can be determined from Equation~(\ref{ep7.51}), we yields
+\begin{equation}\label{ep7.52}
+P = p_0  -\frac{1}{2}\,\rho\left|\frac{dF}{dz}\right|^{\,2}_C.
+\end{equation}
+Let us evaluate the resultant force (per unit length) and the resultant torque (per unit length) acting on the aerofoil
+as a consequence of the pressure distribution.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter07/aerofoil.eps}}
+\caption{\em A two-dimensional aerofoil.}\label{faero}
+\end{figure}
+
+Consider a small element of $C$, lying between $x$, $y$ and $x+dx$, $y+dy$, which is sufficiently
+short that it can be approximated as a straight line. Let $P$ be the local fluid pressure. As illustrated
+in Figure~\ref{fforce}, the pressure force (per unit length) acting on this element has a component $P\,dy$ in the minus
+$x$-direction, and a component $P\,dx$ in the plus $y$-direction. Thus, if $X$ and $Y$ are the components of the
+resultant force (per unit length) in the $x$- and $y$- directions, respectively, then
+\begin{eqnarray}
+dX &=&-P\,dy,\\[0.5ex]
+dY&=&P\,dx.
+\end{eqnarray}
+The pressure force (per unit length) acting on the element also contributes to a moment (per unit length), $M$, acting
+on the aerofoil about the $z$-axis. In fact,
+\begin{equation}
+dM = x\,dX-y\,dY = P\,(x\,dx+y\,dy).
+\end{equation}
+Thus, the $x$- and $y$- components of the resultant force (per unit length) acting on the aerofoil, as
+well as the resultant moment (per unit length) about the $z$-axis, are given by
+\begin{eqnarray}
+X &=&-\oint_C P\,dy,\\[0.5ex]
+Y&=&\oint_C P\,dx,\\[0.5ex]
+M &=&\oint_C P\,(x\,dx+y\,dy),
+\end{eqnarray}
+respectively,
+where the integrals are taken (counter-clockwise) around the curve $C$. Finally, given that the pressure distribution takes the
+form (\ref{ep7.52}), and that a constant pressure obviously yields zero force and zero moment acting on the aerofoil, 
+we find that
+\begin{eqnarray}
+X &=&\frac{1}{2}\,\rho\oint_C \left|\frac{dF}{dz}\right|^{\,2}dy,\\[0.5ex]
+Y&=&-\frac{1}{2}\,\rho\oint_C \left|\frac{dF}{dz}\right|^{\,2}dx,\\[0.5ex]
+M &=&-\frac{1}{2}\,\rho\oint_C \left|\frac{dF}{dz}\right|^{\,2}(x\,dx+y\,dy).
+\end{eqnarray}
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter07/force.eps}}
+\caption{\em Short section of the surface of a two-dimensional aerofoil.}\label{fforce}
+\end{figure}
+
+Now, $z=x+{\rm i}\,y$, and $\bar{z}=x-{\rm i}\,y$, where $\bar{~}$ indicates a complex conjugate.
+Hence, $d\bar{z} = dx -{\rm i}\,dy$, and ${\rm i}\,d\bar{z} = dy+{\rm i}\,dx$.  It follows that
+\begin{equation}
+X - {\rm i}\,Y = \frac{1}{2}\,{\rm i}\,\rho\oint_C \left|\frac{dF}{dz}\right|^{\,2}d\bar{z}.
+\end{equation}
+However,
+\begin{equation}
+ \left|\frac{dF}{dz}\right|^{\,2}d\bar{z} = \frac{dF}{dz}\,\frac{d\bar{F}}{d\bar{z}}\,d\bar{z} = \frac{dF}{dz}\,d\,\bar{F},
+ \end{equation}
+ where $dF = d\phi+{\rm i}\,d\psi$ and $d\bar{F}=d\phi-{\rm i}\,d\,\psi$. However, on the curve $C$,
+ which corresponds to the surface of the aerofoil, we must have $\psi={\rm constant}$ in order to ensure that
+ the normal velocity is zero. Thus, $d\psi=0$ on $C$, and so $d\bar{F}=dF$. 
+ Hence,  on $C$, 
+\begin{equation}
+ \left|\frac{dF}{dz}\right|^{\,2}d\bar{z} =  \frac{dF}{dz}\,dF = \left(\frac{dF}{dz}\right)^{\,2},
+ \end{equation}
+ giving
+ \begin{equation}\label{ep7.65}
+X - {\rm i}\,Y = \frac{1}{2}\,{\rm i}\,\rho\oint_C \left(\frac{dF}{dz}\right)^{\,2}dz.
+\end{equation}
+This result is known as the {\em Blasius theorem}. 
+
+Note that $x\,dx+ y\,dy={\rm Re}(z\,d\bar{z})$. This implies that
+\begin{equation}
+M = {\rm Re}\left(-\frac{1}{2}\,\rho \oint_C \left|\frac{dF}{dz}\right|^{\,2} z\,d\bar{z}\right),
+\end{equation}
+or, making use of an analogous argument to that employed above, 
+\begin{equation}\label{ep7.67}
+M = {\rm Re}\left[-\frac{1}{2}\,\rho \oint_C \left(\frac{dF}{dz}\right)^{\,2} z\,dz\right],
+\end{equation}
+ 
+\section{Complex Integrals}\label{scauchy}
+Consider the integral of some function $F(z)$ of the complex variable around some closed curve $C$ in the complex
+plane:
+\begin{equation}
+J = \oint_C F(z)\,dz.
+\end{equation}
+Since $dz=dx+{\rm i}\,dy$, and writing $F=\phi+{\rm i}\,\psi$, where $\phi$ and $\psi$ are real functions, 
+we find that $J=J_r+{\rm i}\,J_i$, where
+\begin{eqnarray}
+J_r&=&\oint_C (\phi\,dx-\psi\,dy),\\[0.5ex]
+J_i&=&\oint_C (\psi\,dx+\phi\,dy).
+\end{eqnarray}
+However, we can also write the above expressions in the two-dimensional vector form
+\begin{eqnarray}
+J_r &=&\oint_C {\bf A}\cdot d{\bf r},\\[0.5ex]
+J_i &=&\oint_C {\bf B}\cdot d{\bf r},
+\end{eqnarray}
+where $d{\bf r}=(dx,\,dy)$, ${\bf A}=(\phi,\,-\psi))$, and ${\bf B} = (\psi,\,\phi)$. However, according to
+the Stokes' theorem (see Section~\ref{scurl}), 
+\begin{eqnarray}
+\oint_C {\bf A}\cdot d{\bf r}&=&\int_S (\nabla\times {\bf A})_z\,dS,\\[0.5ex]
+\oint_C {\bf B}\cdot d{\bf r} &=&\int_S (\nabla\times {\bf B})_z\,dS,
+\end{eqnarray}
+where $S$ is the region of the $x$-$y$ plane enclosed by $C$. Hence, we obtain
+\begin{eqnarray}
+J_r &=&-\int_S\left(\frac{\partial\psi}{\partial x} + \frac{\partial\phi}{\partial y}\right)dS,\\[0.5ex]
+J_i&=&\int_S\left(\frac{\partial\phi}{\partial x} - \frac{\partial\psi}{\partial y}\right)dS.
+\end{eqnarray}
+
+Let 
+\begin{eqnarray}
+J&=&\oint_{C}F(z)\,dz,\\[0.5ex]
+J'&=&\oint_{C'}  F(z)\,dz,
+\end{eqnarray}
+where $C'$ is a closed curve in the complex plane that surrounds the smaller curve $C$. 
+Consider
+\begin{equation}
+\Delta J = J-J'.
+\end{equation}
+Writing $\Delta J=\Delta J_r+{\rm i}\,\Delta J_i$, where $\Delta J_r$ and $\Delta J_i$ are real, a direct generalization of the previous analysis
+reveals that
+\begin{eqnarray}
+\Delta J_r &=&-\int_{S}\left(\frac{\partial\psi}{\partial x} + \frac{\partial\phi}{\partial y}\right)dS',\\[0.5ex]
+\Delta J_i&=&\int_{S}\left(\frac{\partial\phi}{\partial x} - \frac{\partial\psi}{\partial y}\right)dS',
+\end{eqnarray}
+where $S'$ is now the region of the $x$-$y$ plane lying between the curves $C$ and $C'$. 
+Suppose that $F(z)$ is well-defined throughout $S$ ({\em i.e.}, it is finite, single-valued, and
+differentiable). It immediately follows that its real and imaginary components, $\phi$ and $\psi$,
+respectively, satisfy the Cauchy-Riemann relations, (\ref{ep7.27})--(\ref{ep7.28}), throughout $S'$. 
+However, if this is the case then it is clear from the previous two expressions that $\Delta J_r=\Delta J_i=0$. 
+In other words, if $F(z)$ is well-defined throughout $S$ then $J=J'$. 
+
+Consider, now, the complex integral
+\begin{equation}
+K=\oint_C \left(\frac{dF}{dz}\right)^{\,2}dz,
+\end{equation}
+where the closed curve $C$ corresponds to the surface of our aerofoil, and $dF/dz$ is the complex velocity
+in the region of the complex plane lying outside this curve. Now, in order to be physical,  the velocity field of the fluid
+surrounding the aerofoil must be finite, single-valued, and differentiable. It follows that $dF/dz$, and, hence,
+$(dF/dz)^{\,2}$, is well-defined in the region external to $C$. 
+Consider the second integral
+\begin{equation}
+K'=\oint_{C'} \left(\frac{dF}{dz}\right)^{\,2}dz,
+\end{equation}
+where $C'$ is any closed curve that encloses the aerofoil (and, hence, the curve $C$). Since $(dF/dz)^{\,2}$
+is well-defined in the region external to $C$ it is also well-defined in the region lying between $C$ and $C'$. 
+Hence, according to our previous analysis, $K'=K$. We, thus, conclude that the complex integral appearing in the
+Blasius theorem, (\ref{ep7.65}), can, in fact, be taken around any closed curve that encircles the aerofoil
+without invalidating the theorem. The same is true for the complex integral in appearing in formula (\ref{ep7.67}).
+

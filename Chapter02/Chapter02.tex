@@ -1,0 +1,1158 @@
+\chapter{Mathematical Models of Fluid Motion}\label{c4}
+\section{Introduction}
+In this chapter, we  investigate the mathematical models commonly used to describe the equilibrium and
+dynamics of fluids. Unless
+stated otherwise, all of the analysis is performed using a standard right-handed Cartesian coordinate
+system: $x_1$, $x_2$, $x_3$. Moreover, the Einstein summation convention is employed (so repeated roman subscripts are assumed to be summed from 1 to 3---see Appendix~\ref{appb}). 
+
+\section{What is a Fluid?}\label{s4.1}
+By definition, a {\em solid}\/ material  is {\em rigid}. Now, although a rigid
+material tends to shatter when subjected to very large stresses, it can withstand a moderate
+{\em shear stress}\/ ({\em i.e.}, a stress that tends to deform the material by changing its shape, without necessarily changing its volume)
+for an indefinite period. To be more exact, when a shear stress is first applied to a rigid material it deforms slightly, but
+then springs back to its original shape when the stress is relieved. 
+
+A {\em plastic}\/ material, such as clay,
+also possess some degree of rigidity. However, the critical shear stress at which it yields is relatively
+small, and once this stress is exceeded the material deforms continuously and
+irreversibly, and does not recover its original shape when the stress is relieved. 
+
+By definition, a  {\em fluid}\/ material possesses no rigidity at all.
+In other words, a  small fluid element is  unable to withstand any tendency of an applied shear stress to
+change its shape.  Incidentally, this  does not
+preclude the possibility that such an element may offer resistance
+to  shear stress. However, any  resistance must be incapable of preventing the
+change in shape from eventually occurring, which  implies that the force of resistance
+vanishes with the rate of deformation. An obvious corollary is that the shear stress must
+be {\em zero}\/ everywhere inside a fluid that is in mechanical equilibrium. 
+
+Fluids are conventionally classified as either {\em liquids}\/ or {\em gases}. The most important difference
+between these two types of fluid lies in their relative  {\em compressibility}: {\em i.e.}, gases can be compressed much
+more easily than liquids. Consequently, any motion that involves significant pressure variations is generally accompanied by much larger changes in mass density in the case of a gas than in the
+case of a liquid. 
+
+Of course, a macroscopic fluid ultimately consists of a huge number of individual molecules. However, most practical
+applications of fluid mechanics are concerned with behavior on  length-scales
+that are far larger than the typical intermolecular spacing. Under these circumstances, it
+is reasonable to suppose that the bulk properties of  a given fluid are the same as if
+it were completely {\em continuous}\/ in structure. A corollary of this assumption is that
+when, in the following, we talk about infinitesimal volume elements, we really mean elements which are
+sufficiently small that the bulk fluid properties  (such as  mass density, pressure, and velocity) are approximately constant across them, but are still sufficiently large that
+they contain a  very great number of molecules (which implies that we can safely neglect any statistical variations
+in the bulk properties). The continuum hypothesis also requires infinitesimal volume elements to be much
+larger than the molecular mean-free-path.
+
+In addition to the continuum hypothesis, our study of fluid mechanics is premised on three major assumptions:
+\begin{enumerate}
+\item Fluids are {\em isotropic}\/ media: {\em i.e.}, there is no preferred direction in a fluid.
+\item Fluids are {\em Newtonian}: {\em i.e.}, there is a linear relationship between the local shear stress and
+the local rate of strain, as first postulated by Newton. It is also assumed that there is a linear relationship
+between the local heat flux density and  the local temperature gradient. 
+\item Fluids are {\em classical}: {\em i.e.}, the macroscopic motion of ordinary fluids is well-described
+by Newtonian dynamics, and both quantum and relativistic effects can be safely ignored.
+\end{enumerate}
+It should be noted that the above assumptions are not valid for all fluid types ({\em e.g.}, certain
+liquid polymers, which are non-isotropic; thixotropic
+fluids, such as jelly or paint, which are non-Newtonian; and quantum fluids, such as liquid helium, which
+exhibit non-classical effects on macroscopic length-scales). However, most practical
+applications of fluid mechanics involve the equilibrium and motion of bodies of water or air, extending over macroscopic length-scales, and situated  relatively close to the Earth's surface. Such bodies are very well-described
+as isotropic, Newtonian,  classical fluids.
+
+\section{Volume and Surface Forces}\label{s5.4}
+Generally speaking, fluids are acted upon by two distinct types of force. The first type is {\em long-range}\/ in nature---{\em
+i.e.}, such that it decreases relatively slowly with increasing distance between interacting elements---and is
+capable of completely penetrating into the interior of a fluid.  Gravity
+is an obvious example of a long-range force. One consequence of the relatively slow variation of
+long-range forces with position  is that they
+act equally on all of the fluid contained within a sufficiently small volume element.  In this situation, the net force 
+acting on the element becomes directly proportional to its volume. For this reason, long-range forces are often called {\em volume  forces}. In the following, we shall write the total  volume force acting at time $t$ on the fluid contained within a
+small volume element of magnitude $d V$, centered on a {\em fixed}\/ point whose position vector is ${\bf r}$,
+as
+\begin{equation}
+{\bf F}({\bf r},t)\,d V.
+\end{equation}
+
+The second type of force is {\em short-range}\/ in nature, and
+is most conveniently modeled as {\em momentum transport}\/ within the fluid. Such transport is generally due to a combination of
+the mutual forces exerted by contiguous molecules, and momentum fluxes caused by  relative molecular motion. 
+Suppose that $\bpi_x({\bf r}, t)$ is the net flux density of $x$-directed fluid momentum due to
+short-range forces
+ at  position ${\bf r}$ and time $t$. In other words, suppose that, at position ${\bf r}$ and 
+ time $t$,  as a direct consequence of short-range forces, $x$-momentum is flowing at the rate of
+ $|\bpi_x|$ newton-seconds per meter squared per second in the direction of vector $\bpi_x$.  Consider an infinitesimal  plane surface element, $d{\bf S} = {\bf n}\,dS$,  located at point ${\bf r}$. Here, $dS$ is the
+ area of the element, and  ${\bf n}$ its unit normal (see Section~\ref{sect22}). The fluid which lies
+ on that side of the element toward which ${\bf n}$ points is said to lie on its {\em positive}\/ side, and {\em vice versa}. 
+ The net flux of $x$-momentum across the element (in the direction of ${\bf n}$)  is
+ $\bpi_x \cdot d{\bf S}$ newtons, which implies (from Newton's second law of motion) that the fluid  on the  positive side of the surface element
+ experiences a force in the $x$-direction of $\bpi_x
+ \!\cdot\! d{\bf S}$ newtons due to short-range
+ interaction  with the fluid on the negative side. 
+ According to Newton's third law of motion, the  fluid on the negative side of the surface  experiences a force in the $x$-direction of $-\bpi_x \cdot d{\bf S}$ newtons due to interaction with the  fluid on the positive side. 
+ Short-range forces
+ are often called {\em surface forces}\/ because they are directly  proportional to the area of the surface element across which
+ they act. 
+ Let $\bpi_y({\bf r},t)$ and $\bpi_z({\bf r},t)$ be the net flux density of $y$- and $z$-momentum, respectively, at position ${\bf r}$ and
+ time $t$. By a straightforward extension of above argument, the net surface force exerted {\em by}\/ the fluid on the positive side of  some
+ planar surface element, $d{\bf S}$, {\em on}\/ the fluid
+ on its negative side is
+ \begin{equation}\label{e4.2}
+ {\bf f} = (-\bpi_x\!\cdot\! d{\bf S},\, -\bpi_y\!\cdot\!d{\bf S},\, -\bpi_z\!\cdot\!d{\bf S}).
+ \end{equation}
+ In tensor notation (see Appendix~\ref{appb}), the above equation can be written
+ \begin{equation}\label{e4.3}
+ f_i = \sigma_{ij}\,dS_j,
+ \end{equation}
+ where $\sigma_{11}= -(\bpi_x)_x$, $\sigma_{12} = -(\bpi_x)_y$, $\sigma_{21}=-(\bpi_y)_x$, {\em etc.}
+ Here, the $\sigma_{ij}({\bf r}, t)$ are termed the local {\em stresses}\/ in the fluid at position ${\bf r}$ and
+ time $t$, and have units of force per unit area. Moreover, the $\sigma_{ij}$ are
+ the components of a second-order tensor (see Appendix~\ref{appb}), known as the {\em stress tensor}. This follows because the $f_i$ are the components of a first-order tensor (since all forces are proper vectors), and the $dS_i$ are the components of an {\em arbitrary}\/ first-order tensor [since surface elements are
+ also proper vectors---see Section~\ref{sect22}---and (\ref{e4.3}) holds for
+  elements whose normals point in {\em any}\/ direction], so application of  the quotient rule (see Section~\ref{strans}) to Equation~(\ref{e4.3}) reveals that the  $\sigma_{ij}$  transform under rotation of the coordinate axes as the components of a second-order tensor. We can interpret $\sigma_{ij}({\bf r},t)$
+ as the $i$-component of the force per unit area exerted, at position ${\bf r}$ and time $t$, across a plane surface element normal to the
+ $j$-direction. The three diagonal components of $\sigma_{ij}$ are
+ termed {\em normal stresses}, since each of them gives the normal component of the  force per unit area acting
+ across a plane surface element parallel to one of the Cartesian coordinate planes. The six non-diagonal components
+ are termed {\em shear stresses}, since they drive shearing motion in which parallel
+ layers of fluid slide relative to one another.
+ 
+\section{General Properties of  Stress Tensor}\label{s4.3}
+ The $i$-component of the total force acting on a  fluid element consisting of a fixed volume $V$ enclosed by a surface $S$ is written
+ \begin{equation}
+ f_i = \int_V F_i\,dV + \oint_S \sigma_{ij}\,dS_j,
+ \end{equation}
+ where the first term on the right-hand side is the integrated volume force acting throughout $V$, whereas the
+ second term is the net surface force acting across $S$. Making use of the tensor divergence theorem (see Section~\ref{stfield}),
+ the above expression becomes
+ \begin{equation}
+ f_i = \int_V F_i\,dV + \int_V \frac{\partial \sigma_{ij}}{\partial x_j}\,dV.
+ \end{equation}
+In the limit   $V\rightarrow 0$ (note that we are using $V$ to denote both the fluid element and its volume), it is reasonable to suppose that the $F_i$ and $\partial \sigma_{ij}/\partial x_j$ are
+ approximately constant across the element. In this situation, both contributions on the right-hand side of the above equation scale as $V$. Now, according to Newtonian dynamics, 
+ the $i$-component of the net force acting on the element is equal to the $i$-component of the rate of change of its linear  momentum. However, in the limit
+  $V\rightarrow 0$,  the  linear acceleration and mass density of the fluid are  both approximately constant across the element. In this case,
+  the 
+  rate of change of the  element's linear momentum
+ also scales as  $V$. In other words,  the net volume force, surface force, and
+ rate of change of linear momentum of an infinitesimal fluid element  all scale as the volume of the element, and
+ consequently remain  approximately the same order of magnitude as the volume shrinks to zero. We conclude
+ that
+ the linear equation of motion of an infinitesimal fluid element places no particular restrictions on the stress tensor. 
+ 
+ The $i$-component of the total torque, taken about the origin $O$ of the coordinate system, acting on a fluid element that consists of
+ a fixed volume $V$ enclosed by a surface $S$ is written  [see Equations~(\ref{etorque}) and (\ref{e3.6})]
+ \begin{equation}
+ \tau_i =\int_V \epsilon_{ijk}\,x_j\,F_k\,dV + \oint_S\epsilon_{ijk}\,x_j\,\sigma_{kl}\,dS_l,
+ \end{equation}
+ where the first and second terms on the right-hand side are due to volume and surface forces, respectively. 
+Making use of the tensor divergence theorem (see Section~\ref{stfield}),
+ the above expression becomes
+ \begin{equation}
+ \tau_i = \int_V \epsilon_{ijk}\,x_j\,F_k\,dV + \int_V \epsilon_{ijk}\frac{\partial (x_j\,\sigma_{kl})}{\partial x_l}\,dV,
+ \end{equation}
+ which reduces to
+ \begin{equation}\label{e4.8}
+ \tau_i = \int_V \epsilon_{ijk}\,x_j\,F_k\,dV + \int_V \epsilon_{ijk}\,\sigma_{kj}\,dV+ \int_V\epsilon_{ijk}\,x_j\,\frac{\partial \sigma_{kl}}{\partial x_l}\,dV,
+ \end{equation}
+ since $\partial x_i/\partial x_j = \delta_{ij}$. Assuming that point $O$ lies {\em within}\/ the fluid element, and taking the
+ limit $V\rightarrow 0$ in which the $F_i$, $\sigma_{ij}$, and $\partial \sigma_{ij}/\partial x_j$ are all approximately
+ constant across the element, we deduce that the first, second, and third terms on the right-hand
+ side of the above equation scale as $V^{\,4/3}$, $V$, and $V^{
+ \,4/3}$, respectively. Now, according to Newtonian dynamics, the $i$-component
+ of the total torque acting on the fluid element is equal to the $i$-component of the
+ rate of change of its net angular momentum about $O$. Assuming that the linear acceleration of the fluid 
+ is approximately constant across the element, we deduce that the rate of change of its angular momentum scales as $V^{\,4/3}$. 
+ Hence, it is clear that 
+ the rotational equation of motion of a  fluid element, surrounding a general point $O$, becomes completely dominated
+ by the second term on the right-hand side of (\ref{e4.8}) in the limit that the volume of the element approaches zero (since
+ this term is a factor $V^{-1/3}$ larger than the other terms). It follows that the second term must be identically zero (otherwise
+an   infinitesimal fluid element would acquire  an absurdly large angular velocity).
+ This is only possible, for all choices of the position of point $O$, and the shape of the element, if
+ \begin{equation}
+ \epsilon_{ijk}\,\sigma_{kj} = 0
+ \end{equation}
+ throughout the fluid. 
+ The above relation shows that the stress tensor must be {\em symmetric}: {\em i.e.},
+ \begin{equation}
+ \sigma_{ji} = \sigma_{ij}.
+ \end{equation}
+ It immediately follows that the stress tensor only has {\em six}\/ independent components ({\em i.e.}, $\sigma_{11}$, $\sigma_{22}$, $\sigma_{33}$, $\sigma_{12}$, $\sigma_{13}$, and $\sigma_{23}$). 
+ 
+Now, it is always possible to choose the orientation of a set of Cartesian axes in such a manner
+ that the non-diagonal components of a given {\em symmetric}\/ second-order tensor field  are all set to zero at a given point in space
+ (see Exercise B.6). 
+ With reference to such {\em principal axes}, the
+ diagonal components of the stress tensor $\sigma_{ij}$  become so-called {\em principal stresses}---$\sigma_{11}'$, $\sigma_{22}'$, $\sigma_{33}'$, say. Of course, in general, the orientation of the principal axes varies with position. 
+ The normal stress $\sigma_{11}'$ acting across a surface
+ element perpendicular to the first principal axis  corresponds to a tension (or a compression if $\sigma_{11}'$ is negative)
+ in the direction of that axis. Likewise, for $\sigma_{22}'$ and $\sigma_{33}'$. Thus, the general state of the
+ fluid, at a particular point in space, can be regarded as a superposition of tensions, or compressions, in three orthogonal directions.
+ 
+ The {\em trace}\/ of the stress tensor, $\sigma_{ii}=\sigma_{11}
+ +\sigma_{22}+\sigma_{33}$, is a scalar, and, therefore, independent of the orientation of the coordinate axes (see Appendix~\ref{appb}). Thus,
+ it follows that, irrespective of the orientation of the principle axes, the trace of the stress tensor at a given point  is always equal to the sum of the principal stresses: {\em i.e.},
+ \begin{equation}\label{e4.11}
+ \sigma_{ii} = \sigma_{11}'+\sigma_{22}'+\sigma_{33}'.
+ \end{equation}
+ 
+\section{Stress Tensor in a Static Fluid}\label{s5.5}
+Consider the surface forces exerted on some infinitesimal cubic volume element of a {\em static}\/ fluid. Suppose that the 
+components of the stress tensor are approximately constant across the element. Suppose, further, that the sides of
+the cube are aligned parallel to the principal axes of the local stress tensor. This tensor, which now has zero
+non-diagonal components, can be regarded as the sum of two tensors: {\em i.e.},
+\begin{equation}
+\left(
+\begin{array}{ccc}
+\frac{1}{3}\sigma_{ii}& 0 & 0\\[0.5ex]
+0&\frac{1}{3}\sigma_{ii} & 0 \\[0.5ex]
+0&0&\frac{1}{3}\sigma_{ii}
+\end{array}\right),\label{e4.12}
+\end{equation}
+and
+\begin{equation}
+\left(
+\begin{array}{ccc}
+\sigma_{11}'-\frac{1}{3}\sigma_{ii}& 0 & 0\\[0.5ex]
+0&\sigma_{22}'-\frac{1}{3}\sigma_{ii} & 0 \\[0.5ex]
+0&0&\sigma_{33}'-\frac{1}{3}\sigma_{ii}
+\end{array}\right).\label{e4.13}
+\end{equation}
+
+The first of the above tensors is {\em isotropic}\/ (see Section~\ref{siso}), and corresponds to the same
+normal force  per unit area acting inward  (since the sign of $\frac{1}{3}\sigma_{ii}$ is invariably negative) on each face of
+the  volume element. This uniform compression  acts to change the element's volume,
+but not its shape, and can  easily be withstood by the fluid within the element.
+
+The second of the above tensors represents the departure of the stress tensor from an isotropic form. The diagonal
+components of this tensor have zero sum, in view of (\ref{e4.11}), and thus represent equal and opposite forces per unit area,
+acting on   opposing faces of the  volume element, which are such that the forces on at least one pair of opposing faces constitute a tension, and
+the forces on at least one pair constitute a compression. Such forces necessarily tend to change the shape of the volume element, either elongating
+or compressing it along  one of its symmetry axes. Moreover, this tendency cannot  be offset by any
+volume force acting on the element, since such forces become arbitrarily small compared
+to surface forces in the limit that the element's volume tends to zero (see Section~\ref{s4.3}).
+Now, we have previously defined a fluid as a material
+that is incapable of withstanding any tendency of applied forces to change its shape (see Section~\ref{s4.1}). It follows that
+if the diagonal components of the tensor (\ref{e4.13}) are non-zero anywhere inside the fluid then it is impossible for the fluid at that point to be at rest. Hence,
+we conclude that the principal stresses, $\sigma_{11}'$, $\sigma_{22}'$, and $\sigma_{33}'$, 
+must be equal to one another  at all points in a static fluid. This  implies
+that the stress tensor  takes the isotropic form (\ref{e4.12}) everywhere in a stationary fluid. Furthermore, this
+is true irrespective of the orientation of the coordinate axes, since the components of an isotropic
+tensor are rotationally invariant (see Section~\ref{siso}). 
+
+Fluids at rest are generally in a state of compression, so it is convenient to write the stress tensor of a static
+fluid in the form
+\begin{equation}
+\sigma_{ij} = - p\,\delta_{ij},
+\end{equation}
+where $p=-\frac{1}{3}\sigma_{ii}$ is termed the {\em static fluid pressure}, and is generally a function of ${\bf r}$ and $t$. 
+It follows that, in a stationary fluid, the force per unit area exerted across a plane surface element
+with unit normal ${\bf n}$ is $-p\,{\bf n}$ [see Equation~(\ref{e4.3})]. Moreover, this normal force  has the {\em same}\/ value for
+all possible orientations of ${\bf n}$. This well-known result---namely, 
+that the   pressure is the same in all directions at a given point in a static fluid---is known as {\em Pascal's law}, and is a direct consequence of the
+fact that a fluid element cannot withstand shear stresses, or, alternatively, any tendency of applied forces
+to change its shape. 
+
+\section{Stress Tensor in a Moving Fluid}\label{sstress}
+We have seen that  in a static fluid the stress tensor takes the form
+\begin{equation}
+\sigma_{ij} = -p\,\delta_{ij},
+\end{equation}
+where $p=-\frac{1}{3}\,\sigma_{ii}$ is the static pressure: {\em i.e.}, minus the normal stress acting in any direction.
+Now,  the normal stress at a given point in a moving fluid generally varies with direction: {\em i.e.}, the principal stresses are
+not equal to one another. However, we can still define the mean principal stress as $(\sigma_{11}'+\sigma_{22}'+\sigma_{33}')/3= \frac{1}{3}\,\sigma_{ii}$.
+Moreover, given that the  principal stresses are actually normal stresses (in a coordinate frame aligned with the principal axes), we can also regard  $\frac{1}{3}\,\sigma_{ii}$
+as the mean normal stress. 
+It is convenient to define pressure in a moving fluid as minus the {\em mean normal
+stress}: {\em i.e.}, 
+\begin{equation}
+p= -\frac{1}{3}\,\sigma_{ii}.
+\end{equation}
+Thus, we can write the stress tensor in a moving fluid as the sum of an isotropic part, $-p\,\delta_{ij}$,
+which has the same form as the stress tensor in a static fluid, and a remaining non-isotropic
+part, $d_{ij}$, which includes any shear stresses, and also has diagonal components whose
+sum is zero. In other words,
+\begin{equation}
+\sigma_{ij} = - p\,\delta_{ij} + d_{ij},
+\end{equation}
+where
+\begin{equation}
+d_{ii} = 0.\label{e4.18}
+\end{equation}
+Moreover, since $\sigma_{ij}$ and $\delta_{ij}$ are both symmetric tensors, it follows that
+$d_{ij}$ is also symmetric: {\em i.e.}, 
+\begin{equation}
+d_{ji} = d_{ij}.\label{e4.19}
+\end{equation}
+
+It is clear that the so-called {\em deviatoric stress tensor}, $d_{ij}$, is a consequence of {\em fluid motion}, since
+it is zero in a static fluid. Suppose, however, that we were to view a static fluid in both its rest frame and  in a frame of reference moving at
+ some {\em constant}\/ velocity relative to the rest frame. Now, we would expect the force distribution within the fluid to
+ be the {\em same}\/ in both frames of reference, since the fluid does not accelerate in either. 
+ However, in the first frame, the fluid appears stationary and the deviatoric stress tensor is therefore zero, whilst in the second it has a {\em uniform}\/ velocity and the deviatoric stress tensor is also zero (because it is the same as in the rest frame).
+ We, thus, conclude that the deviatoric stress tensor is zero   both in a stationary fluid {\em and}\/ in a moving fluid
+ possessing  no spatial velocity gradients. This suggests that the deviatoric stress tensor is driven by {\em velocity gradients}\/
+ within the fluid. Moreover, the tensor must vanish as these gradients vanish. 
+ 
+Let the $v_i({\bf r}, t)$ be the Cartesian components of the fluid velocity at point ${\bf r}$ and time $t$. The
+various velocity gradients within the fluid then take the form $\partial v_i/\partial x_j$. The simplest
+possible assumption, which is consistent with the above discussion,  is that the components of the deviatoric stress tensor are {\em linear}\/ functions
+of these velocity gradients: {\em i.e.}, 
+\begin{equation}\label{e4.20}
+d_{ij} = A_{ijkl}\,\frac{\partial v_k}{\partial x_l}.
+\end{equation}
+Here, $A_{ijkl}$ is a fourth-order tensor (this follows from the quotient rule because $d_{ij}$ and
+$\partial v_i/\partial x_j$ are both proper second-order tensors). Any fluid in which the deviatoric
+stress tensor takes the above form is termed a {\em Newtonian fluid}, since Newton was the
+first to postulate a linear relationship between shear stresses and velocity gradients.  
+
+Now, in an {\em isotropic}\/ fluid---that is, a fluid in which there is no preferred direction---we would
+expect the fourth-order tensor $A_{ijkl}$ to be isotropic---that is, to have a form in which all
+distinction between different directions is absent. As demonstrated in Section~\ref{siso}, the
+most general expression for  an isotropic fourth-order tensor  is
+\begin{equation}\label{e4.21}
+A_{ijkl}= \alpha\,\delta_{ij}\,\delta_{kl} + \beta\,\delta_{ik}\,\delta_{jl}+\gamma\,\delta_{il}\,\delta_{jk},
+\end{equation}
+where $\alpha$, $\beta$, and $\gamma$ are arbitrary scalars (which can be functions of position and time). 
+Thus, it follows from (\ref{e4.20}) and (\ref{e4.21}) that
+\begin{equation}
+d_{ij} = \alpha\,\frac{\partial v_k}{\partial x_k}\,\delta_{ij} + \beta\,\frac{\partial v_i}{\partial x_j}
++\gamma\,\frac{\partial v_j}{\partial x_i}.
+\end{equation}
+However, according to Equation~(\ref{e4.19}), $d_{ij}$ is a {\em symmetric}\/ tensor, which implies that $\beta=\gamma$, 
+and
+\begin{equation}
+d_{ij} = \alpha\,e_{kk}\,\delta_{ij}+2\,\beta\,e_{ij},
+\end{equation}
+where
+\begin{equation}\label{e4.24}
+e_{ij} = \frac{1}{2}\left(\frac{\partial v_i}{\partial x_j} + \frac{\partial v_j}{\partial x_i}\right)
+\end{equation}
+is called the {\em rate of strain tensor}. 
+Finally, according to Equation~(\ref{e4.18}), $d_{ij}$ is a {\em traceless}\/ tensor, which yields 
+$3\alpha=-2\beta$, and
+\begin{equation}\label{e4.25}
+d_{ij} = 2\mu\left(e_{ij} - \frac{1}{3}\,e_{kk}\,\delta_{ij}\right),
+\end{equation}
+where $\mu=\beta$. 
+We, thus, conclude that  the most general expression for the stress tensor in an isotropic Newtonian fluid
+is
+\begin{equation}\label{e4.26}
+\sigma_{ij} = - p\,\delta_{ij} +2\mu\left(e_{ij} - \frac{1}{3}\,e_{kk}\,\delta_{ij}\right),
+\end{equation}
+where $p({\bf r},t)$ and $\mu({\bf r},t)$ are arbitrary scalars. 
+
+\section{Viscosity}
+The significance of the parameter $\mu$, appearing in the above expression for the stress tensor, can be seen from the form taken by the relation (\ref{e4.25}) in the
+special case of simple shearing motion. With $\partial v_1/\partial x_2$ as the only non-zero
+velocity derivative, all of the components of $d_{ij}$ are zero apart from the
+shear stresses
+\begin{equation}
+d_{12} = d_{21} = \mu\,\frac{\partial v_1}{\partial x_2}.
+\end{equation}
+Thus, $\mu$ is the constant of proportionality between the rate of shear and the tangential
+force per unit area when parallel plane layers of fluid slide over one another. This constant of proportionality is generally
+referred to as {\em viscosity}. It is a matter of experience that the force between layers
+of fluid undergoing relative sliding motion  always  tends to oppose
+the  motion, which implies that  $\mu>0$. 
+
+The viscosities of dry air and pure water at $20^\circ\,{\rm C}$  and atmospheric pressure are about $1.8 \times 10^{-5}\, {\rm kg/(m\,s)}$
+and $1.0\times 10^{-3}\, {\rm kg/(m\,s)}$, respectively. In neither case does the viscosity exhibit
+much variation with pressure. However, the viscosity of air {\em increases}\/ by about $0.3$ percent, and
+that of water {\em decreases}\/ by about 3 percent, per degree Centigrade 
+rise in temperature. 
+
+\section{Conservation Laws} 
+Suppose that $\theta({\bf r}, t)$ is the density of some bulk fluid property ({\em e.g.},  mass, momentum, 
+energy) at position ${\bf r}$ and time $t$. In other words, suppose that, at time $t$,  an infinitesimal fluid element of volume $dV$, located
+at position ${\bf r}$, contains an amount $\theta({\bf r},t)\,dV$ of the property in question. Note, incidentally,
+that $\theta$ can be either a scalar, a component of a vector, or even a component of a tensor.
+ The total 
+amount of the property contained within some {\em fixed}\/ volume $V$ is
+\begin{equation}
+\Theta = \int_V \theta\,dV,
+\end{equation}
+where the integral is taken over all elements of $V$. Let $d{\bf S}$ be an outward directed 
+element of the bounding surface of $V$. Suppose that this element is located at point ${\bf r}$. The volume of fluid  that
+flows per second across the element, and so out of  $V$,  is ${\bf v}({\bf r}, t)\!\cdot\! d{\bf S}$. Thus, the
+amount of the fluid property under consideration which is {\em convected}\/ across the element per second is
+$\theta({\bf r},t)\,{\bf v}({\bf r}, t)\cdot d{\bf S}$. It follows that the net amount of the property that 
+is convected out of volume $V$ by fluid flow across its bounding surface $S$ is
+\begin{equation}\label{eflux}
+\Phi_\Theta = \int_S \theta\,{\bf v}\cdot d{\bf S},
+\end{equation}
+where the integral is taken over all outward directed  elements of $S$. Suppose, finally, that
+the property in question   is created within the volume $V$ at the rate $S_\Theta$ per second. 
+The conservation equation for the fluid property takes the form
+\begin{equation}
+\frac{d\Theta}{dt} = S_\Theta-\Phi_\Theta.
+\end{equation}
+In other words, the rate of increase in the amount of the property contained within $V$ is the
+difference between the  creation rate of the property inside $V$, and the rate at
+which the property is convected out of $V$ by  fluid flow.
+The above conservation law can also be written
+\begin{equation}\label{econs}
+\frac{d\Theta}{dt} +\Phi_\Theta= S_\Theta.
+\end{equation}
+Here, $\Phi_\Theta$ is termed the {\em flux}\/ of the property out of $V$, whereas $S_\Theta$ 
+is called the net {\em generation rate}\/ of the property within $V$. 
+
+\section{Mass Conservation}\label{scont}
+Let $\rho({\bf r},t)$ and ${\bf v}({\bf r},t)$ be the mass density and velocity  of a given fluid at point ${\bf r}$ and time $t$. Consider a
+{\em fixed}\/ volume $V$ surrounded by a surface $S$. The net mass contained within $V$ is
+\begin{equation}
+M = \int_V \rho\,dV,
+\end{equation}
+where $dV$ is an element of $V$.
+Furthermore, the mass flux across $S$, and out of $V$, is [see Equation~(\ref{eflux})]
+\begin{equation}
+\Phi_M = \int_S \rho\,{\bf v}\cdot d{\bf S},
+\end{equation}
+where $d{\bf S}$ is an outward directed element of $S$.  Mass conservation requires 
+that the rate of increase of the mass contained within $V$,
+plus the net mass flux  out of $V$, should equal zero: {\em i.e.},
+\begin{equation}
+\frac{dM}{dt} +\Phi_M=0
+\end{equation}
+[{\em cf.}, Equation~(\ref{econs})].
+Here, we are assuming that there is no  mass generation (or destruction) within $V$ (since individual molecules
+are effectively indestructible). 
+It follows that
+\begin{equation}
+\int_V \frac{\partial \rho}{\partial t}\,dV + \int_S\rho\,{\bf v}\cdot d{\bf S} = 0,
+\end{equation}
+since $V$ is non-time-varying. Making use of the divergence theorem (see Section~\ref{sdiv}),
+the above equation becomes
+\begin{equation}
+\int_V\left[\frac{\partial \rho}{\partial t} + \nabla\!\cdot\!(\rho\,{\bf v})\right]dV = 0.
+\end{equation}
+However, this result is true irrespective of the size, shape, or location of  volume $V$, which is only possible if
+\begin{equation}\label{e4.33}
+\frac{\partial\rho}{\partial t} + \nabla\!\cdot\!(\rho\,{\bf v}) = 0
+\end{equation}
+throughout the fluid. The above expression is known as the {\em equation of fluid continuity}, and is
+a direct consequence of mass conservation. 
+
+\section{Convective Time Derivative}\label{sconv}
+The quantity $\partial \rho({\bf r}, t)/\partial t$, appearing in Equation~(\ref{e4.33}),  represents the time derivative of the fluid mass density at the {\em fixed}\/ point ${\bf r}$. Suppose that ${\bf v}({\bf r},t)$ is the instantaneous fluid velocity at the same point. It follows
+that the time derivative of the  density, as seen in a frame of reference which is {\em instantaneously co-moving}\/ with the fluid
+at point ${\bf r}$, is
+\begin{equation}
+\lim_{\delta t\rightarrow 0} \frac{\rho({\bf r}+{\bf v}\,\delta t,t+\delta t)-\rho({\bf r}, t)}{\delta t} = \frac{\partial \rho}{\partial t} + {\bf v}\!\cdot\!\nabla \rho \equiv \frac{D \rho}{Dt},
+\end{equation}
+where we have Taylor expanded $\rho({\bf r}+{\bf v}\,\delta t, t+\delta t)$ up to first-order in $\delta t$, and where
+\begin{equation}\label{e4.35}
+\frac{D}{Dt}\equiv  \frac{\partial}{\partial t} + {\bf v}\!\cdot\!\nabla = \frac{\partial}{\partial t} + v_i\,\frac{\partial}{\partial x_i}.
+\end{equation}
+Clearly, the so-called {\em convective time derivative}, $D/Dt$, represents the time derivative seen in the  local rest frame of the fluid.
+
+The continuity equation (\ref{e4.33}) can be rewritten in the form
+\begin{equation}\label{e4.36}
+\frac{1}{\rho}\,\frac{D\rho}{Dt}\equiv \frac{D\ln\rho}{Dt}=-\nabla\!\cdot\!{\bf v},
+\end{equation}
+since $\nabla \cdot(\rho\,{\bf v}) = {\bf v}\cdot\nabla \rho + \rho\,\nabla \cdot{\bf v}$ [see (\ref{divprod})]. Consider a
+ volume element $V$ that is {\em co-moving}\/ with the fluid. 
+ In general, as the element is convected by the fluid its volume changes. In fact, it is easily
+ seen that
+ \begin{equation}
+ \frac{DV}{Dt} = \int_S{\bf v}\cdot d{\bf S}=\int_S v_i\,dS_i = \int_V \frac{\partial v_i}{\partial x_i}\,dV = \int_V \nabla\!\cdot \! {\bf v}\,dV,
+ \end{equation}
+ where $S$ is the bounding surface of the element, and use has been made of the divergence theorem. In the limit that $V\rightarrow 0$,
+ and $\nabla\!\cdot\!{\bf v}$ is approximately constant across the element, we obtain
+ \begin{equation}\label{e4.38}
+ \frac{1}{V}\,\frac{DV}{Dt} \equiv \frac{D\ln V}{Dt} = \nabla\!\cdot\!{\bf v}.
+ \end{equation}
+ Hence, we conclude that the divergence of the fluid velocity at a given point in space specifies
+ the fractional rate of increase in the volume of an infinitesimal co-moving fluid element at that point. 
+ 
+\section{Momentum Conservation}\label{smom}
+Consider a fixed volume $V$ surrounded by a surface $S$. The $i$-component of the total linear momentum contained within $V$
+is
+\begin{equation}
+P_i = \int_V \rho\,v_i\,dV.
+\end{equation}
+Moreover, the flux of $i$-momentum across $S$, and out of $V$, is [see Equation~(\ref{eflux})]
+\begin{equation}
+\Phi_i = \int_S \rho\,v_i\,v_j\,dS_j.
+\end{equation}
+Finally, the  $i$-component of the net  force acting on the fluid within $V$ is
+\begin{equation}
+f_i = \int_V F_i\,dV + \oint_S \sigma_{ij}\,dS_j,
+\end{equation}
+where the first and second terms on the right-hand side are the contributions from volume and surface forces, respectively. 
+
+Momentum conservation requires  that the rate of
+increase of the net $i$-momentum of the fluid contained within $V$, plus the flux of $i$-momentum out of $V$, is equal to the rate of $i$-momentum generation
+within $V$. Of course, from Newton's second law of motion, the latter quantity is equal to the $i$-component
+of the net force acting on the fluid contained within $V$. Thus, we obtain [{\em cf.}, Equation~(\ref{econs})] 
+\begin{equation}
+\frac{dP_i}{dt} + \Phi_i = f_i,
+\end{equation}
+which can be written
+\begin{equation}
+\int_V \frac{\partial(\rho\,v_i)}{\partial t}\,dV +\int_S\rho\,v_i\,v_j\,dS_j =  \int_V F_i\,dV + \oint_S \sigma_{ij}\,dS_j,
+\end{equation}
+since the volume $V$ is non-time-varying. 
+Making use of the tensor divergence theorem, this becomes 
+\begin{equation}
+\int_V\left[\frac{\partial (\rho\,v_i)}{\partial t} + \frac{\partial(\rho\,v_i\,v_j)}{\partial x_j}\right]dV = 
+\int_V\left(F_i + \frac{\partial\sigma_{ij}}{\partial x_j}\right)dV.
+\end{equation}
+However, the above result is valid irrespective of the size, shape, or location of  volume $V$, which is only
+possible if
+\begin{equation}
+\frac{\partial (\rho\,v_i)}{\partial t} + \frac{\partial(\rho\,v_i\,v_j)}{\partial x_j} = F_i + \frac{\partial\sigma_{ij}}{\partial x_j}
+\end{equation}
+everywhere inside the fluid. Expanding the derivatives, and rearranging, we obtain
+\begin{equation}\label{e4.45}
+\left(\frac{\partial\rho}{\partial t} + v_j\,\frac{\partial\rho}{\partial x_j} +\rho\, \frac{\partial v_j}{\partial x_j}\right)v_i
++ \rho\left(\frac{\partial v_i}{\partial t} + v_j\,\frac{\partial v_i}{\partial x_j}\right)= F_i + \frac{\partial\sigma_{ij}}{\partial x_j}.
+\end{equation}
+Now, in tensor notation, the continuity equation (\ref{e4.33})  is written
+\begin{equation}\label{e4.46}
+\frac{\partial\rho}{\partial t} + v_j\,\frac{\partial\rho}{\partial x_j} + \rho\,\frac{\partial v_j}{\partial x_j}=0.
+\end{equation}
+So, combining Equations (\ref{e4.45}) and (\ref{e4.46}), we obtain the following  {\em fluid equation of motion}:
+\begin{equation}
+ \rho\left(\frac{\partial v_i}{\partial t} + v_j\,\frac{\partial v_i}{\partial x_j}\right)= F_i + \frac{\partial\sigma_{ij}}{\partial x_j}.
+\end{equation} 
+An alternative form of this equation  is
+\begin{equation}\label{e4.48}
+\frac{D v_i}{Dt} =  \frac{F_i}{\rho} + \frac{1}{\rho}\frac{\partial\sigma_{ij}}{\partial x_j}.
+\end{equation}
+The above equation describes how the   net volume and surface forces per unit mass acting on  a co-moving fluid element determine its acceleration.
+
+\section{Navier-Stokes Equation}
+Equations~(\ref{e4.24}), (\ref{e4.26}), and (\ref{e4.48}) can be combined to give the equation of motion
+of an isotropic, Newtonian, classical fluid:
+\begin{equation}
+\rho \,\frac{D v_i}{Dt}= F_i - \frac{\partial p}{\partial x_i} + \frac{\partial}{\partial x_j}\!\left[\mu\left(\frac{\partial v_i}{\partial x_j}+ \frac{\partial v_j}{\partial x_i}\right)\right] - \frac{\partial}{\partial x_i}\!\left(\frac{2}{3}\,\mu\,\frac{\partial  v_j}{\partial x_j}\right).
+\end{equation}
+This equation is generally known as the {\em Navier-Stokes equation}.
+Now, in situations in which there are no strong  temperature gradients in the fluid it is a good approximation to treat    viscosity  as a spatially uniform quantity, in which case the
+Navier-Stokes equation simplifies
+somewhat to give
+\begin{equation}
+\rho \,\frac{D v_i}{Dt}= F_i - \frac{\partial p}{\partial x_i} +\mu\left[\frac{\partial^2 v_i}{\partial x_j\,\partial x_j}+ \frac{1}{3}\,\frac{\partial^2 v_j}{\partial x_i\,\partial x_j}\right].
+\end{equation}
+When expressed in vector form, the above expression becomes
+\begin{equation}\label{e4.52}
+\rho\,\frac{D{\bf v}}{Dt}\equiv \rho\!\left[\frac{\partial {\bf v}}{\partial t} + ({\bf v}\!\cdot\!\nabla)\,{\bf v}\right] = {\bf F} - \nabla p + \mu\left[\nabla^2 {\bf v}
++ \frac{1}{3}\,\nabla(\nabla\!\cdot\!{\bf v})\right],
+\end{equation}
+where use has been made of Equation~(\ref{e4.35}). Here, 
+\begin{eqnarray}
+[({\bf a}\!\cdot\!\nabla){\bf b}]_i&\equiv& a_j\,\frac{\partial b_i}{\partial x_j},\label{e4.52x}\\[0.5ex]
+(\nabla^2{\bf v})_i &\equiv& \nabla^2 v_i.\label{e4.53}
+\end{eqnarray}
+Note, however, that the above identities are only valid in {\em Cartesian}\/ coordinates (see Appendix~\ref{ccurv}). 
+
+\section{Energy Conservation}
+Consider a fixed volume $V$ surrounded by a surface $S$. The total energy content of the fluid contained within $V$ is
+\begin{equation}\label{e4.62}
+E = \int_V \rho\,{\cal E}\,dV + \int_V\frac{1}{2}\,\rho\,v_i\,v_i\,dV,
+\end{equation}
+where the first and second terms on the right-hand side are the net internal and kinetic energies, respectively. Here, 
+${\cal E}({\bf r},t)$ is the internal ({\em i.e.}, thermal) energy per unit mass of the fluid. The energy flux
+across $S$, and out of $V$, is [{\em cf.},  Equation~(\ref{eflux})]
+\begin{equation}\label{e4.63}
+\Phi_E = \int_S \rho\left({\cal E} + \frac{1}{2}\,v_i\,v_i\right)v_j\,dS_j = \int_V\frac{\partial}{\partial x_j}\!
+\left[\rho\left({\cal E} + \frac{1}{2}\,v_i\,v_i\right)v_j\right]dV,
+\end{equation}
+where use has been made of the tensor divergence theorem. According to the first law of thermodynamics, the rate of increase of
+the energy contained within $V$, plus the net energy flux out of $V$, is equal to the net rate of work done on the fluid
+within $V$, minus the
+net  heat flux out of $V$: {\em i.e.},
+\begin{equation}
+\frac{dE}{dt} + \Phi_E = \dot{W} -\dot{Q},
+\end{equation}
+where $\dot{W}$ is the net rate of work, and $\dot{Q}$  the net heat flux. It can be seen that $\dot{W}-\dot{Q}$ is the
+effective energy generation rate within $V$ [{\em cf.}, Equation~(\ref{econs})]. 
+
+Now, the net rate at which volume and surface forces do work on the fluid within $V$ is
+\begin{equation}\label{e4.65}
+\dot{W} = \int_V v_i\,F_i\,dV + \int_S v_i\,\sigma_{ij}\,dS_j = \int_V\left[v_i\,F_i+ \frac{\partial(v_i\,\sigma_{ij})}{\partial x_j}\right]dV,
+\end{equation}
+where use has been made of the tensor divergence theorem.
+
+Generally speaking, heat flow in fluids is driven by {\em temperature gradients}. Let the $q_i({\bf r},t)$ be the
+Cartesian components of the heat flux density at position ${\bf r}$ and time $t$. It follows that the heat  flux
+across a surface element $d{\bf S}$, located at point ${\bf r}$, is ${\bf q}\cdot d{\bf S} = q_i\,dS_i$. Let $T({\bf r},t)$ be
+the  temperature of the fluid at position ${\bf r}$ and time $t$. Thus, a general temperature gradient takes the
+form $\partial T/\partial x_i$.   Let us assume that there is a {\em linear}\/ relationship between the components of the local heat flux
+density and the local temperature gradient: {\em i.e.},
+\begin{equation}
+q_i = A_{ij}\,\frac{\partial T}{\partial x_j},
+\end{equation}
+where the $A_{ij}$ are the components of a second-rank tensor (which can be functions of position and time). 
+Now, in an {\em isotropic}\/ fluid we would expect $A_{ij}$ to be an isotropic tensor (see Section~\ref{siso}). 
+However, the most general second-order isotropic tensor is  simply a multiple of $\delta_{ij}$. Hence, we can write
+\begin{equation}
+A_{ij} = -\kappa\,\delta_{ij},
+\end{equation}
+where $\kappa({\bf r},t)$  is termed the {\em thermal conductivity}\/ of the fluid. It follows that the most general
+expression for the heat flux density in an isotropic  fluid is
+\begin{equation}
+q_i = -\kappa\,\frac{\partial T}{\partial x_i},
+\end{equation}
+or, equivalently, 
+\begin{equation}\label{e4.68x}
+{\bf q} = -\kappa\,\nabla T.
+\end{equation}
+Moreover, it is a matter of experience that heat flows {\em down}\/ temperature gradients: {\em i.e.}, $\kappa>0$. 
+We conclude that the net heat flux out of volume $V$ is
+\begin{equation}\label{e4.69}
+\dot{Q} = -\int_S\kappa\,\frac{\partial T}{\partial x_i}\,dS_i = - \int_V\frac{\partial}{\partial x_i}\!\left(\kappa\,\frac{\partial T}{\partial x_i}\right) dV,
+\end{equation}
+where use has been made of the tensor divergence theorem.
+
+Equations~(\ref{e4.62})--(\ref{e4.65}) and (\ref{e4.69}) can be combined to give the following energy conservation equation:
+\begin{eqnarray}
+\int_V\left\{\frac{\partial}{\partial t}\!\left[\rho\left({\cal E}+ \frac{1}{2}\,v_i\,v_i\right)\right]
++\frac{\partial}{\partial x_j}\!\left[\rho\left({\cal E}+\frac{1}{2}\,v_i\,v_i\right)v_j\right]\right\}dV &&\nonumber\\[0.5ex]
+= \int_V\left[v_i\,F_i + \frac{\partial}{\partial x_j}\!\left(v_i\,\sigma_{ij} + \kappa\,\frac{\partial T}{\partial x_j}\right)\right]dV.&&
+\end{eqnarray}
+However, this result is valid irrespective of the size, shape, or location of  volume $V$, which is only
+possible if
+\begin{equation}
+\frac{\partial}{\partial t}\!\left[\rho\left({\cal E}+ \frac{1}{2}\,v_i\,v_i\right)\right]
++\frac{\partial}{\partial x_j}\!\left[\rho\left({\cal E}+\frac{1}{2}\,v_i\,v_i\right)v_j\right]
+= v_i\,F_i + \frac{\partial}{\partial x_j}\!\left(v_i\,\sigma_{ij} + \kappa\,\frac{\partial T}{\partial x_j}\right)
+\end{equation}
+everywhere inside the fluid. Expanding some of the derivatives, and rearranging, we obtain
+\begin{equation}
+\rho\,\frac{D}{D t}\!\left({\cal E}+ \frac{1}{2}\,v_i\,v_i\right)
+= v_i\,F_i + \frac{\partial}{\partial x_j}\!\left(v_i\,\sigma_{ij} + \kappa\,\frac{\partial T}{\partial x_j}\right),
+\end{equation}
+where use has been made of the continuity equation (\ref{e4.36}).
+Now, the scalar product of ${\bf v}$ with the fluid equation of motion (\ref{e4.48}) yields
+\begin{equation}
+\rho\,v_i\,\frac{D v_i}{Dt} \equiv \rho\,\frac{D}{Dt}\!\left(\frac{1}{2}\,v_i\,v_i\right) = v_i\,F_i + v_i\,\frac{\partial \sigma_{ij}}{\partial x_j}.
+\end{equation}
+Combining the previous two equations, we get
+\begin{equation}
+\rho\,\frac{D{\cal E}}{Dt} = \frac{\partial v_i}{\partial x_j} \,\sigma_{ij}+ \frac{\partial}{\partial x_j}\!\left(\kappa\,\frac{\partial T}{\partial x_j}\right).
+\end{equation}
+Finally, making use of (\ref{e4.26}), we deduce that the {\em energy conservation equation}\/ for an isotropic Newtonian fluid
+takes the general form
+\begin{equation}\label{e4.66}
+\frac{D{\cal E}}{Dt} = - \frac{p}{\rho}\,\frac{\partial v_i}{\partial x_i} + \frac{1}{\rho}\left[\chi + \frac{\partial}{\partial x_j}\!\left(
+\kappa\,\frac{\partial T}{\partial x_j}\right)\right].
+\end{equation}
+Here,
+\begin{equation}\label{e4.67}
+\chi = \frac{\partial v_i}{\partial x_j}\,d_{ij} = 2\mu\left(e_{ij}\,e_{ij} - \frac{1}{3}\,e_{ii}\,e_{jj}\right)
+=\mu\left(\frac{\partial v_i}{\partial x_j}\,\frac{\partial v_i}{\partial x_j}+\frac{\partial v_i}{\partial x_j}\,\frac{\partial v_j}{\partial x_i} - \frac{2}{3}\,\frac{\partial v_i}{\partial x_i}\,\frac{\partial v_j}{\partial x_j}\right)
+\end{equation}
+is the rate of heat generation per unit volume due to viscosity.
+When written in vector form, Equation~(\ref{e4.66}) becomes
+\begin{equation}\label{e4.68}
+\frac{D{\cal E}}{Dt} = - \frac{p}{\rho}\,\nabla\!\cdot\!{\bf v} + \frac{\chi}{\rho} +\frac{\nabla\!\cdot(
+\kappa\,\nabla T)}{\rho}.
+\end{equation}
+According to the above equation, the internal energy per unit mass of a co-moving fluid element
+evolves in time as a consequence of work done on the element by pressure, as 
+its volume changes, viscous heat generation due to flow shear, and heat conduction.
+
+\section{Equations of Incompressible Fluid Flow}\label{siff}
+In most situations of general interest, the flow of a conventional liquid, such as water, is {\em incompressible}\/ to
+a high degree of accuracy. Now, a fluid is said to be incompressible  when the mass density of a co-moving volume element 
+does not change appreciably as the element moves through regions of varying pressure. In other words,  for an incompressible fluid, the rate of change of $\rho$
+following the motion is zero: {\em i.e.},
+\begin{equation}\label{e4.78}
+\frac{D\rho}{Dt} = 0.
+\end{equation}
+In this case, the continuity equation (\ref{e4.36}) reduces to
+\begin{equation}
+\nabla\!\cdot\!{\bf v} = 0.
+\end{equation}
+We conclude that,  as a consequence of mass conservation, an incompressible fluid must have a {\em divergence-free}, or solenoidal,  velocity field. This immediately implies, from Equation~(\ref{e4.38}), that  the volume of a co-moving fluid element is a constant of the motion. In most practical situations, the initial density distribution in an incompressible fluid is {\em uniform}\/ in space. 
+Hence, it follows from (\ref{e4.78}) that the density distribution remains uniform in space and constant in time.
+In other words, we can generally treat the density, $\rho$, as a  uniform constant  in incompressible fluid flow problems. 
+
+Suppose that the volume force acting on the fluid is {\em conservative}\/ in nature (see Section~\ref{sgrad}): {\em i.e.},
+\begin{equation}
+{\bf F} = - \rho\,\nabla\Psi,
+\end{equation}
+where $\Psi({\bf r}, t)$ is the potential energy per unit mass, and $\rho\,\Psi$ the
+potential energy per unit volume. Assuming that the fluid viscosity is a spatially uniform quantity, which is
+generally the case (unless there are strong temperature variations within the fluid), the Navier-Stokes equation for an incompressible fluid reduces to
+\begin{equation}\label{e5.78}
+\frac{D{\bf v}}{Dt}=   - \frac{\nabla p}{\rho}-\nabla\Psi + \nu\,\nabla^2 {\bf v},
+\end{equation}
+where
+\begin{equation}
+\nu = \frac{\mu}{\rho}
+\end{equation}
+is termed the {\em kinematic viscosity}, and has units of meters squared per second. 
+Roughly speaking, momentum diffuses a distance of order $\sqrt{\kappa\,t}$ meters in $t$ seconds as a consequence of viscosity.
+The kinematic viscosity of water at $20^\circ\,{\rm C}$ is about $1.0\times 10^{-6}\,{\rm m^2/s}$. 
+It follows that viscous momentum diffusion in water is a relatively slow process. 
+
+The complete set of equations governing incompressible flow is
+\begin{eqnarray}
+\nabla\!\cdot\!{\bf v} &=& 0,\label{e4.83}\\[0.5ex]
+\frac{D{\bf v}}{Dt}&=& - \frac{\nabla p}{\rho} -\nabla\Psi  + \nu\,\nabla^2 {\bf v}.\label{e4.84}
+\end{eqnarray}
+Here, $\rho$ and $\nu$ are regarded as known constants, and $\Psi({\bf r},t)$  as a known function. Thus, we have
+four equations---namely, Equation~(\ref{e4.83}), plus the three components of Equation~(\ref{e4.84})---for
+four unknowns---namely, the pressure, $p({\bf r}, t)$, plus the three components of the velocity, ${\bf v}({\bf r}, t)$. 
+Note that an energy conservation equation is redundant in the case of incompressible fluid flow.
+
+\section{Equations of Compressible Fluid Flow}
+In many situations of general interest, the flow of gases is {\em compressible}: {\em i.e.}, there are significant changes in the
+mass density  as the gas flows from place to place. For the case of compressible flow, the continuity equation 
+(\ref{e4.36}), and the Navier-Stokes equation (\ref{e4.52}), must be augmented by the energy
+conservation equation (\ref{e4.68}), as well as thermodynamic relations that specify the internal
+energy per unit mass  and the temperature in terms of the density and pressure.
+For an {\em ideal gas}, these relations take the form
+\begin{eqnarray}\label{e4.85}
+{\cal E} &=& \frac{c_V}{\cal M}\,T,\\[0.5ex]
+T&=& \frac{\cal M}{\cal R}\,\frac{p}{\rho},\label{e4.86}
+\end{eqnarray}
+where $c_V$ is the molar specific heat  {\em at constant volume}, ${\cal R}=8.3145\,{\rm J\,K^{-1}\,mol^{-1}}$ 
+the molar ideal gas constant, ${\cal M}$ the molar mass ({\em i.e.}, the mass of 1 mole of gas molecules), and $T$  the temperature in degrees Kelvin. Incidentally, 1 mole corresponds to $6.0221\times 10^{24}$ molecules. Here, we have assumed, for the sake of simplicity, that $c_V$ is a  uniform constant. 
+It is also convenient to  assume that the  thermal conductivity, $\kappa$, is a
+ uniform constant. Making use of these approximations, Equations~(\ref{e4.36}), (\ref{e4.68}), (\ref{e4.85}), and (\ref{e4.86}) can be
+combined to give
+\begin{equation}
+\frac{1}{\gamma-1}\left(\frac{Dp}{Dt} - \frac{\gamma\,p}{\rho}\,\frac{D\rho}{Dt}\right)
+= \chi + \frac{\kappa\,{\cal M}}{\cal R}\,\nabla^2\!\left(\frac{p}{\rho}\right),
+\end{equation}
+where 
+\begin{equation}
+\gamma = \frac{c_p}{c_V} = \frac{c_V+{\cal R}}{c_V}
+\end{equation}
+is the ratio of the molar specific heat at {\em constant pressure}, $c_p$,  to that at constant volume, $c_V$. (Incidentally, the result that $c_p=c_V+{\cal R}$
+for an ideal gas is a standard theorem of thermodynamics.) The ratio of specific heats of dry air
+at $20^\circ\,{\rm C}$ is $1.40$. 
+
+The complete set of equations governing compressible ideal gas flow are
+\begin{eqnarray}
+\frac{D\rho}{Dt} &=& -\rho\,\nabla\!\cdot\!{\bf v},\label{e4.89}\\[0.5ex]
+\frac{D{\bf v}}{Dt} &=& -\frac{\nabla p}{\rho} - \nabla\Psi+\frac{\mu}{\rho}\left[\nabla^2{\bf v} + \frac{1}{3}\,\nabla(\nabla\!\cdot\!{\bf v})\right],\label{e4.90}\\[0.5ex]
+\frac{1}{\gamma-1}\left(\frac{Dp}{Dt} - \frac{\gamma\,p}{\rho}\,\frac{D\rho}{Dt}\right)
+&=& \chi + \frac{\kappa\,{\cal M}}{\cal R}\,\nabla^2\!\left(\frac{p}{\rho}\right),\label{e4.91}
+\end{eqnarray}
+where the dissipation function $\chi$ is specified in terms of $\mu$ and ${\bf v}$ in Equation~(\ref{e4.67}). Here, $\mu$,
+$\gamma$, $\kappa$, ${\cal M}$, and ${\cal R}$ are regarded as known constants, and $\Psi({\bf r}, t)$  as a known function. Thus, we have five equations---namely, Equations~(\ref{e4.89}) and (\ref{e4.91}), plus the three components of Equation~(\ref{e4.90})---for five 
+unknowns---namely,
+the density, $\rho({\bf r},t)$, the pressure, $p({\bf r}, t)$, and the three components of the velocity, ${\bf v}({\bf r}, t)$. 
+
+\section{Dimensionless Numbers in Incompressible Flow}\label{sdim}
+It is helpful to normalize the equations of incompressible fluid flow, (\ref{e4.83})--(\ref{e4.84}), in the following
+manner: $\bar{\nabla} = L\,\nabla$, $\bar{\bf v} = {\bf v}/V_0$, $\bar{t} = (V_0/L)\,t$, 
+$\bar{\Psi} = \Psi/(g\,L)$, and  $\bar{p} = p/(\rho\,V_0^{\,2} +\rho\,g\,L+ \rho\,\nu\,V_0/L)$. Here, $L$ is a typical spatial variation length-scale,  $V_0$ 
+a typical fluid velocity, and $g$  a typical gravitational acceleration (assuming that $\Psi$ represents a gravitational
+potential energy per unit mass). All hatted quantities are  dimensionless, and are designed to be comparable with unity. 
+The normalized equations of incompressible fluid flow take the form
+\begin{eqnarray}\label{e4.89x}
+\bar{\nabla}\!\cdot\!\bar{\bf v} &=& 0,\\[0.5ex]
+\frac{D\bar{\bf v}}{D\bar{t}}&=&   - \left(1+\frac{1}{{\rm Fr}}+\frac{1}{{\rm Re}}\right)\bar{\nabla} \bar{p}-\frac{\bar{\nabla}\bar{\Psi}}{\rm Fr} + \frac{\bar{\nabla}^2 \bar{\bf v}}{\rm Re},\label{e4.90x}
+\end{eqnarray}
+where $D/D\bar{t}\equiv \partial/\partial \bar{t} + \bar{\bf v}\!\cdot\!\bar{\nabla}$, and
+\begin{eqnarray}
+{\rm Re} &=& \frac{L\,V_0}{\nu},\\[0.5ex]
+{\rm Fr} &=& \frac{V_0^{\,2}}{g\,L}.
+\end{eqnarray}
+Here, the dimensionless numbers ${\rm Re}$ and ${\rm Fr}$ are known as the {\em Reynolds number}\/ and the
+{\em Froude number}, respectively. The Reynolds number is the typical ratio of inertial to viscous forces within the fluid,
+whereas the Froude number is the typical ratio of inertial to gravitational forces.  Thus, viscosity is relatively important
+compared to inertia when ${\rm Re}\ll 1$, and {\em vice versa}. Likewise, gravity is relatively important compared to
+inertia when ${\rm Fr}\ll 1$, and
+{\em vice versa}. 
+Note that, in principal,  ${\rm Re}$ and ${\rm Fr}$
+are the only quantities in Equations~(\ref{e4.89x}) and (\ref{e4.90x}) that can be significantly greater or smaller
+than unity.
+
+For the case of water at $20^\circ\,{\rm C}$, located on the surface of the Earth, 
+\begin{eqnarray}
+{\rm Re} &\simeq& 1.0\times 10^6\,L({\rm m})\,V_0({\rm m\,s^{-1}}),\\[0.5ex]
+{\rm Fr} &\simeq& 1.0\times 10^{-1}\,[V_0({\rm m\,s^{-1}})]^{\,2}/L({\rm m}).
+\end{eqnarray}
+Thus, if $L\sim 1\,{\rm m}$ and $V_0\sim 1\,{\rm m\,s^{-1}}$, as is often the
+case for terrestrial water dynamics, the above expressions suggest that
+ ${\rm Re}\gg 1$ and ${\rm Fr}\sim{\cal O}(1)$. 
+In this situation, the viscous  term on the right-hand side of (\ref{e4.90x}) becomes negligible, 
+and the (unnormalized) incompressible fluid flow equations
+reduce to the following {\em inviscid, incompressible, fluid flow equations}:
+\begin{eqnarray}
+\nabla\!\cdot\!{\bf v} &=& 0,\\[0.5ex]
+\frac{D{\bf v}}{Dt}&=& - \frac{\nabla p}{\rho} - \nabla\Psi.
+\end{eqnarray}
+
+For the case of lubrication oil at $20^\circ\,{\rm C}$, located on the surface of the Earth, $\nu\simeq 1.0\times 10^{-4}\,{\rm m^2\,s^{-1}}$ ({\em i.e.},
+oil is about 100 times more viscous than water), and
+so
+\begin{eqnarray}
+{\rm Re} &\simeq& 1.0\times 10^4\,L({\rm m})\,V_0({\rm m\,s^{-1}}),\\[0.5ex]
+{\rm Fr} &\simeq& 1.0\times 10^{-1}\,[V_0({\rm m\,s^{-1}})]^{\,2}/L({\rm m}).
+\end{eqnarray}
+Suppose that oil is slowly flowing down a narrow lubrication channel such that $L\ll 10^{-3}\,{\rm m}$ and $V_0\ll 10^{-1}\,{\rm m\,s^{-1}}$.
+It follows, from the above expressions, that ${\rm Re}\ll 1$ and ${\rm Fr}\ll 1$. In this situation, the inertial term on the left-hand
+side of (\ref{e4.90x}) becomes negligible, and the (unnormalized)
+ incompressible fluid flow equations
+reduce to the following {\em inertia-free, incompressible, fluid flow equations}:
+\begin{eqnarray}
+\nabla\!\cdot\!{\bf v} &=& 0,\\[0.5ex]
+0&=& - \frac{\nabla p}{\rho} - \nabla\Psi+\nu\,\nabla^2{\bf v}.
+\end{eqnarray}
+
+\section{Dimensionless Numbers in Compressible Flow}\label{scomp}
+It is helpful to normalize the equations of compressible ideal gas flow, (\ref{e4.89})---(\ref{e4.91}), in the following
+manner: $\bar{\nabla} = L\,\nabla$, $\bar{\bf v} = {\bf v}/V_0$, $\bar{t} = (V_0/L)\,t$, $\bar{\rho}=\rho/\rho_0$, $\bar{\Psi} = \Psi/(g\,L)$, $\bar{\chi} = (L/V_0)^2\,\chi$, and $\bar{p} = (p-p_0)/(\rho_0\,V_0^{\,2} +\rho_0\,g\,L+ \rho_0\,\nu\,V_0/L)$. Here, $L$ is a typical spatial variation length-scale,  $V_0$ 
+a typical fluid velocity, $\rho_0$  a typical mass density, and $g$ a typical gravitational acceleration (assuming that $\Psi$ represents a gravitational
+potential energy per unit mass). Furthermore, $p_0$ corresponds to atmospheric pressure at ground level, and is a uniform
+constant. It follows that $\bar{p}$ represents  deviations from atmospheric pressure.
+All hatted quantities are  dimensionless, and are designed to be comparable with unity. 
+The normalized equations of compressible ideal gas flow take the form
+\begin{eqnarray}\label{e4.97}
+\frac{D\bar{\rho}}{Dt}&=& -\bar{\rho}\,\bar{\nabla}\!\cdot\!\bar{\bf v},\\[0.5ex]
+\frac{D\bar{\bf v}}{D\bar{t}}&=&   - \left(1+\frac{1}{{\rm Fr}}+\frac{1}{{\rm Re}}\right)\frac{\bar{\nabla}\bar{p}}{\bar{\rho}}-\frac{\bar{\nabla}\bar{\Psi}}{\rm Fr} + \frac{1}{{\rm Re}\,\bar{\rho}}\left[\bar{\nabla}^2 \bar{\bf v}-\frac{1}{3}\,\bar{\nabla}(\bar{\nabla}\!\cdot\!\bar{\bf v})\right],\label{e4.97x}\\[0.5ex]
+\frac{1}{\gamma-1}\left[\frac{D\bar{p}}{D\bar{t}}\right.\!\!&-&\!\! \left.\gamma\left(\frac{\bar{p}_0+\bar{p}}{\bar{\rho}}\right)\frac{D\bar{\rho}}{D\bar{t}}\right]=\frac{\bar{\chi}}{1+{\rm Re}\,(1+1/{\rm Fr})}+ \frac{1}{{\rm Re}\,{\rm Pr}}\,\nabla^2\!\left(
+\frac{\bar{p}_0 + \bar{p}}{\bar{\rho}}\right),\nonumber\\[0.5ex]&&\label{e4.98}\\[0.5ex]
+\bar{p}_0 &=& \frac{1}{\gamma\,{\rm M}^{\,2}\,(1+1/{\rm Fr}+1/{\rm Re})},\label{e4.99}
+\end{eqnarray}
+where $D/D\bar{t}\equiv \partial/\partial \bar{t} + \bar{\bf v}\!\cdot\!\bar{\nabla}$, 
+\begin{eqnarray}
+{\rm Re} &=& \frac{L\,V_0}{\nu},\\[0.5ex]
+{\rm Fr} &=& \frac{V_0^{\,2}}{g\,L},\\[0.5ex]
+{\rm Pr} &=& \frac{\nu}{\kappa_H},\\[0.5ex]
+{\rm M} &=& \frac{V_0}{\sqrt{\gamma\,p_0/\rho_0}},
+\end{eqnarray}
+and
+\begin{eqnarray}
+\nu &=&\frac{\mu}{\rho_0},\\[0.5ex]
+\kappa_H &=& \frac{\kappa\,{\cal M}}{{\cal R}\,\rho_0}.
+\end{eqnarray}
+Here, the dimensionless numbers ${\rm Re}$, ${\rm Fr}$, ${\rm Pr}$, and ${\rm M}$  are known as the {\em Reynolds number},  
+{\em Froude number}, {\em Prandtl number},  and {\em Mach number}, respectively.  The Reynolds number is the typical ratio of inertial to viscous forces within the gas,
+the Froude number  the typical ratio of inertial to gravitational forces, the  Prandtl number 
+the typical ratio of  momentum   to  thermal diffusion rates, 
+and the Mach number the typical ratio of 
+gas flow and sound propagation speeds. Thus, thermal diffusion is far faster than momentum diffusion when ${\rm Pr}\ll 1$,
+and {\em vice versa}. Moreover, the gas flow is termed {\em subsonic}\/ when ${\rm M}\ll 1$, {\em supersonic}\/ when
+${\rm M}\gg 1$, and {\em transonic}\/ when ${\rm M}\sim {\cal O}(1)$. 
+Note that $\sqrt{\gamma\,p_0/\rho_0}$ is the speed of sound in the undisturbed gas. 
+The quantity $\kappa_H$ is called the {\em thermal diffusivity}\/ of the gas, and has
+units of meters squared per second. Thus, heat typically diffuses through the gas a distance $\sqrt{\kappa_H\,t}$ meters in $t$
+seconds. 
+The thermal diffusivity of dry air at atmospheric
+pressure and $20^\circ\,{\rm C}$ is about
+$\kappa_H = 2.1\times 10^{-5}\,{\rm m^2\,s^{-1}}$.
+It follows that heat diffusion in air is a relatively slow process. 
+The kinematic viscosity of dry air at atmospheric pressure and $20^\circ\,{\rm C}$ is
+about $\nu= 1.5\times 10^{-5}\,{\rm m^2\,s^{-1}}$.  Hence, momentum diffusion in air
+is also a relatively slow process. 
+
+For the case of dry air at atmospheric pressure and $20^\circ\,{\rm C}$, 
+\begin{eqnarray}\label{e4.112}
+{\rm Re} &\simeq& 6.7\times 10^4\,L({\rm m})\,V_0({\rm m\,s^{-1}}),\\[0.5ex]
+{\rm Fr} &\simeq& 1.0\times 10^{-1}\,[V_0({\rm m\,s^{-1}})]^{\,2}/L({\rm m}),\\[0.5ex]
+{\rm Pr} &\simeq & 7.2\times 10^{-1},\\[0.5ex]
+{\rm M} &\simeq &2.9\times 10^{-3}\,V_0({\rm m\,s^{-1}}).\label{e4.115}
+\end{eqnarray}
+Thus, if $L\sim 1\,{\rm m}$ and $V_0\sim 1\,{\rm m\,s^{-1}}$, as is often the case for {\em subsonic}\/
+air dynamics close to the Earth's surface, the above expressions suggest that ${\rm Re}\gg 1$,  ${\rm M}\ll 1$, and
+${\rm Fr}, {\rm Pr} \sim {\cal O}(1)$. It immediately follows from Equation~(\ref{e4.99}) that $\bar{p}_0\gg 1$. 
+However, in this situation, Equation~(\ref{e4.98}) is dominated by the second term in square brackets on
+its left-hand side. Hence, this equation can only be satisfied if the term in question is small, which implies  that
+\begin{equation}
+\frac{D\bar{\rho}}{D\bar{t}} \ll 1.
+\end{equation}
+Equation~(\ref{e4.97}) then gives
+\begin{equation}
+\bar{\nabla}\!\cdot\!\bar{\bf v} \ll 1.
+\end{equation}
+Thus, it is evident that subsonic ({\em i.e.}, ${\rm M}\ll 1$) gas flow is essentially {\em incompressible}.
+The fact that ${\rm Re}\gg 1$ implies that such flow is also essentially {\em inviscid}. In the
+incompressible inviscid limit (in which $\bar{\nabla}\!\cdot\!\bar{\bf v}=0$ and ${\rm Re}\gg 1$),  the
+(unnormalized) compressible ideal gas flow equations
+reduce to the previously derived  inviscid, incompressible, fluid flow equations: {\em i.e.}, 
+\begin{eqnarray}
+\nabla\!\cdot\!{\bf v} &=& 0,\\[0.5ex]
+\frac{D{\bf v}}{Dt}&=& - \frac{\nabla p}{\rho} - \nabla\Psi.
+\end{eqnarray}
+It follows that the equations which govern subsonic gas dynamics close to the surface of the Earth are essentially the
+same as those which govern the  flow of water.
+
+Suppose that $L\sim 1\,{\rm m}$ and $V_0\sim 300\,{\rm m\,s^{-1}}$, as is typically the case for {\em transonic}\/
+air dynamics ({\em e.g.}, air flow over the wing of a fighter jet). In this situation, 
+Equations~(\ref{e4.99}) and (\ref{e4.112})--(\ref{e4.115}) yield ${\rm Re}, {\rm Fr} \gg 1$ and ${\rm M}, {\rm Pr}, \bar{p}_0\sim {\cal O}(1)$. It follows that  the final two terms  on the right-hand sides of Equations~(\ref{e4.97x}) and
+(\ref{e4.98}) can be neglected. Thus, the (unnormalized) compressible ideal gas flow equations reduce to the
+following set of {\em inviscid  adiabatic ideal gas flow equations}:
+\begin{eqnarray}
+\frac{D\rho}{Dt} &=& -\rho\,\nabla\!\cdot\!{\bf v},\\[0.5ex]
+\frac{D{\bf v}}{Dt} &=& -\frac{\nabla p}{\rho},\\[0.5ex]
+\frac{D}{Dt}\!\left(\frac{p}{\rho^\gamma}\right)&=&0. \label{e4.122}
+\end{eqnarray}
+In particular, if the initial distribution of $p/\rho^\gamma$ is  uniform in space, as is often the case, then Equation~(\ref{e4.122}) ensures that the distribution remains uniform as time progresses. In fact, it can be shown that the entropy
+per unit mass of an ideal gas is
+\begin{equation}
+{\cal S} = \frac{c_V}{{\cal M}}\ln\!\left(\frac{p}{\rho^\gamma}\right).
+\end{equation}
+Hence, the assumption that $p/\rho^\gamma$ is uniform in space is equivalent to the assumption that the
+entropy per unit mass of the gas is a spatial constant. A gas in which this is the case is termed {\em homentropic}. 
+Equation~(\ref{e4.122}) ensures that the entropy of a co-moving gas element is a constant of the motion in
+transonic flow. A gas in which this is the case is termed {\em isentropic}. 
+In the homentropic case, the above compressible gas flow equations simplify
+somewhat to give
+\begin{eqnarray}
+\frac{D\rho}{Dt} &=& -\rho\,\nabla\!\cdot\!{\bf v},\\[0.5ex]
+\frac{D{\bf v}}{Dt} &=& -\frac{\nabla p}{\rho},\\[0.5ex]
+\frac{p}{p_0} &=& \left(\frac{\rho}{\rho_0}\right)^\gamma.\label{e4.125}
+\end{eqnarray}
+Here, $p_0$ is atmospheric pressure, and $\rho_0$ is the density of air at atmospheric pressure. Equation~(\ref{e4.125})
+is known as the {\em adiabatic gas law}, and is a consequence of the fact that transonic gas dynamics takes place
+far too quickly for thermal heat conduction (which is a relatively slow process) to have any appreciable effect on the temperature distribution within the gas. Incidentally, a gas in which thermal diffusion is negligible is generally termed {\em adiabatic}.
+
+\section{Fluid Equations in Cartesian Coordinates}\label{sx2.18}
+Let us adopt the conventional Cartesian coordinate system, $x$, $y$, $z$. According to Equation~(\ref{e4.26}), the various components
+of the stress tensor are
+\begin{eqnarray}
+\sigma_{xx} &=& -p + 2\mu\,\frac{\partial v_x}{\partial x},\\[0.5ex]
+\sigma_{yy} &=& -p + 2\mu\,\frac{\partial v_y}{\partial y},\\[0.5ex]
+\sigma_{zz} &=& -p + 2\mu\,\frac{\partial v_z}{\partial z},\\[0.5ex]
+\sigma_{xy}=\sigma_{yx} &=& \mu\left(\frac{\partial v_x}{\partial y}+\frac{\partial v_y}{\partial x}\right),\\[0.5ex]
+\sigma_{xz}=\sigma_{zx} &=& \mu\left(\frac{\partial v_x}{\partial z}+\frac{\partial v_z}{\partial x}\right),\\[0.5ex]
+\sigma_{yz}=\sigma_{zy} &=& \mu\left(\frac{\partial v_y}{\partial z}+\frac{\partial v_z}{\partial y}\right),
+\end{eqnarray}
+where ${\bf v}$ is the  velocity, $p$  the pressure, and $\mu$ the viscosity. The equations of compressible
+fluid flow, (\ref{e4.89})--(\ref{e4.91}) (from which the equations of incompressible fluid flow
+can easily be obtained by setting $D\rho/Dt=0$), become
+\begin{eqnarray}
+\frac{D\rho}{Dt} &=&-\rho\,\Delta,\\[0.5ex]
+\frac{Dv_x}{Dt}&=& - \frac{1}{\rho}\,\frac{\partial p}{\partial x} - \frac{\partial\Psi}{\partial x}
++ \frac{\mu}{\rho}\left(\nabla^2 v_x + \frac{1}{3}\,\frac{\partial\Delta}{\partial x}\right),\\[0.5ex]
+\frac{Dv_y}{Dt}&=& - \frac{1}{\rho}\,\frac{\partial p}{\partial y} - \frac{\partial\Psi}{\partial y}
++ \frac{\mu}{\rho}\left(\nabla^2 v_y + \frac{1}{3}\,\frac{\partial\Delta}{\partial y}\right),\\[0.5ex]
+\frac{Dv_z}{Dt}&=& - \frac{1}{\rho}\,\frac{\partial p}{\partial z} - \frac{\partial\Psi}{\partial z}
++ \frac{\mu}{\rho}\left(\nabla^2 v_z + \frac{1}{3}\,\frac{\partial\Delta}{\partial z}\right),\\[0.5ex]
+\frac{1}{\gamma-1}\left(\frac{D\rho}{Dt} - \frac{\gamma\,p}{\rho}\,\frac{D\rho}{Dt}\right)
+&=&\chi + \frac{\kappa\,{\cal M}}{{\cal R}}\,\nabla^2\left(\frac{p}{\rho}\right),
+\end{eqnarray}
+where $\rho$ is the mass density, $\gamma$ the ratio of specific heats, $\kappa$ the heat conductivity, ${\cal M}$
+the molar mass, and ${\cal R}$ the molar ideal gas constant. Furthermore,
+\begin{eqnarray}
+\Delta&=&\frac{\partial v_x}{\partial x} + \frac{\partial v_y}{\partial y} + \frac{\partial v_z}{\partial z},\\[0.5ex]
+\frac{D}{Dt} &=& \frac{\partial}{\partial t} + v_x\,\frac{\partial }{\partial x} + v_y\,\frac{\partial}{\partial y} + v_z\,\frac{\partial}{\partial z},\\[0.5ex]
+\nabla^2 &=&\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2},\\[0.5ex]
+\chi &=&2\mu\left[\left(\frac{\partial v_x}{\partial x}\right)^2+\left(\frac{\partial v_y}{\partial y}\right)^2+
+\left(\frac{\partial v_z}{\partial z}\right)^2+\frac{1}{2}\left(\frac{\partial v_x}{\partial y}+\frac{\partial v_y}{\partial x}\right)^2\right.\nonumber\\[0.5ex]
+&&\left.+\frac{1}{2}\left(\frac{\partial v_x}{\partial z}+\frac{\partial v_z}{\partial x}\right)^2+\frac{1}{2}\left(\frac{\partial v_y}{\partial z}+\frac{\partial v_z}{\partial y}\right)^2\right].
+\end{eqnarray}
+In the above, $\gamma$, $\mu$, $\kappa$, and ${\cal M}$ are treated as uniform constants. 
+
+\section{Fluid Equations in Cylindrical Coordinates}\label{s2.19}
+Let us adopt the cylindrical coordinate system, $r$, $\theta$, $z$. Making use of the results quoted
+in Section~\ref{scyl}, the components of the stress tensor are
+\begin{eqnarray}
+\sigma_{rr} &=&-p + 2\mu\,\frac{\partial v_r}{\partial r},\\[0.5ex]
+\sigma_{\theta\theta} &=&-p + 2\mu\left(\frac{1}{r}\frac{\partial v_\theta}{\partial \theta}+ \frac{v_r}{r}\right),\\[0.5ex]
+\sigma_{zz} &=&-p + 2\mu\,\frac{\partial v_z}{\partial z},\\[0.5ex]
+\sigma_{r\theta}=\sigma_{\theta r} &=&\mu\left(\frac{1}{r}\,\frac{\partial v_r}{\partial\theta} + \frac{\partial v_\theta}{\partial r}-\frac{v_\theta}{r}\right),\\[0.5ex]
+\sigma_{rz}=\sigma_{zr} &=&\mu\left(\frac{\partial v_r}{\partial z} + \frac{\partial v_z}{\partial r}\right),\\[0.5ex]
+\sigma_{\theta z} = \sigma_{z\theta} &=& \mu\left(\frac{1}{r}\,\frac{\partial v_z}{\partial\theta}+\frac{\partial v_\theta}{\partial z}\right),
+\end{eqnarray}
+whereas the equations of compressible fluid flow become
+\begin{eqnarray}
+\frac{D\rho}{Dt} &=&-\rho\,\Delta,\\[0.5ex]
+\frac{Dv_r}{Dt}-\frac{v_\theta^{\,2}}{r}&=& - \frac{1}{\rho}\,\frac{\partial p}{\partial r} - \frac{\partial\Psi}{\partial r}
+\nonumber\\[0.5ex]&&+ \frac{\mu}{\rho}\left(\nabla^2 v_r -\frac{v_r}{r^2}-\frac{2}{r^2}\,\frac{\partial v_\theta}{\partial\theta}+ \frac{1}{3}\,\frac{\partial\Delta}{\partial r}\right),\\[0.5ex]
+\frac{Dv_\theta}{Dt}+\frac{v_r\,v_\theta}{r}&=& - \frac{1}{\rho\,r}\,\frac{\partial p}{\partial \theta} - \frac{1}{r}\frac{\partial\Psi}{\partial \theta}\nonumber\\[0.5ex]&&
++\frac{\mu}{\rho}\left(\nabla^2 v_\theta +\frac{2}{r^2}\,\frac{\partial v_r}{\partial\theta} -\frac{v_\theta}{r^2}+ \frac{1}{3r}\,\frac{\partial\Delta}{\partial \theta}\right),\\[0.5ex]
+\frac{Dv_z}{Dt}&=& - \frac{1}{\rho}\,\frac{\partial p}{\partial z} - \frac{\partial\Psi}{\partial z}
++ \frac{\mu}{\rho}\left(\nabla^2 v_z + \frac{1}{3}\,\frac{\partial\Delta}{\partial z}\right),\\[0.5ex]
+\frac{1}{\gamma-1}\left(\frac{D\rho}{Dt} - \frac{\gamma\,p}{\rho}\,\frac{D\rho}{Dt}\right)
+&=&\chi + \frac{\kappa\,{\cal M}}{\cal R}\,\nabla^2\left(\frac{p}{\rho}\right),
+\end{eqnarray}
+where 
+\begin{eqnarray}
+\Delta&=&\frac{1}{r}\,\frac{\partial (r\,v_r)}{\partial r} +\frac{1}{r}\, \frac{\partial v_\theta}{\partial \theta} + \frac{\partial v_z}{\partial z},\\[0.5ex]
+\frac{D}{Dt} &=& \frac{\partial}{\partial t} + v_r\,\frac{\partial }{\partial r} + \frac{v_\theta}{r}\,\frac{\partial}{\partial \theta} + v_z\,\frac{\partial}{\partial z},\\[0.5ex]
+\nabla^2 &=&\frac{1}{r}\frac{\partial}{\partial r}\!\left(r\,\frac{\partial}{\partial r} \right)+\frac{1}{r^2}\, \frac{\partial^2}{\partial \theta^2}+\frac{\partial^2}{\partial z^2},\\[0.5ex]
+\chi &=&2\mu\left[\left(\frac{\partial v_r}{\partial r}\right)^2+\left(\frac{1}{r}\,\frac{\partial v_\theta}{\partial \theta}+\frac{v_r}{r}\right)^2+
+\left(\frac{\partial v_z}{\partial z}\right)^2+\frac{1}{2}\left(\frac{1}{r}\,\frac{\partial v_r}{\partial \theta}+\frac{\partial v_\theta}{\partial r}-\frac{v_\theta}{r}\right)^2\right.\nonumber\\[0.5ex]
+&&\left.+\frac{1}{2}\left(\frac{\partial v_r}{\partial z}+\frac{\partial v_z}{\partial r}\right)^2+\frac{1}{2}\left(\frac{\partial v_\theta}{\partial z}+\frac{1}{r}\,\frac{\partial v_z}{\partial \theta}\right)^2\right].
+\end{eqnarray}
+
+\section{Fluid Equations in Spherical Coordinates}
+Let us, finally,  adopt the spherical  coordinate system, $r$, $\theta$, $\phi$. Making use of the results quoted
+in Section~\ref{ssph}, the components of the stress tensor are
+\begin{eqnarray}
+\sigma_{rr} &=&-p + 2\mu\,\frac{\partial v_r}{\partial r},\\[0.5ex]
+\sigma_{\theta\theta} &=&-p + 2\mu\left(\frac{1}{r}\frac{\partial v_\theta}{\partial \theta}+ \frac{v_r}{r}\right),\\[0.5ex]
+\sigma_{\phi\phi} &=&-p + 2\mu\left(\frac{1}{r\,\sin\theta}\,\frac{\partial v_\phi}{\partial \phi}+\frac{v_r}{r}+\frac{\cot\theta\,v_\theta}{r}\right),\\[0.5ex]
+\sigma_{r\theta}=\sigma_{\theta r} &=&\mu\left(\frac{1}{r}\,\frac{\partial v_r}{\partial\theta} + \frac{\partial v_\theta}{\partial r}-\frac{v_\theta}{r}\right),\\[0.5ex]
+\sigma_{r\phi}=\sigma_{\phi r} &=&\mu\left(\frac{1}{r\,\sin\theta}\,\frac{\partial v_r}{\partial \phi} + \frac{\partial v_\phi}{\partial r}-\frac{v_\phi}{r}\right),\\[0.5ex]
+\sigma_{\theta \phi} = \sigma_{\phi\theta} &=& \mu\left(\frac{1}{r\,\sin\theta}\,\frac{\partial v_\theta}{\partial \phi}+\frac{1}{r}\,\frac{\partial v_\phi}{\partial\theta}-\frac{\cot\theta\,v_\phi}{r}\right),
+\end{eqnarray}
+whereas the equations of compressible fluid flow become
+\begin{eqnarray}
+\frac{D\rho}{Dt} &=&-\rho\,\Delta,\\[0.5ex]
+\frac{Dv_r}{Dt}-\frac{v_\theta^{\,2}+v_\phi^{\,2}}{r}&=& - \frac{1}{\rho}\,\frac{\partial p}{\partial r} - \frac{\partial\Psi}{\partial r}
++ \frac{\mu}{\rho}\left(\nabla^2 v_r -\frac{2 v_r}{r^2}-\frac{2}{r^2}\,\frac{\partial v_\theta}{\partial\theta}\right.\nonumber\\[0.5ex]&&\left.-\frac{2\cot\theta\,v_\theta}{r^2}-\frac{2}{r^2\,\sin\theta}\,\frac{\partial v_\phi}{\partial\phi}+ \frac{1}{3}\,\frac{\partial\Delta}{\partial r}\right),\\[0.5ex]
+\frac{Dv_\theta}{Dt}+\frac{v_r\,v_\theta-\cot\theta\,v_\phi^{\,2}}{r}&=& - \frac{1}{\rho\,r}\,\frac{\partial p}{\partial \theta} - \frac{1}{r}\frac{\partial\Psi}{\partial \theta}
++\frac{\mu}{\rho}\left(\nabla^2 v_\theta +\frac{2}{r^2}\,\frac{\partial v_r}{\partial\theta} \right.\\[0.5ex]
+&&\left.-\frac{v_\theta}{r^2\,\sin^2\theta}-\frac{2\,\cot\theta}{r^2\,\sin\theta}\,\frac{\partial v_\phi}{\partial\phi}+ \frac{1}{3r}\,\frac{\partial\Delta}{\partial \theta}\right),\\[0.5ex]
+\frac{Dv_\phi}{Dt}+\frac{v_r\,v_\phi + \cot\theta\,v_\theta\,v_\phi}{r}&=& - \frac{1}{\rho\,r\,\sin\theta}\,\frac{\partial p}{\partial \phi} - \frac{1}{r\,\sin\theta}\,\frac{\partial\Psi}{\partial \phi}
++ \frac{\mu}{\rho}\left(\nabla^2 v_\phi-\frac{v_\phi}{r^2\,\sin^2\theta} \right.\nonumber\\[0.5ex]
+&&\left. + \frac{2}{r^2\,\sin^2\theta}\,\frac{\partial v_r}{\partial \phi}+ \frac{2\,\cot\theta}{r^2\,\sin\theta}\,\frac{\partial v_\theta}{\partial\phi}+ \frac{1}{3r\,\sin\theta}\,\frac{\partial\Delta}{\partial \phi}\right),\\[0.5ex]
+\frac{1}{\gamma-1}\left(\frac{D\rho}{Dt} - \frac{\gamma\,p}{\rho}\,\frac{D\rho}{Dt}\right)
+&=&\chi + \frac{\kappa\,{\cal M}}{\cal R}\,\nabla^2\left(\frac{p}{\rho}\right),
+\end{eqnarray}
+where 
+\begin{eqnarray}
+\Delta&=&\frac{1}{r^2}\,\frac{\partial (r^2\,v_r)}{\partial r} +\frac{1}{r\,\sin\theta}\, \frac{\partial (\sin\theta\,v_\theta)}{\partial \theta} + \frac{1}{r\,\sin\theta}\,\frac{\partial v_\phi}{\partial \phi},\\[0.5ex]
+\frac{D}{Dt} &=& \frac{\partial}{\partial t} + v_r\,\frac{\partial }{\partial r} + \frac{v_\theta}{r}\,\frac{\partial}{\partial \theta} + \frac{v_\phi}{r\,\sin\theta}\,\frac{\partial}{\partial \phi},\\[0.5ex]
+\nabla^2 &=&\frac{1}{r^2}\,\frac{\partial}{\partial r}\!\left(r^2\,\frac{\partial}{\partial r} \right)+\frac{1}{r^2\,\sin\theta}\, \frac{\partial}{\partial \theta}\!\left(\sin\theta\,\frac{\partial}{\partial\theta}\right)+\frac{1}{r^2\,\sin^2\theta}\,\frac{\partial^2}{\partial \phi^2},\\[0.5ex]
+\chi &=&2\mu\left[\left(\frac{\partial v_r}{\partial r}\right)^2+\left(\frac{1}{r}\,\frac{\partial v_\theta}{\partial \theta}+\frac{v_r}{r}\right)^2+
+\left(\frac{1}{r\,\sin\theta}\,\frac{\partial v_\phi}{\partial \phi}+\frac{v_r}{r}+\frac{\cot\theta\,v_\theta}{r}\right)^2\right.\nonumber\\[0.5ex]&&+\frac{1}{2}\left(\frac{1}{r}\,\frac{\partial v_r}{\partial \theta}+\frac{\partial v_\theta}{\partial r}-\frac{v_\theta}{r}\right)^2+\frac{1}{2}\left(\frac{1}{r\,\sin\theta}\,\frac{\partial v_r}{\partial \phi}+\frac{\partial v_\phi}{\partial r}-\frac{v_\phi}{r}\right)^2\nonumber\\[0.5ex]
+&&\left.+\frac{1}{2}\left(\frac{1}{r\,\sin\theta}\,\frac{\partial v_\theta}{\partial \phi}+\frac{1}{r}\,\frac{\partial v_\phi}{\partial \theta}-\frac{\cot\theta\,v_\phi}{r}\right)^2\right].
+\end{eqnarray}
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{2.\arabic{enumi}}
+\begin{enumerate}
+\item Equations (\ref{e4.68x}), (\ref{e4.68}), and (\ref{e4.89}) can be combined to give the following energy conservation equation
+for a non-ideal compressible fluid:
+$$
+\rho\,\frac{D{\cal E}}{Dt} - \frac{p}{\rho}\,\frac{D\rho}{Dt} = \chi - \nabla\cdot{\bf q},
+$$
+where $\rho$ is the mass density, $p$ the pressure, ${\cal E}$ the internal energy per unit mass, $\chi$ the
+viscous energy dissipation rate per unit volume, and ${\bf q}$ the heat flux density. We also have
+\begin{eqnarray}
+\frac{D\rho}{Dt} &=&-\rho\,\nabla\cdot{\bf v},\nonumber\\[0.5ex]
+{\bf q}&=&-\kappa\,\nabla T,\nonumber
+\end{eqnarray}
+where ${\bf v}$ is the fluid velocity,  $T$  the temperature, and $\kappa$ the thermal conductivity. Now, according to a standard theorem  in thermodynamics,
+$$
+T\,d{\cal S} = d{\cal E}- \frac{p}{\rho^2}\,d\rho,
+$$
+where ${\cal S}$ is the entropy per unit mass. Moreover, the entropy flux density at a given point
+in the fluid is
+$$
+{\bf s} = \rho\,{\cal S}\,{\bf v} + \frac{{\bf q}}{T},
+$$
+where the first term on the right-hand side is due to direct entropy convection by the fluid, and the second is the entropy
+flux density associated with heat conduction. 
+
+Derive an entropy conservation equation of the form
+$$
+\frac{dS}{dt} + \Phi_S = \Theta_S,
+$$
+where $S$ is the net amount of entropy contained in some fixed volume $V$, $\Phi_S$ the entropy flux out of $V$, and $\Theta_S$ the
+net rate of entropy creation within $V$. Give expressions for $S$, $\Phi_S$, and $\Theta_S$. Demonstrate that
+ the entropy creation rate per unit volume is
+ $$
+ \theta = \frac{\chi}{T} + \frac{{\bf q}\cdot{\bf q}}{\kappa\,T^2}.
+ $$
+ Finally, show that $\theta\geq 0$, in accordance with the second law of thermodynamics. 
+ 
+ \item The Navier-Stokes equation for an incompressible fluid of uniform mass density $\rho$ takes the form
+ $$
+ \frac{D{\bf v}}{Dt} = -\frac{\nabla p}{\rho} - \nabla\Psi + \nu\,\nabla^2{\bf v},
+ $$
+ where ${\bf v}$ is the fluid velocity, $p$ the pressure, $\Psi$ the potential energy per unit mass, and $\nu$
+ the (uniform) kinematic viscosity. The incompressibility constraint requires that
+ $$
+ \nabla\cdot{\bf v} = 0.
+ $$
+ Finally, the quantity
+ $$
+ \bomega\equiv \nabla\times {\bf v}
+ $$
+ is generally referred to as the fluid {\em vorticity}. 
+ 
+ Derive the following {\em vorticity evolution equation}\/ from
+ the Navier-Stokes equation:
+ $$
+ \frac{D\bomega}{Dt} = (\bomega\cdot\nabla)\,{\bf v} + \nu\,\nabla^2\bomega.
+ $$
+ 
+ \item Consider two-dimensional incompressible fluid flow. Let the velocity field take the form
+ $$
+ {\bf v} = v_x(x,y,t)\,{\bf e}_x + v_y(x,y,t)\,{\bf e}_y.
+ $$
+ Demonstrate that the equations of incompressible fluid flow (see Exercise~2.2) can be satisfied by writing
+ \begin{eqnarray}
+ v_x &=&-\frac{\partial \psi}{\partial y},\nonumber\\[0.5ex]
+ v_y&=&\frac{\partial\psi}{\partial x},\nonumber
+ \end{eqnarray}
+ where
+ $$
+ \frac{\partial\omega}{\partial t}+\frac{\partial\psi}{\partial x}\,\frac{\partial \omega}{\partial y} -\frac{\partial\omega}{\partial x}\, \frac{\partial\psi}{\partial y} = \nu\,\nabla^2\omega,
+ $$
+ and
+ $$
+ \omega = \nabla^2\psi.
+ $$
+ Here, $\nabla^2\equiv \partial^2/\partial x^2+ \partial^2/\partial y^2$. Furthermore, the quantity $\psi$ is termed a {\em stream-function}, 
+ since ${\bf v}\cdot\nabla\psi = 0$: {\em i.e.}, the fluid flow is everywhere parallel to contours of $\psi$. 
+ 
+ \item Consider incompressible {\em irrotational}\/ flow: {\em i.e.}, flow that satisfies
+ \begin{eqnarray}
+ \frac{D{\bf v}}{Dt} &=& -\frac{\nabla p}{\rho} -\nabla\Psi +\nu\,\nabla^2{\bf v},\nonumber\\[0.5ex]
+ \nabla\cdot{\bf v} &=& 0,\nonumber
+ \end{eqnarray}
+ as well as
+ $$
+ \nabla\times {\bf v} = {\bf 0}.
+ $$
+ Here, ${\bf v}$ is the fluid velocity, $\rho$ the uniform mass density, $p$ the pressure, $\Psi$ the potential energy
+ per unit mass, and $\nu$ the uniform kinematic viscosity. 
+ 
+ Demonstrate that the above equations can
+ be satisfied by writing
+ $$
+ {\bf v}= \nabla\phi,
+ $$
+ where
+ $$
+ \nabla^2\phi = 0,
+ $$
+ and
+ $$
+ \frac{\partial\phi}{\partial t} + \frac{1}{2}\,v^2+ \frac{p}{\rho} + \Psi ={\cal C}(t).
+ $$
+ Here, ${\cal C}(t)$ is a spatial constant. This type of flow is known as {\em potential flow}, since the velocity
+ field is derived from a scalar potential. 
+ 
+ \item The equations of  inviscid adiabatic  ideal gas flow are
+ \begin{eqnarray}
+ \frac{D\rho}{Dt} &=&-\rho\,\nabla\cdot{\bf v},\nonumber\\[0.5ex]
+ \frac{D{\bf v}}{Dt} &=& - \frac{\nabla p}{\rho} - \nabla\Psi,\nonumber\\[0.5ex]
+ \frac{D}{Dt}\!\left(\frac{p}{\rho^\gamma}\right) &=& 0.\nonumber
+ \end{eqnarray}
+ Here, $\rho$ is the mass density, ${\bf v}$ the flow velocity, $p$ the pressure, $\Psi$ the
+ potential energy per unit mass, and $\gamma$ the (uniform) ratio of specific heats. 
+ Suppose that the pressure and potential energy are both time independent: {\em i.e.}, $\partial p/\partial t=
+ \partial\Psi/\partial t=0$. 
+ 
+ Demonstrate that
+ $$
+ H = \frac{1}{2}\,v^2 + \frac{\gamma}{\gamma-1}\,\frac{p}{\rho} + \Psi
+ $$
+ is a constant of the motion: {\em i.e.}, $DH/Dt = 0$. This result is known as {\em Bernoulli's theorem}. 
+ 
+\item The equations of  inviscid  adiabatic non-ideal gas flow are
+ \begin{eqnarray}
+ \frac{D\rho}{Dt} &=&-\rho\,\nabla\cdot{\bf v},\nonumber\\[0.5ex]
+ \frac{D{\bf v}}{Dt} &=& - \frac{\nabla p}{\rho} - \nabla\Psi,\nonumber\\[0.5ex]
+ \frac{D{\cal E}}{Dt} - \frac{p}{\rho^2}\,\frac {D\rho}{Dt} &=&0.\nonumber
+ \end{eqnarray}
+ Here, $\rho$ is the mass density, ${\bf v}$ the flow velocity, $p$ the pressure, $\Psi$ the
+ potential energy per unit mass, and ${\cal E}$ the internal energy per unit mass. 
+ Suppose that the pressure and potential energy are both time independent: {\em i.e.}, $\partial p/\partial t=
+ \partial\Psi/\partial t=0$. 
+ Demonstrate that
+ $$
+ H = \frac{1}{2}\,v^2 + {\cal E}+ \frac{p}{\rho} + \Psi
+ $$
+ is a constant of the motion: {\em i.e.}, $DH/Dt = 0$. This result is a more general form of Bernoulli's theorem. 
+ 
+ \item Demonstrate that Bernoulli's theorem for incompressible, inviscid fluid flow takes the form $DH/Dt=0$, where
+ $$
+ H = \frac{1}{2}\,v^2 + \frac{p}{\rho} + \Psi.
+ $$
+
+\end{enumerate}}
